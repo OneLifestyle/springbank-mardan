@@ -1,103 +1,128 @@
-import Image from "next/image";
+import { Navigation } from "@/components/navigation";
+import { HeroSection } from "@/components/hero-section";
+import { OverviewSection } from "@/components/overview-section";
+import { FeaturesSection } from "@/components/features-section";
+import { GallerySection } from "@/components/gallery-section";
+import { GroundsSection } from "@/components/grounds-section";
+import { LocationSection } from "@/components/location-section";
+import { ContactSection } from "@/components/contact-section";
+import { Footer } from "@/components/footer";
 
-export default function Home() {
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  name: "Springbank - Mediterranean Sanctuary on 5 Acres",
+  description:
+    "A master-built Mediterranean-inspired sanctuary on approximately 5 acres in Mardan, South Gippsland. Featuring sweeping Tarwin Valley views, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, poured earth studio, and EV charging. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
+  url: "https://springbankmardan.com",
+  image: "https://springbankmardan.com/images/hero.jpeg",
+  datePosted: "2026-01-27",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "AUD",
+    price: "1500000",
+    url: "https://springbankmardan.com",
+  },
+  about: {
+    "@type": "SingleFamilyResidence",
+    name: "Springbank",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "30 O'Malleys Road",
+      addressLocality: "Mardan",
+      addressRegion: "VIC",
+      postalCode: "3953",
+      addressCountry: "AU",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -38.4567,
+      longitude: 145.8234,
+    },
+    numberOfRooms: 8,
+    numberOfBedrooms: 5,
+    numberOfBathroomsTotal: 2,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: 471,
+      unitCode: "SQM",
+    },
+    lotSize: {
+      "@type": "QuantitativeValue",
+      value: 2,
+      unitCode: "HAR",
+    },
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Pinot Noir vineyard" },
+      { "@type": "LocationFeatureSpecification", name: "Robert Boyle-designed gardens" },
+      { "@type": "LocationFeatureSpecification", name: "530m private walking track" },
+      { "@type": "LocationFeatureSpecification", name: "Poured earth studio with EV charging" },
+      { "@type": "LocationFeatureSpecification", name: "Dam with merbau deck" },
+      { "@type": "LocationFeatureSpecification", name: "Passive solar design" },
+      { "@type": "LocationFeatureSpecification", name: "Hydronic heating" },
+      { "@type": "LocationFeatureSpecification", name: "Double garage and carport" },
+    ],
+  },
+  broker: {
+    "@type": "RealEstateAgent",
+    name: "One Lifestyle Real Estate",
+    url: "https://onelifestyle.com.au",
+    employee: {
+      "@type": "Person",
+      name: "Dean Jones",
+      telephone: "+61 438 079 904",
+      jobTitle: "Licensed Estate Agent / Director",
+    },
+  },
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  name: "Springbank, Mardan",
+  description:
+    "Luxury lifestyle property on 5 acres in Mardan, South Gippsland, Victoria. Centrally located between Leongatha, Mirboo North, and Meeniyan in the heart of the Tarwin Valley. Ideal for tree changers and sea changers seeking premium country living near Wilsons Promontory.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "30 O'Malleys Road",
+    addressLocality: "Mardan",
+    addressRegion: "VIC",
+    postalCode: "3953",
+    addressCountry: "AU",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -38.4567,
+    longitude: 145.8234,
+  },
+  containedInPlace: [
+    { "@type": "AdministrativeArea", name: "South Gippsland" },
+    { "@type": "AdministrativeArea", name: "Gippsland, Victoria" },
+  ],
+};
+
+export default function SpringbankPropertyPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+      />
+      <main>
+        <Navigation />
+        <HeroSection />
+        <OverviewSection />
+        <FeaturesSection />
+        <GallerySection />
+        <GroundsSection />
+        <LocationSection />
+        <ContactSection />
+        <Footer />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
