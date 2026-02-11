@@ -83,8 +83,16 @@ export function ContactSection() {
 
             <p className="text-muted-foreground leading-relaxed mb-8">
               For further information or to arrange a private inspection of this
-              unique Mediterranean sanctuary, please contact Dean Jones at One
-              Lifestyle Real Estate. Experience the lifestyle of profound
+              unique Mediterranean sanctuary, please contact Dean Jones at{" "}
+              <a
+                href="https://onelifestylerealestate.com.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                One Lifestyle Real Estate
+              </a>
+              . Experience the lifestyle of profound
               tranquillity that Springbank offers.
             </p>
 
@@ -99,7 +107,14 @@ export function ContactSection() {
                     Dean Jones
                   </h3>
                   <p className="text-muted-foreground">
-                    One Lifestyle Real Estate
+                    <a
+                      href="https://onelifestylerealestate.com.au"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-foreground"
+                    >
+                      One Lifestyle Real Estate
+                    </a>
                   </p>
                 </div>
               </div>

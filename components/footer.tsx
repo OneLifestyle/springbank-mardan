@@ -112,7 +112,16 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-primary-foreground/50">
           <p>
-            © {new Date().getFullYear()} One Lifestyle Real Estate. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://onelifestylerealestate.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground transition-colors underline underline-offset-4"
+            >
+              One Lifestyle Real Estate
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a
