@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { label: "Open Home", href: "#open-home" },
   { label: "Overview", href: "#overview" },
   { label: "Features", href: "#features" },
   { label: "Gallery", href: "#gallery" },

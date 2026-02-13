@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation";
 import { HeroSection } from "@/components/hero-section";
+import { OpenHomePromoSection } from "@/components/open-home-promo-section";
 import { OverviewSection } from "@/components/overview-section";
 import { FeaturesSection } from "@/components/features-section";
 import { GallerySection } from "@/components/gallery-section";
@@ -115,6 +116,7 @@ export default function SpringbankPropertyPage() {
       <main>
         <Navigation />
         <HeroSection />
+        <OpenHomePromoSection />
         <OverviewSection />
         <FeaturesSection />
         <GallerySection />
