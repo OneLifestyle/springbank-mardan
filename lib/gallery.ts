@@ -91,7 +91,7 @@ const homepageHighlightSelections = [
   {
     file: "springbank-mardan-homepage-highlight-08.jpg",
     alt: "Springbank interior presentation image from latest campaign",
-    category: "Interiors",
+    category: "Exterior",
   },
   {
     file: "springbank-mardan-homepage-highlight-09.jpg",
