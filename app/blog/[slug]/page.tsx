@@ -249,6 +249,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   ))}
                 </div>
               </section>
+
+              {post.imageCredits && post.imageCredits.length > 0 && (
+                <section>
+                  <h2 className="font-serif text-2xl text-foreground">Image sources and licenses</h2>
+                  <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+                    {post.imageCredits.map((credit) => (
+                      <li key={credit.sourceUrl}>
+                        <a
+                          href={credit.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary underline-offset-4 hover:underline"
+                        >
+                          {credit.label}
+                        </a>{" "}
+                        by {credit.author}, licensed{" "}
+                        <a
+                          href={credit.licenseUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary underline-offset-4 hover:underline"
+                        >
+                          {credit.licenseName}
+                        </a>
+                        .
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </div>
           </article>
         </div>
