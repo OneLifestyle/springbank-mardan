@@ -4,11 +4,18 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { galleryCategories, propertyImages, type GalleryCategory } from "@/lib/gallery";
+import {
+  galleryCategories,
+  getEmbedVideoUrl,
+  propertyFilm,
+  propertyImages,
+  type GalleryCategory,
+} from "@/lib/gallery";
 
 export default function GalleryClient() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory | "All">("All");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const embeddedUrl = getEmbedVideoUrl(propertyFilm.youtubeUrl);
 
   const filteredImages = useMemo(() => {
     if (activeCategory === "All") {
@@ -48,6 +55,43 @@ export default function GalleryClient() {
             the complete ~50-photo set is added.
           </p>
         </header>
+
+        <section className="mt-8 overflow-hidden rounded-xl border border-border bg-card">
+          <div className="grid gap-0 lg:grid-cols-[1.2fr,0.8fr]">
+            <div className="relative aspect-[16/9] w-full bg-black">
+              {embeddedUrl ? (
+                <iframe
+                  src={embeddedUrl}
+                  title={propertyFilm.title}
+                  className="h-full w-full"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
+                <div
+                  className="h-full w-full bg-cover bg-center"
+                  style={{ backgroundImage: `url('${propertyFilm.fallbackImage}')` }}
+                />
+              )}
+            </div>
+            <div className="p-6 md:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                Property Film
+              </p>
+              <h2 className="mt-3 font-serif text-2xl text-foreground">{propertyFilm.title}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                {propertyFilm.description}
+              </p>
+              <div className="mt-6">
+                <Button asChild>
+                  <Link href="/#gallery">Back to listing</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-8 rounded-xl border border-border bg-card p-6 md:p-8">
           <p className="text-sm text-muted-foreground">Filter by category</p>

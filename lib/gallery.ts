@@ -16,8 +16,7 @@ export const propertyFilm = {
   title: "Springbank Property Film",
   description:
     "A guided video walkthrough of the residence, gardens, and Tarwin Valley setting.",
-  // Add your YouTube URL here when ready, e.g. "https://www.youtube.com/watch?v=..."
-  youtubeUrl: "",
+  youtubeUrl: "https://youtu.be/rFPWAy40BEg",
   fallbackImage: "/images/hero.jpeg",
 };
 
