@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { OpenHomePromoSection } from "@/components/open-home-promo-section";
 import { OverviewSection } from "@/components/overview-section";
 import { FeaturesSection } from "@/components/features-section";
-import { GallerySection } from "@/components/gallery-section";
+import { FullGallerySection } from "@/components/full-gallery-section";
 import { GroundsSection } from "@/components/grounds-section";
 import { LocationSection } from "@/components/location-section";
 import { BlogPreviewSection } from "@/components/blog-preview-section";
@@ -120,7 +120,7 @@ export default function SpringbankPropertyPage() {
         <OpenHomePromoSection />
         <OverviewSection />
         <FeaturesSection />
-        <GallerySection />
+        <FullGallerySection />
         <GroundsSection />
         <LocationSection />
         <BlogPreviewSection />
