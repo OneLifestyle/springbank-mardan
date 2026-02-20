@@ -55,52 +55,52 @@ export const propertyImages: PropertyImage[] = [...importedListingImages, ...imp
 const homepageHighlightSelections = [
   {
     file: "springbank-mardan-homepage-highlight-01.jpg",
-    alt: "Springbank landscape outlook across the grounds and dam",
+    alt: "Elevated view across Springbank grounds with dam and mature trees",
     category: "Views",
   },
   {
     file: "springbank-mardan-homepage-highlight-02.jpg",
-    alt: "Springbank established garden setting and outdoor landscape detail",
+    alt: "Kitchen sink window framing Springbank gardens and valley outlook",
     category: "Interiors",
   },
   {
     file: "springbank-mardan-homepage-highlight-03.jpg",
-    alt: "Springbank gated entry and driveway approach",
+    alt: "White post-and-rail gate entry at 30 O'Malleys Road",
     category: "Exterior",
   },
   {
     file: "springbank-mardan-homepage-highlight-04.jpg",
-    alt: "Springbank dam edge deck and rural outlook",
+    alt: "Merbau deck beside the dam with open rural outlook",
     category: "Views",
   },
   {
     file: "springbank-mardan-homepage-highlight-05.jpg",
-    alt: "Springbank pergola and courtyard transition space",
+    alt: "Pergola walkway linking courtyard and residence exterior",
     category: "Exterior",
   },
   {
     file: "springbank-mardan-homepage-highlight-06.jpg",
-    alt: "Springbank established gardens and open lawn zone",
+    alt: "Established garden feature and lawns within the grounds",
     category: "Grounds",
   },
   {
     file: "springbank-mardan-homepage-highlight-07.jpg",
-    alt: "Springbank interior living zone with warm materials and light",
+    alt: "Open-plan kitchen and dining zone with timber finishes",
     category: "Interiors",
   },
   {
     file: "springbank-mardan-homepage-highlight-08.jpg",
-    alt: "Springbank interior presentation image from latest campaign",
+    alt: "Sunset exterior of the residence and driveway approach",
     category: "Exterior",
   },
   {
     file: "springbank-mardan-homepage-highlight-09.jpg",
-    alt: "Springbank outdoor entertaining edge with garden frontage",
+    alt: "Covered outdoor edge overlooking driveway and lawn area",
     category: "Exterior",
   },
   {
     file: "springbank-mardan-homepage-highlight-10.jpg",
-    alt: "Springbank kitchen outlook toward Tarwin Valley landscape",
+    alt: "Kitchen bench and sink with wide window to valley views",
     category: "Interiors",
   },
 ] as const;
