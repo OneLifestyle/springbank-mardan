@@ -61,7 +61,7 @@ const homepageHighlightSelections = [
   {
     file: "springbank-mardan-homepage-highlight-02.jpg",
     alt: "Springbank established garden setting and outdoor landscape detail",
-    category: "Grounds",
+    category: "Interiors",
   },
   {
     file: "springbank-mardan-homepage-highlight-03.jpg",
