@@ -136,15 +136,25 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Property Link */}
-            <a
-              href="https://www.realestate.com.au/property-house-vic-mardan-150094768"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
-            >
-              View on realestate.com.au →
-            </a>
+            {/* Property Links */}
+            <div className="flex flex-col gap-2">
+              <a
+                href="https://www.realestate.com.au/property-acreage+semi-rural-vic-mardan-150373704"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+              >
+                View on realestate.com.au →
+              </a>
+              <a
+                href="https://www.onelifestylerealestate.com.au/listings/30-omalleys-road-mardan-197100.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+              >
+                View on onelifestylerealestate.com.au →
+              </a>
+            </div>
           </div>
 
           {/* Contact Form */}
