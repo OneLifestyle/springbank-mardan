@@ -11,7 +11,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
-          backgroundImage: `url('/images/hero.jpeg')`,
+          backgroundImage: `url('/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg')`,
         }}
       />
 

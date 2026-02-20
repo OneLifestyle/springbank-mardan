@@ -17,7 +17,7 @@ const jsonLd = {
   description:
     "A master-built Mediterranean-inspired sanctuary on approximately 5 acres in Mardan, South Gippsland. Featuring sweeping Tarwin Valley views, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, poured earth studio, and EV charging. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
   url: "https://springbankmardan.com",
-  image: "https://springbankmardan.com/images/hero.jpeg",
+  image: "https://springbankmardan.com/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
   datePosted: "2026-01-27",
   offers: {
     "@type": "Offer",

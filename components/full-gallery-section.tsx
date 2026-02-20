@@ -121,7 +121,7 @@ export function FullGallerySection() {
           <h3 className="font-serif text-2xl text-foreground">Open the complete gallery</h3>
           <p className="mt-3 text-muted-foreground">
             Browse all available images in one place with category filtering, full-size viewing, and
-            room to expand as the full ~50-photo collection is added.
+            room to expand as new property media is added.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             {galleryCategories.map((category) => (

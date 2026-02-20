@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero.jpeg",
+        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
         width: 1200,
         height: 630,
         alt: "Springbank - Mediterranean sanctuary overlooking the Tarwin Valley in Mardan, VIC",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Springbank | 5-Acre Lifestyle Property Near Leongatha, South Gippsland",
     description:
       "Mediterranean sanctuary on 5 acres in Mardan. 15 min to Leongatha, Mirboo North and Meeniyan. Tarwin Valley views, vineyard, Robert Boyle gardens.",
-    images: ["/images/hero.jpeg"],
+    images: ["/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg"],
   },
 };
 

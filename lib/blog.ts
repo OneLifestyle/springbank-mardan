@@ -59,7 +59,7 @@ const posts: BlogPost[] = [
       "Tarwin Valley",
     ],
     heroImage: {
-      src: "/images/gallery-dam-view.jpeg",
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
       alt: "Springbank residence and grounds overlooking the dam and Tarwin Valley setting",
       caption:
         "Springbank at 30 O'Malleys Rd, Mardan: a master-built Mediterranean sanctuary on approximately 5 acres.",
@@ -77,7 +77,7 @@ const posts: BlogPost[] = [
           "Passive solar principles are integrated into the design, supported by double glazed windows, solar power, split system air conditioning, and solid fuel heating with a concealed wetback system. The result is year-round comfort aligned with sustainable intent.",
         ],
         image: {
-          src: "/images/gallery-entrance.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
           alt: "Cherry Oak entrance and Mediterranean-inspired facade at Springbank",
           caption:
             "A bespoke entrance and careful orientation set the tone for the home.",
@@ -91,7 +91,7 @@ const posts: BlogPost[] = [
           "The upper level functions as a private retreat, incorporating the main bedroom with walk-in robe and semi-ensuite access, along with additional flexible rooms suited to bedrooms, guest accommodation, or home office use.",
         ],
         image: {
-          src: "/images/kitchen.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
           alt: "Renovated kitchen at Springbank with timber benchtops and large island",
           caption:
             "The central kitchen is designed for everyday function and larger-scale entertaining.",
@@ -111,7 +111,7 @@ const posts: BlogPost[] = [
           "Fully lined and finished with kitchenette facilities, a separate toilet and vanity area, quality lighting, and electric vehicle charging capability, this ancillary structure offers exceptional versatility for creative, professional, or recreational use while remaining complementary to the main residence.",
         ],
         image: {
-          src: "/images/gallery-buildings.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
           alt: "Main residence with poured earth studio and garages at Springbank",
           caption:
             "The ancillary building expands function without compromising design cohesion.",
@@ -125,7 +125,7 @@ const posts: BlogPost[] = [
           "A rare lifestyle feature is the approximately 530-metre private walking and running track that encircles the property, meandering through open lawns and shaded cypress sections.",
         ],
         image: {
-          src: "/images/gallery-gardens.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
           alt: "Established Robert Boyle designed gardens and lawns at Springbank",
           caption:
             "The landscape design is a core part of Springbank's lifestyle offering.",
@@ -153,19 +153,19 @@ const posts: BlogPost[] = [
     galleryTitle: "Springbank image gallery",
     gallery: [
       {
-        src: "/images/gallery-dam-view.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
         alt: "Springbank with dam and deck in foreground",
       },
       {
-        src: "/images/gallery-terrace.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
         alt: "Outdoor terrace with valley views at Springbank",
       },
       {
-        src: "/images/gallery-olive-path.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
         alt: "Olive-lined pathway through Springbank grounds",
       },
       {
-        src: "/images/gallery-valley.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
         alt: "Tarwin Valley views from Springbank",
       },
     ],
@@ -238,7 +238,7 @@ const posts: BlogPost[] = [
           "A property that appears similar on paper can perform very differently once these practical factors are priced in.",
         ],
         image: {
-          src: "/images/gallery-gardens.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
           alt: "Established gardens and open lawn areas on a South Gippsland acreage",
           caption:
             "Usable land and established landscape assets are central to long-term lifestyle value.",
@@ -269,7 +269,7 @@ const posts: BlogPost[] = [
         alt: "Town centre context in Mirboo North",
       },
       {
-        src: "/images/gallery-valley.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
         alt: "Tarwin Valley landscape outlook",
       },
     ],
@@ -407,7 +407,7 @@ const posts: BlogPost[] = [
         alt: "Mirboo North streetscape",
       },
       {
-        src: "/images/gallery-olive-path.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
         alt: "Lifestyle property grounds in South Gippsland",
       },
     ],
@@ -505,7 +505,7 @@ const posts: BlogPost[] = [
           "In this context, property functionality is just as important as headline distance to the coast.",
         ],
         image: {
-          src: "/images/gallery-terrace.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
           alt: "Outdoor terrace suitable for hosting and long-stay lifestyle",
           caption:
             "Properties that support flexible entertaining often perform better for coast-oriented living.",
@@ -531,11 +531,11 @@ const posts: BlogPost[] = [
         alt: "South Gippsland rolling hinterland",
       },
       {
-        src: "/images/gallery-valley.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
         alt: "Tarwin Valley views from regional lifestyle property",
       },
       {
-        src: "/images/gallery-dam-view.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
         alt: "Lifestyle acreage with water feature and open lawns",
       },
     ],
@@ -578,7 +578,7 @@ const posts: BlogPost[] = [
       "regional property checklist",
     ],
     heroImage: {
-      src: "/images/gallery-buildings.jpeg",
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
       alt: "Residence and ancillary buildings on acreage property",
       caption:
         "Acreage value in rural Victoria is strongly influenced by usability, infrastructure, and adaptability.",
@@ -596,7 +596,7 @@ const posts: BlogPost[] = [
           "A block with lower nominal acreage but higher usability can outperform larger alternatives over time.",
         ],
         image: {
-          src: "/images/gallery-gardens.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
           alt: "Usable lawns and structured gardens on acreage",
           caption:
             "Usability should be assessed across the full property, not just the immediate house zone.",
@@ -618,7 +618,7 @@ const posts: BlogPost[] = [
           "Assess build quality, services, and compliance context so ancillary assets are treated as functional value, not just visual extras.",
         ],
         image: {
-          src: "/images/gallery-buildings.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
           alt: "Main residence with separate studio and garage building",
           caption:
             "Ancillary infrastructure can significantly improve long-term property utility.",
@@ -640,7 +640,7 @@ const posts: BlogPost[] = [
           "This is especially important for buyers moving from metropolitan areas into regional acreage ownership for the first time.",
         ],
         image: {
-          src: "/images/gallery-valley.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
           alt: "Rural valley outlook from acreage property",
           caption:
             "Long-term fit improves when scenic appeal is matched with practical routine testing.",
@@ -659,19 +659,19 @@ const posts: BlogPost[] = [
     galleryTitle: "Acreage planning image references",
     gallery: [
       {
-        src: "/images/gallery-buildings.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
         alt: "Residence and ancillary building relationship",
       },
       {
-        src: "/images/gallery-gardens.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
         alt: "Garden and grounds maintenance scope",
       },
       {
-        src: "/images/gallery-terrace.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
         alt: "Outdoor living integration on acreage",
       },
       {
-        src: "/images/gallery-valley.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
         alt: "Long-range rural outlook",
       },
     ],
@@ -696,7 +696,7 @@ const posts: BlogPost[] = [
       "tree change property research",
     ],
     heroImage: {
-      src: "/images/gallery-olive-path.jpeg",
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
       alt: "Pathway through established trees on lifestyle property",
       caption:
         "Structured search sequencing improves inspection quality and conversion confidence.",
@@ -722,7 +722,7 @@ const posts: BlogPost[] = [
           "This approach helps avoid overpaying for properties that require significant adaptation after settlement.",
         ],
         image: {
-          src: "/images/gallery-front.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
           alt: "Front garden and approach to lifestyle residence",
           caption:
             "Presentation matters, but functional fit should lead selection decisions.",
@@ -744,7 +744,7 @@ const posts: BlogPost[] = [
           "A benchmark stage is especially useful in lifestyle markets where stock can be highly differentiated.",
         ],
         image: {
-          src: "/images/gallery-dam-view.jpeg",
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
           alt: "Acreage benchmark property with water feature and lawns",
           caption:
             "Benchmarking against strong comparables improves offer discipline.",
@@ -762,19 +762,19 @@ const posts: BlogPost[] = [
     galleryTitle: "Inspection-planning visual context",
     gallery: [
       {
-        src: "/images/gallery-olive-path.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
         alt: "Pathways and landscape flow on acreage",
       },
       {
-        src: "/images/gallery-front.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
         alt: "Front approach and building context",
       },
       {
-        src: "/images/gallery-dam-view.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
         alt: "Water and landscape relationship on site",
       },
       {
-        src: "/images/gallery-entrance.jpeg",
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
         alt: "Entry quality and built form detail",
       },
     ],

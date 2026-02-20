@@ -74,7 +74,7 @@ export function GroundsSection() {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden">
               <img
-                src="/images/aerial-grounds-from-road.jpeg"
+                src="/images/springbank/highlights/springbank-mardan-south-gippsland-property-aerial-grounds-road.jpg"
                 alt="Aerial view of Springbank property from O'Malleys Road showing white post-and-rail fencing, sweeping manicured lawns, dam with merbau deck, mature eucalypts and willows, and the Mediterranean-style residence nestled among established gardens"
                 className="w-full h-full object-cover"
               />

@@ -112,7 +112,7 @@ export function OverviewSection() {
           <div className="relative">
             <div className="aspect-[4/3] bg-muted overflow-hidden">
               <img
-                src="/images/kitchen.jpeg"
+                src="/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg"
                 alt="Renovated country kitchen with terracotta rangehood and valley views"
                 className="w-full h-full object-cover"
               />

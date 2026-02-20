@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/gallery-dam-view.jpeg",
+        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
         width: 1200,
         height: 630,
         alt: "Springbank open home in Mardan",
@@ -54,7 +54,7 @@ const jsonLd = {
     name: "One Lifestyle Real Estate",
     url: "https://onelifestylerealestate.com.au",
   },
-  image: ["https://springbankmardan.com/images/gallery-dam-view.jpeg"],
+  image: ["https://springbankmardan.com/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg"],
   url: "https://springbankmardan.com/open-home",
   description:
     "Open Home at Springbank, 30 O'Malleys Rd Mardan VIC 3953. Saturday 28 February 2026, 12pm to 1pm.",
@@ -73,27 +73,27 @@ const expectations = [
 
 const galleryImages = [
   {
-    src: "/images/gallery-dam-view.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
     alt: "Springbank from the dam with merbau deck, sweeping lawns and established gardens",
   },
   {
-    src: "/images/gallery-terrace.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
     alt: "Outdoor terrace with panoramic valley views",
   },
   {
-    src: "/images/gallery-olive-path.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
     alt: "Olive tree-lined pathway through the grounds",
   },
   {
-    src: "/images/gallery-buildings.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
     alt: "Main residence and poured earth studio",
   },
   {
-    src: "/images/gallery-gardens.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
     alt: "Robert Boyle designed gardens with mature trees",
   },
   {
-    src: "/images/gallery-valley.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
     alt: "Sweeping Tarwin Valley views from the property",
   },
 ];
@@ -169,7 +169,7 @@ export default function OpenHomePage() {
             <div className="overflow-hidden rounded-xl border border-border bg-card">
               <div className="relative aspect-[16/7] w-full">
                 <Image
-                  src="/images/gallery-dam-view.jpeg"
+                  src="/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg"
                   alt="Springbank residence and grounds during open home season"
                   fill
                   className="object-cover"

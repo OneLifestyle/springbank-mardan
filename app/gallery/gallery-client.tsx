@@ -52,7 +52,7 @@ export default function GalleryClient() {
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
             Explore the full image library with category filters. This section is designed to scale as
-            the complete ~50-photo set is added.
+            new property media is added.
           </p>
         </header>
 

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/gallery-dam-view.jpeg",
+        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
         width: 1200,
         height: 630,
         alt: "Springbank and Tarwin Valley setting",

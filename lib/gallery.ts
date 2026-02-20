@@ -17,75 +17,111 @@ export const propertyFilm = {
   description:
     "A guided video walkthrough of the residence, gardens, and Tarwin Valley setting.",
   youtubeUrl: "https://youtu.be/rFPWAy40BEg",
-  fallbackImage: "/images/hero.jpeg",
+  fallbackImage:
+    "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
 };
 
-export const propertyImages: PropertyImage[] = [
+export const highlightImages: PropertyImage[] = [
   {
-    src: "/images/gallery-dam-view.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
     alt: "Springbank from the dam with merbau deck, sweeping lawns and established gardens",
     category: "Grounds",
   },
   {
-    src: "/images/gallery-entrance.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
     alt: "Grand Cherry Oak entrance with columns and valley views",
     category: "Interiors",
   },
   {
-    src: "/images/kitchen.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
     alt: "Renovated country kitchen with terracotta rangehood",
     category: "Interiors",
   },
   {
-    src: "/images/gallery-terrace.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
     alt: "Outdoor terrace with panoramic valley views",
     category: "Exterior",
   },
   {
-    src: "/images/gallery-olive-path.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
     alt: "Olive tree-lined pathway through the grounds",
     category: "Grounds",
   },
   {
-    src: "/images/gallery-buildings.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
     alt: "Main residence and poured earth studio",
     category: "Exterior",
   },
   {
-    src: "/images/gallery-gardens.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
     alt: "Robert Boyle designed gardens with mature trees",
     category: "Grounds",
   },
   {
-    src: "/images/gallery-front.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
     alt: "Front garden with Japanese maple and double garage",
     category: "Exterior",
   },
   {
-    src: "/images/gallery-valley.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
     alt: "Sweeping Tarwin Valley views from the property",
     category: "Views",
   },
   {
-    src: "/images/hero.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
     alt: "Hero view of Springbank residence and grounds",
     category: "Exterior",
   },
   {
-    src: "/images/aerial-grounds-from-road.jpeg",
+    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-aerial-grounds-road.jpg",
     alt: "Aerial view of Springbank grounds and residence from O'Malleys Road",
     category: "Views",
   },
   {
-    src: "/images/floorplan-all-levels.png",
+    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-floorplan-all-levels.png",
     alt: "Floor plan showing upper and lower levels plus garage, carport and studio",
     category: "Plans",
   },
   {
-    src: "/images/aerial-boundary-plan.jpg",
+    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-aerial-boundary-plan.jpg",
     alt: "Aerial boundary plan of the full 5-acre property",
     category: "Plans",
   },
+];
+
+const rotatingCategories: GalleryCategory[] = [
+  "Exterior",
+  "Interiors",
+  "Grounds",
+  "Views",
+];
+
+const importedListingImages: PropertyImage[] = Array.from({ length: 62 }, (_, index) => {
+  const seq = String(index + 1).padStart(3, "0");
+  return {
+    src: `/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-${seq}.jpg`,
+    alt: `Springbank Mardan South Gippsland lifestyle property gallery image ${seq}`,
+    category: rotatingCategories[index % rotatingCategories.length],
+  };
+});
+
+const importedListingPlans: PropertyImage[] = [
+  {
+    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-listing-floorplan-01.png",
+    alt: "Springbank Mardan listing floorplan image 01",
+    category: "Plans",
+  },
+  {
+    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-listing-floorplan-02.jpg",
+    alt: "Springbank Mardan listing floorplan image 02",
+    category: "Plans",
+  },
+];
+
+export const propertyImages: PropertyImage[] = [
+  ...highlightImages,
+  ...importedListingImages,
+  ...importedListingPlans,
 ];
 
 export const galleryCategories: GalleryCategory[] = [
@@ -97,7 +133,7 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export function getHomepageGalleryHighlights(max = 10): PropertyImage[] {
-  return propertyImages.filter((image) => image.category !== "Plans").slice(0, max);
+  return highlightImages.filter((image) => image.category !== "Plans").slice(0, max);
 }
 
 export function getEmbedVideoUrl(youtubeUrl: string): string | null {
