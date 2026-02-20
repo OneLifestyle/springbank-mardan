@@ -18,76 +18,8 @@ export const propertyFilm = {
     "A guided video walkthrough of the residence, gardens, and Tarwin Valley setting.",
   youtubeUrl: "https://youtu.be/rFPWAy40BEg",
   fallbackImage:
-    "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+    "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-001.jpg",
 };
-
-export const highlightImages: PropertyImage[] = [
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
-    alt: "Springbank from the dam with merbau deck, sweeping lawns and established gardens",
-    category: "Grounds",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
-    alt: "Grand Cherry Oak entrance with columns and valley views",
-    category: "Interiors",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
-    alt: "Renovated country kitchen with terracotta rangehood",
-    category: "Interiors",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
-    alt: "Outdoor terrace with panoramic valley views",
-    category: "Exterior",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
-    alt: "Olive tree-lined pathway through the grounds",
-    category: "Grounds",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
-    alt: "Main residence and poured earth studio",
-    category: "Exterior",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
-    alt: "Robert Boyle designed gardens with mature trees",
-    category: "Grounds",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
-    alt: "Front garden with Japanese maple and double garage",
-    category: "Exterior",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
-    alt: "Sweeping Tarwin Valley views from the property",
-    category: "Views",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
-    alt: "Hero view of Springbank residence and grounds",
-    category: "Exterior",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-aerial-grounds-road.jpg",
-    alt: "Aerial view of Springbank grounds and residence from O'Malleys Road",
-    category: "Views",
-  },
-  {
-    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-floorplan-all-levels.png",
-    alt: "Floor plan showing upper and lower levels plus garage, carport and studio",
-    category: "Plans",
-  },
-  {
-    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-aerial-boundary-plan.jpg",
-    alt: "Aerial boundary plan of the full 5-acre property",
-    category: "Plans",
-  },
-];
 
 const rotatingCategories: GalleryCategory[] = [
   "Exterior",
@@ -118,11 +50,26 @@ const importedListingPlans: PropertyImage[] = [
   },
 ];
 
-export const propertyImages: PropertyImage[] = [
-  ...highlightImages,
-  ...importedListingImages,
-  ...importedListingPlans,
-];
+export const propertyImages: PropertyImage[] = [...importedListingImages, ...importedListingPlans];
+
+const homepageHighlightSelections = [
+  { seq: "001", alt: "Springbank lifestyle property exterior and grounds view", category: "Exterior" },
+  { seq: "004", alt: "Springbank outdoor living and terrace setting", category: "Exterior" },
+  { seq: "007", alt: "Springbank residence and surrounding gardens", category: "Grounds" },
+  { seq: "011", alt: "Springbank landscape outlook across established lawns", category: "Grounds" },
+  { seq: "015", alt: "Springbank interior space and natural light", category: "Interiors" },
+  { seq: "020", alt: "Springbank exterior perspective with mature trees", category: "Exterior" },
+  { seq: "026", alt: "Springbank garden layout and circulation pathways", category: "Grounds" },
+  { seq: "033", alt: "Springbank long-range rural outlook in South Gippsland", category: "Views" },
+  { seq: "041", alt: "Springbank building footprint and usable open space", category: "Exterior" },
+  { seq: "052", alt: "Springbank feature image from updated listing campaign", category: "Views" },
+] as const;
+
+export const homepageHighlightImages: PropertyImage[] = homepageHighlightSelections.map((item) => ({
+  src: `/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-${item.seq}.jpg`,
+  alt: item.alt,
+  category: item.category,
+}));
 
 export const galleryCategories: GalleryCategory[] = [
   "Exterior",
@@ -133,7 +80,7 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export function getHomepageGalleryHighlights(max = 10): PropertyImage[] {
-  return highlightImages.filter((image) => image.category !== "Plans").slice(0, max);
+  return homepageHighlightImages.slice(0, max);
 }
 
 export function getEmbedVideoUrl(youtubeUrl: string): string | null {
