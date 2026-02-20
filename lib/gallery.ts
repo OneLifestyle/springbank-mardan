@@ -53,16 +53,16 @@ const importedListingPlans: PropertyImage[] = [
 export const propertyImages: PropertyImage[] = [...importedListingImages, ...importedListingPlans];
 
 const homepageHighlightSelections = [
-  { seq: "001", alt: "Springbank lifestyle property exterior and grounds view", category: "Exterior" },
-  { seq: "004", alt: "Springbank outdoor living and terrace setting", category: "Exterior" },
-  { seq: "007", alt: "Springbank residence and surrounding gardens", category: "Grounds" },
-  { seq: "011", alt: "Springbank landscape outlook across established lawns", category: "Grounds" },
-  { seq: "015", alt: "Springbank interior space and natural light", category: "Interiors" },
-  { seq: "020", alt: "Springbank exterior perspective with mature trees", category: "Exterior" },
-  { seq: "026", alt: "Springbank garden layout and circulation pathways", category: "Grounds" },
-  { seq: "033", alt: "Springbank long-range rural outlook in South Gippsland", category: "Views" },
-  { seq: "041", alt: "Springbank building footprint and usable open space", category: "Exterior" },
-  { seq: "052", alt: "Springbank feature image from updated listing campaign", category: "Views" },
+  { seq: "001", alt: "Springbank landscape outlook across the grounds and dam", category: "Views" },
+  { seq: "043", alt: "Springbank interior room with natural light and neutral finishes", category: "Interiors" },
+  { seq: "007", alt: "Springbank gated entry and driveway approach", category: "Exterior" },
+  { seq: "011", alt: "Springbank dam edge deck and rural outlook", category: "Views" },
+  { seq: "015", alt: "Springbank pergola and courtyard transition space", category: "Exterior" },
+  { seq: "020", alt: "Springbank established gardens and open lawn zone", category: "Grounds" },
+  { seq: "049", alt: "Springbank interior living zone with warm materials and light", category: "Interiors" },
+  { seq: "059", alt: "Springbank interior presentation image from latest campaign", category: "Interiors" },
+  { seq: "041", alt: "Springbank outdoor entertaining edge with garden frontage", category: "Exterior" },
+  { seq: "052", alt: "Springbank kitchen outlook toward Tarwin Valley landscape", category: "Interiors" },
 ] as const;
 
 export const homepageHighlightImages: PropertyImage[] = homepageHighlightSelections.map((item) => ({
