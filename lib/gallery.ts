@@ -53,20 +53,60 @@ const importedListingPlans: PropertyImage[] = [
 export const propertyImages: PropertyImage[] = [...importedListingImages, ...importedListingPlans];
 
 const homepageHighlightSelections = [
-  { seq: "001", alt: "Springbank landscape outlook across the grounds and dam", category: "Views" },
-  { seq: "043", alt: "Springbank interior room with natural light and neutral finishes", category: "Interiors" },
-  { seq: "007", alt: "Springbank gated entry and driveway approach", category: "Exterior" },
-  { seq: "011", alt: "Springbank dam edge deck and rural outlook", category: "Views" },
-  { seq: "015", alt: "Springbank pergola and courtyard transition space", category: "Exterior" },
-  { seq: "020", alt: "Springbank established gardens and open lawn zone", category: "Grounds" },
-  { seq: "049", alt: "Springbank interior living zone with warm materials and light", category: "Interiors" },
-  { seq: "059", alt: "Springbank interior presentation image from latest campaign", category: "Interiors" },
-  { seq: "041", alt: "Springbank outdoor entertaining edge with garden frontage", category: "Exterior" },
-  { seq: "052", alt: "Springbank kitchen outlook toward Tarwin Valley landscape", category: "Interiors" },
+  {
+    file: "springbank-mardan-homepage-highlight-01.jpg",
+    alt: "Springbank landscape outlook across the grounds and dam",
+    category: "Views",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-02.jpg",
+    alt: "Springbank established garden setting and outdoor landscape detail",
+    category: "Grounds",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-03.jpg",
+    alt: "Springbank gated entry and driveway approach",
+    category: "Exterior",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-04.jpg",
+    alt: "Springbank dam edge deck and rural outlook",
+    category: "Views",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-05.jpg",
+    alt: "Springbank pergola and courtyard transition space",
+    category: "Exterior",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-06.jpg",
+    alt: "Springbank established gardens and open lawn zone",
+    category: "Grounds",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-07.jpg",
+    alt: "Springbank interior living zone with warm materials and light",
+    category: "Interiors",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-08.jpg",
+    alt: "Springbank interior presentation image from latest campaign",
+    category: "Interiors",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-09.jpg",
+    alt: "Springbank outdoor entertaining edge with garden frontage",
+    category: "Exterior",
+  },
+  {
+    file: "springbank-mardan-homepage-highlight-10.jpg",
+    alt: "Springbank kitchen outlook toward Tarwin Valley landscape",
+    category: "Interiors",
+  },
 ] as const;
 
 export const homepageHighlightImages: PropertyImage[] = homepageHighlightSelections.map((item) => ({
-  src: `/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-${item.seq}.jpg`,
+  src: `/images/springbank/highlights/${item.file}`,
   alt: item.alt,
   category: item.category,
 }));
