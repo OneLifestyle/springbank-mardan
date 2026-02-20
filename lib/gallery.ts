@@ -13,7 +13,7 @@ export type PropertyImage = {
 };
 
 export const propertyFilm = {
-  title: "Springbank Property Film",
+  title: "Springbank Feature Video",
   description:
     "A guided video walkthrough of the residence, gardens, and Tarwin Valley setting.",
   youtubeUrl: "https://youtu.be/rFPWAy40BEg",

@@ -51,8 +51,8 @@ export default function GalleryClient() {
             Springbank photo library
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            Explore the full image library with category filters. This section is designed to scale as
-            new property media is added.
+            Explore interiors, outdoor living zones, gardens, valley views, and floorplans in one
+            place as you compare the full lifestyle offering at Springbank.
           </p>
         </header>
 
