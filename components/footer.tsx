@@ -72,6 +72,12 @@ export function Footer() {
               >
                 Location
               </a>
+              <Link
+                href="/blog"
+                className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+              >
+                Journal
+              </Link>
               <a
                 href="#contact"
                 className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors"

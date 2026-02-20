@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getAllBlogPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: "https://springbankmardan.com",
       lastModified: new Date(),
@@ -45,4 +46,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
   ];
+
+  const blogRoutes: MetadataRoute.Sitemap = [
+    {
+      url: "https://springbankmardan.com/blog",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    ...getAllBlogPosts().map((post) => ({
+      url: `https://springbankmardan.com/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
+  ];
+
+  return [...staticRoutes, ...blogRoutes];
 }

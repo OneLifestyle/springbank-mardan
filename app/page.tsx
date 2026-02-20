@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/features-section";
 import { GallerySection } from "@/components/gallery-section";
 import { GroundsSection } from "@/components/grounds-section";
 import { LocationSection } from "@/components/location-section";
+import { BlogPreviewSection } from "@/components/blog-preview-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
@@ -122,6 +123,7 @@ export default function SpringbankPropertyPage() {
         <GallerySection />
         <GroundsSection />
         <LocationSection />
+        <BlogPreviewSection />
         <ContactSection />
         <Footer />
       </main>

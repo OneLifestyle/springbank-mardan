@@ -12,6 +12,7 @@ const navItems = [
   { label: "Gallery", href: "#gallery" },
   { label: "The Grounds", href: "#grounds" },
   { label: "Location", href: "#location" },
+  { label: "Journal", href: "#journal" },
   { label: "Contact", href: "#contact" },
 ];
 
