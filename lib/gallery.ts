@@ -42,7 +42,7 @@ const importedListingImageMetadata: Array<{
   { seq: "014", alt: "Hedge tunnel walkway through formal garden structure", category: "Grounds" },
   { seq: "015", alt: "Pergola courtyard beside residence exterior wall", category: "Exterior" },
   { seq: "016", alt: "Orchard-style walking track and lawn around the home", category: "Grounds" },
-  { seq: "017", alt: "Residence and outbuildings with driveway approach", category: "Exterior" },
+  { seq: "017", alt: "Two-story main residence and outbuilding", category: "Exterior" },
   { seq: "018", alt: "Spa bathroom with corner bath and vanity", category: "Interiors" },
   { seq: "019", alt: "Tree-lined drive and lawn frontage near buildings", category: "Grounds" },
   { seq: "020", alt: "Circular garden bed and clipped hedge feature", category: "Grounds" },
