@@ -34,7 +34,11 @@ const importedListingImageMetadata: Array<{
   { seq: "006", alt: "Covered side veranda and garden edge along residence", category: "Exterior" },
   { seq: "007", alt: "White post-and-rail entrance gates at property driveway", category: "Exterior" },
   { seq: "008", alt: "Cypress-lined lawn corridor across open grounds", category: "Grounds" },
-  { seq: "009", alt: "Brick garage and studio building with turning driveway", category: "Exterior" },
+  {
+    seq: "009",
+    alt: "Poured earth garage and studio, with gravel driveway to the lower level of the main residence on the right",
+    category: "Exterior",
+  },
   { seq: "010", alt: "Open lawns and drainage line with mature trees", category: "Exterior" },
   { seq: "011", alt: "Merbau deck on dam edge with rural horizon", category: "Views" },
   { seq: "012", alt: "Shaded grove and open grass near the homestead", category: "Grounds" },
