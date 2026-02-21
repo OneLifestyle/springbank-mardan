@@ -50,7 +50,11 @@ const importedListingImageMetadata: Array<{
   { seq: "022", alt: "White boundary fencing beneath mature eucalypts", category: "Exterior" },
   { seq: "023", alt: "Open paddock and tree line beside boundary track", category: "Grounds" },
   { seq: "024", alt: "Olive trees and gravel path near residence", category: "Grounds" },
-  { seq: "025", alt: "Walk-in robe and dressing passage to ensuite", category: "Interiors" },
+  {
+    seq: "025",
+    alt: "Walk-in robe and dressing passage connecting to a toilet/vanity and the semi-ensuite family bathroom",
+    category: "Interiors",
+  },
   { seq: "026", alt: "Double garage interior with vehicle and storage space", category: "Exterior" },
   { seq: "027", alt: "Bedroom with large picture window and garden outlook", category: "Interiors" },
   { seq: "028", alt: "Open lawn area with scattered shade trees", category: "Grounds" },
