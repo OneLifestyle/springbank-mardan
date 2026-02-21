@@ -31,7 +31,7 @@ const importedListingImageMetadata: Array<{
   { seq: "003", alt: "Poured earth garage and studio beside the main residence", category: "Exterior" },
   { seq: "004", alt: "Home office nook with desk and monitors", category: "Interiors" },
   { seq: "005", alt: "Tree-lined walking track beside post-and-rail fence", category: "Grounds" },
-  { seq: "006", alt: "Covered side veranda and garden edge along residence", category: "Exterior" },
+  { seq: "006", alt: "Side pergola and garden edge along residence", category: "Exterior" },
   { seq: "007", alt: "White post-and-rail entrance gates at property driveway", category: "Exterior" },
   { seq: "008", alt: "Cypress-lined lawn corridor across open grounds", category: "Grounds" },
   {
