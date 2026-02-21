@@ -28,7 +28,7 @@ const importedListingImageMetadata: Array<{
 }> = [
   { seq: "001", alt: "Elevated view across grounds, dam, and tree-lined valley surrounds", category: "Views" },
   { seq: "002", alt: "Main residence overlooking dam and lawns from lower grounds", category: "Exterior" },
-  { seq: "003", alt: "Side elevation of residence and garage within landscaped lawn", category: "Exterior" },
+  { seq: "003", alt: "Poured earth garage and studio beside the main residence", category: "Exterior" },
   { seq: "004", alt: "Home office nook with desk and monitors", category: "Interiors" },
   { seq: "005", alt: "Tree-lined walking track beside post-and-rail fence", category: "Grounds" },
   { seq: "006", alt: "Covered side veranda and garden edge along residence", category: "Exterior" },
