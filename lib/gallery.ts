@@ -79,7 +79,11 @@ const importedListingImageMetadata: Array<{
   { seq: "047", alt: "Open-plan studio room with kitchenette and dining setup", category: "Interiors" },
   { seq: "048", alt: "Main kitchen and dining area with terracotta rangehood", category: "Interiors" },
   { seq: "049", alt: "Open-plan kitchen and dining with timber floors", category: "Interiors" },
-  { seq: "050", alt: "Living room with fireplace, TV wall, and timber floors", category: "Interiors" },
+  {
+    seq: "050",
+    alt: "Living room with fireplace, TV wall, and rare Peppermint Gum timber floors",
+    category: "Interiors",
+  },
   { seq: "051", alt: "Open-plan interior linking lounge, dining, and kitchen", category: "Interiors" },
   { seq: "052", alt: "Kitchen benches and sink with wide valley outlook", category: "Interiors" },
   { seq: "053", alt: "Terrace viewed through window toward surrounding gardens", category: "Exterior" },
