@@ -62,7 +62,7 @@ const importedListingImageMetadata: Array<{
   { seq: "026", alt: "Double garage interior with vehicle and storage space", category: "Exterior" },
   { seq: "027", alt: "Bedroom with large picture window and garden outlook", category: "Interiors" },
   { seq: "028", alt: "Open lawn area with scattered shade trees", category: "Grounds" },
-  { seq: "029", alt: "Bedroom and adjoining retreat within the studio zone", category: "Interiors" },
+  { seq: "029", alt: "Bedroom and adjoining retreat on the downstairs level", category: "Interiors" },
   { seq: "030", alt: "Internal stair hall and passage to lower rooms", category: "Interiors" },
   { seq: "031", alt: "Studio living zone with kitchenette and lounge area", category: "Interiors" },
   { seq: "032", alt: "Multipurpose studio room with kitchenette wall", category: "Interiors" },
