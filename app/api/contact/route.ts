@@ -11,11 +11,8 @@ const inquiryTypeLabels: Record<string, string> = {
   other: "Other",
 };
 
-const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const BOT_OR_RATE_LIMIT_ERROR =
   "Unable to submit enquiry right now. Please try again or contact us directly.";
-const TURNSTILE_CONFIG_ERROR =
-  "Form verification is currently unavailable. Please call or email directly.";
 
 function parsePositiveInt(value: string | undefined, fallback: number): number {
   const parsed = Number.parseInt(value || "", 10);
@@ -90,48 +87,8 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#039;");
 }
 
-async function verifyTurnstileToken(
-  turnstileSecret: string,
-  token: string,
-  ip: string
-): Promise<boolean> {
-  try {
-    const body = new URLSearchParams({
-      secret: turnstileSecret,
-      response: token,
-    });
-
-    if (ip !== "unknown") {
-      body.append("remoteip", ip);
-    }
-
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: body.toString(),
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      return false;
-    }
-
-    const payload = (await response.json()) as { success?: boolean };
-    return Boolean(payload.success);
-  } catch {
-    return false;
-  }
-}
-
 export async function POST(request: NextRequest) {
   try {
-    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
-    if (!turnstileSecret) {
-      return NextResponse.json({ error: TURNSTILE_CONFIG_ERROR }, { status: 503 });
-    }
-
     const rawBody = (await request.json()) as Record<string, unknown>;
     const fullName = typeof rawBody.fullName === "string" ? rawBody.fullName.trim() : "";
     const phone = typeof rawBody.phone === "string" ? rawBody.phone.trim() : "";
@@ -139,8 +96,6 @@ export async function POST(request: NextRequest) {
     const inquiryType = typeof rawBody.inquiryType === "string" ? rawBody.inquiryType.trim() : "";
     const message = typeof rawBody.message === "string" ? rawBody.message.trim() : "";
     const website = typeof rawBody.website === "string" ? rawBody.website.trim() : "";
-    const turnstileToken =
-      typeof rawBody.turnstileToken === "string" ? rawBody.turnstileToken.trim() : "";
 
     if (!fullName || !phone || !email || !inquiryType) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -150,17 +105,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
     }
 
-    if (!turnstileToken) {
-      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
-    }
-
     const clientIp = getClientIp(request);
-    const turnstileValid = await verifyTurnstileToken(turnstileSecret, turnstileToken, clientIp);
-
-    if (!turnstileValid) {
-      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
-    }
-
     const rateLimitResult = checkRateLimit(`${clientIp}:/api/contact`);
     if (rateLimitResult.limited) {
       return NextResponse.json(
