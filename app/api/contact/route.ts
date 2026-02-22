@@ -1,84 +1,237 @@
+import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request: Request) {
-  try {
-    const body = await request.json();
-    const { fullName, phone, email, inquiryType, message } = body;
+const inquiryTypeLabels: Record<string, string> = {
+  inspection: "Private Inspection",
+  "floor-plans": "Request Floor Plans",
+  pricing: "Pricing Enquiry",
+  general: "General Information",
+  other: "Other",
+};
 
-    // Validate required fields
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const BOT_OR_RATE_LIMIT_ERROR =
+  "Unable to submit enquiry right now. Please try again or contact us directly.";
+const TURNSTILE_CONFIG_ERROR =
+  "Form verification is currently unavailable. Please call or email directly.";
+
+function parsePositiveInt(value: string | undefined, fallback: number): number {
+  const parsed = Number.parseInt(value || "", 10);
+  if (Number.isNaN(parsed) || parsed <= 0) {
+    return fallback;
+  }
+  return parsed;
+}
+
+const RATE_LIMIT_WINDOW_SECONDS = parsePositiveInt(
+  process.env.CONTACT_RATE_LIMIT_WINDOW_SECONDS,
+  600
+);
+const RATE_LIMIT_MAX_REQUESTS = parsePositiveInt(
+  process.env.CONTACT_RATE_LIMIT_MAX_REQUESTS,
+  5
+);
+
+type ContactRateLimitStore = Map<string, number[]>;
+type GlobalWithContactLimiter = typeof globalThis & {
+  __contactRateLimitStore?: ContactRateLimitStore;
+};
+
+const globalWithContactLimiter = globalThis as GlobalWithContactLimiter;
+const contactRateLimitStore =
+  globalWithContactLimiter.__contactRateLimitStore ?? new Map<string, number[]>();
+if (!globalWithContactLimiter.__contactRateLimitStore) {
+  globalWithContactLimiter.__contactRateLimitStore = contactRateLimitStore;
+}
+
+function getClientIp(request: NextRequest): string {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0]?.trim() || "unknown";
+  }
+
+  const realIp = request.headers.get("x-real-ip");
+  if (realIp) {
+    return realIp.trim();
+  }
+
+  return "unknown";
+}
+
+function checkRateLimit(key: string) {
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_SECONDS * 1000;
+  const timestamps = contactRateLimitStore.get(key) ?? [];
+  const recentTimestamps = timestamps.filter((timestamp) => timestamp > windowStart);
+
+  if (recentTimestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+    const retryAfterSeconds = Math.max(
+      1,
+      Math.ceil((recentTimestamps[0] + RATE_LIMIT_WINDOW_SECONDS * 1000 - now) / 1000)
+    );
+
+    contactRateLimitStore.set(key, recentTimestamps);
+    return { limited: true, retryAfterSeconds };
+  }
+
+  recentTimestamps.push(now);
+  contactRateLimitStore.set(key, recentTimestamps);
+  return { limited: false, retryAfterSeconds: 0 };
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+async function verifyTurnstileToken(
+  turnstileSecret: string,
+  token: string,
+  ip: string
+): Promise<boolean> {
+  try {
+    const body = new URLSearchParams({
+      secret: turnstileSecret,
+      response: token,
+    });
+
+    if (ip !== "unknown") {
+      body.append("remoteip", ip);
+    }
+
+    const response = await fetch(TURNSTILE_VERIFY_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: body.toString(),
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const payload = (await response.json()) as { success?: boolean };
+    return Boolean(payload.success);
+  } catch {
+    return false;
+  }
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (!turnstileSecret) {
+      return NextResponse.json({ error: TURNSTILE_CONFIG_ERROR }, { status: 503 });
+    }
+
+    const rawBody = (await request.json()) as Record<string, unknown>;
+    const fullName = typeof rawBody.fullName === "string" ? rawBody.fullName.trim() : "";
+    const phone = typeof rawBody.phone === "string" ? rawBody.phone.trim() : "";
+    const email = typeof rawBody.email === "string" ? rawBody.email.trim() : "";
+    const inquiryType = typeof rawBody.inquiryType === "string" ? rawBody.inquiryType.trim() : "";
+    const message = typeof rawBody.message === "string" ? rawBody.message.trim() : "";
+    const website = typeof rawBody.website === "string" ? rawBody.website.trim() : "";
+    const turnstileToken =
+      typeof rawBody.turnstileToken === "string" ? rawBody.turnstileToken.trim() : "";
+
     if (!fullName || !phone || !email || !inquiryType) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (website) {
+      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
+    }
+
+    if (!turnstileToken) {
+      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
+    }
+
+    const clientIp = getClientIp(request);
+    const turnstileValid = await verifyTurnstileToken(turnstileSecret, turnstileToken, clientIp);
+
+    if (!turnstileValid) {
+      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
+    }
+
+    const rateLimitResult = checkRateLimit(`${clientIp}:/api/contact`);
+    if (rateLimitResult.limited) {
       return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
+        { error: BOT_OR_RATE_LIMIT_ERROR },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(rateLimitResult.retryAfterSeconds),
+          },
+        }
       );
     }
 
-    // Format the inquiry type for display
-    const inquiryTypeLabels: Record<string, string> = {
-      inspection: "Private Inspection",
-      "floor-plans": "Request Floor Plans",
-      pricing: "Pricing Enquiry",
-      general: "General Information",
-      other: "Other",
-    };
+    const formattedInquiryType = inquiryTypeLabels[inquiryType] || inquiryType;
+    const subjectInquiryType = formattedInquiryType.replace(/[\r\n]/g, " ").slice(0, 120);
 
-    const formattedInquiryType =
-      inquiryTypeLabels[inquiryType] || inquiryType;
+    const safeFullName = escapeHtml(fullName);
+    const safePhone = escapeHtml(phone);
+    const safeEmail = escapeHtml(email);
+    const safeFormattedInquiryType = escapeHtml(formattedInquiryType);
+    const safeMessage = message ? escapeHtml(message).replace(/\n/g, "<br>") : "";
 
-    // Send email to the Resend account owner's email (required for free tier without verified domain)
-    // The reply-to is set to the inquirer's email so you can reply directly to them
     const { data, error } = await resend.emails.send({
       from: "Springbank Enquiry <onboarding@resend.dev>",
       to: ["sgbcproperty@icloud.com"],
       replyTo: email,
-      subject: `New Enquiry: ${formattedInquiryType} - Springbank, 30 O'Malleys Rd Mardan`,
+      subject: `New Enquiry: ${subjectInquiryType} - Springbank, 30 O'Malleys Rd Mardan`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h1 style="color: #1a1a1a; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px;">
             New Property Enquiry
           </h1>
-          
+
           <h2 style="color: #333; margin-top: 24px;">Springbank - 30 O'Malleys Rd, Mardan VIC 3953</h2>
-          
+
           <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
             <tr>
               <td style="padding: 12px; background: #f5f5f5; font-weight: bold; width: 140px;">Name</td>
-              <td style="padding: 12px; background: #fafafa;">${fullName}</td>
+              <td style="padding: 12px; background: #fafafa;">${safeFullName}</td>
             </tr>
             <tr>
               <td style="padding: 12px; background: #f5f5f5; font-weight: bold;">Phone</td>
               <td style="padding: 12px; background: #fafafa;">
-                <a href="tel:${phone}" style="color: #1a1a1a;">${phone}</a>
+                <a href="tel:${safePhone}" style="color: #1a1a1a;">${safePhone}</a>
               </td>
             </tr>
             <tr>
               <td style="padding: 12px; background: #f5f5f5; font-weight: bold;">Email</td>
               <td style="padding: 12px; background: #fafafa;">
-                <a href="mailto:${email}" style="color: #1a1a1a;">${email}</a>
+                <a href="mailto:${safeEmail}" style="color: #1a1a1a;">${safeEmail}</a>
               </td>
             </tr>
             <tr>
               <td style="padding: 12px; background: #f5f5f5; font-weight: bold;">Enquiry Type</td>
-              <td style="padding: 12px; background: #fafafa;">${formattedInquiryType}</td>
+              <td style="padding: 12px; background: #fafafa;">${safeFormattedInquiryType}</td>
             </tr>
           </table>
-          
+
           ${
-            message
+            safeMessage
               ? `
             <div style="margin-top: 24px;">
               <h3 style="color: #333; margin-bottom: 8px;">Message</h3>
               <div style="padding: 16px; background: #f5f5f5; border-left: 4px solid #1a1a1a;">
-                ${message.replace(/\n/g, "<br>")}
+                ${safeMessage}
               </div>
             </div>
           `
               : ""
           }
-          
+
           <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #e0e0e0; color: #666; font-size: 12px;">
             <p>This enquiry was submitted via springbankmardan.com</p>
           </div>
@@ -88,18 +241,12 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "Failed to send email" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
     }
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error("API error:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

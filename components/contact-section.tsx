@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react"
-
-import { useState } from "react";
-import { Phone, Mail, User } from "lucide-react";
+import { Mail, Phone, User } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -15,24 +13,141 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+
+type TurnstileRenderOptions = {
+  sitekey: string;
+  callback: (token: string) => void;
+  "expired-callback": () => void;
+  "error-callback": () => void;
+};
+
+type TurnstileApi = {
+  render: (container: HTMLElement, options: TurnstileRenderOptions) => string;
+  reset: (widgetId?: string) => void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileApi;
+  }
+}
+
+type ContactFormData = {
+  fullName: string;
+  phone: string;
+  email: string;
+  inquiryType: string;
+  message: string;
+  website: string;
+};
+
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const FORM_UNAVAILABLE_MESSAGE =
+  "Form verification is not configured. Please call or email Dean directly.";
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
+  const router = useRouter();
+  const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
+  const [formData, setFormData] = useState<ContactFormData>({
     fullName: "",
     phone: "",
     email: "",
     inquiryType: "",
     message: "",
+    website: "",
   });
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [isTurnstileLoaded, setIsTurnstileLoaded] = useState(false);
+  const [turnstileError, setTurnstileError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!turnstileSiteKey) {
+      setTurnstileError(FORM_UNAVAILABLE_MESSAGE);
+      return;
+    }
+
+    const onScriptError = () => {
+      setTurnstileError(
+        "Verification service is unavailable. Please call or email Dean directly."
+      );
+    };
+
+    const initTurnstile = () => {
+      if (!window.turnstile || !turnstileContainerRef.current || turnstileWidgetIdRef.current) {
+        return;
+      }
+
+      turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+        sitekey: turnstileSiteKey,
+        callback: (token: string) => {
+          setTurnstileToken(token);
+          setTurnstileError(null);
+        },
+        "expired-callback": () => {
+          setTurnstileToken("");
+          setTurnstileError("Verification expired. Please complete it again.");
+        },
+        "error-callback": () => {
+          setTurnstileToken("");
+          setTurnstileError("Verification failed. Please try again.");
+        },
+      });
+
+      setIsTurnstileLoaded(true);
+    };
+
+    if (window.turnstile) {
+      initTurnstile();
+      return;
+    }
+
+    const scriptId = "cloudflare-turnstile-api";
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    script.addEventListener("load", initTurnstile);
+    script.addEventListener("error", onScriptError);
+
+    return () => {
+      script?.removeEventListener("load", initTurnstile);
+      script?.removeEventListener("error", onScriptError);
+    };
+  }, []);
+
+  const resetTurnstile = () => {
+    setTurnstileToken("");
+    if (window.turnstile && turnstileWidgetIdRef.current) {
+      window.turnstile.reset(turnstileWidgetIdRef.current);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError(null);
+
+    if (!turnstileSiteKey) {
+      setError(FORM_UNAVAILABLE_MESSAGE);
+      return;
+    }
+
+    if (!turnstileToken) {
+      setError("Please complete the verification check before submitting.");
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/contact", {
@@ -40,50 +155,55 @@ export function ContactSection() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
 
       if (!response.ok) {
-        throw new Error("Failed to submit enquiry");
+        const payload = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        throw new Error(
+          payload?.error ||
+            "There was an error submitting your enquiry. Please try again or contact us directly."
+        );
       }
 
-      setIsSubmitted(true);
-
-      // Reset form after a delay
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          fullName: "",
-          phone: "",
-          email: "",
-          inquiryType: "",
-          message: "",
-        });
-      }, 5000);
-    } catch {
-      setError("There was an error submitting your enquiry. Please try again or contact us directly.");
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        inquiryType: "",
+        message: "",
+        website: "",
+      });
+      resetTurnstile();
+      router.push("/enquiry-submitted?source=contact-form");
+    } catch (submitError) {
+      const message =
+        submitError instanceof Error
+          ? submitError.message
+          : "There was an error submitting your enquiry. Please try again or contact us directly.";
+      setError(message);
+      resetTurnstile();
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Contact Information */}
+    <section id="contact" className="bg-background py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">
-              Get in Touch
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 text-balance">
+            <p className="mb-3 text-sm uppercase tracking-[0.2em] text-primary">Get in Touch</p>
+            <h2 className="mb-6 font-serif text-3xl text-foreground text-balance md:text-4xl lg:text-5xl">
               Arrange Your Private Inspection
             </h2>
-            <div className="w-20 h-px bg-primary mb-8" />
+            <div className="mb-8 h-px w-20 bg-primary" />
 
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              For further information or to arrange a private inspection of this
-              unique Mediterranean sanctuary, please contact Dean Jones at{" "}
+            <p className="mb-8 leading-relaxed text-muted-foreground">
+              For further information or to arrange a private inspection of this unique Mediterranean
+              sanctuary, please contact Dean Jones at{" "}
               <a
                 href="https://onelifestylerealestate.com.au"
                 target="_blank"
@@ -92,20 +212,16 @@ export function ContactSection() {
               >
                 One Lifestyle Real Estate
               </a>
-              . Experience the lifestyle of profound
-              tranquillity that Springbank offers.
+              . Experience the lifestyle of profound tranquillity that Springbank offers.
             </p>
 
-            {/* Agent Card */}
-            <div className="bg-secondary p-6 md:p-8 border border-border mb-8">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-primary/10 flex items-center justify-center shrink-0">
-                  <User className="w-8 h-8 text-primary" />
+            <div className="mb-8 border border-border bg-secondary p-6 md:p-8">
+              <div className="mb-6 flex items-start gap-4">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center bg-primary/10">
+                  <User className="h-8 w-8 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl text-foreground mb-1">
-                    Dean Jones
-                  </h3>
+                  <h3 className="mb-1 font-serif text-xl text-foreground">Dean Jones</h3>
                   <p className="text-muted-foreground">
                     <a
                       href="https://onelifestylerealestate.com.au"
@@ -121,28 +237,27 @@ export function ContactSection() {
               <div className="space-y-4">
                 <a
                   href="tel:0431639749"
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-foreground transition-colors hover:text-primary"
                 >
-                  <Phone className="w-5 h-5 text-primary" />
+                  <Phone className="h-5 w-5 text-primary" />
                   0431 639 749
                 </a>
                 <a
                   href="mailto:dean@onelifestyle.com.au"
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-3 text-foreground transition-colors hover:text-primary"
                 >
-                  <Mail className="w-5 h-5 text-primary" />
+                  <Mail className="h-5 w-5 text-primary" />
                   dean@onelifestyle.com.au
                 </a>
               </div>
             </div>
 
-            {/* Property Links */}
             <div className="flex flex-col gap-2">
               <a
                 href="https://www.realestate.com.au/property-acreage+semi-rural-vic-mardan-150373704"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+                className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
               >
                 View on realestate.com.au →
               </a>
@@ -150,154 +265,147 @@ export function ContactSection() {
                 href="https://www.onelifestylerealestate.com.au/listings/30-omalleys-road-mardan-197100.aspx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors"
+                className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
               >
                 View on onelifestylerealestate.com.au →
               </a>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-card p-6 md:p-10 border border-border">
-            <h3 className="font-serif text-2xl text-foreground mb-6">
-              Send an Enquiry
-            </h3>
+          <div className="border border-border bg-card p-6 md:p-10">
+            <h3 className="mb-6 font-serif text-2xl text-foreground">Send an Enquiry</h3>
 
-            {isSubmitted ? (
-              <div className="text-center py-12">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    className="w-8 h-8 text-accent"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
+            <form onSubmit={handleSubmit} className="relative space-y-6">
+              {error && (
+                <div className="border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+                  {error}
                 </div>
-                <h4 className="font-serif text-xl text-foreground mb-2">
-                  Thank You!
-                </h4>
-                <p className="text-muted-foreground">
-                  Your enquiry has been submitted. Dean will be in touch
-                  shortly.
-                </p>
+              )}
+
+              <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                <Label htmlFor="website">Website</Label>
+                <Input
+                  id="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {error && (
-                  <div className="p-4 bg-destructive/10 border border-destructive/20 text-destructive text-sm">
-                    {error}
-                  </div>
-                )}
+
+              <div>
+                <Label htmlFor="fullName">Full Name *</Label>
+                <Input
+                  id="fullName"
+                  type="text"
+                  required
+                  value={formData.fullName}
+                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  placeholder="Enter your full name"
+                  className="mt-2"
+                />
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div>
-                  <Label htmlFor="fullName">Full Name *</Label>
+                  <Label htmlFor="phone">Phone Number *</Label>
                   <Input
-                    id="fullName"
-                    type="text"
+                    id="phone"
+                    type="tel"
                     required
-                    value={formData.fullName}
-                    onChange={(e) =>
-                      setFormData({ ...formData, fullName: e.target.value })
-                    }
-                    placeholder="Enter your full name"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="Your phone number"
                     className="mt-2"
                   />
                 </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      required
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      placeholder="Your phone number"
-                      className="mt-2"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      placeholder="Your email address"
-                      className="mt-2"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <Label htmlFor="inquiryType">Nature of Enquiry *</Label>
-                  <Select
-                    value={formData.inquiryType}
-                    onValueChange={(value) =>
-                      setFormData({ ...formData, inquiryType: value })
-                    }
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    id="email"
+                    type="email"
                     required
-                  >
-                    <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Select enquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="inspection">
-                        Private Inspection
-                      </SelectItem>
-                      <SelectItem value="floor-plans">
-                        Request Floor Plans
-                      </SelectItem>
-                      <SelectItem value="pricing">Pricing Enquiry</SelectItem>
-                      <SelectItem value="general">
-                        General Information
-                      </SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Message (Optional)</Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
-                    placeholder="Tell us more about your enquiry..."
-                    rows={4}
-                    className="mt-2 resize-none"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="Your email address"
+                    className="mt-2"
                   />
                 </div>
+              </div>
 
-                <Button
-                  type="submit"
-                  className="w-full"
-                  size="lg"
-                  disabled={isSubmitting}
+              <div>
+                <Label htmlFor="inquiryType">Nature of Enquiry *</Label>
+                <Select
+                  value={formData.inquiryType}
+                  onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
+                  required
                 >
-                  {isSubmitting ? "Sending..." : "Submit Enquiry"}
-                </Button>
+                  <SelectTrigger className="mt-2">
+                    <SelectValue placeholder="Select enquiry type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="inspection">Private Inspection</SelectItem>
+                    <SelectItem value="floor-plans">Request Floor Plans</SelectItem>
+                    <SelectItem value="pricing">Pricing Enquiry</SelectItem>
+                    <SelectItem value="general">General Information</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-                <p className="text-xs text-muted-foreground text-center">
-                  By submitting this form, you agree to be contacted regarding
-                  this property.
-                </p>
-              </form>
-            )}
+              <div>
+                <Label htmlFor="message">Message (Optional)</Label>
+                <Textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Tell us more about your enquiry..."
+                  rows={4}
+                  className="mt-2 resize-none"
+                />
+              </div>
+
+              {turnstileSiteKey && (
+                <div>
+                  <Label htmlFor="turnstile-container">Verification *</Label>
+                  <div id="turnstile-container" ref={turnstileContainerRef} className="mt-2 min-h-16" />
+                  {!isTurnstileLoaded && !turnstileError && (
+                    <p className="mt-2 text-xs text-muted-foreground">Loading verification...</p>
+                  )}
+                  {turnstileError && (
+                    <p className="mt-2 text-sm text-destructive">{turnstileError}</p>
+                  )}
+                </div>
+              )}
+
+              {!turnstileSiteKey && (
+                <div className="border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
+                  {FORM_UNAVAILABLE_MESSAGE}
+                </div>
+              )}
+
+              <Button
+                type="submit"
+                className="w-full"
+                size="lg"
+                disabled={
+                  isSubmitting ||
+                  !turnstileSiteKey ||
+                  !turnstileToken ||
+                  Boolean(turnstileError)
+                }
+              >
+                {isSubmitting ? "Sending..." : "Submit Enquiry"}
+              </Button>
+
+              <p className="text-center text-xs text-muted-foreground">
+                By submitting this form, you agree to be contacted regarding this property.
+              </p>
+              <p className="text-center text-[11px] text-muted-foreground">
+                This site is protected by Cloudflare Turnstile.
+              </p>
+            </form>
           </div>
         </div>
       </div>
