@@ -24,6 +24,76 @@ type ContactFormData = {
   website: string;
 };
 
+type RecaptchaApi = {
+  ready: (callback: () => void) => void;
+  execute: (siteKey: string, options: { action: string }) => Promise<string>;
+};
+
+declare global {
+  interface Window {
+    grecaptcha?: RecaptchaApi;
+  }
+}
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+const RECAPTCHA_SCRIPT_ID = "google-recaptcha-v3";
+const RECAPTCHA_ACTION = "contact_form_submit";
+
+function loadRecaptchaScript(siteKey: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (typeof window === "undefined") {
+      reject(new Error("Browser environment unavailable."));
+      return;
+    }
+
+    if (window.grecaptcha) {
+      resolve();
+      return;
+    }
+
+    let script = document.getElementById(RECAPTCHA_SCRIPT_ID) as HTMLScriptElement | null;
+
+    if (!script) {
+      script = document.createElement("script");
+      script.id = RECAPTCHA_SCRIPT_ID;
+      script.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    const onLoad = () => resolve();
+    const onError = () => reject(new Error("Failed to load reCAPTCHA."));
+
+    script.addEventListener("load", onLoad, { once: true });
+    script.addEventListener("error", onError, { once: true });
+  });
+}
+
+async function getRecaptchaToken(siteKey: string): Promise<string> {
+  await loadRecaptchaScript(siteKey);
+
+  if (!window.grecaptcha) {
+    throw new Error("reCAPTCHA not available.");
+  }
+
+  return new Promise((resolve, reject) => {
+    window.grecaptcha?.ready(async () => {
+      try {
+        const token = await window.grecaptcha?.execute(siteKey, { action: RECAPTCHA_ACTION });
+        if (!token) {
+          reject(new Error("reCAPTCHA token was empty."));
+          return;
+        }
+
+        resolve(token);
+      } catch {
+        reject(new Error("reCAPTCHA verification failed."));
+      }
+    });
+  });
+}
+
 export function ContactSection() {
   const router = useRouter();
 
@@ -44,12 +114,18 @@ export function ContactSection() {
     setIsSubmitting(true);
 
     try {
+      if (!RECAPTCHA_SITE_KEY) {
+        throw new Error("Form verification is not configured. Please contact Dean directly.");
+      }
+
+      const recaptchaToken = await getRecaptchaToken(RECAPTCHA_SITE_KEY);
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, recaptchaToken }),
       });
 
       if (!response.ok) {
@@ -263,6 +339,27 @@ export function ContactSection() {
 
               <p className="text-center text-xs text-muted-foreground">
                 By submitting this form, you agree to be contacted regarding this property.
+              </p>
+              <p className="text-center text-[11px] text-muted-foreground">
+                This site is protected by reCAPTCHA and the Google{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground"
+                >
+                  Terms of Service
+                </a>{" "}
+                apply.
               </p>
             </form>
           </div>

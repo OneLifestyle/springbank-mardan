@@ -11,12 +11,25 @@ const inquiryTypeLabels: Record<string, string> = {
   other: "Other",
 };
 
+const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const RECAPTCHA_ACTION = "contact_form_submit";
+
 const BOT_OR_RATE_LIMIT_ERROR =
   "Unable to submit enquiry right now. Please try again or contact us directly.";
+const RECAPTCHA_CONFIG_ERROR =
+  "Form verification is currently unavailable. Please call or email directly.";
 
 function parsePositiveInt(value: string | undefined, fallback: number): number {
   const parsed = Number.parseInt(value || "", 10);
   if (Number.isNaN(parsed) || parsed <= 0) {
+    return fallback;
+  }
+  return parsed;
+}
+
+function parseScore(value: string | undefined, fallback: number): number {
+  const parsed = Number.parseFloat(value || "");
+  if (Number.isNaN(parsed) || parsed < 0 || parsed > 1) {
     return fallback;
   }
   return parsed;
@@ -30,6 +43,7 @@ const RATE_LIMIT_MAX_REQUESTS = parsePositiveInt(
   process.env.CONTACT_RATE_LIMIT_MAX_REQUESTS,
   5
 );
+const RECAPTCHA_MIN_SCORE = parseScore(process.env.RECAPTCHA_MIN_SCORE, 0.5);
 
 type ContactRateLimitStore = Map<string, number[]>;
 type GlobalWithContactLimiter = typeof globalThis & {
@@ -87,8 +101,59 @@ function escapeHtml(value: string): string {
     .replace(/'/g, "&#039;");
 }
 
+type RecaptchaVerifyResponse = {
+  success?: boolean;
+  score?: number;
+  action?: string;
+};
+
+async function verifyRecaptchaToken(
+  recaptchaSecret: string,
+  token: string,
+  ip: string
+): Promise<boolean> {
+  try {
+    const body = new URLSearchParams({
+      secret: recaptchaSecret,
+      response: token,
+    });
+
+    if (ip !== "unknown") {
+      body.append("remoteip", ip);
+    }
+
+    const response = await fetch(RECAPTCHA_VERIFY_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: body.toString(),
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      return false;
+    }
+
+    const payload = (await response.json()) as RecaptchaVerifyResponse;
+
+    return (
+      Boolean(payload.success) &&
+      (payload.score ?? 0) >= RECAPTCHA_MIN_SCORE &&
+      payload.action === RECAPTCHA_ACTION
+    );
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!recaptchaSecret) {
+      return NextResponse.json({ error: RECAPTCHA_CONFIG_ERROR }, { status: 503 });
+    }
+
     const rawBody = (await request.json()) as Record<string, unknown>;
     const fullName = typeof rawBody.fullName === "string" ? rawBody.fullName.trim() : "";
     const phone = typeof rawBody.phone === "string" ? rawBody.phone.trim() : "";
@@ -96,6 +161,8 @@ export async function POST(request: NextRequest) {
     const inquiryType = typeof rawBody.inquiryType === "string" ? rawBody.inquiryType.trim() : "";
     const message = typeof rawBody.message === "string" ? rawBody.message.trim() : "";
     const website = typeof rawBody.website === "string" ? rawBody.website.trim() : "";
+    const recaptchaToken =
+      typeof rawBody.recaptchaToken === "string" ? rawBody.recaptchaToken.trim() : "";
 
     if (!fullName || !phone || !email || !inquiryType) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -105,7 +172,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
     }
 
+    if (!recaptchaToken) {
+      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
+    }
+
     const clientIp = getClientIp(request);
+    const recaptchaValid = await verifyRecaptchaToken(recaptchaSecret, recaptchaToken, clientIp);
+
+    if (!recaptchaValid) {
+      return NextResponse.json({ error: BOT_OR_RATE_LIMIT_ERROR }, { status: 400 });
+    }
+
     const rateLimitResult = checkRateLimit(`${clientIp}:/api/contact`);
     if (rateLimitResult.limited) {
       return NextResponse.json(
