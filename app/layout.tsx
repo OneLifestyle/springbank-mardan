@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from "next";
 import { Abril_Fatface, Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -92,6 +93,18 @@ export default function RootLayout({
       <body
         className={`${nunitoSans.variable} ${abrilFatface.variable} font-sans antialiased`}
       >
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17968493350"
+        />
+        <Script id="google-ads-gtag">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17968493350');
+          `}
+        </Script>
         {children}
         <Analytics />
       </body>
