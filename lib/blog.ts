@@ -1277,10 +1277,10 @@ const posts: BlogPost[] = [
           "For many buyers, this flexibility increases both lifestyle utility and resale resilience.",
         ],
         image: {
-          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-031.jpg",
-          alt: "Lower-level living zone demonstrating flexible guest-use potential",
+          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-030.jpg",
+          alt: "Lower-level living space with kitchenette and adjoining laundry area",
           caption:
-            "The lower level adds genuine flexibility for guest accommodation and multi-use living.",
+            "The lower level includes a practical kitchenette and laundry hybrid, supporting flexible guest and day-to-day use.",
         },
       },
       {
