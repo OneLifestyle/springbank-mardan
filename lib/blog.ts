@@ -782,6 +782,584 @@ const posts: BlogPost[] = [
     ctaBody:
       "If you are at inspection stage now, apply this pathway to Springbank and compare it against your current shortlist for a more structured decision.",
   },
+  {
+    slug: "south-gippsland-autumn-buying-window-how-to-time-your-lifestyle-property-move",
+    title:
+      "South Gippsland Autumn Buying Window: How to Time Your Lifestyle Property Move",
+    excerpt:
+      "A practical guide to the autumn buying window in South Gippsland, including inspection conditions, decision timing, and how to avoid rushed offers on lifestyle acreage.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-02-28",
+    readingTimeMinutes: 8,
+    categories: ["Regional Guide", "Buyer Strategy", "South Gippsland"],
+    tags: [
+      "south gippsland property timing",
+      "autumn inspections victoria",
+      "lifestyle property strategy",
+      "tree change planning",
+      "regional buyer guide",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
+      alt: "Olive-lined path and gardens in late-season light",
+      caption:
+        "Autumn inspections often reveal land condition, light quality, and maintenance realities more clearly.",
+    },
+    intro: [
+      "For many buyers, autumn is one of the most useful windows to assess South Gippsland lifestyle property with less noise than peak summer.",
+      "Land condition, drainage behavior, and day-to-day liveability are often easier to read at this time of year, which improves buying discipline before offer stage.",
+    ],
+    sections: [
+      {
+        heading: "Why autumn inspections are high-value",
+        paragraphs: [
+          "Autumn usually gives buyers better evidence than peak holiday periods. You can inspect under more ordinary conditions, including cooler weather and changing ground moisture.",
+          "This makes it easier to evaluate access, comfort, and maintenance load across the full property rather than just presentation on a sunny day.",
+          "For acreage buyers, this timing can materially improve due diligence quality.",
+        ],
+      },
+      {
+        heading: "What to test on-site in this season",
+        paragraphs: [
+          "Prioritise driveway performance, low-point drainage, outdoor usability, and internal heating efficiency.",
+          "Also test travel times and service access under realistic weekend traffic patterns.",
+          "These checks create a stronger risk profile before contract decisions.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+          alt: "Dam, lawns, and access areas across lifestyle acreage",
+          caption:
+            "Seasonal inspection should include access, drainage, and practical movement across the site.",
+        },
+      },
+      {
+        heading: "Avoiding rushed offer decisions",
+        paragraphs: [
+          "Use a staged process: first-pass inspection, shortlist review, then a second visit focused on operational checks.",
+          "A repeat visit improves confidence and helps separate emotional response from long-term fit.",
+          "Buyers who keep this sequence usually negotiate with greater clarity.",
+        ],
+      },
+      {
+        heading: "How to convert insights into action",
+        paragraphs: [
+          "Document each property with the same checklist and scoring framework so comparisons stay objective.",
+          "Then benchmark your top option against one higher-spec listing and one value listing before final offer range.",
+          "That final benchmark step often prevents overpaying in differentiated lifestyle markets.",
+        ],
+      },
+    ],
+    featureListTitle: "Autumn inspection checklist",
+    featureList: [
+      "Check driveway and access performance in cooler, wetter conditions",
+      "Assess drainage and low-point behavior across the full block",
+      "Test heating, ventilation, and indoor comfort profile",
+      "Run repeat travel-time checks to your core service town",
+      "Complete at least one second-pass inspection before offering",
+    ],
+    galleryTitle: "Autumn buying context gallery",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
+        alt: "Tree-lined pathway through established grounds",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Water and landscape relationship on acreage",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+        alt: "Outdoor terrace and year-round living zone",
+      },
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "Regional South Gippsland landscape setting",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+    ],
+    ctaTitle: "Compare autumn-ready properties",
+    ctaBody:
+      "Use this framework when inspecting Springbank to assess land performance, comfort, and long-term liveability with a clear seasonal lens.",
+  },
+  {
+    slug: "how-to-read-a-lifestyle-property-listing-12-signals-that-matter-more-than-styling",
+    title:
+      "How to Read a Lifestyle Property Listing: 12 Signals That Matter More Than Styling",
+    excerpt:
+      "A buyer-focused framework for reading lifestyle property listings, with twelve practical signals that help separate marketing language from long-term value.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-02-28",
+    readingTimeMinutes: 9,
+    categories: ["Buyer Guide", "Lifestyle Property", "Regional Victoria"],
+    tags: [
+      "lifestyle property listing tips",
+      "regional property due diligence",
+      "acreage buyer checklist",
+      "south gippsland real estate",
+      "tree change buyers",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+      alt: "Well-appointed kitchen in a regional lifestyle home",
+      caption:
+        "Presentation matters, but listing quality is best judged by functional detail and verifiable information.",
+    },
+    intro: [
+      "Lifestyle property listings can look similar at first glance, even when long-term ownership outcomes are very different.",
+      "The strongest buyers use a repeatable reading framework that focuses on utility, maintenance profile, and adaptation potential rather than visual styling alone.",
+    ],
+    sections: [
+      {
+        heading: "Read for function first",
+        paragraphs: [
+          "Start with evidence of operational quality: orientation, thermal comfort features, water systems, access, and ancillary infrastructure.",
+          "Listings that clearly explain these fundamentals are usually easier to evaluate and compare.",
+          "If core function is vague, treat the listing as needing deeper verification before shortlist stage.",
+        ],
+      },
+      {
+        heading: "Look for asset depth beyond the main house",
+        paragraphs: [
+          "In regional lifestyle markets, value often sits in the wider asset ecosystem: studio space, garaging, storage, established gardens, and outdoor living zones.",
+          "These elements shape day-to-day usability and can reduce future adaptation costs.",
+          "Strong listings usually describe these features with practical specificity, not broad adjectives.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+          alt: "Main residence with integrated ancillary studio building",
+          caption:
+            "Ancillary spaces can be a major determinant of long-term flexibility.",
+        },
+      },
+      {
+        heading: "Use a consistency checklist across all listings",
+        paragraphs: [
+          "Apply the same checklist to each property so your shortlist is based on comparable evidence.",
+          "This keeps decision quality high and reduces the chance of over-weighting photography or staging.",
+          "Consistent evaluation also improves confidence when you move to inspection and offer planning.",
+        ],
+      },
+      {
+        heading: "Verify before emotional commitment",
+        paragraphs: [
+          "Before committing to a property, confirm claims through inspection, direct questions, and where relevant independent advice.",
+          "Verification is especially important for acreage where maintenance and infrastructure quality drive ownership experience.",
+          "A disciplined verification step protects both budget and lifestyle outcomes.",
+        ],
+      },
+    ],
+    featureListTitle: "12 listing signals to prioritise",
+    featureList: [
+      "Clear orientation and thermal-comfort details",
+      "Evidence of water, drainage, and access performance",
+      "Specific information on ancillary buildings",
+      "Practical garden and land usability context",
+      "Storage, garaging, and visitor accommodation flexibility",
+      "Realistic maintenance profile and upgrade history",
+      "Service-town proximity and travel-time framing",
+      "Consistency between listing copy and floorplan",
+      "Functional kitchen and living-zone layout",
+      "Outdoor-zone usability across seasons",
+      "Adaptability for work-from-home or multigenerational use",
+      "Transparent contact and inspection information",
+    ],
+    galleryTitle: "Listing-analysis visual context",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+        alt: "Kitchen quality and layout functionality",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Ancillary infrastructure and flexibility",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
+        alt: "Approach, access, and parking context",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+        alt: "Established landscape assets and usable grounds",
+      },
+    ],
+    ctaTitle: "Apply the 12-signal framework in real time",
+    ctaBody:
+      "Use this listing-reading checklist against Springbank to test feature depth, usability, and long-term value before your next inspection decision.",
+  },
+  {
+    slug: "melbourne-to-south-gippsland-weekend-inspection-itinerary-for-acreage-buyers",
+    title:
+      "Melbourne to South Gippsland: Weekend Inspection Itinerary for Acreage Buyers",
+    excerpt:
+      "A practical two-day inspection itinerary for Melbourne buyers assessing South Gippsland acreage, designed to improve comparison quality and reduce decision fatigue.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-02-28",
+    readingTimeMinutes: 8,
+    categories: ["Inspection Planning", "Buyer Strategy", "South Gippsland"],
+    tags: [
+      "melbourne tree change",
+      "south gippsland inspections",
+      "acreage buyer itinerary",
+      "regional property planning",
+      "weekend buyer strategy",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
+      alt: "Wide South Gippsland valley outlook from lifestyle acreage",
+      caption:
+        "A structured itinerary helps Melbourne buyers compare properties under realistic conditions.",
+    },
+    intro: [
+      "Many Melbourne buyers inspect South Gippsland with too little structure, then return with unclear notes and low confidence.",
+      "A two-day itinerary can transform decision quality by separating town-level checks from property-level due diligence and keeping comparisons consistent.",
+    ],
+    sections: [
+      {
+        heading: "Day one: region and town calibration",
+        paragraphs: [
+          "Use day one to test town fit, service access, and practical travel windows rather than rushing into multiple home inspections.",
+          "Focus on the locations most relevant to your daily life, including schools, healthcare, groceries, and trade access.",
+          "This sets a clear baseline for interpreting property suitability on day two.",
+        ],
+        image: {
+          src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+          alt: "Leongatha main street and service hub context",
+          caption:
+            "Town functionality should be validated before finalising property priorities.",
+        },
+      },
+      {
+        heading: "Day two: property inspections with a fixed scorecard",
+        paragraphs: [
+          "Inspect with one scorecard covering land usability, building function, comfort systems, and maintenance exposure.",
+          "Keep inspection slots realistic and allow time between properties for immediate notes.",
+          "A fixed process prevents recency bias and improves shortlist confidence.",
+        ],
+      },
+      {
+        heading: "What to track beyond brochure highlights",
+        paragraphs: [
+          "Record details on access quality, outdoor-zone usability, ancillary flexibility, and likely annual maintenance load.",
+          "Where possible, observe how the property performs in ordinary weather and not just ideal light.",
+          "These factors frequently decide long-term satisfaction for acreage owners.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
+          alt: "Driveway approach and access to home and garage",
+          caption:
+            "Access and day-to-day movement patterns are critical for regional ownership comfort.",
+        },
+      },
+      {
+        heading: "Post-trip decision routine",
+        paragraphs: [
+          "Within 24 hours, rank inspected properties against your non-negotiables and identify any missing verification.",
+          "Then book follow-up inspections only for top-ranked options with unresolved key questions.",
+          "This routine keeps momentum high without forcing premature offers.",
+        ],
+      },
+    ],
+    featureListTitle: "Weekend inspection itinerary summary",
+    featureList: [
+      "Day 1: validate town function and travel windows",
+      "Day 2: inspect with one consistent property scorecard",
+      "Capture notes immediately after each inspection",
+      "Track access, infrastructure, and maintenance signals",
+      "Run a 24-hour post-trip ranking and follow-up plan",
+    ],
+    galleryTitle: "Weekend planning context gallery",
+    gallery: [
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Leongatha service-town context",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-front-garden-garage.jpg",
+        alt: "Property approach and access context",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
+        alt: "Rural outlook and landscape context",
+      },
+      {
+        src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+        alt: "Mirboo North streetscape context",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+      {
+        label: "Mirboo North Town Hall - March 2022",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Mirboo_North_Town_Hall_%E2%80%94_March_2022.jpg",
+        author: "Alison Newman",
+        licenseName: "CC0 1.0",
+        licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      },
+    ],
+    ctaTitle: "Use this itinerary on your next trip",
+    ctaBody:
+      "If Springbank is on your shortlist, use this weekend itinerary to compare it against nearby options with consistent inspection logic.",
+  },
+  {
+    slug: "regional-acreage-finance-and-holding-costs-a-plain-english-planning-guide",
+    title:
+      "Regional Acreage Finance and Holding Costs: A Plain-English Planning Guide",
+    excerpt:
+      "A clear planning guide for buyers assessing finance readiness and long-term holding costs for regional acreage, with emphasis on cash-flow realism and ownership resilience.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-02-28",
+    readingTimeMinutes: 9,
+    categories: ["Buyer Guide", "Acreage", "Finance Planning"],
+    tags: [
+      "regional acreage finance",
+      "lifestyle property holding costs",
+      "tree change budget planning",
+      "rural property ownership costs",
+      "south gippsland acreage",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+      alt: "Acreage residence and ancillary infrastructure",
+      caption:
+        "Finance planning for acreage should include infrastructure upkeep and seasonal variability.",
+    },
+    intro: [
+      "Finance approval is only one part of readiness for regional acreage ownership. The stronger test is whether annual cash flow remains stable after routine and seasonal costs are included.",
+      "This guide outlines a practical planning model buyers can use before they commit to a lifestyle property purchase.",
+    ],
+    sections: [
+      {
+        heading: "Start with total ownership, not purchase price",
+        paragraphs: [
+          "Acreage ownership costs usually extend beyond standard home assumptions because of larger grounds, broader infrastructure, and higher maintenance exposure.",
+          "Build an annual model that includes property upkeep, utilities profile, insurance, transport load, and a contingency buffer.",
+          "This total-cost view gives a more reliable affordability signal than mortgage estimates alone.",
+        ],
+      },
+      {
+        heading: "Stress-test your model for seasonal variability",
+        paragraphs: [
+          "Seasonal weather, garden cycles, and occasional infrastructure work can shift costs year to year.",
+          "Use conservative assumptions so short-term variation does not disrupt long-term ownership confidence.",
+          "A stress-tested plan improves both offer discipline and post-settlement resilience.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+          alt: "Established gardens and grounds requiring ongoing management",
+          caption:
+            "Mature grounds create strong lifestyle value but should be reflected in ownership planning.",
+        },
+      },
+      {
+        heading: "Evaluate flexibility assets that reduce future spend",
+        paragraphs: [
+          "Properties with quality ancillary space, efficient comfort systems, and adaptable layout can reduce future upgrade pressure.",
+          "When comparing listings, include these features in your value model rather than focusing only on headline land size.",
+          "Functional flexibility often pays back through lower adaptation costs over time.",
+        ],
+      },
+      {
+        heading: "Use a go/no-go threshold before contract",
+        paragraphs: [
+          "Set a clear affordability threshold that includes mortgage and full ownership profile, then apply it consistently.",
+          "If a property requires assumptions outside that range, pause and rework the model before proceeding.",
+          "This threshold approach protects lifestyle goals from financial overreach.",
+        ],
+      },
+    ],
+    featureListTitle: "Finance readiness checklist for acreage buyers",
+    featureList: [
+      "Model annual total ownership cost, not just loan repayments",
+      "Include maintenance, utilities, and transport in baseline budget",
+      "Stress-test for seasonal and one-off infrastructure costs",
+      "Value adaptable ancillary infrastructure in comparisons",
+      "Set and enforce a clear go/no-go affordability threshold",
+    ],
+    galleryTitle: "Ownership-planning visual context",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Residence and ancillary infrastructure",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+        alt: "Grounds and maintenance scope",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Landscape features and ongoing upkeep profile",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
+        alt: "Built quality and long-term durability context",
+      },
+    ],
+    ctaTitle: "Pressure-test your budget against a live example",
+    ctaBody:
+      "Use this finance framework to evaluate Springbank and confirm whether your planned ownership model supports both comfort and long-term flexibility.",
+  },
+  {
+    slug: "springbank-inspection-notes-five-details-buyers-notice-first-at-30-omalleys-road",
+    title:
+      "Springbank Inspection Notes: Five Details Buyers Notice First at 30 O'Malleys Road",
+    excerpt:
+      "A property-specific guide to what stands out most during inspection at Springbank in Mardan, from orientation and craftsmanship to garden design and ancillary flexibility.",
+    publishedAt: "2026-02-28",
+    updatedAt: "2026-02-28",
+    readingTimeMinutes: 8,
+    categories: ["Property Spotlight", "Springbank", "South Gippsland"],
+    tags: [
+      "springbank mardan",
+      "30 omalleys road mardan",
+      "south gippsland lifestyle property",
+      "mardan property for sale",
+      "tarwin valley views",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+      alt: "Springbank residence with valley outlook and mature plantings",
+      caption:
+        "Springbank combines architectural intent, mature landscape design, and practical liveability.",
+    },
+    intro: [
+      "Some properties read well online but only become compelling once you walk the grounds. Springbank is one of those listings.",
+      "During inspections at 30 O'Malleys Road, buyers repeatedly focus on five specific details that explain why this home feels distinct within the South Gippsland acreage market.",
+    ],
+    sections: [
+      {
+        heading: "1) Orientation and immediate sense of place",
+        paragraphs: [
+          "From arrival, the home's orientation frames long Tarwin Valley outlooks while preserving privacy and shelter.",
+          "This relationship between built form and landscape creates a strong everyday living feel, not just a view-line moment.",
+          "Buyers often identify this as the first signal that the property was designed with long-term comfort in mind.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
+          alt: "Long Tarwin Valley outlook from Springbank",
+          caption:
+            "Orientation and outlook are immediate strengths on arrival at Springbank.",
+        },
+      },
+      {
+        heading: "2) Craftsmanship and interior volume",
+        paragraphs: [
+          "Inside, rare Peppermint Gum flooring, generous ceiling heights, and a cohesive material palette set a quality benchmark that is difficult to replicate.",
+          "The renovated kitchen anchors the home with practical flow and substantial storage, supporting both daily use and entertaining.",
+          "Inspection feedback commonly highlights the balance between visual character and functional planning.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+          alt: "Springbank kitchen with timber finishes and island bench",
+          caption:
+            "The kitchen is a focal point for both day-to-day living and social use.",
+        },
+      },
+      {
+        heading: "3) Lower-level flexibility and guest capacity",
+        paragraphs: [
+          "The upgraded lower level is frequently noted for its practical versatility, including spa bathroom and kitchenette facilities.",
+          "This expands the home's capacity for guests, multigenerational visits, or separated activity zones.",
+          "For many buyers, this flexibility increases both lifestyle utility and resale resilience.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-031.jpg",
+          alt: "Lower-level living zone demonstrating flexible guest-use potential",
+          caption:
+            "The lower level adds genuine flexibility for guest accommodation and multi-use living.",
+        },
+      },
+      {
+        heading: "4) Ancillary studio and garage ecosystem",
+        paragraphs: [
+          "The separate studio-style building with garage integration broadens use-cases for work, creative projects, and storage without compromising design cohesion.",
+          "Inspection groups often treat this as a core value driver rather than an optional extra.",
+          "In acreage markets, high-quality ancillary space can materially improve long-term ownership outcomes.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+          alt: "Springbank ancillary studio and garage structure",
+          caption:
+            "Ancillary infrastructure at Springbank is integrated and functionally significant.",
+        },
+      },
+      {
+        heading: "5) Robert Boyle garden structure and full-site experience",
+        paragraphs: [
+          "The established Robert Boyle designed gardens, vineyard and orchard plantings, and walking track produce a complete lifestyle setting rather than isolated landscape moments.",
+          "Buyers consistently comment on how the grounds feel curated yet usable, with clear zones for recreation and hosting.",
+          "This full-site coherence is a defining part of Springbank's market position.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+          alt: "Robert Boyle designed gardens and structured planting at Springbank",
+          caption:
+            "Landscape design at Springbank supports both visual impact and practical daily use.",
+        },
+      },
+    ],
+    featureListTitle: "Springbank inspection highlights",
+    featureList: [
+      "Designed orientation with sweeping Tarwin Valley outlooks",
+      "Rare Peppermint Gum flooring and high-ceiling interior volume",
+      "Renovated kitchen with strong practical flow and storage",
+      "Flexible lower level with spa bathroom and kitchenette",
+      "Integrated ancillary studio and garage capability",
+      "Robert Boyle designed gardens, vineyard, orchard, and walking track",
+    ],
+    galleryTitle: "Springbank inspection gallery",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+        alt: "Hero view of Springbank residence and grounds",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+        alt: "Kitchen and interior quality details",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Main home and ancillary studio relationship",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+        alt: "Robert Boyle designed gardens and established planting",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-061.jpg",
+        alt: "Elevated residence view across established grounds and valley horizon",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-048.jpg",
+        alt: "Outdoor living zone with broad garden frontage",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-059.jpg",
+        alt: "Mature landscaping with strong separation and privacy",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-013.jpg",
+        alt: "Interior detail highlighting material quality and natural light",
+      },
+    ],
+    ctaTitle: "Book your inspection window",
+    ctaBody:
+      "To inspect Springbank at 30 O'Malleys Rd, Mardan, contact Dean Jones at One Lifestyle Real Estate on 0431 639 749 or email dean@onelifestyle.com.au.",
+  },
 ];
 
 export function toFacetSlug(value: string): string {

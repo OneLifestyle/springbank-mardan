@@ -9,18 +9,19 @@ export function OpenHomePromoSection() {
         <div className="rounded-xl border border-border bg-card p-8 md:p-10">
           <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">Open Home</p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            Saturday 28 February 2026, 12pm to 1pm
+            Saturday 7 March 2026, 12pm to 1pm
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
             Inspect Springbank in person at 30 O&apos;Malleys Rd, Mardan VIC 3953. View the
             Mediterranean-inspired residence, Robert Boyle designed gardens, and sweeping Tarwin
-            Valley outlook.
+            Valley outlook. This inspection sits in the Labour Day long weekend period, when more
+            visitors are expected across South Gippsland.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="flex items-center gap-2 text-sm text-foreground">
               <CalendarDays className="h-4 w-4 text-primary" />
-              Saturday 28 February 2026
+              Saturday 7 March 2026
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground">
               <Clock3 className="h-4 w-4 text-primary" />
@@ -41,7 +42,7 @@ export function OpenHomePromoSection() {
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-transparent">
               <a
-                href="https://www.facebook.com/events/25736775532617953"
+                href="https://www.facebook.com/events/951991930598945/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gap-2"
