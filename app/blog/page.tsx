@@ -196,9 +196,27 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
                 >
                   Previous
                 </Link>
-                <p className="text-sm text-muted-foreground">
-                  Page {currentPage} of {totalPages}
-                </p>
+                <div className="flex flex-wrap items-center justify-center gap-2">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) =>
+                    pageNumber === currentPage ? (
+                      <span
+                        key={pageNumber}
+                        aria-current="page"
+                        className="rounded-md border border-primary bg-primary px-3 py-2 text-sm font-medium text-primary-foreground"
+                      >
+                        {pageNumber}
+                      </span>
+                    ) : (
+                      <Link
+                        key={pageNumber}
+                        href={buildBlogHref(pageNumber)}
+                        className="rounded-md border border-border px-3 py-2 text-sm text-foreground transition-colors hover:border-primary"
+                      >
+                        {pageNumber}
+                      </Link>
+                    )
+                  )}
+                </div>
                 <Link
                   href={buildBlogHref(currentPage + 1)}
                   aria-disabled={currentPage >= totalPages}

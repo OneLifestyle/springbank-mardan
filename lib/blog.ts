@@ -1277,10 +1277,10 @@ const posts: BlogPost[] = [
           "For many buyers, this flexibility increases both lifestyle utility and resale resilience.",
         ],
         image: {
-          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-030.jpg",
-          alt: "Lower-level living space with kitchenette and adjoining laundry area",
+          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-034.jpg",
+          alt: "Lower-level multipurpose room with bed, kitchenette, and integrated laundry area",
           caption:
-            "The lower level includes a practical kitchenette and laundry hybrid, supporting flexible guest and day-to-day use.",
+            "The lower-level multipurpose room includes bed space, a kitchenette, and integrated laundry facilities for flexible guest and daily use.",
         },
       },
       {
