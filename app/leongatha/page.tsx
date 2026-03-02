@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   ArrowLeft,
   BarChart3,
@@ -14,13 +15,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Leongatha Real Estate & Lifestyle Guide | South Gippsland Property Insights",
+  title: "Leongatha Real Estate Guide | Houses and Acreage for Sale",
   description:
-    "Leongatha real estate and lifestyle guide for buyers researching houses, acreage, and tree-change opportunities in South Gippsland, Victoria.",
+    "Leongatha real estate guide for buyers comparing houses and acreage for sale, with practical links to nearby South Gippsland listing opportunities.",
   keywords: [
     "Leongatha real estate",
     "Leongatha property",
     "Leongatha houses for sale",
+    "acreage for sale leongatha",
     "Leongatha lifestyle",
     "Leongatha living",
     "South Gippsland real estate",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "https://springbankmardan.com/leongatha",
   },
   openGraph: {
-    title: "Leongatha Real Estate & Lifestyle Guide",
+    title: "Leongatha Real Estate Guide | Houses and Acreage for Sale",
     description:
       "Understand Leongatha buyer demand, census profile, and practical search pathways before you inspect.",
     url: "https://springbankmardan.com/leongatha",
@@ -93,6 +95,12 @@ const statCards = [
 export default function LeongathaPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Leongatha", item: "https://springbankmardan.com/leongatha" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -121,7 +129,7 @@ export default function LeongathaPage() {
             <div className="max-w-4xl">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">Leongatha VIC 3953</p>
               <h1 className="font-serif text-4xl leading-tight text-foreground md:text-6xl">
-                Leongatha real estate and lifestyle guide
+                Leongatha real estate guide for house and acreage buyers
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Leongatha is the service heart of{" "}
@@ -132,6 +140,12 @@ export default function LeongathaPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
+                  <Link href="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    View Mardan property for sale
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.realestate.com.au/buy/in-leongatha,+vic+3953/list-1"
                     target="_blank"
@@ -154,6 +168,13 @@ export default function LeongathaPage() {
                   </a>
                 </Button>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                If you want acreage near Leongatha, compare active listings including{" "}
+                <Link href="/" className="text-primary underline-offset-4 hover:underline">
+                  this Mardan opportunity
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

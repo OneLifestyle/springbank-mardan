@@ -48,11 +48,12 @@ export default function GalleryClient() {
         <header className="mt-8 max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">Full Gallery</p>
           <h1 className="mt-3 font-serif text-4xl leading-tight text-foreground md:text-5xl">
-            Springbank photo library
+            Springbank property gallery: interiors, grounds and plans
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            Browse photos before inspecting this South Gippsland lifestyle property for sale.
             Explore interiors, outdoor living zones, gardens, valley views, and floorplans in one
-            place as you compare the full lifestyle offering at Springbank.
+            place.
           </p>
         </header>
 

@@ -2,37 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   filterPostsByFacets,
   getAllCategories,
   getAllTags,
   toFacetSlug,
 } from "@/lib/blog";
-
-export const metadata: Metadata = {
-  title: "South Gippsland Property Journal | Springbank Mardan",
-  description:
-    "Property and lifestyle articles focused on South Gippsland real estate, tree-change living, and regional buyer insights around Mardan, Leongatha, Meeniyan, Mirboo North, and Wilsons Promontory.",
-  alternates: {
-    canonical: "https://springbankmardan.com/blog",
-  },
-  openGraph: {
-    title: "South Gippsland Property Journal",
-    description:
-      "Long-form articles on lifestyle property, regional relocation, and South Gippsland buyer context.",
-    url: "https://springbankmardan.com/blog",
-    siteName: "Springbank Mardan",
-    type: "website",
-    images: [
-      {
-        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Springbank and Tarwin Valley setting",
-      },
-    ],
-  },
-};
 
 type BlogIndexProps = {
   searchParams?: Promise<{
@@ -41,6 +17,44 @@ type BlogIndexProps = {
     page?: string | string[];
   }>;
 };
+
+export async function generateMetadata({ searchParams }: BlogIndexProps): Promise<Metadata> {
+  const params = await searchParams;
+  const activeCategory = firstParam(params?.category)?.toLowerCase();
+  const activeTag = firstParam(params?.tag)?.toLowerCase();
+
+  return {
+    title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
+    description:
+      "Buyer-focused South Gippsland real estate blog with guides on acreage for sale, township comparisons, and lifestyle-property inspection strategy.",
+    alternates: {
+      canonical: "https://springbankmardan.com/blog",
+    },
+    robots:
+      activeCategory || activeTag
+        ? {
+            index: false,
+            follow: true,
+          }
+        : undefined,
+    openGraph: {
+      title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
+      description:
+        "Buyer-focused South Gippsland real estate insights with practical guides for acreage and lifestyle-property searches.",
+      url: "https://springbankmardan.com/blog",
+      siteName: "Springbank Mardan",
+      type: "website",
+      images: [
+        {
+          url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+          width: 1200,
+          height: 630,
+          alt: "South Gippsland real estate blog",
+        },
+      ],
+    },
+  };
+}
 
 function firstParam(value?: string | string[]): string | undefined {
   if (Array.isArray(value)) {
@@ -80,6 +94,9 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
     const query = new URLSearchParams();
     if (activeCategory) query.set("category", activeCategory);
     if (activeTag) query.set("tag", activeTag);
+    if (!activeCategory && !activeTag) {
+      return page > 1 ? `/blog/page/${page}` : "/blog";
+    }
     if (page > 1) query.set("page", String(page));
     const qs = query.toString();
     return qs ? `/blog?${qs}` : "/blog";
@@ -87,6 +104,12 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
 
   return (
     <main className="min-h-screen bg-background py-16 md:py-24">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Blog", item: "https://springbankmardan.com/blog" },
+        ]}
+      />
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="max-w-4xl">
           <Link
@@ -106,6 +129,21 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
             A long-form blog covering lifestyle property in South Gippsland, with practical context
             for buyers comparing town access, land, gardens, and long-stay liveability.
           </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Start with{" "}
+            <Link href="/" className="text-primary underline-offset-4 hover:underline">
+              this Mardan lifestyle property for sale
+            </Link>
+            , view{" "}
+            <Link href="/open-home" className="text-primary underline-offset-4 hover:underline">
+              open-home details
+            </Link>
+            , or{" "}
+            <Link href="/#contact" className="text-primary underline-offset-4 hover:underline">
+              contact the agent
+            </Link>
+            .
+          </p>
           <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">
             <span>{posts.length} post{posts.length === 1 ? "" : "s"}</span>
             <span>
@@ -123,6 +161,29 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr),280px]">
           <section className="grid gap-6">
+            {!activeCategory && !activeTag && currentPage === 1 && (
+              <article className="rounded-xl border border-border bg-card p-6 md:p-8">
+                <p className="text-xs uppercase tracking-[0.14em] text-primary">Property spotlight</p>
+                <h2 className="mt-2 font-serif text-2xl text-foreground">
+                  Start with listing-focused Springbank guides
+                </h2>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  <Link
+                    href="/blog/escape-to-springbank-master-built-mediterranean-sanctuary"
+                    className="rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-primary"
+                  >
+                    Mardan Property for Sale: Springbank&apos;s 5-Acre Mediterranean Sanctuary
+                  </Link>
+                  <Link
+                    href="/blog/springbank-inspection-notes-five-details-buyers-notice-first-at-30-omalleys-road"
+                    className="rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-primary"
+                  >
+                    South Gippsland Lifestyle Property for Sale: 5 Springbank Inspection Highlights
+                  </Link>
+                </div>
+              </article>
+            )}
+
             {paginatedPosts.map((post) => (
               <article key={post.slug} className="overflow-hidden rounded-xl border border-border bg-card">
                 <div className="grid gap-0 md:grid-cols-[1.05fr,1fr]">

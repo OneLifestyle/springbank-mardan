@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   ArrowLeft,
   BarChart3,
@@ -14,13 +15,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Mirboo North Real Estate & Lifestyle Guide | South Gippsland Property Insights",
+  title: "Mirboo North Real Estate Guide | Houses and Lifestyle Property",
   description:
-    "Mirboo North real estate and lifestyle guide for buyers comparing village character, regional housing options, and tree-change demand in South Gippsland.",
+    "Mirboo North real estate guide for buyers comparing houses and lifestyle property, with South Gippsland market context and nearby acreage options.",
   keywords: [
     "Mirboo North real estate",
     "Mirboo North property",
     "Mirboo North houses for sale",
+    "acreage for sale mirboo north",
     "Mirboo North lifestyle",
     "Mirboo North living",
     "South Gippsland real estate",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "https://springbankmardan.com/mirboo-north",
   },
   openGraph: {
-    title: "Mirboo North Real Estate & Lifestyle Guide",
+    title: "Mirboo North Real Estate Guide | Houses and Lifestyle Property",
     description:
       "Understand Mirboo North buyer demand, census profile, and market research pathways for South Gippsland property decisions.",
     url: "https://springbankmardan.com/mirboo-north",
@@ -93,6 +95,12 @@ const statCards = [
 export default function MirbooNorthPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Mirboo North", item: "https://springbankmardan.com/mirboo-north" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -121,7 +129,7 @@ export default function MirbooNorthPage() {
             <div className="max-w-4xl">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">Mirboo North VIC 3871</p>
               <h1 className="font-serif text-4xl leading-tight text-foreground md:text-6xl">
-                Mirboo North real estate and lifestyle guide
+                Mirboo North real estate guide for lifestyle buyers
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Mirboo North is a hilltop township known for village character and easy access to the Strzelecki Ranges. It suits people who want scenic living without being too far from the service towns of{" "}
@@ -132,6 +140,12 @@ export default function MirbooNorthPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
+                  <Link href="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    View Mardan property for sale
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.realestate.com.au/buy/in-mirboo+north,+vic+3871/list-1"
                     target="_blank"
@@ -154,6 +168,13 @@ export default function MirbooNorthPage() {
                   </a>
                 </Button>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Compare Mirboo North options with a live{" "}
+                <Link href="/" className="text-primary underline-offset-4 hover:underline">
+                  Mardan lifestyle property for sale
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

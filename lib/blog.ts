@@ -43,9 +43,9 @@ const posts: BlogPost[] = [
   {
     slug: "escape-to-springbank-master-built-mediterranean-sanctuary",
     title:
-      "Escape to Springbank: A Master-Built Mediterranean Sanctuary in the Tarwin Valley",
+      "Mardan Property for Sale: Springbank's 5-Acre Mediterranean Sanctuary",
     excerpt:
-      "Set on approximately 5 acres at 30 O'Malleys Rd, Mardan, Springbank combines Mediterranean-inspired architecture, sustainable design, and established Robert Boyle gardens in one cohesive South Gippsland lifestyle holding.",
+      "South Gippsland real estate spotlight: 30 O'Malleys Rd, Mardan is a 5-acre lifestyle property for sale with valley views, studio, gardens, and clear inspect-or-enquire pathways.",
     publishedAt: "2026-02-20",
     updatedAt: "2026-02-20",
     readingTimeMinutes: 8,
@@ -1216,9 +1216,9 @@ const posts: BlogPost[] = [
   {
     slug: "springbank-inspection-notes-five-details-buyers-notice-first-at-30-omalleys-road",
     title:
-      "Springbank Inspection Notes: Five Details Buyers Notice First at 30 O'Malleys Road",
+      "South Gippsland Lifestyle Property for Sale: 5 Springbank Inspection Highlights",
     excerpt:
-      "A property-specific guide to what stands out most during inspection at Springbank in Mardan, from orientation and craftsmanship to garden design and ancillary flexibility.",
+      "Mardan property for sale at 30 O'Malleys Rd: five inspection highlights covering orientation, interiors, lower-level flexibility, and gardens ahead of private inspection or open home.",
     publishedAt: "2026-02-28",
     updatedAt: "2026-02-28",
     readingTimeMinutes: 8,
@@ -1237,8 +1237,8 @@ const posts: BlogPost[] = [
         "Springbank combines architectural intent, mature landscape design, and practical liveability.",
     },
     intro: [
-      "Some properties read well online but only become compelling once you walk the grounds. Springbank is one of those listings.",
-      "During inspections at 30 O'Malleys Road, buyers repeatedly focus on five specific details that explain why this home feels distinct within the South Gippsland acreage market.",
+      "For buyers searching Mardan property for sale, Springbank at 30 O'Malleys Road is a 5-acre lifestyle property that becomes clearer in person than it does online.",
+      "Before private inspection or open home, these five highlights explain where the strongest day-to-day value sits across layout, flexibility, and landscape.",
     ],
     sections: [
       {

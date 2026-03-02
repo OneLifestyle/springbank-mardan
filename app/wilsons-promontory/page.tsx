@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   ArrowLeft,
   BarChart3,
@@ -14,11 +15,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Wilsons Promontory Lifestyle & Real Estate Access Guide | South Gippsland",
+  title: "Property Near Wilsons Promontory | Real Estate Access Guide",
   description:
     "Wilsons Promontory lifestyle and real estate access guide for buyers researching coastal proximity, holiday demand, and nearby property markets in South Gippsland.",
   keywords: [
     "Wilsons Promontory real estate",
+    "acreage for sale prom country",
     "Wilsons Promontory lifestyle",
     "Wilsons Promontory holiday homes",
     "property near Wilsons Promontory",
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     canonical: "https://springbankmardan.com/wilsons-promontory",
   },
   openGraph: {
-    title: "Wilsons Promontory Lifestyle & Real Estate Access Guide",
+    title: "Property Near Wilsons Promontory | Real Estate Access Guide",
     description:
       "Understand how Wilsons Promontory drives lifestyle demand and surrounding property searches in South Gippsland.",
     url: "https://springbankmardan.com/wilsons-promontory",
@@ -87,6 +89,15 @@ const statCards = [
 export default function WilsonsPromontoryPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          {
+            name: "Wilsons Promontory",
+            item: "https://springbankmardan.com/wilsons-promontory",
+          },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -117,13 +128,19 @@ export default function WilsonsPromontoryPage() {
                 Wilsons Promontory National Park
               </p>
               <h1 className="font-serif text-4xl leading-tight text-foreground md:text-6xl">
-                Wilsons Promontory lifestyle and real estate access guide
+                Wilsons Promontory lifestyle and nearby real estate guide
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Wilsons Promontory National Park is a major lifestyle drawcard for South Gippsland. There is no private housing inside the park, so most people stay in nearby towns such as Yanakie or Foster and use the region as a base for hikes, beaches, and wildlife.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
+                  <Link href="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    View Mardan acreage for sale
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.realestate.com.au/buy/in-gippsland_south-vic/list-1"
                     target="_blank"

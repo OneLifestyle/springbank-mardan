@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CalendarDays, Clock3, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { getAllBlogPosts, getBlogPostBySlug, toFacetSlug } from "@/lib/blog";
 
 type BlogPostPageProps = {
@@ -38,9 +39,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   }
 
   const canonical = `https://springbankmardan.com/blog/${post.slug}`;
+  const isPropertySpotlight = post.categories.includes("Property Spotlight");
+  const titleSuffix = isPropertySpotlight
+    ? " | Mardan Property for Sale"
+    : " | Springbank Journal";
 
   return {
-    title: `${post.title} | Springbank Journal`,
+    title: `${post.title}${titleSuffix}`,
     description: post.excerpt,
     keywords: [...post.tags, ...post.categories],
     alternates: {
@@ -100,6 +105,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Blog", item: "https://springbankmardan.com/blog" },
+          { name: post.title, item: `https://springbankmardan.com/blog/${post.slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -193,6 +205,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   )}
                 </section>
               ))}
+
+              {!post.categories.includes("Property Spotlight") && (
+                <section className="rounded-xl border border-border bg-secondary/30 p-6">
+                  <h2 className="font-serif text-2xl text-foreground">
+                    Compare with an active South Gippsland listing
+                  </h2>
+                  <p className="mt-3 text-muted-foreground">
+                    Use this research alongside a live{" "}
+                    <Link
+                      href="/"
+                      className="text-primary underline-offset-4 hover:underline"
+                    >
+                      Mardan lifestyle property for sale
+                    </Link>
+                    {" "}to compare land usability, location access, and inspection readiness.
+                  </p>
+                </section>
+              )}
 
               <section className="space-y-5">
                 <h2 className="font-serif text-3xl text-foreground">{post.featureListTitle}</h2>

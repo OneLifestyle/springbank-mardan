@@ -3,16 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "Open Home Saturday 7 March | Springbank Mardan",
+  title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
   description:
-    "Open Home at Springbank, 30 O'Malleys Rd Mardan VIC 3953. Saturday 7 March 2026, 12pm to 1pm. Labour Day long-weekend inspection.",
+    "Open home details for this Mardan acreage for sale at 30 O'Malleys Rd. View inspection time, location, and contact options for South Gippsland buyers.",
   alternates: {
     canonical: "https://springbankmardan.com/open-home",
   },
   openGraph: {
-    title: "Open Home | Springbank Mardan",
+    title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
     description:
       "Inspect Springbank on Saturday 7 March 2026 from 12pm to 1pm during the Labour Day long weekend.",
     url: "https://springbankmardan.com/open-home",
@@ -101,6 +102,12 @@ const galleryImages = [
 export default function OpenHomePage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Open Home", item: "https://springbankmardan.com/open-home" },
+        ]}
+      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main className="min-h-screen bg-background">
         <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
@@ -123,7 +130,7 @@ export default function OpenHomePage() {
                 Open Home Event
               </p>
               <h1 className="font-serif text-4xl leading-tight text-foreground md:text-6xl">
-                Springbank Mediterranean Sanctuary
+                Open home for this Mardan property for sale
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Discover Springbank, a master-built Mediterranean-inspired sanctuary offering sustainable comfort and breathtaking views across the Tarwin Valley.
@@ -149,6 +156,15 @@ export default function OpenHomePage() {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
+                  <a href="tel:0431639749" className="gap-2">
+                    <Phone className="h-4 w-4" />
+                    Book private inspection
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
+                  <Link href="/">View full listing website</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.facebook.com/events/951991930598945/"
                     target="_blank"
@@ -158,9 +174,6 @@ export default function OpenHomePage() {
                     Open Facebook event
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="bg-transparent">
-                  <Link href="/">View full listing website</Link>
                 </Button>
               </div>
             </div>

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import GalleryClient from "./gallery-client";
 
 export const metadata: Metadata = {
-  title: "Springbank Full Gallery | Mardan Lifestyle Property",
+  title: "Mardan Property for Sale Gallery | Springbank Photos",
   description:
-    "Browse the full Springbank gallery with interiors, exteriors, grounds, valley views, and plans.",
+    "Browse the full gallery for this Mardan property for sale, including interiors, grounds, valley views, and plans before inspection.",
   alternates: {
     canonical: "https://springbankmardan.com/gallery",
   },
   openGraph: {
-    title: "Springbank Full Gallery",
+    title: "Mardan Property for Sale Gallery | Springbank Photos",
     description:
       "Full photo library for Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
     url: "https://springbankmardan.com/gallery",
@@ -27,5 +28,15 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
-  return <GalleryClient />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Gallery", item: "https://springbankmardan.com/gallery" },
+        ]}
+      />
+      <GalleryClient />
+    </>
+  );
 }

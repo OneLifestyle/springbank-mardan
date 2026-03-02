@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   ArrowLeft,
   BarChart3,
@@ -14,13 +15,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Meeniyan Real Estate & Lifestyle Guide | South Gippsland Property Insights",
+  title: "Meeniyan Real Estate Guide | Property and Houses for Sale",
   description:
-    "Meeniyan real estate and lifestyle guide for buyers researching village-scale property, regional living, and South Gippsland market context.",
+    "Meeniyan real estate guide for buyers comparing property and houses for sale, with South Gippsland market context and nearby acreage options.",
   keywords: [
     "Meeniyan real estate",
     "Meeniyan property",
     "Meeniyan houses for sale",
+    "acreage for sale meeniyan",
     "Meeniyan lifestyle",
     "Meeniyan living",
     "South Gippsland real estate",
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     canonical: "https://springbankmardan.com/meeniyan",
   },
   openGraph: {
-    title: "Meeniyan Real Estate & Lifestyle Guide",
+    title: "Meeniyan Real Estate Guide | Property and Houses for Sale",
     description:
       "Understand Meeniyan buyer demand, village profile, and real estate research pathways in South Gippsland.",
     url: "https://springbankmardan.com/meeniyan",
@@ -93,6 +95,12 @@ const statCards = [
 export default function MeeniyanPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "Meeniyan", item: "https://springbankmardan.com/meeniyan" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -121,7 +129,7 @@ export default function MeeniyanPage() {
             <div className="max-w-4xl">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">Meeniyan VIC 3956</p>
               <h1 className="font-serif text-4xl leading-tight text-foreground md:text-6xl">
-                Meeniyan real estate and lifestyle guide
+                Meeniyan real estate and village property guide
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Meeniyan is a compact village with a strong food and arts scene, set among the Strzelecki Ranges. It appeals to people who want a quieter township feel while staying connected to the wider{" "}
@@ -132,6 +140,12 @@ export default function MeeniyanPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" asChild>
+                  <Link href="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    View Mardan property for sale
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.realestate.com.au/buy/in-meeniyan,+vic+3956/list-1"
                     target="_blank"
@@ -154,6 +168,14 @@ export default function MeeniyanPage() {
                   </a>
                 </Button>
               </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Buyer intent check: if you are researching Meeniyan property for sale and houses for
+                sale near Meeniyan, compare with nearby acreage options in{" "}
+                <Link href="/" className="text-primary underline-offset-4 hover:underline">
+                  Mardan
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </section>

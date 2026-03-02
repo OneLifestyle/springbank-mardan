@@ -21,10 +21,13 @@ export function HeroSection() {
           30 O'Malleys Rd, Mardan VIC 3953 | South Gippsland
         </p>
         <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-primary-foreground mb-6 leading-tight text-balance">
-          Springbank
+          Acreage for sale in South Gippsland
         </h1>
         <p className="text-primary-foreground/90 text-lg md:text-xl lg:text-2xl font-serif italic mb-8 max-w-3xl mx-auto text-pretty">
-          A Master-Built Mediterranean Inspired Sanctuary Overlooking the Tarwin Valley
+          30 O&apos;Malleys Rd, Mardan VIC 3953. Springbank, a master-built Mediterranean inspired sanctuary overlooking the Tarwin Valley.
+        </p>
+        <p className="text-primary-foreground/90 text-sm md:text-base mb-8 max-w-4xl mx-auto">
+          South Gippsland real estate opportunity: Mardan property for sale, a 5-acre lifestyle property near Leongatha, Meeniyan and Mirboo North.
         </p>
         <p className="text-primary-foreground text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-3">
           $1.5m

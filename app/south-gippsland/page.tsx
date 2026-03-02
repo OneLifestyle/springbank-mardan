@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import {
   ArrowLeft,
   BarChart3,
@@ -14,11 +15,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "South Gippsland Real Estate & Lifestyle Guide | Living in Regional Victoria",
+  title: "South Gippsland Real Estate Guide | Houses and Acreage for Sale",
   description:
     "South Gippsland real estate and lifestyle guide for buyers researching regional Victoria. Explore market context, key townships, census data, and high-intent property search pathways.",
   keywords: [
     "South Gippsland real estate",
+    "acreage for sale south gippsland",
     "South Gippsland lifestyle",
     "South Gippsland living",
     "South Gippsland holiday homes",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     canonical: "https://springbankmardan.com/south-gippsland",
   },
   openGraph: {
-    title: "South Gippsland Real Estate & Lifestyle Guide",
+    title: "South Gippsland Real Estate Guide | Houses and Acreage for Sale",
     description:
       "Research South Gippsland real estate, regional lifestyle drivers, township differences, and trusted data sources before you buy.",
     url: "https://springbankmardan.com/south-gippsland",
@@ -121,6 +123,12 @@ const townshipCards = [
 export default function SouthGippslandPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", item: "https://springbankmardan.com" },
+          { name: "South Gippsland", item: "https://springbankmardan.com/south-gippsland" },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -155,6 +163,12 @@ export default function SouthGippslandPage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Button size="lg" asChild>
+                  <Link href="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    View Mardan property for sale
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
                     href="https://www.realestate.com.au/buy/in-gippsland_south-vic/list-1"
                     target="_blank"
@@ -176,6 +190,29 @@ export default function SouthGippslandPage() {
                 If you are also comparing specific high-amenity acreage options, view{" "}
                 <Link href="/" className="text-primary underline-offset-4 hover:underline">
                   Springbank
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-10">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl rounded-xl border border-border bg-card p-6">
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">
+                South Gippsland houses and acreage for sale: where buyers start
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Most buyers begin with broad search terms like houses for sale South Gippsland, then
+                narrow to town fit and property type. If you are comparing acreage opportunities,
+                review this{" "}
+                <Link href="/" className="text-primary underline-offset-4 hover:underline">
+                  Mardan property for sale
+                </Link>{" "}
+                and a{" "}
+                <Link href="/" className="text-primary underline-offset-4 hover:underline">
+                  5-acre lifestyle listing in South Gippsland
                 </Link>
                 .
               </p>

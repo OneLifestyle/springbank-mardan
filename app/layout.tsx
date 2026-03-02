@@ -18,44 +18,19 @@ const abrilFatface = Abril_Fatface({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://springbankmardan.com"),
-  alternates: {
-    canonical: "https://springbankmardan.com",
-  },
-  title:
-    "Springbank | 5-Acre Mediterranean Sanctuary in Mardan, South Gippsland - Near Leongatha, Mirboo North & Meeniyan",
+  title: "South Gippsland Acreage for Sale | Springbank Mardan",
   description:
-    "Discover Springbank at 30 O'Malleys Rd, Mardan VIC. A master-built Mediterranean sanctuary on 5 acres with sweeping Tarwin Valley views, Robert Boyle-designed gardens, vineyard, and dam. 15 min to Leongatha, Mirboo North and Meeniyan. The ultimate South Gippsland tree change or sea change lifestyle property.",
+    "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
   keywords: [
-    "Springbank Mardan",
-    "30 O'Malleys Road Mardan",
-    "Mardan property for sale",
-    "South Gippsland property",
     "South Gippsland real estate",
-    "Leongatha property for sale",
-    "Leongatha real estate",
-    "Mirboo North property for sale",
-    "Mirboo North real estate",
-    "Meeniyan property for sale",
-    "Meeniyan real estate",
-    "lifestyle property South Gippsland",
-    "tree change Victoria",
-    "tree change South Gippsland",
-    "sea change South Gippsland",
+    "acreage for sale south gippsland",
+    "mardan property for sale",
     "acreage property Gippsland",
-    "Mediterranean home Victoria",
-    "luxury rural property Victoria",
-    "vineyard property for sale",
-    "hobby farm South Gippsland",
-    "Tarwin Valley views",
-    "sustainable living Victoria",
-    "5 acre property Victoria",
-    "Wilson Promontory region",
-    "Gippsland lifestyle property",
   ],
   openGraph: {
-    title: "Springbank | 5-Acre Lifestyle Property in South Gippsland - Near Leongatha",
+    title: "South Gippsland Acreage for Sale | Springbank Mardan",
     description:
-      "Master-built Mediterranean sanctuary on 5 acres in Mardan, 15 min to Leongatha, Mirboo North and Meeniyan. Sweeping Tarwin Valley views, Robert Boyle gardens, vineyard, and dam. The ultimate South Gippsland tree change.",
+      "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
     url: "https://springbankmardan.com",
     siteName: "Springbank Mardan",
     type: "website",
@@ -70,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Springbank | 5-Acre Lifestyle Property Near Leongatha, South Gippsland",
+    title: "South Gippsland Acreage for Sale | Springbank Mardan",
     description:
-      "Mediterranean sanctuary on 5 acres in Mardan. 15 min to Leongatha, Mirboo North and Meeniyan. Tarwin Valley views, vineyard, Robert Boyle gardens.",
+      "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
     images: ["/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg"],
   },
 };
