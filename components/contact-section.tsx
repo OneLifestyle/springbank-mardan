@@ -24,75 +24,8 @@ type ContactFormData = {
   website: string;
 };
 
-type RecaptchaApi = {
-  ready: (callback: () => void) => void;
-  execute: (siteKey: string, options: { action: string }) => Promise<string>;
-};
-
-declare global {
-  interface Window {
-    grecaptcha?: RecaptchaApi;
-  }
-}
-
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-const RECAPTCHA_SCRIPT_ID = "google-recaptcha-v3";
-const RECAPTCHA_ACTION = "contact_form_submit";
-
-function loadRecaptchaScript(siteKey: string): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (typeof window === "undefined") {
-      reject(new Error("Browser environment unavailable."));
-      return;
-    }
-
-    if (window.grecaptcha) {
-      resolve();
-      return;
-    }
-
-    let script = document.getElementById(RECAPTCHA_SCRIPT_ID) as HTMLScriptElement | null;
-
-    if (!script) {
-      script = document.createElement("script");
-      script.id = RECAPTCHA_SCRIPT_ID;
-      script.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`;
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-
-    const onLoad = () => resolve();
-    const onError = () => reject(new Error("Failed to load reCAPTCHA."));
-
-    script.addEventListener("load", onLoad, { once: true });
-    script.addEventListener("error", onError, { once: true });
-  });
-}
-
-async function getRecaptchaToken(siteKey: string): Promise<string> {
-  await loadRecaptchaScript(siteKey);
-
-  if (!window.grecaptcha) {
-    throw new Error("reCAPTCHA not available.");
-  }
-
-  return new Promise((resolve, reject) => {
-    window.grecaptcha?.ready(async () => {
-      try {
-        const token = await window.grecaptcha?.execute(siteKey, { action: RECAPTCHA_ACTION });
-        if (!token) {
-          reject(new Error("reCAPTCHA token was empty."));
-          return;
-        }
-
-        resolve(token);
-      } catch {
-        reject(new Error("reCAPTCHA verification failed."));
-      }
-    });
-  });
-}
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
 export function ContactSection() {
   const router = useRouter();
@@ -114,24 +47,41 @@ export function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      if (!RECAPTCHA_SITE_KEY) {
-        throw new Error("Form verification is not configured. Please contact Dean directly.");
+      if (!WEB3FORMS_ACCESS_KEY) {
+        throw new Error("Web3Forms is not configured. Please contact Dean directly.");
       }
 
-      const recaptchaToken = await getRecaptchaToken(RECAPTCHA_SITE_KEY);
+      if (formData.website.trim()) {
+        throw new Error("Unable to submit enquiry right now. Please call or email directly.");
+      }
 
-      const response = await fetch("/api/contact", {
+      const payload = new FormData();
+      payload.append("access_key", WEB3FORMS_ACCESS_KEY);
+      payload.append("from_name", "Springbank Mardan Website");
+      payload.append(
+        "subject",
+        `New Enquiry: ${formData.inquiryType || "General"} - Springbank, 30 O'Malleys Rd Mardan`
+      );
+      payload.append("name", formData.fullName);
+      payload.append("phone", formData.phone);
+      payload.append("email", formData.email);
+      payload.append("inquiry_type", formData.inquiryType);
+      payload.append("message", formData.message || "No additional message provided.");
+      payload.append("website", "");
+      payload.append("botcheck", "");
+
+      const response = await fetch(WEB3FORMS_ENDPOINT, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, recaptchaToken }),
+        body: payload,
       });
 
-      if (!response.ok) {
-        const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+      const responseBody = (await response.json().catch(() => null)) as
+        | { success?: boolean; message?: string }
+        | null;
+
+      if (!response.ok || !responseBody?.success) {
         throw new Error(
-          payload?.error ||
+          responseBody?.message ||
             "There was an error submitting your enquiry. Please try again or contact us directly."
         );
       }
@@ -242,7 +192,13 @@ export function ContactSection() {
           <div className="border border-border bg-card p-6 md:p-10">
             <h3 className="mb-6 font-serif text-2xl text-foreground">Send an Enquiry</h3>
 
-            <form onSubmit={handleSubmit} className="relative space-y-6">
+            <form
+              action={WEB3FORMS_ENDPOINT}
+              method="POST"
+              onSubmit={handleSubmit}
+              className="relative space-y-6"
+            >
+              <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY ?? ""} />
               {error && (
                 <div className="border border-destructive/20 bg-destructive/10 p-4 text-sm text-destructive">
                   {error}
@@ -341,25 +297,7 @@ export function ContactSection() {
                 By submitting this form, you agree to be contacted regarding this property.
               </p>
               <p className="text-center text-[11px] text-muted-foreground">
-                This site is protected by reCAPTCHA and the Google{" "}
-                <a
-                  href="https://policies.google.com/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-foreground"
-                >
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a
-                  href="https://policies.google.com/terms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline underline-offset-4 hover:text-foreground"
-                >
-                  Terms of Service
-                </a>{" "}
-                apply.
+                Form delivery powered by Web3Forms.
               </p>
             </form>
           </div>
