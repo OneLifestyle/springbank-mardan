@@ -18,15 +18,30 @@ export type BlogSection = {
   image?: BlogImage;
 };
 
+export type BlogAuthor = {
+  name: string;
+  role?: string;
+};
+
+export type BlogPublisher = {
+  name: string;
+  url?: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
+  seoTitle?: string;
+  seoDescription?: string;
   publishedAt: string;
   updatedAt: string;
   readingTimeMinutes: number;
   categories: string[];
   tags: string[];
+  author?: BlogAuthor;
+  publisher?: BlogPublisher;
+  sourceUrl?: string;
   heroImage: BlogImage;
   intro: string[];
   sections: BlogSection[];
@@ -1359,6 +1374,691 @@ const posts: BlogPost[] = [
     ctaTitle: "Book your inspection window",
     ctaBody:
       "To inspect Springbank at 30 O'Malleys Rd, Mardan, contact Dean Jones at One Lifestyle Real Estate on 0431 639 749 or email dean@onelifestyle.com.au.",
+  },
+  {
+    slug: "south-gippsland-weekender-holiday-home-guide-what-buyers-should-check",
+    title:
+      "South Gippsland Weekender and Holiday Home Guide: What Buyers Should Check Before They Buy",
+    excerpt:
+      "A practical guide for buyers researching a South Gippsland holiday home or country weekender, with focus on access, maintenance, land usability, and long-stay flexibility.",
+    publishedAt: "2026-03-12",
+    updatedAt: "2026-03-12",
+    readingTimeMinutes: 8,
+    categories: ["Buyer Guide", "Holiday Home", "South Gippsland"],
+    tags: [
+      "south gippsland holiday home",
+      "south gippsland weekender",
+      "country weekender victoria",
+      "holiday home south gippsland",
+      "south gippsland lifestyle property",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+      alt: "Wilsons Promontory coast illustrating South Gippsland weekender appeal",
+      caption:
+        "Holiday-home demand in South Gippsland is often driven by the region's mix of coast, hinterland, and easy repeat-visit appeal.",
+    },
+    intro: [
+      "Many buyers begin a South Gippsland holiday home search with a feeling rather than a framework. They know they want space, scenery, and an easier regional rhythm, but they have not yet tested what kind of property will actually be enjoyable to own.",
+      "The strongest South Gippsland weekender purchases are not just visually appealing. They are easy to reach, manageable between visits, and flexible enough to support longer stays or future full-time use if circumstances change.",
+    ],
+    sections: [
+      {
+        heading: "Why South Gippsland keeps attracting weekender buyers",
+        paragraphs: [
+          "South Gippsland sits in a useful middle ground for Melbourne-based buyers. It feels materially different from the city, but it is still reachable enough for repeat use across weekends, public holidays, and longer seasonal breaks.",
+          "That combination of rural outlook, coastal access, and village-scale destinations makes the region attractive to buyers who want more than a standard suburban second home.",
+          "The appeal is strongest when a property can deliver both retreat value and practical ownership discipline.",
+        ],
+        image: {
+          src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+          alt: "South Gippsland rural landscape with rolling green outlook",
+          caption:
+            "South Gippsland appeals because it combines landscape depth with realistic repeat-visit access.",
+        },
+      },
+      {
+        heading: "A scenic retreat is not always a workable second home",
+        paragraphs: [
+          "A holiday property that photographs well can still be awkward in practice. Buyers should distinguish between a place that feels beautiful for one afternoon and a place that supports repeat use without friction.",
+          "Layout, arrival ease, storage, heating and cooling, and simple lock-up processes often matter more than decorative charm once ownership begins.",
+          "This is especially true for buyers who expect to host family or work remotely for part of the time.",
+        ],
+      },
+      {
+        heading: "Access from Melbourne changes real-world usage",
+        paragraphs: [
+          "The value of a South Gippsland weekender depends heavily on how often you will genuinely use it. Travel time, route quality, and ease of arrival influence that far more than buyers admit during the first search phase.",
+          "A property that looks ideal on paper can become underused if every trip feels operationally heavy. The best holiday bases reduce the mental load of leaving, arriving, and settling in.",
+          "That is why practical regional positioning is a buyer issue, not just a logistics issue.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+          alt: "Terrace and valley outlook at a South Gippsland lifestyle property",
+          caption:
+            "A strong weekender works best when the quality of arrival matches the quality of the setting.",
+        },
+      },
+      {
+        heading: "Maintenance burden is where many holiday-home decisions turn",
+        paragraphs: [
+          "Gardens, water systems, driveways, fencing, and larger land parcels create a different ownership profile from a compact lock-and-leave property. Buyers should model what the property looks like after two, four, and eight weeks without attendance.",
+          "This does not mean acreage is a poor weekender choice. It means the land has to be usable, well-structured, and proportionate to the owner's time and appetite.",
+          "Established grounds can be an asset if they are coherent and well planned. They become a liability only when ownership burden outruns lifestyle value.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+          alt: "Lifestyle acreage with dam, lawn, and structured landscape",
+          caption:
+            "Landscape quality adds major value when it remains practical to maintain between visits.",
+        },
+      },
+      {
+        heading: "Buy for now, but leave room for future full-time use",
+        paragraphs: [
+          "Many premium South Gippsland weekender purchases eventually become something more: a semi-permanent base, a pre-retirement move, or a genuine full-time relocation.",
+          "That is why flexible accommodation, ancillary space, guest capacity, and routine town access should be considered from the start.",
+          "Properties that can support both short-stay enjoyment and long-stay liveability usually hold stronger long-term appeal.",
+        ],
+      },
+    ],
+    featureListTitle: "Weekender buyer checklist",
+    featureList: [
+      "Test whether travel time supports repeat use, not just one-off enthusiasm",
+      "Check how the property performs when left unattended between visits",
+      "Assess whether the land is usable and proportionate to your lifestyle",
+      "Prioritise heating, cooling, storage, and lock-up practicality",
+      "Consider guest capacity and future long-stay flexibility",
+      "Compare scenic appeal against actual ownership workload",
+    ],
+    galleryTitle: "Weekender and holiday-home reference images",
+    gallery: [
+      {
+        src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+        alt: "Wilsons Promontory coastline and regional tourism appeal",
+      },
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "South Gippsland hinterland outlook",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+        alt: "Terrace and entertaining outlook at Springbank",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Grounds and water feature at Springbank",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Darby Beach Wilson's Promontory",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Darby_Beach_Wilson%27s_Promontory.jpg",
+        author: "J27shaw",
+        licenseName: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+    ],
+    ctaTitle: "Compare this guide with an active South Gippsland property",
+    ctaBody:
+      "If you want a property that can function as both a premium country weekender and a realistic long-term regional base, compare these criteria with Springbank at 30 O'Malleys Rd, Mardan.",
+  },
+  {
+    slug: "acreage-for-sale-near-leongatha-why-service-access-changes-the-buying-decision",
+    title:
+      "Acreage for Sale Near Leongatha: Why Service Access Changes the Buying Decision",
+    excerpt:
+      "A buyer-focused guide to acreage for sale near Leongatha, explaining why service access, travel time, and regional positioning matter as much as the block itself.",
+    publishedAt: "2026-03-11",
+    updatedAt: "2026-03-11",
+    readingTimeMinutes: 8,
+    categories: ["Buyer Guide", "Acreage", "Leongatha"],
+    tags: [
+      "acreage for sale leongatha",
+      "lifestyle property near leongatha",
+      "south gippsland acreage",
+      "leongatha real estate acreage",
+      "property near leongatha",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+      alt: "Leongatha town-centre streetscape",
+      caption:
+        "Leongatha often acts as the practical service anchor for buyers searching acreage across the surrounding district.",
+    },
+    intro: [
+      "Buyers searching acreage for sale near Leongatha are usually not searching for a postcode alone. They are searching for land and privacy that still connect cleanly to schools, healthcare, retail, and everyday services.",
+      "That makes Leongatha less of a destination keyword and more of a decision-making anchor. The strongest acreage purchases in the district often sit outside the township itself, but still benefit from reliable access to what Leongatha provides.",
+    ],
+    sections: [
+      {
+        heading: "Why Leongatha becomes the reference point",
+        paragraphs: [
+          "In South Gippsland, Leongatha often serves as the benchmark for day-to-day practicality. Buyers use it to judge whether a broader regional property search can support ordinary life, not just lifestyle aspiration.",
+          "This makes sense because the town concentrates schools, supermarkets, medical services, hospitality, and trade access in a way smaller settlements do not.",
+          "Once Leongatha is understood as a functional anchor, surrounding acreage locations become easier to compare rationally.",
+        ],
+      },
+      {
+        heading: "What 'near Leongatha' should mean in real buying terms",
+        paragraphs: [
+          "The phrase only becomes useful when translated into real travel behaviour. Buyers should test weekday and weekend travel times, not just read a distance figure on a map.",
+          "A property can be technically close but feel disconnected if the route, road quality, or access pattern is inconvenient. Another property can sit slightly farther out yet perform better because the trip is simpler and more predictable.",
+          "This is why acreage buyers should think in terms of service reach rather than suburb labels.",
+        ],
+        image: {
+          src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+          alt: "South Gippsland road-and-landscape context near service towns",
+          caption:
+            "Regional access is best judged by lived travel patterns, not only map distance.",
+        },
+      },
+      {
+        heading: "Service access matters more than buyers initially think",
+        paragraphs: [
+          "For permanent movers, weekender owners, and multigenerational households alike, service depth affects ownership quality. Medical appointments, school runs, groceries, contractors, and routine errands all compound over time.",
+          "Properties that feel wonderfully private can become operationally frustrating when these basics are awkward. In contrast, a well-positioned holding often feels easier to own from the first month onward.",
+          "This is one reason Leongatha-led searches are often stronger than broader generic acreage searches.",
+        ],
+      },
+      {
+        heading: "Why the surrounding districts can outperform the township itself",
+        paragraphs: [
+          "Many buyers do not need to live in Leongatha to benefit from Leongatha. They need efficient connection to it, combined with better landscape quality, greater privacy, or stronger lifestyle design than a town-edge holding can offer.",
+          "Locations such as Mardan can perform well in this context because they sit within practical reach of multiple South Gippsland centres rather than depending on only one.",
+          "That broader regional position can materially improve both liveability and resale appeal.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-aerial-grounds-road.jpg",
+          alt: "Aerial view of Springbank grounds and regional road connection",
+          caption:
+            "Regional positioning becomes more valuable when it balances access, privacy, and usable land.",
+        },
+      },
+      {
+        heading: "Compare acreage on function, not just romance",
+        paragraphs: [
+          "Acreage purchases are often emotionally led at first. That is natural, but the stronger outcomes come when buyers layer emotion with logistics, building quality, ancillary flexibility, and land usability.",
+          "The question is not only whether a property feels special. It is whether it can keep feeling practical after twelve months of ownership.",
+          "That is the standard a serious near-Leongatha acreage search should be using.",
+        ],
+      },
+    ],
+    featureListTitle: "What to compare in acreage near Leongatha",
+    featureList: [
+      "Use travel-time testing instead of map distance alone",
+      "Benchmark access to schools, healthcare, retail, and trades",
+      "Assess whether privacy comes at the expense of routine convenience",
+      "Compare land usability alongside built quality",
+      "Look for flexibility across guest space, work space, and storage",
+      "Favour regional positioning that supports more than one township",
+    ],
+    galleryTitle: "Leongatha-area acreage reference images",
+    gallery: [
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Leongatha main-street context",
+      },
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "Regional South Gippsland landscape",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-aerial-grounds-road.jpg",
+        alt: "Springbank aerial and site setting",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-entrance.jpg",
+        alt: "Springbank entry and built-form quality",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+    ],
+    ctaTitle: "Compare access with a current Mardan acreage listing",
+    ctaBody:
+      "If you are searching acreage for sale near Leongatha, compare these service-access criteria with Springbank at 30 O'Malleys Rd, Mardan to see how regional positioning affects day-to-day ownership.",
+  },
+  {
+    slug: "prom-country-property-guide-buying-acreage-weekender-or-holiday-base",
+    title:
+      "Prom Country Property Guide: Buying Acreage, a Weekender, or a Holiday Base in South Gippsland",
+    excerpt:
+      "A practical Prom Country property guide for buyers comparing acreage, holiday-home, and inland lifestyle options across South Gippsland before they inspect.",
+    publishedAt: "2026-03-10",
+    updatedAt: "2026-03-10",
+    readingTimeMinutes: 8,
+    categories: ["Regional Guide", "Prom Country", "South Gippsland"],
+    tags: [
+      "prom country real estate",
+      "prom country acreage for sale",
+      "holiday home prom country",
+      "property near wilsons promontory",
+      "south gippsland weekender",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+      alt: "Darby Beach at Wilsons Promontory representing Prom Country appeal",
+      caption:
+        "Prom Country search intent often begins with destination appeal, but the best buying decisions come from matching that appeal to practical ownership goals.",
+    },
+    intro: [
+      "Prom Country is one of those regional search terms that carries both emotional and practical weight. Buyers use it when they want nature access, weekend appeal, and a recognisable South Gippsland identity, even if they have not yet settled on a precise township.",
+      "That makes it a useful search phrase, but not yet a complete property strategy. The strongest Prom Country purchases come from deciding whether you want a holiday base, a flexible weekender, or a serious long-stay property with coastal reach.",
+    ],
+    sections: [
+      {
+        heading: "What buyers usually mean by Prom Country",
+        paragraphs: [
+          "In practice, Prom Country is less a strict boundary and more a buying frame. It captures a broad mix of inland villages, tourism routes, and properties that benefit from Wilsons Promontory association without necessarily sitting on the immediate edge of it.",
+          "This is useful from an SEO perspective because it mirrors how people actually search. It is also useful for buyers because it allows comparison across multiple micro-locations.",
+          "The key is to move from destination language into ownership logic before committing.",
+        ],
+      },
+      {
+        heading: "Holiday-home appeal and full-time practicality are not the same thing",
+        paragraphs: [
+          "A property that performs well as a holiday base may not be ideal for ordinary week-to-week living. Equally, a strong permanent-living property may not maximise the short-stay tourism romance some buyers first imagine.",
+          "The right choice depends on whether your priority is arrival experience, hosting flexibility, service access, low-maintenance ownership, or future relocation potential.",
+          "Prom Country buyers usually get better outcomes when they identify that priority early.",
+        ],
+        image: {
+          src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+          alt: "South Gippsland inland landscape near the broader Prom Country region",
+          caption:
+            "Inland South Gippsland often gives buyers stronger liveability while preserving access to Prom Country destinations.",
+        },
+      },
+      {
+        heading: "Why inland options can outperform purely tourism-led addresses",
+        paragraphs: [
+          "A tourism-facing address can be exciting at first, but it may create tradeoffs around congestion, service reach, holding costs, or seasonal rhythm. Some buyers discover too late that they wanted broader regional function rather than pure destination proximity.",
+          "An inland lifestyle property can offer privacy, land, and year-round usability while still supporting regular Wilsons Promontory day trips and broader South Gippsland travel.",
+          "This is especially relevant for buyers who expect the property to evolve with their lifestyle over time.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+          alt: "Terrace and valley outlook in an inland South Gippsland setting",
+          caption:
+            "The strongest inland properties balance retreat value with broader regional usability.",
+        },
+      },
+      {
+        heading: "Prom Country searchers should define the ownership model early",
+        paragraphs: [
+          "Are you buying for occasional use, frequent weekends, semi-retirement, or full-time regional living? Until that question is answered, property comparison stays too vague.",
+          "The ownership model affects how you judge access, storage, maintenance, land size, guest accommodation, and supporting town infrastructure.",
+          "A clear model helps you inspect with discipline rather than reacting only to atmosphere.",
+        ],
+      },
+      {
+        heading: "Use Prom Country as an entry point, not the final filter",
+        paragraphs: [
+          "Prom Country is a powerful way to discover the region, but better buying decisions usually come from narrowing into practical fit, not staying at destination level.",
+          "That means comparing inland lifestyle holdings, village-based homes, and flexible regional bases side by side.",
+          "Once that happens, the buyer is no longer just chasing scenery. They are choosing a property that can actually work.",
+        ],
+      },
+    ],
+    featureListTitle: "Prom Country buyer checklist",
+    featureList: [
+      "Decide whether you want a holiday base, weekender, or long-stay property",
+      "Compare inland practicality against tourism-led address appeal",
+      "Test how often you would realistically use the property",
+      "Assess service access alongside destination branding",
+      "Check maintenance load relative to ownership pattern",
+      "Look for properties that remain flexible as your lifestyle changes",
+    ],
+    galleryTitle: "Prom Country and South Gippsland reference images",
+    gallery: [
+      {
+        src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+        alt: "Darby Beach and Wilsons Promontory destination context",
+      },
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "Inland South Gippsland landscape",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+        alt: "Inland lifestyle property entertaining outlook",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Structured grounds and outlook in South Gippsland",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Darby Beach Wilson's Promontory",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Darby_Beach_Wilson%27s_Promontory.jpg",
+        author: "J27shaw",
+        licenseName: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+    ],
+    ctaTitle: "Compare Prom Country intent with a flexible inland listing",
+    ctaBody:
+      "If you are searching Prom Country property but want stronger year-round flexibility, compare Springbank in Mardan as an inland South Gippsland base with broad regional reach.",
+  },
+  {
+    slug: "south-gippsland-permanent-move-guide-schools-healthcare-shops-and-daily-life",
+    title:
+      "South Gippsland Permanent Move Guide: Schools, Healthcare, Shops, and Daily Life for Acreage Buyers",
+    excerpt:
+      "A permanent-move guide for buyers considering living in South Gippsland, with focus on schools, healthcare, service towns, connectivity, and the realities of acreage ownership.",
+    publishedAt: "2026-03-09",
+    updatedAt: "2026-03-09",
+    readingTimeMinutes: 9,
+    categories: ["Regional Guide", "Tree Change", "South Gippsland"],
+    tags: [
+      "move to south gippsland",
+      "living in south gippsland",
+      "south gippsland lifestyle property",
+      "tree change victoria south gippsland",
+      "south gippsland acreage living",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+      alt: "South Gippsland rural landscape and long-stay living context",
+      caption:
+        "The strongest permanent-move decisions in South Gippsland come from testing daily-life fit, not just regional appeal.",
+    },
+    intro: [
+      "Buyers planning a permanent move to South Gippsland need a different framework from buyers chasing a holiday property. Landscape appeal still matters, but ordinary life matters more.",
+      "Schools, healthcare, groceries, contractors, travel patterns, connectivity, and land maintenance all shape whether a property remains enjoyable after the first excitement of the move fades. That is why permanent-move buyers should assess the region through daily function rather than broad lifestyle branding alone.",
+    ],
+    sections: [
+      {
+        heading: "Start with the routine, not the dream version",
+        paragraphs: [
+          "A South Gippsland tree change often begins with a picture of open space, slower pace, and a more grounded way of living. That aspiration is legitimate, but permanent ownership is decided by weekday routine as much as weekend atmosphere.",
+          "The strongest buyers test how the region will work on school mornings, appointment days, grocery runs, and maintenance-heavy weeks.",
+          "When that routine holds together, the lifestyle upside becomes much more durable.",
+        ],
+      },
+      {
+        heading: "Schools, healthcare, and retail shape the town hierarchy",
+        paragraphs: [
+          "Permanent movers should begin by understanding which town will anchor daily life. Leongatha often functions as the primary service centre, while other towns may better suit character, scale, or cultural preference.",
+          "The right decision usually comes from matching household needs to service depth, not from chasing the most picturesque village alone.",
+          "That is especially true for families, older buyers, and anyone who expects regular appointments or specialist services.",
+        ],
+        image: {
+          src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+          alt: "Leongatha service-town streetscape",
+          caption:
+            "For many permanent movers, Leongatha provides the service depth that stabilises regional living.",
+        },
+      },
+      {
+        heading: "Lifestyle fit still matters, but it must be specific",
+        paragraphs: [
+          "Village identity, food culture, walkability, community feel, and landscape character all matter. What buyers need to avoid is treating those qualities as substitutes for practical function.",
+          "Meeniyan, Mirboo North, and other townships may each be compelling, but they serve different day-to-day patterns.",
+          "The better question is not which town is nicest. It is which town best supports the life you will actually lead there.",
+        ],
+        image: {
+          src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+          alt: "Historic streetscape image associated with Meeniyan",
+          caption:
+            "Village character adds value when it fits the buyer's real long-term routine.",
+        },
+      },
+      {
+        heading: "Acreage ownership changes the cadence of daily life",
+        paragraphs: [
+          "Living on acreage introduces a different rhythm from a conventional residential block. Water, mowing, access tracks, gardens, outbuildings, drainage, and external maintenance all become part of the normal ownership cycle.",
+          "For the right buyer, this is part of the value proposition. The point is to assess it honestly before purchase rather than treat it as a vague lifestyle extra.",
+          "The best regional holdings feel expansive without becoming operationally exhausting.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+          alt: "Established gardens on a South Gippsland acreage property",
+          caption:
+            "Mature landscape assets add quality, but only when ownership load remains proportionate.",
+        },
+      },
+      {
+        heading: "Connectivity, trades, and simple reliability matter more over time",
+        paragraphs: [
+          "Phone coverage, internet stability, local contractors, and ease of access are not glamorous comparison points, but they materially affect whether a permanent move feels sustainable.",
+          "Many buyers only notice these factors once they begin regular use. Permanent movers should investigate them before emotional commitment hardens.",
+          "This is where disciplined regional due diligence can outperform intuitive buying.",
+        ],
+        image: {
+          src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+          alt: "Mirboo North town-centre context in the hills",
+          caption:
+            "Town choice affects the quality of everyday life just as much as the property itself.",
+        },
+      },
+    ],
+    featureListTitle: "Permanent-move due-diligence checklist",
+    featureList: [
+      "Choose your service anchor before choosing your exact property",
+      "Test weekday errands and appointment routes in real conditions",
+      "Assess school, health, retail, and contractor access honestly",
+      "Model the actual workload of owning land, gardens, and outbuildings",
+      "Check connectivity and reliability, not just atmosphere",
+      "Prefer properties that support long-term routine as well as lifestyle aspiration",
+    ],
+    galleryTitle: "Permanent-move reference images",
+    gallery: [
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "South Gippsland regional setting",
+      },
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Leongatha service-centre context",
+      },
+      {
+        src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+        alt: "Meeniyan village-character reference",
+      },
+      {
+        src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+        alt: "Mirboo North township context",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+      {
+        label: "Meeniyan National Bank of Australasia, Old Gippstown",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Meeniyan_National_Bank_of_Australasia,_Old_Gippstown.JPG",
+        author: "Gippslander2012",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+      {
+        label: "Mirboo North Town Hall - March 2022",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Mirboo_North_Town_Hall_%E2%80%94_March_2022.jpg",
+        author: "Alison Newman",
+        licenseName: "CC0 1.0",
+        licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      },
+    ],
+    ctaTitle: "Apply this checklist to a live property",
+    ctaBody:
+      "If you are considering a permanent move to South Gippsland, use this framework against Springbank at 30 O'Malleys Rd, Mardan to test whether the property supports real day-to-day regional living.",
+  },
+  {
+    slug: "mardan-property-for-sale-why-springbank-works-as-a-full-time-home-or-premium-country-weekender",
+    title:
+      "Mardan Property for Sale: Why Springbank Works as a Full-Time Home or Premium Country Weekender",
+    excerpt:
+      "Springbank at 30 O'Malleys Rd, Mardan is a South Gippsland lifestyle property for sale with the flexibility to suit both full-time regional living and premium country-weekender buyers.",
+    publishedAt: "2026-03-08",
+    updatedAt: "2026-03-08",
+    readingTimeMinutes: 9,
+    categories: ["Property Spotlight", "Springbank", "South Gippsland"],
+    tags: [
+      "mardan property for sale",
+      "south gippsland lifestyle property for sale",
+      "acreage for sale south gippsland",
+      "country weekender victoria",
+      "springbank mardan",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+      alt: "Springbank residence with mature landscaping and valley setting",
+      caption:
+        "Springbank combines architectural presence, established landscape design, and a level of flexibility that suits more than one buyer profile.",
+    },
+    intro: [
+      "Some lifestyle properties are clearly holiday homes. Others are clearly permanent residences. Springbank at 30 O'Malleys Rd, Mardan is more interesting because it can credibly serve both roles.",
+      "For buyers comparing South Gippsland lifestyle property for sale, that dual fit matters. It means the property offers not only aesthetic appeal, but also a more resilient ownership proposition for changing family patterns, longer stays, and future life-stage shifts.",
+    ],
+    sections: [
+      {
+        heading: "Two buyer profiles fit Springbank particularly well",
+        paragraphs: [
+          "The first is the full-time regional mover who wants a serious home with architectural identity, practical comfort, and enough flexibility for guests, work, and longer-term living. The second is the premium country-weekender buyer who wants retreat value without feeling like the property will be underutilised or operationally awkward.",
+          "Springbank works because it does not force a compromise between those positions. It feels complete enough for daily life and distinctive enough for escape value.",
+          "That makes it rarer than many acreage listings that only perform strongly in one direction.",
+        ],
+      },
+      {
+        heading: "Why it works as a full-time residence",
+        paragraphs: [
+          "The main residence has the internal quality and practical planning expected of a serious long-term home. Rare Peppermint Gum flooring, generous ceiling heights, a substantial renovated kitchen, and a coherent living arrangement all support everyday use rather than occasional occupation.",
+          "Comfort systems, passive design thinking, and the relationship between indoor spaces and the surrounding grounds also strengthen the full-time living proposition.",
+          "For permanent movers, this means the property reads as a true home first, not just a lifestyle shell.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+          alt: "Springbank kitchen and main living quality",
+          caption:
+            "The main residence has the planning and material quality needed for long-term daily life.",
+        },
+      },
+      {
+        heading: "Why it also works as a premium country weekender",
+        paragraphs: [
+          "A strong weekender needs more than good looks. It needs a sense of arrival, manageable ownership, guest appeal, and enough comfort to make repeated stays feel rewarding.",
+          "Springbank's valley outlooks, entertaining zones, mature gardens, and broader South Gippsland position make it highly effective in that role. It feels special on arrival, but it is not dependent on novelty alone.",
+          "That matters for buyers who want a property they can keep enjoying over many years rather than outgrow quickly.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+          alt: "Outdoor terrace and valley views at Springbank",
+          caption:
+            "Arrival quality and landscape setting make Springbank compelling as a high-end regional retreat.",
+        },
+      },
+      {
+        heading: "Lower-level flexibility broadens the ownership model",
+        paragraphs: [
+          "One of the most commercially important parts of Springbank is the lower level. With bedroom capacity, spa bathroom, and kitchenette facilities, it materially expands how the property can be used.",
+          "That flexibility supports guest stays, multigenerational visits, semi-separated living, and longer occupancy patterns without reducing privacy in the main residence.",
+          "For many buyers, this is where the property's versatility stops being abstract and becomes tangible.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-034.jpg",
+          alt: "Lower-level multipurpose area with kitchenette and bed zone",
+          caption:
+            "The lower level adds practical flexibility for both full-time living and visitor accommodation.",
+        },
+      },
+      {
+        heading: "Studio, grounds, and regional positioning add long-term resilience",
+        paragraphs: [
+          "The separate studio-style building, double garage integration, Robert Boyle designed gardens, vineyard, orchard plantings, and walking track deepen the lifestyle offering far beyond a basic rural block.",
+          "Equally important is location. Mardan places the property within reach of Leongatha, Meeniyan, Mirboo North, and wider South Gippsland day-trip patterns, including Prom Country access.",
+          "That combination of physical flexibility and regional positioning is why Springbank can appeal to more than one serious buyer profile at once.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+          alt: "Springbank main residence and ancillary studio building",
+          caption:
+            "The ancillary building and grounds expand how the property can support different ownership patterns.",
+        },
+      },
+    ],
+    featureListTitle: "Why Springbank suits more than one buyer type",
+    featureList: [
+      "Main residence quality strong enough for full-time regional living",
+      "Arrival appeal and landscape depth suited to premium weekender use",
+      "Flexible lower level for guests, multigenerational use, or longer stays",
+      "Studio and garage infrastructure that broadens practical use",
+      "Established Robert Boyle designed gardens and structured outdoor zones",
+      "Regional position with practical access to multiple South Gippsland centres",
+    ],
+    galleryTitle: "Springbank flexibility and lifestyle gallery",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+        alt: "Springbank hero view with residence and grounds",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+        alt: "Main kitchen and core living quality at Springbank",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-034.jpg",
+        alt: "Lower-level multipurpose space with kitchenette and bed area",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Ancillary studio and garage structure at Springbank",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+        alt: "Robert Boyle designed gardens and landscape structure",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Dam, deck, and open lawns at Springbank",
+      },
+    ],
+    ctaTitle: "Inspect Springbank as either a home or retreat",
+    ctaBody:
+      "If you are comparing South Gippsland lifestyle property for sale for either a permanent move or a premium country-weekender purchase, arrange an inspection of Springbank at 30 O'Malleys Rd, Mardan.",
   },
 ];
 

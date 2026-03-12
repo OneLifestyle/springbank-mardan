@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { LISTING_DETAILS, OPEN_HOME_EVENT, getOpenHomeEventJsonLd } from "@/lib/site-schema";
 
 export const metadata: Metadata = {
   title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
     description:
-      "Inspect Springbank on Saturday 7 March 2026 from 12pm to 1pm during the Labour Day long weekend.",
+      `Inspect Springbank on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime} during the Labour Day long weekend.`,
     url: "https://springbankmardan.com/open-home",
     siteName: "Springbank Mardan",
     type: "website",
@@ -28,37 +29,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Event",
-  name: "Open Home - Springbank Mediterranean Sanctuary",
-  startDate: "2026-03-07T12:00:00+11:00",
-  endDate: "2026-03-07T13:00:00+11:00",
-  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-  eventStatus: "https://schema.org/EventScheduled",
-  location: {
-    "@type": "Place",
-    name: "Springbank",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "30 O'Malleys Rd",
-      addressLocality: "Mardan",
-      addressRegion: "VIC",
-      postalCode: "3953",
-      addressCountry: "AU",
-    },
-  },
-  organizer: {
-    "@type": "RealEstateAgent",
-    name: "One Lifestyle Real Estate",
-    url: "https://onelifestylerealestate.com.au",
-  },
-  image: ["https://springbankmardan.com/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg"],
-  url: "https://springbankmardan.com/open-home",
-  description:
-    "Open Home at Springbank, 30 O'Malleys Rd Mardan VIC 3953. Saturday 7 March 2026, 12pm to 1pm. Labour Day long-weekend inspection.",
 };
 
 const expectations = [
@@ -100,6 +70,8 @@ const galleryImages = [
 ];
 
 export default function OpenHomePage() {
+  const openHomeEventJsonLd = getOpenHomeEventJsonLd();
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -108,7 +80,10 @@ export default function OpenHomePage() {
           { name: "Open Home", item: "https://springbankmardan.com/open-home" },
         ]}
       />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(openHomeEventJsonLd) }}
+      />
       <main className="min-h-screen bg-background">
         <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
           <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -119,7 +94,7 @@ export default function OpenHomePage() {
               <ArrowLeft className="h-4 w-4" />
               Back to main listing
             </Link>
-            <p className="text-sm text-muted-foreground">Open Home Saturday 7 March, 12pm to 1pm</p>
+            <p className="text-sm text-muted-foreground">Open Home {OPEN_HOME_EVENT.teaserTime}</p>
           </div>
         </header>
 
@@ -142,15 +117,15 @@ export default function OpenHomePage() {
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 <div className="rounded-lg border border-border bg-card p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Date</p>
-                  <p className="mt-2 text-sm text-foreground">Saturday 7 March 2026</p>
+                  <p className="mt-2 text-sm text-foreground">{OPEN_HOME_EVENT.displayDate}</p>
                 </div>
                 <div className="rounded-lg border border-border bg-card p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Time</p>
-                  <p className="mt-2 text-sm text-foreground">12:00pm to 1:00pm</p>
+                  <p className="mt-2 text-sm text-foreground">{OPEN_HOME_EVENT.displayTime}</p>
                 </div>
                 <div className="rounded-lg border border-border bg-card p-4">
                   <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Location</p>
-                  <p className="mt-2 text-sm text-foreground">30 O&apos;Malleys Rd, Mardan VIC 3953</p>
+                  <p className="mt-2 text-sm text-foreground">{LISTING_DETAILS.addressLine}</p>
                 </div>
               </div>
 
@@ -166,7 +141,7 @@ export default function OpenHomePage() {
                 </Button>
                 <Button size="lg" variant="outline" asChild className="bg-transparent">
                   <a
-                    href="https://www.facebook.com/events/951991930598945/"
+                    href={OPEN_HOME_EVENT.facebookEventUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"

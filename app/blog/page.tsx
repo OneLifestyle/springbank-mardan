@@ -9,6 +9,7 @@ import {
   getAllTags,
   toFacetSlug,
 } from "@/lib/blog";
+import { DEFAULT_BLOG_DESCRIPTION, BLOG_NAME, getBlogCollectionPageJsonLd } from "@/lib/site-schema";
 
 type BlogIndexProps = {
   searchParams?: Promise<{
@@ -25,8 +26,7 @@ export async function generateMetadata({ searchParams }: BlogIndexProps): Promis
 
   return {
     title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
-    description:
-      "Buyer-focused South Gippsland real estate blog with guides on acreage for sale, township comparisons, and lifestyle-property inspection strategy.",
+    description: DEFAULT_BLOG_DESCRIPTION,
     alternates: {
       canonical: "https://springbankmardan.com/blog",
     },
@@ -89,6 +89,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
   const categories = getAllCategories();
   const tags = getAllTags();
   const hasFilter = Boolean(activeCategory || activeTag);
+  const collectionPageJsonLd = getBlogCollectionPageJsonLd();
 
   function buildBlogHref(page: number): string {
     const query = new URLSearchParams();
@@ -110,6 +111,12 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
           { name: "Blog", item: "https://springbankmardan.com/blog" },
         ]}
       />
+      {!hasFilter && currentPage === 1 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
+        />
+      )}
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <header className="max-w-4xl">
           <Link
@@ -120,7 +127,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
             Back to main listing
           </Link>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-            Springbank Journal
+            {BLOG_NAME}
           </p>
           <h1 className="mt-3 font-serif text-4xl leading-tight text-foreground md:text-5xl">
             South Gippsland property and lifestyle articles

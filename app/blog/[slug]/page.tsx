@@ -6,6 +6,7 @@ import { ArrowLeft, CalendarDays, Clock3, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { getAllBlogPosts, getBlogPostBySlug, toFacetSlug } from "@/lib/blog";
+import { getBlogPostingJsonLd } from "@/lib/site-schema";
 
 type BlogPostPageProps = {
   params: Promise<{
@@ -40,20 +41,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const canonical = `https://springbankmardan.com/blog/${post.slug}`;
   const isPropertySpotlight = post.categories.includes("Property Spotlight");
+  const resolvedTitle = post.seoTitle ?? post.title;
+  const resolvedDescription = post.seoDescription ?? post.excerpt;
   const titleSuffix = isPropertySpotlight
     ? " | Mardan Property for Sale"
     : " | Springbank Journal";
 
   return {
-    title: `${post.title}${titleSuffix}`,
-    description: post.excerpt,
+    title: `${resolvedTitle}${titleSuffix}`,
+    description: resolvedDescription,
     keywords: [...post.tags, ...post.categories],
     alternates: {
       canonical,
     },
     openGraph: {
-      title: post.title,
-      description: post.excerpt,
+      title: resolvedTitle,
+      description: resolvedDescription,
       url: canonical,
       siteName: "Springbank Mardan",
       type: "article",
@@ -80,28 +83,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
-    mainEntityOfPage: `https://springbankmardan.com/blog/${post.slug}`,
-    articleSection: post.categories,
-    keywords: post.tags.join(", "),
-    image: [`https://springbankmardan.com${post.heroImage.src}`],
-    author: {
-      "@type": "Organization",
-      name: "One Lifestyle Real Estate",
-      url: "https://onelifestylerealestate.com.au",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "One Lifestyle Real Estate",
-      url: "https://onelifestylerealestate.com.au",
-    },
-  };
+  const articleJsonLd = getBlogPostingJsonLd(post);
 
   return (
     <>

@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Abril_Fatface, Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { getGlobalOrganizationJsonLd, getWebsiteJsonLd } from "@/lib/site-schema";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -63,6 +64,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteJsonLd = getWebsiteJsonLd();
+  const organizationJsonLd = getGlobalOrganizationJsonLd();
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
@@ -80,6 +84,14 @@ export default function RootLayout({
             gtag('config', 'AW-17968493350');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {children}
         <Analytics />
       </body>
