@@ -50,7 +50,7 @@ export function OverviewSection() {
             Property Overview
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 text-balance">
-            A Striking Testament to Architectural Vision
+            Tuscan-Inspired Mediterranean Living in South Gippsland
           </h2>
           <div className="w-20 h-px bg-primary mx-auto" />
         </div>
@@ -83,30 +83,29 @@ export function OverviewSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg text-foreground leading-relaxed mb-6">
-              In a marketplace often dominated by traditional colonial
-              homesteads, &apos;Springbank&apos; stands as a striking testament
-              to architectural vision, sustainable living, and
-              Mediterranean-inspired elegance. Situated on approximately 5 acres
-              of prime South Gippsland soil in the quiet hamlet of Mardan, this
-              exceptional lifestyle property offers a retreat of profound
-              tranquillity and self-sufficiency, just 15 minutes from Leongatha,
-              Mirboo North and Meeniyan.
+              30 O&apos;Malleys Rd, Mardan delivers a Tuscan-inspired Mediterranean
+              residence on approximately 5 acres of prime South Gippsland soil.
+              Known on site as Springbank, the property offers a rare combination
+              of architectural character, rural privacy, and practical long-term
+              liveability just 15 minutes from Leongatha, Mirboo North, and
+              Meeniyan.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              For those seeking the ultimate tree change or sea change in
-              Gippsland, the aesthetic distinction is immediate. The residence
-              was designed and constructed by a master builder who prioritised
-              environmental harmony and visual impact. The home is perfectly
-              oriented to embrace sweeping, uninterrupted views across the
-              rolling greens of the Tarwin Valley toward the distant, majestic
-              Hoddle Range.
+              The design story is not only visual. The upstairs main dwelling is
+              fully double glazed and carefully oriented to work with passive
+              solar principles, which materially improves comfort through both
+              summer and winter. The home opens to sweeping, uninterrupted views
+              across the rolling greens of the Tarwin Valley toward the Hoddle
+              Range, but it also feels unusually composed and usable in everyday
+              life.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Centrally located between Leongatha, Mirboo North, and Meeniyan,
-              Springbank offers the rare combination of absolute rural privacy
-              with easy access to South Gippsland&apos;s vibrant townships,
-              artisan food scene, and proximity to the renowned Wilsons
-              Promontory National Park.
+              The poured-earth garage and studio building extends that thermal
+              stability even further, with thick walls that help keep the space
+              temperate on hot days and less harsh in winter. Add the Robert
+              Boyle designed gardens, the entertaining outlook, and the regional
+              access to South Gippsland&apos;s villages and coast, and the result
+              is a property that lives as well as it looks.
             </p>
           </div>
           <div className="relative">

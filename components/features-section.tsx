@@ -12,13 +12,13 @@ const features = [
     icon: Sun,
     title: "Passive Solar Design",
     description:
-      "The home employs passive solar design principles supported by double glazed windows, a solar power system, and split system air conditioning for year-round comfort.",
+      "The main dwelling is oriented for passive solar performance and supported by fully double glazed upstairs living areas, solar power, and split-system air conditioning for calmer year-round comfort.",
   },
   {
     icon: Thermometer,
-    title: "Efficient Heating",
+    title: "Stable Year-Round Temperatures",
     description:
-      "Solid fuel heating provides a cosy ambiance during cooler months while incorporating a concealed wetback system for high-efficiency hot water generation.",
+      "Solid fuel heating and a concealed wetback system support winter efficiency, while the poured-earth studio and garage building maintains a notably temperate feel through both summer heat and colder months.",
   },
   {
     icon: ChefHat,
@@ -36,13 +36,13 @@ const features = [
     icon: Sparkles,
     title: "Transformed Lower Level",
     description:
-      "A beautifully appointed extension featuring a bedroom-sized guest room, stunning spa bathroom, kitchenette facilities, and large rumpus room opening to an alfresco deck.",
+      "A beautifully appointed extension featuring a bedroom-sized guest room, spa bathroom, kitchenette facilities, and a large rumpus room opening to an alfresco deck for guest stays or multi-zone family living.",
   },
   {
     icon: Car,
     title: "Studio & EV Charging",
     description:
-      "Architecturally striking poured earth double garage plus 80+ sqm studio-style space, fully lined with kitchenette, toilet, and Tesla electric vehicle charging station.",
+      "Architecturally striking poured-earth double garage plus 80+ sqm studio-style space, fully lined with kitchenette, toilet, and Tesla electric vehicle charging station, making it unusually useful well beyond storage alone.",
   },
 ];
 
@@ -60,8 +60,9 @@ export function FeaturesSection() {
           </h2>
           <div className="w-20 h-px bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Every detail of Springbank has been thoughtfully designed to provide
-            sustainable comfort without compromising on luxury or style.
+            Every detail has been shaped to deliver sustainable comfort,
+            architectural character, and the kind of lived usability that
+            matters after the inspection ends.
           </p>
         </div>
 

@@ -29,6 +29,17 @@ const locationHighlights = [
   },
 ];
 
+const additionalTownLinks = [
+  { label: "Foster", href: "/foster" },
+  { label: "Fish Creek", href: "/fish-creek" },
+  { label: "Korumburra", href: "/korumburra" },
+  { label: "Inverloch", href: "/inverloch" },
+  { label: "Venus Bay", href: "/venus-bay" },
+  { label: "Sandy Point", href: "/sandy-point" },
+  { label: "Waratah Bay", href: "/waratah-bay" },
+  { label: "Walkerville", href: "/walkerville" },
+];
+
 export function LocationSection() {
   return (
     <section id="location" className="py-20 md:py-28 bg-secondary">
@@ -109,6 +120,29 @@ export function LocationSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mb-16 rounded-xl border border-border bg-card p-6 md:p-8">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h3 className="font-serif text-2xl text-foreground">Explore more South Gippsland towns</h3>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                Compare coastal, village, and service-town options across the wider district before
+                deciding whether an inland homesite at Mardan is the better long-term fit.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {additionalTownLinks.map((town) => (
+              <Link
+                key={town.href}
+                href={town.href}
+                className="rounded-full border border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
+              >
+                {town.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Map Embed */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { CalendarDays, Clock3, ExternalLink, MapPin } from "lucide-react";
+import { CalendarDays, Clock3, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OPEN_HOME_EVENT } from "@/lib/site-schema";
 
 export function OpenHomePromoSection() {
   return (
@@ -9,23 +10,22 @@ export function OpenHomePromoSection() {
         <div className="rounded-xl border border-border bg-card p-8 md:p-10">
           <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">Open Home</p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            Saturday 7 March 2026, 12pm to 1pm
+            {OPEN_HOME_EVENT.displayDate}, {OPEN_HOME_EVENT.displayTime}
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
-            Inspect Springbank in person at 30 O&apos;Malleys Rd, Mardan VIC 3953. View the
-            Mediterranean-inspired residence, Robert Boyle designed gardens, and sweeping Tarwin
-            Valley outlook. This inspection sits in the Labour Day long weekend period, when more
-            visitors are expected across South Gippsland.
+            Inspect 30 O&apos;Malleys Rd, Mardan VIC 3953 in person over the Easter long weekend.
+            View the Tuscan-inspired Mediterranean residence, Robert Boyle designed gardens, the
+            poured-earth studio, and sweeping Tarwin Valley outlook in one inspection window.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="flex items-center gap-2 text-sm text-foreground">
               <CalendarDays className="h-4 w-4 text-primary" />
-              Saturday 7 March 2026
+              {OPEN_HOME_EVENT.displayDate}
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground">
               <Clock3 className="h-4 w-4 text-primary" />
-              12:00pm to 1:00pm
+              {OPEN_HOME_EVENT.displayTime}
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground">
               <MapPin className="h-4 w-4 text-primary" />
@@ -41,15 +41,7 @@ export function OpenHomePromoSection() {
               <a href="tel:0431639749">Call Dean Jones: 0431 639 749</a>
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-transparent">
-              <a
-                href="https://www.facebook.com/events/951991930598945/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gap-2"
-              >
-                Facebook Event
-                <ExternalLink className="h-4 w-4" />
-              </a>
+              <Link href="/">View full listing website</Link>
             </Button>
           </div>
         </div>

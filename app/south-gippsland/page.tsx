@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { GuideEventsSection } from "@/components/guide-events-section";
+import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
   BarChart3,
@@ -117,6 +119,54 @@ const townshipCards = [
     href: "/wilsons-promontory",
     description:
       "Nature access that shapes travel patterns and nearby township interest.",
+  },
+  {
+    title: "Foster real estate",
+    href: "/foster",
+    description:
+      "Prom-side service base with practical town amenities and access to nearby coastlines.",
+  },
+  {
+    title: "Fish Creek property",
+    href: "/fish-creek",
+    description:
+      "Village character, arts-led identity, and strong Prom Country comparison value.",
+  },
+  {
+    title: "Korumburra real estate",
+    href: "/korumburra",
+    description:
+      "Service-town benchmark for buyers comparing practicality against acreage and coast.",
+  },
+  {
+    title: "Inverloch real estate",
+    href: "/inverloch",
+    description:
+      "Coastal benchmark for beach-town living, holiday-home demand, and lifestyle tradeoffs.",
+  },
+  {
+    title: "Venus Bay property",
+    href: "/venus-bay",
+    description:
+      "Beachside living and holiday-home profile compared with inland South Gippsland options.",
+  },
+  {
+    title: "Sandy Point property",
+    href: "/sandy-point",
+    description:
+      "Prom-side coastal alternative with a quieter rhythm and lower-density shoreline appeal.",
+  },
+  {
+    title: "Waratah Bay property",
+    href: "/waratah-bay",
+    description:
+      "Quiet-coast living for buyers comparing direct beach use with broader regional flexibility.",
+  },
+  {
+    title: "Walkerville property",
+    href: "/walkerville",
+    description:
+      "Historic limestone-kiln coastline and a strong place-led coastal comparison point.",
   },
 ];
 
@@ -374,82 +424,10 @@ export default function SouthGippslandPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-6xl">
-              <h2 className="font-serif text-3xl text-foreground md:text-4xl">2026 events to plan around</h2>
-              <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-                These are South Gippsland events with published 2026 dates. Confirm on the source pages before booking.
-              </p>
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
-                <article className="rounded-xl border border-border bg-card p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">14 Feb 2026</p>
-                  <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Summer Produce Market</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    This produce market is a useful snapshot of South Gippsland&apos;s grower and artisan food economy in one place. It attracts a mix of locals, weekend visitors, and longer-stay property researchers, which gives it practical regional relevance. Events like this help buyers test whether the district&apos;s food culture aligns with their day-to-day lifestyle expectations.
-                  </p>
-                  <a
-                    href="https://www.visitgippsland.com.au/event/fish-creek-summer-produce-market"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    Event details <ExternalLink className="h-3 w-3" />
-                  </a>
-                </article>
-                <article className="rounded-xl border border-border bg-card p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                  <h3 className="mt-2 font-serif text-xl text-foreground">South Gippsland Garlic Festival</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Korumburra</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    The Garlic Festival is one of the region&apos;s standout annual food events and draws broad attendance from across Gippsland and Melbourne visitors. It combines producers, demonstrations, and community activity in a format that reflects the local agricultural base. For relocation decisions, that consistency of regional event programming can be as relevant as listing supply data.
-                  </p>
-                  <a
-                    href="https://www.visitgippsland.com.au/event/south-gippsland-garlic-festival"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    Event details <ExternalLink className="h-3 w-3" />
-                  </a>
-                </article>
-                <article className="rounded-xl border border-border bg-card p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Mar 2026</p>
-                  <h3 className="mt-2 font-serif text-xl text-foreground">Inverloch Running Festival</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Inverloch</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Inverloch Running Festival brings a fitness-led audience to the coast and shows another side of the regional events mix. Its accessible format and established location make it practical for both participation and spectator weekends. This kind of recurring coastal activation reinforces why many buyers value proximity between inland towns and beach destinations.
-                  </p>
-                  <a
-                    href="https://www.visitgippsland.com.au/event/inverloch-running-festival"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    Event details <ExternalLink className="h-3 w-3" />
-                  </a>
-                </article>
-                <article className="rounded-xl border border-border bg-card p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">16 May 2026</p>
-                  <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Tea Cosy Festival</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    The Tea Cosy Festival is a distinctive local event with a strong community and craft identity. It attracts people interested in village-scale culture and helps highlight the social texture of South Gippsland towns. For buyers doing suburb-level comparisons, that local character is often an important complement to property metrics.
-                  </p>
-                  <a
-                    href="https://www.visitgippsland.com.au/event/fish-creek-tea-cosy-festival"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                  >
-                    Event details <ExternalLink className="h-3 w-3" />
-                  </a>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
+        <GuideEventsSection
+          description="These are South Gippsland events with current published 2026 dates from official source pages. Confirm details before booking travel."
+          events={guideEvents.southGippsland}
+        />
 
         <section className="bg-secondary/30 py-12 md:py-16">
           <div className="container mx-auto px-4">
@@ -541,9 +519,9 @@ export default function SouthGippslandPage() {
                 Drill down by location
               </h2>
               <p className="mt-3 max-w-3xl text-muted-foreground">
-                These four guides help visitors compare choices across the same region, from service towns to lifestyle villages.
+                These guides help visitors compare choices across the same region, from service towns to coastal settlements and lifestyle villages.
               </p>
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {townshipCards.map((town) => (
                   <article key={town.title} className="rounded-xl border border-border bg-card p-6">
                     <h3 className="font-serif text-2xl text-foreground">{town.title}</h3>

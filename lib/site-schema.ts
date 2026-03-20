@@ -3,7 +3,7 @@ import type { BlogPost } from "@/lib/blog";
 export const SITE_URL = "https://springbankmardan.com";
 export const SITE_NAME = "Springbank Mardan";
 export const SITE_DESCRIPTION =
-  "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.";
+  "Acreage for sale in South Gippsland at 30 O'Malleys Rd, Mardan VIC 3953. Tuscan-inspired Mediterranean residence on 5 acres near Leongatha, Meeniyan and Mirboo North.";
 export const DEFAULT_SHARE_IMAGE =
   `${SITE_URL}/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg`;
 export const BLOG_URL = `${SITE_URL}/blog`;
@@ -24,7 +24,7 @@ export const DEFAULT_BLOG_AUTHOR = {
 };
 
 export const LISTING_DETAILS = {
-  name: "Springbank - Mediterranean Sanctuary on 5 Acres",
+  name: "30 O'Malleys Rd, Mardan - Tuscan-Inspired Mediterranean Residence on 5 Acres",
   addressLine: "30 O'Malleys Rd, Mardan VIC 3953",
   streetAddress: "30 O'Malleys Road",
   locality: "Mardan",
@@ -32,12 +32,12 @@ export const LISTING_DETAILS = {
   postalCode: "3953",
   country: "AU",
   description:
-    "A master-built Mediterranean-inspired sanctuary on approximately 5 acres in Mardan, South Gippsland. Featuring sweeping Tarwin Valley views, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, poured earth studio, and EV charging. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
+    "Tuscan-inspired Mediterranean residence on approximately 5 acres in Mardan, South Gippsland. Featuring Tarwin Valley views, fully double glazed main living spaces, passive solar comfort, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, and a poured earth studio with stable year-round temperatures. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
   listingUrl: SITE_URL,
   image: DEFAULT_SHARE_IMAGE,
   datePosted: "2026-01-27",
   priceCurrency: "AUD",
-  price: "1500000",
+  price: "1280000",
   latitude: -38.4567,
   longitude: 145.8234,
   numberOfRooms: 8,
@@ -49,16 +49,15 @@ export const LISTING_DETAILS = {
 
 export const OPEN_HOME_EVENT = {
   name: "Open Home - Springbank Mediterranean Sanctuary",
-  startDate: "2026-03-07T12:00:00+11:00",
-  endDate: "2026-03-07T13:00:00+11:00",
-  displayDate: "Saturday 7 March 2026",
-  displayTime: "12:00pm to 1:00pm",
-  teaserTime: "Saturday 7 March, 12pm to 1pm",
+  startDate: "2026-04-04T11:00:00+11:00",
+  endDate: "2026-04-04T12:00:00+11:00",
+  displayDate: "Saturday 4 April 2026",
+  displayTime: "11:00am to 12:00pm",
+  teaserTime: "Saturday 4 April, 11am to 12pm",
   url: `${SITE_URL}/open-home`,
   image: `${SITE_URL}/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg`,
-  facebookEventUrl: "https://www.facebook.com/events/951991930598945/",
   description:
-    "Open Home at Springbank, 30 O'Malleys Rd Mardan VIC 3953. Saturday 7 March 2026, 12pm to 1pm. Labour Day long-weekend inspection.",
+    "Open Home at 30 O'Malleys Rd, Mardan VIC 3953. Saturday 4 April 2026, 11am to 12pm. Easter long-weekend inspection.",
 };
 
 type BlogAuthor = {

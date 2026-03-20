@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { GuideEventsSection } from "@/components/guide-events-section";
+import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
   BarChart3,
@@ -308,80 +310,10 @@ export default function WilsonsPromontoryPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl text-foreground md:text-4xl">2026 events to plan around</h2>
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              These events are in nearby South Gippsland towns commonly used as bases for The Prom. Confirm dates on the source pages before booking.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">27 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Festival of Small Halls: Foster</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Foster</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Festival of Small Halls brings respected touring artists into community venues and attracts a broad regional audience. For people using Foster as a Prom base, it is a strong example of year-round cultural activity beyond peak holiday traffic. It also helps demonstrate how the local events calendar supports long-stay living, not just day tourism.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/festival-of-small-halls-2026-autumn-tour-foster"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Foster and District Agricultural Show</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Foster</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  The Foster Show combines livestock, local produce, and rural community exhibits in one traditional regional event. It provides useful context for buyers considering a permanent move, because it reflects the district&apos;s agricultural identity and social fabric. Attendance is straightforward from surrounding townships and helps visitors assess local community participation in practice.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/foster-and-district-agricultural-show"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">14 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Summer Produce Market</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This market highlights local growers, artisan producers, and small-batch food businesses from across South Gippsland. It is a useful complement to Prom day trips because it brings the region&apos;s town and food culture into the same weekend planning window. For relocating buyers, that combination of nature access and strong local produce economy is often a key draw.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/fish-creek-summer-produce-market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">16 May 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Tea Cosy Festival</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  The Tea Cosy Festival is a distinctive local event with a strong community and craft focus. It attracts visitors looking for village atmosphere and regional character, not only major-ticket tourism. In a property comparison context, events like this help show what everyday social life feels like across nearby Prom access towns.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/fish-creek-tea-cosy-festival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+        <GuideEventsSection
+          description="These events are in nearby South Gippsland towns commonly used as bases for The Prom. Confirm dates on the source pages before booking."
+          events={guideEvents.wilsonsPromontory}
+        />
 
         <section className="bg-secondary/30 py-12 md:py-16">
           <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3 lg:px-8">

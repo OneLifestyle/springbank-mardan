@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { GuideEventsSection } from "@/components/guide-events-section";
+import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
   BarChart3,
@@ -316,80 +318,10 @@ export default function MirbooNorthPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl text-foreground md:text-4xl">2026 events to plan around</h2>
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              Dates below are published for 2026. Confirm on the source pages before booking.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Mirboo North Market</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Mirboo North</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Mirboo North Market brings local produce, handmade goods, and small-scale traders into one easy-to-walk event format. It is useful for visitors who want to understand how active the local maker and food community is outside peak holiday periods. For prospective buyers, the market gives a realistic read on town energy and social connection.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/mirboo-north-market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Preserving Cooking Class</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Mirboo North</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This class focuses on practical preserving skills and regional produce, which aligns well with the area&apos;s food-growing culture. It offers a hands-on way to connect with local routines rather than only spectator-style tourism. Events like this often appeal to tree-change buyers who are looking for useful lifestyle participation, not just scenery.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/preserving-cooking-class"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">27 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Festival of Small Halls: Foster</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Foster</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Festival of Small Halls programs respected touring artists in community venues and draws strong regional attendance. From Mirboo North, Foster is manageable for evening events, making this a practical part of the annual calendar. It helps demonstrate that the broader South Gippsland lifestyle includes regular live culture as well as outdoor access.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/festival-of-small-halls-2026-autumn-tour-foster"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">South Gippsland Garlic Festival</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Korumburra</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  The Garlic Festival is one of the region&apos;s higher-profile food events and attracts a broad mix of locals and visitors. It combines produce, demonstrations, and community programming that reflect South Gippsland&apos;s agricultural identity. For anyone comparing towns, it is a useful marker of how active the district calendar can be through late summer.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/south-gippsland-garlic-festival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+        <GuideEventsSection
+          description="Dates below are published for current 2026 events. Confirm on the source pages before booking."
+          events={guideEvents.mirbooNorth}
+        />
 
         <section className="bg-secondary/30 py-12 md:py-16">
           <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3 lg:px-8">

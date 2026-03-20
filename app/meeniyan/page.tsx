@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { GuideEventsSection } from "@/components/guide-events-section";
+import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
   BarChart3,
@@ -296,80 +298,10 @@ export default function MeeniyanPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl text-foreground md:text-4xl">2026 events to plan around</h2>
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              These Meeniyan events have published 2026 dates. Confirm on the source pages before booking.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">19 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Lyrebird Presents: ThornBird</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Meeniyan Town Hall</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Lyrebird Presents events are a major part of Meeniyan&apos;s live-music profile and help explain the town&apos;s strong cultural reputation. ThornBird is a good example of how touring acts use the town hall as a serious regional venue. For visitors, it is a chance to assess local atmosphere beyond daytime cafe trade.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/thornbird---meeniyan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">5 Mar 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Lyrebird Presents: Sarah Blasko</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Meeniyan Town Hall</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This date brings a high-profile Australian artist into a small-town setting, which is part of what makes Meeniyan distinctive in-region. The event format is typically intimate and community-oriented rather than stadium-scale. It highlights the lifestyle benefit of being in a town with active cultural programming.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/lyrebird-presents-at-meeniyan---sarah-blasko"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">13 Mar 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Lyrebird Presents: Annie &amp; The Caldwells</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Meeniyan Town Hall</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This international act sits within the same Lyrebird series and reinforces Meeniyan&apos;s role as a genuine music destination in South Gippsland. For people comparing towns, events like this show that small scale does not mean limited calendar depth. It adds meaningful weekend activity for both residents and visitors.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/annie-the-caldwells"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">14 Mar 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Lyrebird Presents: Fantastic Negrito</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Meeniyan Town Hall</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  Fantastic Negrito&apos;s show rounds out a concentrated run of notable March programming in Meeniyan. The consistency of these bookings is important for anyone assessing year-round local energy and visitor draw. It is a practical signal that the town supports more than a seasonal tourism economy.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/lyrebird-presents-at-meeniyan---fantastic-negrito"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+        <GuideEventsSection
+          description="These Meeniyan events have current published 2026 dates. Confirm on the source pages before booking."
+          events={guideEvents.meeniyan}
+        />
 
         <section className="bg-secondary/30 py-12 md:py-16">
           <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3 lg:px-8">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CalendarDays, Clock3, ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowLeft, CalendarDays, Clock3, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { LISTING_DETAILS, OPEN_HOME_EVENT, getOpenHomeEventJsonLd } from "@/lib/site-schema";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
     description:
-      `Inspect Springbank on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime} during the Labour Day long weekend.`,
+      `Inspect 30 O'Malleys Rd, Mardan on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime} during the Easter long weekend.`,
     url: "https://springbankmardan.com/open-home",
     siteName: "Springbank Mardan",
     type: "website",
@@ -108,10 +108,10 @@ export default function OpenHomePage() {
                 Open home for this Mardan property for sale
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Discover Springbank, a master-built Mediterranean-inspired sanctuary offering sustainable comfort and breathtaking views across the Tarwin Valley.
+                Inspect 30 O&apos;Malleys Rd, Mardan in person and experience a Tuscan-inspired Mediterranean residence designed for year-round comfort, entertaining, and long-stay living.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                This open home falls on the Labour Day long weekend, when South Gippsland typically sees stronger visitor activity.
+                This open home falls on the Easter long weekend, when South Gippsland typically sees stronger visitor movement across the district.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -140,15 +140,7 @@ export default function OpenHomePage() {
                   <Link href="/">View full listing website</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild className="bg-transparent">
-                  <a
-                    href={OPEN_HOME_EVENT.facebookEventUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="gap-2"
-                  >
-                    Open Facebook event
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
+                  <a href="mailto:dean@onelifestyle.com.au">Email the agent</a>
                 </Button>
               </div>
             </div>
@@ -175,13 +167,13 @@ export default function OpenHomePage() {
             <h2 className="font-serif text-3xl text-foreground md:text-4xl">Springbank property overview</h2>
             <div className="mt-5 max-w-4xl space-y-4 text-muted-foreground">
               <p>
-                In a marketplace often dominated by traditional colonial homesteads, Springbank stands apart as a Mediterranean-inspired residence designed for sustainable comfort, visual impact, and practical long-term liveability. The home was master-built with orientation and environmental performance in mind, capturing sweeping views across the Tarwin Valley toward the Hoddle Range.
+                This Tuscan-inspired Mediterranean residence was designed to do more than present well on inspection day. The upstairs living areas are fully double glazed, the orientation supports passive solar comfort, and the main dwelling sits comfortably within sweeping views across the Tarwin Valley toward the Hoddle Range.
               </p>
               <p>
-                The open home gives buyers a direct feel for key spaces that define the property&apos;s appeal: rare Peppermint Gum flooring, high ceilings, a renovated timber-bench kitchen with island, and a substantially upgraded lower level with spa bathroom and kitchenette facilities. Outside, the Robert Boyle designed gardens, vineyard, orchard plantings, and private walking track reinforce the lifestyle depth that is difficult to assess from photos alone.
+                The open home gives buyers a direct feel for the key spaces that define the property&apos;s value: rare Peppermint Gum flooring, high ceilings, a renovated timber-bench kitchen with island, and a substantially upgraded lower level with spa bathroom and kitchenette facilities. Outside, the Robert Boyle designed gardens, vineyard, orchard plantings, and private walking track reinforce the lifestyle depth that is difficult to assess from photos alone.
               </p>
               <p>
-                Located in Mardan with straightforward access to Leongatha, Mirboo North, and Meeniyan, Springbank combines rural privacy with practical regional connection. For buyers searching tree-change property in South Gippsland, this inspection is designed to show both craftsmanship and day-to-day usability in the one visit window.
+                The poured-earth garage and studio building adds another lived advantage: unusually stable internal temperatures through both summer heat and winter cold. Located in Mardan with straightforward access to Leongatha, Mirboo North, and Meeniyan, this inspection is designed to show both craftsmanship and day-to-day usability in one visit window.
               </p>
             </div>
           </div>
@@ -225,11 +217,11 @@ export default function OpenHomePage() {
                 <div className="mt-4 space-y-3 text-sm text-muted-foreground">
                   <p className="flex items-start gap-2">
                     <CalendarDays className="h-4 w-4 mt-0.5 text-primary" />
-                    Saturday 7 March 2026
+                    {OPEN_HOME_EVENT.displayDate}
                   </p>
                   <p className="flex items-start gap-2">
                     <Clock3 className="h-4 w-4 mt-0.5 text-primary" />
-                    12:00pm to 1:00pm
+                    {OPEN_HOME_EVENT.displayTime}
                   </p>
                   <p className="flex items-start gap-2">
                     <MapPin className="h-4 w-4 mt-0.5 text-primary" />
@@ -244,15 +236,6 @@ export default function OpenHomePage() {
                   >
                     <Phone className="h-4 w-4" />
                     Dean Jones 0431 639 749
-                  </a>
-                  <a
-                    href="https://www.facebook.com/events/951991930598945/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-medium text-foreground hover:bg-secondary/50"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                    View Facebook event details
                   </a>
                   <a
                     href="mailto:dean@onelifestyle.com.au"

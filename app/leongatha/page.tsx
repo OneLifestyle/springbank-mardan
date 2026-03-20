@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { GuideEventsSection } from "@/components/guide-events-section";
+import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
   BarChart3,
@@ -328,80 +330,10 @@ export default function LeongathaPage() {
           </div>
         </section>
 
-        <section className="py-12 md:py-16">
-          <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-3xl text-foreground md:text-4xl">2026 events to plan around</h2>
-            <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
-              These are nearby South Gippsland events with published 2026 dates. Always confirm timing on the source page before booking travel.
-            </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">14 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Summer Produce Market</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This produce-focused market is useful for sampling what the broader South Gippsland food scene is actually like on the ground. You get local growers, artisan stalls, and a community-style atmosphere that reflects the pace of nearby towns. It is a strong weekend option for people comparing lifestyle depth across the region.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/fish-creek-summer-produce-market"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Feb 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">South Gippsland Garlic Festival</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Korumburra</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  The South Gippsland Garlic Festival is one of the region&apos;s better-known annual events and draws a broad local and visitor crowd. It combines food, producer culture, and community programming in a format that is easy for day visitors based in Leongatha. Events like this help show how active the regional calendar can be beyond peak-holiday periods.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/south-gippsland-garlic-festival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">28 Mar 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Inverloch Running Festival</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Inverloch</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  This event brings a different profile of visitors and activity to the coast and is useful if you enjoy fitness-led community weekends. For Leongatha residents, Inverloch is close enough to attend without overnight planning, which makes it practical rather than occasional. It is another example of how coastal access adds variety to life based inland.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/inverloch-running-festival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-              <article className="rounded-xl border border-border bg-card p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">16 May 2026</p>
-                <h3 className="mt-2 font-serif text-xl text-foreground">Fish Creek Tea Cosy Festival</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Fish Creek</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  The Tea Cosy Festival has a strong local identity and typically attracts people looking for regional culture, craft, and small-town atmosphere. It is a lighter-format event that still gives you a good read on community participation across South Gippsland. For prospective movers, that local social texture is often as important as headline property data.
-                </p>
-                <a
-                  href="https://www.visitgippsland.com.au/event/fish-creek-tea-cosy-festival"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1 text-sm text-primary hover:underline"
-                >
-                  Event details <ExternalLink className="h-3 w-3" />
-                </a>
-              </article>
-            </div>
-          </div>
-        </section>
+        <GuideEventsSection
+          description="These are nearby South Gippsland events with current published 2026 dates. Always confirm timing on the source page before booking travel."
+          events={guideEvents.leongatha}
+        />
 
         <section className="bg-secondary/30 py-12 md:py-16">
           <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
