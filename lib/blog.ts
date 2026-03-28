@@ -28,6 +28,11 @@ export type BlogPublisher = {
   url?: string;
 };
 
+export type BlogRelatedLink = {
+  label: string;
+  href: string;
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -50,6 +55,7 @@ export type BlogPost = {
   galleryTitle: string;
   gallery: BlogImage[];
   imageCredits?: BlogImageCredit[];
+  relatedLinks?: BlogRelatedLink[];
   ctaTitle: string;
   ctaBody: string;
 };
@@ -2652,6 +2658,647 @@ const posts: BlogPost[] = [
     ctaTitle: "Inspect the property in person",
     ctaBody:
       "If the comfort, studio flexibility, and landscape maturity at 30 O'Malleys Rd align with what you are searching for in South Gippsland real estate, book the next open home or contact Dean Jones directly to inspect.",
+  },
+  {
+    slug: "korumburra-real-estate-guide-why-buyers-look-here-for-value-access-and-acreage-flexibility",
+    title:
+      "Korumburra Real Estate Guide: Why Buyers Look Here for Value, Access, and Acreage Flexibility",
+    excerpt:
+      "A Korumburra real estate guide for buyers comparing service-town convenience, relative value, and whether nearby acreage offers a better long-term South Gippsland fit.",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-03-28",
+    readingTimeMinutes: 8,
+    categories: ["Regional Guide", "Buyer Guide", "Korumburra"],
+    tags: [
+      "korumburra real estate",
+      "property for sale korumburra",
+      "acreage near korumburra",
+      "south gippsland real estate",
+      "regional buyer guide",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+      alt: "Rolling South Gippsland farmland used to frame Korumburra's inland buyer appeal",
+      caption:
+        "Korumburra often enters the shortlist as a practicality benchmark rather than a purely lifestyle-branded village.",
+    },
+    intro: [
+      "Korumburra matters because it helps buyers clarify what they actually need from the region. It is not usually the most romantic search term in South Gippsland, but it is one of the most useful because it sits at the intersection of service access, regional movement, and a more practical day-to-day routine.",
+      "That makes it a strong comparison town for buyers trying to decide whether their best outcome is a service-centre base, a township home, or a nearby acreage property that still keeps the essentials within reach.",
+    ],
+    sections: [
+      {
+        heading: "Korumburra is often about value and practicality first",
+        paragraphs: [
+          "Buyers searching Korumburra real estate are often using the town as a practical benchmark. They want to know what their money buys once they step away from more heavily branded lifestyle villages or tourism-driven coastal addresses.",
+          "That does not make Korumburra secondary. In many cases it makes it more revealing, because it forces the shortlist to deal with commute logic, town convenience, and whether everyday life will still feel workable after the first burst of regional excitement fades.",
+          "For families, permanent movers, and buyers trying to balance services with more flexible landholdings, that practical frame is useful very early in the search.",
+        ],
+      },
+      {
+        heading: "Service access still shapes the shortlist more than people admit",
+        paragraphs: [
+          "A lot of South Gippsland searches begin with village atmosphere or lifestyle imagery, but the shortlist is often won by how easy the weekly routine feels. Korumburra performs well in that comparison because it gives buyers a direct way to test how much everyday convenience they actually need.",
+          "Shops, schools, healthcare, and regional road access all matter more once a purchase starts shifting from idea to action. That is why Korumburra often remains relevant even when buyers eventually purchase somewhere quieter or more private.",
+        ],
+        image: {
+          src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+          alt: "South Gippsland service-town streetscape illustrating the convenience benchmark buyers often use",
+          caption:
+            "Service-town logic remains one of the strongest filters in regional property decisions.",
+        },
+      },
+      {
+        heading: "The real comparison is town convenience versus acreage flexibility",
+        paragraphs: [
+          "Once the service benchmark is clear, the next question becomes whether you want to live inside that framework or simply remain close enough to use it. That is where acreage near Korumburra or in nearby inland localities starts to become more interesting.",
+          "More land, stronger privacy, mature gardens, guest accommodation, or a usable studio can materially change the ownership pattern. In that scenario, the town is still valuable, but it becomes a support system rather than the centrepiece.",
+          "This is why buyers comparing Korumburra with Mardan often end up thinking less about postcode and more about how they want the property itself to perform year-round.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+          alt: "Inland acreage property with residence and ancillary building used to compare against township-based options",
+          caption:
+            "For many buyers, the critical question is whether the property needs to be in town or simply well connected to it.",
+        },
+      },
+      {
+        heading: "Korumburra is most useful as a control point",
+        paragraphs: [
+          "Even if Korumburra is not the final destination, it is often one of the best control points in the district. If the town keeps resurfacing in your search, you are probably prioritising routine, access, and value more than pure atmosphere.",
+          "If it starts falling away once you compare it with larger inland homesites, that is equally useful. Either outcome sharpens the search and reduces the risk of chasing the wrong regional identity.",
+        ],
+      },
+    ],
+    featureListTitle: "What Korumburra helps buyers test early",
+    featureList: [
+      "Whether practical town access matters more than village branding",
+      "How much value and land flexibility matter in the budget",
+      "Whether you need to live in town or simply stay well connected to it",
+      "How strongly daily routines should shape the shortlist",
+      "When inland acreage begins to outperform township convenience",
+    ],
+    galleryTitle: "Korumburra comparison gallery",
+    gallery: [
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "South Gippsland inland landscape relevant to Korumburra-area property searches",
+      },
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Service-town context relevant to Korumburra comparisons",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Current Mardan acreage listing used as an inland comparison against Korumburra town convenience",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Korumburra area guide", href: "/korumburra" },
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+      { label: "Leongatha real estate guide", href: "/leongatha" },
+    ],
+    ctaTitle: "Compare Korumburra logic with a live acreage option",
+    ctaBody:
+      "If Korumburra is on your shortlist for value and practicality, compare it directly with the active Mardan lifestyle property for sale, then use the next open home to test whether town convenience or acreage flexibility suits you better.",
+  },
+  {
+    slug: "inverloch-real-estate-guide-coastal-lifestyle-holiday-home-demand-and-what-buyers-should-compare",
+    title:
+      "Inverloch Real Estate Guide: Coastal Lifestyle, Holiday-Home Demand, and What Buyers Should Compare",
+    excerpt:
+      "A buyer-focused Inverloch real estate guide covering beach-town appeal, holiday-home demand, and when inland South Gippsland options may offer a better long-term fit.",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-03-28",
+    readingTimeMinutes: 8,
+    categories: ["Regional Guide", "Coastal Lifestyle", "Inverloch"],
+    tags: [
+      "inverloch real estate",
+      "holiday home inverloch",
+      "property near inverloch",
+      "south gippsland coastal property",
+      "regional buyer guide",
+    ],
+    heroImage: {
+      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Eagles_Nest_Inverloch.jpg",
+      alt: "Eagles Nest coastal formation near Inverloch",
+      caption:
+        "Inverloch attracts buyers who want a genuine coastal base, but that appeal needs to be weighed against price, seasonality, and long-stay practicality.",
+    },
+    intro: [
+      "Inverloch is one of the strongest coastal search anchors in the broader South Gippsland orbit. Buyers are drawn to its beach-town identity, stronger permanent-living base, and the fact that it supports both full-time owners and higher-frequency holiday-home use.",
+      "The question is not whether Inverloch deserves attention. It does. The better question is whether you want an Inverloch address specifically, or whether you want the coastal benefits it represents without taking on the full beach-market trade-off.",
+    ],
+    sections: [
+      {
+        heading: "Why Inverloch dominates so many coastal searches",
+        paragraphs: [
+          "Inverloch is one of the first names buyers reach for when they imagine a coastal lifestyle in this part of Victoria. It has recognisable town scale, direct foreshore appeal, and a stronger sense of year-round activity than many smaller beach settlements.",
+          "That broad appeal makes it useful, but it also means buyers can slip too quickly into postcode thinking. Once that happens, the search risks being driven by reputation alone rather than by the way the property will actually be used.",
+        ],
+      },
+      {
+        heading: "Beach appeal and ownership practicality are not always the same thing",
+        paragraphs: [
+          "Inverloch works very well for buyers who genuinely want a coastal routine: beach access, foreshore walks, a holiday-home rhythm, or a permanent-living pattern that still centres on the coast. For those buyers, the town can justify its premium.",
+          "But the search becomes more complex when the buyer wants only some of those benefits. If the real requirement is occasional beach reach plus stronger privacy, larger landholdings, guest flexibility, or a more self-contained home, the inland comparison gets stronger very quickly.",
+        ],
+        image: {
+          src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+          alt: "South Gippsland coastal setting illustrating the broader appeal that often pulls buyers toward Inverloch and nearby coastal towns",
+          caption:
+            "Coastal pull is real, but not every buyer needs the full beach-town ownership model.",
+        },
+      },
+      {
+        heading: "Holiday-home demand changes the competitive landscape",
+        paragraphs: [
+          "Inverloch has a holiday-home layer that shapes pricing, expectations, and the kind of property that performs well. That can be positive if you want a more active coastal market, but it can also create pressure for buyers who are really searching for longer-stay value rather than pure beach prestige.",
+          "This is where nearby comparisons begin to matter. Venus Bay, Sandy Point, and smaller coastal settlements each sit differently on the beach-use spectrum, while inland locations such as Mardan answer an entirely different brief built around space and year-round usability.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+          alt: "Inland South Gippsland listing used as a comparison against a coastal-only buying strategy",
+          caption:
+            "For some buyers, the stronger move is to buy for flexibility and keep the coast within easy reach.",
+        },
+      },
+      {
+        heading: "Use Inverloch as a benchmark, not an automatic conclusion",
+        paragraphs: [
+          "Inverloch should stay in the search if the coast is central to your long-term ownership plan. But it is most useful when treated as a benchmark rather than an assumption.",
+          "If the town helps you realise that you want a broader South Gippsland base with less beach-market pressure, it has still done its job. That is exactly why the comparison matters.",
+        ],
+      },
+    ],
+    featureListTitle: "What Inverloch helps buyers clarify",
+    featureList: [
+      "How much direct beach-town living really matters",
+      "Whether holiday-home demand suits your budget and timing",
+      "How much premium you are paying for postcode versus actual use",
+      "Whether inland privacy and landholdings are starting to matter more",
+      "How to distinguish coast access from coast dependence",
+    ],
+    galleryTitle: "Inverloch coastal comparison gallery",
+    gallery: [
+      {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Eagles_Nest_Inverloch.jpg",
+        alt: "Eagles Nest rock formation near Inverloch",
+      },
+      {
+        src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+        alt: "South Gippsland coastal drawcard used to frame coastal buyer intent",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+        alt: "Current inland Mardan listing used to compare against an Inverloch-led search",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Eagles Nest Inverloch",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Eagles_Nest_Inverloch.jpg",
+        author: "MattSullivan17",
+        licenseName: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
+      {
+        label: "Darby Beach Wilson's Promontory",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Darby_Beach_Wilson%27s_Promontory.jpg",
+        author: "J27shaw",
+        licenseName: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Inverloch area guide", href: "/inverloch" },
+      { label: "Venus Bay property guide", href: "/venus-bay" },
+      { label: "Sandy Point property guide", href: "/sandy-point" },
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+    ],
+    ctaTitle: "Compare coastal demand with a live inland alternative",
+    ctaBody:
+      "If Inverloch keeps surfacing in your search, compare that beach-town logic with the active Mardan listing and book an inspection to test whether coastal prestige or inland flexibility is the better fit.",
+  },
+  {
+    slug: "fish-creek-real-estate-guide-why-village-character-changes-the-buyer-fit-equation",
+    title: "Fish Creek Real Estate Guide: Why Village Character Changes the Buyer-Fit Equation",
+    seoTitle:
+      "Fish Creek Property Guide for Buyers Drawn to Village Character and Prom Country",
+    seoDescription:
+      "A Fish Creek property guide for buyers comparing village identity, Prom Country appeal, and whether a smaller creative township or a larger inland homesite is the stronger fit.",
+    excerpt:
+      "A buyer-fit guide to Fish Creek for people drawn to arts, food, village character, and Prom Country access but still deciding whether that identity outweighs town services and inland flexibility.",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-03-28",
+    readingTimeMinutes: 8,
+    categories: ["Village Guide", "Buyer Guide", "Fish Creek"],
+    tags: [
+      "fish creek property",
+      "fish creek real estate",
+      "prom country property",
+      "south gippsland village lifestyle",
+      "regional buyer guide",
+    ],
+    heroImage: {
+      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Creek_sign_Stevage.jpg",
+      alt: "Fish Creek township sign and village approach",
+      caption:
+        "Fish Creek tends to attract buyers who care about village texture, Prom Country identity, and a more curated regional atmosphere.",
+    },
+    intro: [
+      "Fish Creek is not just another place on the way to the Prom. For a certain type of buyer, it represents a very specific promise: a village with cultural identity, strong local texture, and a kind of regional prestige that feels different from a standard beach-town or service-town search.",
+      "That makes Fish Creek highly relevant to premium lifestyle buyers, but it also means the search can become emotionally led unless the buyer tests how village character compares with practical day-to-day needs.",
+    ],
+    sections: [
+      {
+        heading: "Fish Creek stands out because it feels curated rather than generic",
+        paragraphs: [
+          "Some buyers respond immediately to Fish Creek because it carries a stronger sense of village identity than many surrounding towns. The arts connection, food culture, and recognisable social atmosphere give it a different kind of weight in the shortlist.",
+          "That matters because the appeal is not merely scenic. It is about the feeling that the town already knows what it is, and that it can support a slower, more deliberate ownership pattern.",
+        ],
+      },
+      {
+        heading: "That village appeal is valuable, but it should still be tested",
+        paragraphs: [
+          "The danger for buyers is not that Fish Creek is overrated. It is that village character can become a shorthand for fit before the harder questions are asked about services, guest logistics, maintenance support, and whether the property itself needs to do more heavy lifting.",
+          "For some people, that softer village layer is exactly what they want. For others, it is attractive but ultimately less important than more land, stronger privacy, or a home with more built flexibility.",
+        ],
+        image: {
+          src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+          alt: "South Gippsland landscape contextualising the village-to-inland comparison around Fish Creek",
+          caption:
+            "Fish Creek's appeal is strongest when village texture matters more than pure service convenience.",
+        },
+      },
+      {
+        heading: "Fish Creek versus larger towns and beach-first locations",
+        paragraphs: [
+          "Fish Creek sits in an interesting comparison set. Against Foster, it often reads as more character-led and less services-led. Against Inverloch or the smaller coastal towns, it offers more village identity and less direct beach logic. Against inland acreage, it offers atmosphere but usually less space and less self-contained flexibility.",
+          "That is why Fish Creek is so useful to the search process. If it stays on the shortlist, you probably care deeply about place character. If it starts to fall away, the inland comparison often becomes much sharper and easier to define.",
+        ],
+        image: {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Creek_sign_Stevage.jpg",
+          alt: "Fish Creek village entry image reinforcing the locality's strong sense of identity",
+          caption:
+            "Fish Creek is often a place-led decision rather than a pure convenience-led one.",
+        },
+      },
+      {
+        heading: "Use Fish Creek to refine your buyer profile",
+        paragraphs: [
+          "Fish Creek is most useful when it helps you work out what kind of regional buyer you are. If village culture, food, and Prom Country texture remain central to the shortlist, then the town has done important work for you.",
+          "If not, it may be telling you that a larger inland base such as Mardan will support your ownership pattern more effectively while still keeping the broader region accessible.",
+        ],
+      },
+    ],
+    featureListTitle: "What Fish Creek reveals about buyer fit",
+    featureList: [
+      "How much village identity matters to your purchase decision",
+      "Whether arts and food culture outweigh service-town convenience",
+      "How strongly Prom Country atmosphere shapes the shortlist",
+      "Whether a smaller township can support your long-stay routine",
+      "When inland acreage starts to look like the stronger overall match",
+    ],
+    galleryTitle: "Fish Creek buyer-fit gallery",
+    gallery: [
+      {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Creek_sign_Stevage.jpg",
+        alt: "Fish Creek township sign and village approach",
+      },
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "Wider South Gippsland landscape context for Fish Creek comparisons",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
+        alt: "Current Mardan listing used to compare against village-led Fish Creek searches",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Fish Creek sign Stevage",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Fish_Creek_sign_Stevage.jpg",
+        author: "Stevage",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Fish Creek area guide", href: "/fish-creek" },
+      { label: "Foster real estate guide", href: "/foster" },
+      { label: "Property near Wilsons Promontory", href: "/wilsons-promontory" },
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+    ],
+    ctaTitle: "Test village appeal against a live acreage option",
+    ctaBody:
+      "If Fish Creek still feels like the right kind of regional identity, compare it directly with the active Mardan property for sale and inspect in person before deciding whether village character or inland flexibility matters more.",
+  },
+  {
+    slug: "sandy-point-waratah-bay-or-walkerville-which-south-gippsland-coastal-base-fits-your-property-search",
+    title:
+      "Sandy Point, Waratah Bay, or Walkerville? Which South Gippsland Coastal Base Fits Your Property Search",
+    excerpt:
+      "A buyer comparison of Sandy Point, Waratah Bay, and Walkerville for people weighing surf access, quiet coastal ownership, and whether a smaller beach location beats a more flexible inland base.",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-03-28",
+    readingTimeMinutes: 9,
+    categories: ["Coastal Comparison", "Buyer Guide", "South Gippsland"],
+    tags: [
+      "sandy point property",
+      "waratah bay property",
+      "walkerville property",
+      "south gippsland coastal property",
+      "regional buyer guide",
+    ],
+    heroImage: {
+      src: "https://commons.wikimedia.org/wiki/Special:FilePath/Limestone_kiln_ruins_viewed_from_Limeburners_track_at_Walkerville%2C_Victoria%2C_Australia.jpg",
+      alt: "Historic limestone kiln ruins and coastline at Walkerville",
+      caption:
+        "The smaller South Gippsland coastal towns appeal for different reasons, and buyers usually do better when those differences are named clearly.",
+    },
+    intro: [
+      "Sandy Point, Waratah Bay, and Walkerville often sit in the same mental bucket for buyers looking at the South Gippsland coast, but they are not interchangeable. Each suits a different kind of ownership pattern and a different idea of what coastal living is supposed to feel like.",
+      "That is why the better move is to compare them directly rather than treat them as generic smaller alternatives to Inverloch. Once that comparison is clear, it becomes easier to work out whether the coast really belongs at the centre of the search.",
+    ],
+    sections: [
+      {
+        heading: "Sandy Point usually appeals to surf and simplicity",
+        paragraphs: [
+          "Sandy Point often attracts buyers who want direct coastal use and a more straightforward holiday-home rhythm. The appeal is clear, but it is best suited to people who genuinely want the beach to drive the ownership pattern rather than simply decorate it.",
+          "If the search is about walking access, surf, and a simpler weekender structure, Sandy Point can be compelling. If the property needs to support more day-to-day variety, the equation changes quickly.",
+        ],
+      },
+      {
+        heading: "Waratah Bay sits quieter and often reads as family-coast ownership",
+        paragraphs: [
+          "Waratah Bay tends to feel quieter and more sheltered in buyer perception. It can suit people who want a slower family-oriented coastal base rather than a more active surf-led identity.",
+          "That quieter rhythm is part of the appeal, but it also means buyers should be realistic about how much town infrastructure or year-round variety they need around them.",
+        ],
+        image: {
+          src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+          alt: "South Gippsland coast reference image supporting the quieter-coast comparison set",
+          caption:
+            "The small coastal towns are less about town scale and more about what kind of coastal ownership rhythm you actually want.",
+        },
+      },
+      {
+        heading: "Walkerville is more place-specific and landscape-led",
+        paragraphs: [
+          "Walkerville appeals differently again. It is not just about beach access; it is about the particular character of the coastline, the limestone-kiln history, and the sense that the place itself is the destination.",
+          "For some buyers that is powerful. For others it is a sign that the search is becoming too place-led and not practical enough for the way they expect to use the property long term.",
+        ],
+        image: {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Limestone_kiln_ruins_viewed_from_Limeburners_track_at_Walkerville%2C_Victoria%2C_Australia.jpg",
+          alt: "Walkerville limestone kiln ruins and coastal character",
+          caption:
+            "Walkerville tends to attract buyers responding to landscape identity rather than town infrastructure.",
+        },
+      },
+      {
+        heading: "The real question is whether coastline should lead the whole search",
+        paragraphs: [
+          "These three towns are useful because they reveal how strongly the coast is driving your decision. If one of them still feels obviously right after comparison, the shortlist is telling you something important.",
+          "If not, it may be pointing you back toward a more versatile inland base where space, guest flexibility, thermal performance, and regional access matter more than direct beach adjacency. That is exactly where a current Mardan property can become a useful control comparison.",
+        ],
+      },
+    ],
+    featureListTitle: "What this coastal comparison helps clarify",
+    featureList: [
+      "Whether surf, quiet-family coast, or landscape character matters most",
+      "How much year-round town support you actually need",
+      "Whether the coast is central to ownership or simply a nice-to-have",
+      "How a smaller beach market compares with inland flexibility",
+      "Which coastal rhythm best matches your likely use pattern",
+    ],
+    galleryTitle: "Small-coast comparison gallery",
+    gallery: [
+      {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Limestone_kiln_ruins_viewed_from_Limeburners_track_at_Walkerville%2C_Victoria%2C_Australia.jpg",
+        alt: "Walkerville limestone kiln ruins and coastline",
+      },
+      {
+        src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+        alt: "South Gippsland coastal reference image",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        alt: "Current Mardan inland comparison listing",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Limestone kiln ruins viewed from Limeburners track at Walkerville, Victoria, Australia",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Limestone_kiln_ruins_viewed_from_Limeburners_track_at_Walkerville%2C_Victoria%2C_Australia.jpg",
+        author: "Damien Frawley",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+      {
+        label: "Darby Beach Wilson's Promontory",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Darby_Beach_Wilson%27s_Promontory.jpg",
+        author: "J27shaw",
+        licenseName: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Sandy Point property guide", href: "/sandy-point" },
+      { label: "Waratah Bay property guide", href: "/waratah-bay" },
+      { label: "Walkerville property guide", href: "/walkerville" },
+      { label: "Inverloch area guide", href: "/inverloch" },
+      { label: "Property near Wilsons Promontory", href: "/wilsons-promontory" },
+    ],
+    ctaTitle: "Compare the coast with a more adaptable inland base",
+    ctaBody:
+      "If Sandy Point, Waratah Bay, or Walkerville is shaping your shortlist, compare that coastline-first logic with the active Mardan lifestyle property and inspect in person before committing to a smaller beach-market ownership model.",
+  },
+  {
+    slug: "30-omalleys-rd-mardan-7-features-that-make-this-acreage-home-comfortable-well-beyond-summer",
+    title:
+      "30 O'Malleys Rd, Mardan: 7 Features That Make This Acreage Home Comfortable Well Beyond Summer",
+    seoTitle:
+      "Mardan Property for Sale: 7 Comfort Features at 30 O'Malleys Rd",
+    seoDescription:
+      "Mardan property for sale at 30 O'Malleys Rd with double glazing, passive solar design, a poured-earth studio, guest flexibility, and year-round South Gippsland liveability.",
+    excerpt:
+      "A close look at the comfort story behind 30 O'Malleys Rd, Mardan, from full double glazing and passive solar design to the poured-earth studio, guest flexibility, and mature outdoor living setup.",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-03-28",
+    readingTimeMinutes: 9,
+    categories: ["Property Spotlight", "Lifestyle Property", "South Gippsland"],
+    tags: [
+      "mardan property for sale",
+      "south gippsland lifestyle property for sale",
+      "30 o'malleys road mardan",
+      "passive solar home victoria",
+      "acreage for sale south gippsland",
+    ],
+    heroImage: {
+      src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+      alt: "Front elevation and grounds at 30 O'Malleys Rd, Mardan",
+      caption:
+        "The appeal of 30 O'Malleys Rd goes beyond visual character; it lies in how well the home and grounds support real use through the year.",
+    },
+    intro: [
+      "Acreage buyers often respond first to outlook, architecture, and atmosphere. The more important question comes later: how well does the property actually live once the seasons change and the routines become ordinary?",
+      "At 30 O'Malleys Rd, Mardan, the answer is unusually strong. The home combines Tuscan-inspired Mediterranean character with a practical comfort story that becomes more obvious the longer you look at the details.",
+    ],
+    sections: [
+      {
+        heading: "1. Full double glazing upstairs changes the lived experience",
+        paragraphs: [
+          "The main upstairs dwelling is fully double glazed, which matters far more than it can look in a photograph. It improves thermal stability, dampens noise, and helps the home feel more composed across both hot and cool conditions.",
+          "For buyers who have spent time inspecting beautiful rural homes that struggle with seasonal extremes, this is a practical differentiator rather than a luxury talking point.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+          alt: "Upstairs living quality and glazing-supported comfort at the Mardan residence",
+          caption:
+            "The comfort story upstairs is tied directly to how the home has been finished and upgraded, not just how it looks.",
+        },
+      },
+      {
+        heading: "2. Passive solar design supports day-to-day comfort",
+        paragraphs: [
+          "The passive solar approach helps the home perform through the ordinary rhythm of the day rather than only during inspection hours. It works with the glazing and broader environmental choices to create a more stable, lower-friction living pattern.",
+          "That matters because a good lifestyle home should feel easy to inhabit, not like a constant battle against weather swings.",
+        ],
+      },
+      {
+        heading: "3. The poured-earth studio is genuinely usable through the year",
+        paragraphs: [
+          "Many rural outbuildings look versatile until the weather turns. This one is different. The thick poured-earth walls in the garage and studio building create unusually stable internal temperatures, which makes the space feel materially more usable in both summer and winter.",
+          "That changes the building from a nice extra into a serious part of the ownership proposition. It can support creative work, overflow accommodation, project space, or a calmer retreat from the main dwelling.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+          alt: "Main residence and poured-earth studio at 30 O'Malleys Rd, Mardan",
+          caption:
+            "The studio building broadens the property's usefulness because it remains more temperate than a standard outbuilding.",
+        },
+      },
+      {
+        heading: "4. The split-level layout increases flexibility",
+        paragraphs: [
+          "The split-level arrangement gives the home more adaptability than a single-mode floor plan. It helps separate activity zones, supports guest stays, and makes the property easier to use across different life stages and ownership patterns.",
+          "That flexibility becomes particularly valuable when a lifestyle home needs to host family, accommodate visitors, or support multigenerational use without compromising the main living rhythm.",
+        ],
+      },
+      {
+        heading: "5. The lower level does real work, not just occasional work",
+        paragraphs: [
+          "The upgraded lower level, including kitchenette facilities and spa bathroom support, makes longer guest stays far more practical. It allows the home to absorb visitors and family without making the main level feel overcommitted.",
+          "For buyers comparing lifestyle property for sale in South Gippsland, that kind of guest-capable flexibility can be the difference between a beautiful home and a genuinely versatile one.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-034.jpg",
+          alt: "Lower-level multipurpose and guest-ready space at 30 O'Malleys Rd",
+          caption:
+            "The lower level gives the property a broader ownership range than many regional homes can offer.",
+        },
+      },
+      {
+        heading: "6. Outdoor living and mature gardens are already resolved",
+        paragraphs: [
+          "The Robert Boyle designed gardens, established outdoor structure, and broad valley-facing setting mean the property already feels mature. That matters because buyers are not taking on raw acreage that still needs years of shaping before it becomes a coherent lifestyle setting.",
+          "The result is a property that can entertain, host, and breathe from the beginning rather than remaining permanently in project mode.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+          alt: "Established gardens and structured outdoor setting at the Mardan property",
+          caption:
+            "The maturity of the landscape is part of what makes the home feel settled and usable from day one.",
+        },
+      },
+      {
+        heading: "7. The valley outlook supports long-stay liveability",
+        paragraphs: [
+          "An outlook matters differently when you plan to live with it rather than just admire it. The Tarwin Valley setting gives the home a sense of release and calm that continues to contribute long after the novelty of first inspection has worn off.",
+          "That is the final reason the property works so well beyond summer. It is not relying on a single season, a single view line, or a single kind of buyer. It supports a deeper, longer pattern of use.",
+        ],
+        image: {
+          src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+          alt: "Terrace and Tarwin Valley outlook at 30 O'Malleys Rd, Mardan",
+          caption:
+            "Long-stay liveability is often defined by how a property feels once the view becomes part of everyday life.",
+        },
+      },
+    ],
+    featureListTitle: "Seven reasons this home performs beyond first impressions",
+    featureList: [
+      "Fully double glazed upstairs living areas",
+      "Passive solar design supporting more stable comfort",
+      "Poured-earth studio and garage building with unusually temperate conditions",
+      "Split-level layout that supports separated activity zones",
+      "Guest-capable lower level with kitchenette and spa bathroom",
+      "Established Robert Boyle designed gardens and outdoor structure",
+      "Tarwin Valley outlook that strengthens long-stay liveability",
+    ],
+    galleryTitle: "Comfort and usability gallery at 30 O'Malleys Rd",
+    gallery: [
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+        alt: "Front elevation and grounds at 30 O'Malleys Rd",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-kitchen.jpg",
+        alt: "Kitchen and upstairs living quality",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
+        alt: "Poured-earth studio and garage building",
+      },
+      {
+        src: "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-034.jpg",
+        alt: "Lower-level guest and multipurpose space",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
+        alt: "Established gardens and structured outdoor spaces",
+      },
+      {
+        src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
+        alt: "Terrace and valley outlook from the home",
+      },
+    ],
+    relatedLinks: [
+      { label: "View the full listing", href: "/" },
+      { label: "Browse the gallery", href: "/gallery" },
+      { label: "Open-home details", href: "/open-home" },
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+      { label: "Leongatha area guide", href: "/leongatha" },
+      { label: "Fish Creek area guide", href: "/fish-creek" },
+    ],
+    ctaTitle: "Inspect the comfort story in person",
+    ctaBody:
+      "If year-round comfort, studio flexibility, and long-stay liveability are central to your South Gippsland search, inspect 30 O'Malleys Rd, Mardan in person and compare it with the other regional ownership models you have been considering.",
   },
 ];
 

@@ -228,6 +228,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </div>
               </section>
 
+              {post.relatedLinks && post.relatedLinks.length > 0 && (
+                <section className="rounded-xl border border-border bg-secondary/30 p-6">
+                  <h2 className="font-serif text-2xl text-foreground">Related area guides</h2>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {post.relatedLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="rounded-full border border-border px-3 py-2 text-sm text-foreground transition-colors hover:border-primary"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+
               <section className="rounded-xl border border-border bg-secondary/30 p-6 md:p-8">
                 <h2 className="font-serif text-3xl text-foreground">{post.ctaTitle}</h2>
                 <p className="mt-4 text-muted-foreground">{post.ctaBody}</p>
