@@ -10,209 +10,189 @@ export type PropertyImage = {
   alt: string;
   category: GalleryCategory;
   caption?: string;
+  useInHomepage?: boolean;
+  useInOpenHome?: boolean;
+  useAsHero?: boolean;
 };
+
+const listingGalleryImages: PropertyImage[] = [
+  {
+    src: "/images/springbank/gallery-full/mardan-lifestyle-property-front-elevation-001.jpg",
+    alt: "Dusk front elevation of the Mardan residence with studio building and gravel arrival court",
+    category: "Exterior",
+    useAsHero: true,
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-acreage-home-dam-overview-001.jpg",
+    alt: "Broad view across the dam toward the main residence and outbuilding on the 5-acre holding",
+    category: "Views",
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-terrace-valley-view-001.jpg",
+    alt: "Covered terrace framed by the residence with panoramic valley views beyond",
+    category: "Views",
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-kitchen-island-dining-001.jpg",
+    alt: "Main kitchen with large island bench opening into the dining area",
+    category: "Interiors",
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-kitchen-valley-view-001.jpg",
+    alt: "Kitchen and dining room with broad valley outlook through the main windows",
+    category: "Interiors",
+    useInHomepage: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-living-room-fireplace-001.jpg",
+    alt: "Main living room with sculpted fireplace, timber floors, and tall ceilings",
+    category: "Interiors",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-dam-residence-outlook-001.jpg",
+    alt: "Dam, lawns, and landscaped grounds leading up to the residence and studio",
+    category: "Views",
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/south-gippsland-lily-pond-gardens-001.jpg",
+    alt: "Elevated view over the lily pond and established South Gippsland gardens",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-lily-pond-gardens-002.jpg",
+    alt: "Garden pond with lilies, clipped hedges, and open lawns around the home",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-hedge-walkway-001.jpg",
+    alt: "Hedge-lined walkway and pergola structure within the formal garden areas",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-tree-lined-drive-001.jpg",
+    alt: "Birch-lined drive and lawns leading toward the residence and garden rooms",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-entry-drive-gardens-001.jpg",
+    alt: "Front approach to the residence framed by mature trees and the gravel court",
+    category: "Exterior",
+    useInHomepage: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/south-gippsland-gardens-water-view-001.jpg",
+    alt: "Expansive lawns, trees, and water feature within the South Gippsland setting",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-open-lawns-orchard-001.jpg",
+    alt: "Open lawns and orchard-style planting across the wider grounds",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-tree-lined-drive-002.jpg",
+    alt: "Tree-lined track through the grounds with lawn edges and established planting",
+    category: "Grounds",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-kitchen-sink-valley-view-001.jpg",
+    alt: "Kitchen sink window looking across the terrace, lawns, and valley backdrop",
+    category: "Interiors",
+    useInHomepage: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-terrace-from-living-room-001.jpg",
+    alt: "View from the living area through to the terrace and valley outlook",
+    category: "Interiors",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-bedroom-feature-wall-001.jpg",
+    alt: "Bedroom with rich feature wall and soft natural light",
+    category: "Interiors",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-lower-level-guest-suite-001.jpg",
+    alt: "Large lower-level guest suite with bed, bench seating, and flexible floor area",
+    category: "Interiors",
+    useInHomepage: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-lower-level-open-living-001.jpg",
+    alt: "Open lower-level living area showing the scale and flexibility of the upgraded space",
+    category: "Interiors",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-lower-level-kitchenette-001.jpg",
+    alt: "Lower-level multipurpose room with kitchenette wall and dining zone",
+    category: "Interiors",
+    useInHomepage: true,
+    useInOpenHome: true,
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-lower-level-breakfast-bench-001.jpg",
+    alt: "Lower-level kitchenette and breakfast bench opening into the adjoining sitting area",
+    category: "Interiors",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-side-elevation-gardens-001.jpg",
+    alt: "Side elevation of the residence and studio beside the lawned dam edge",
+    category: "Exterior",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-driveway-gardens-view-001.jpg",
+    alt: "Driveway and front gardens viewed from the covered outdoor edge",
+    category: "Exterior",
+  },
+  {
+    src: "/images/springbank/gallery-full/mardan-entry-hall-valley-view-001.jpg",
+    alt: "Columned entry hall drawing the eye through to the terrace and valley beyond",
+    category: "Interiors",
+  },
+];
+
+const listingPlans: PropertyImage[] = [
+  {
+    src: "/images/springbank/plans/mardan-property-floorplan-001.png",
+    alt: "Floor plan showing the upper and lower residence layout plus the separate studio and garage",
+    category: "Plans",
+  },
+  {
+    src: "/images/springbank/plans/mardan-property-site-plan-001.jpg",
+    alt: "Site plan showing the full 5-acre property layout and surrounding grounds",
+    category: "Plans",
+  },
+];
+
+export const heroImage =
+  listingGalleryImages.find((image) => image.useAsHero) ?? listingGalleryImages[0];
 
 export const propertyFilm = {
   title: "Springbank Feature Video",
   description:
     "A guided video walkthrough of the residence, gardens, and Tarwin Valley setting.",
   youtubeUrl: "https://youtu.be/rFPWAy40BEg",
-  fallbackImage:
-    "/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-001.jpg",
+  fallbackImage: heroImage.src,
 };
 
-const importedListingImageMetadata: Array<{
-  seq: string;
-  alt: string;
-  category: GalleryCategory;
-}> = [
-  { seq: "001", alt: "Elevated view across grounds, dam, and tree-lined valley surrounds", category: "Views" },
-  { seq: "002", alt: "Main residence overlooking dam and lawns from lower grounds", category: "Exterior" },
-  { seq: "003", alt: "Poured earth garage and studio beside the main residence", category: "Exterior" },
-  { seq: "004", alt: "Home office nook with desk and monitors", category: "Interiors" },
-  { seq: "005", alt: "Tree-lined walking track beside post-and-rail fence", category: "Grounds" },
-  { seq: "006", alt: "Side pergola and garden edge along residence", category: "Exterior" },
-  { seq: "007", alt: "White post-and-rail entrance gates at property driveway", category: "Exterior" },
-  { seq: "008", alt: "Cypress-lined lawn corridor across open grounds", category: "Grounds" },
-  {
-    seq: "009",
-    alt: "Poured earth garage and studio, with gravel driveway to the lower level of the main residence on the right",
-    category: "Exterior",
-  },
-  { seq: "010", alt: "Open lawns and drainage line with mature trees", category: "Exterior" },
-  { seq: "011", alt: "Merbau deck on dam edge with rural horizon", category: "Views" },
-  { seq: "012", alt: "Shaded grove and open grass near the homestead", category: "Grounds" },
-  { seq: "013", alt: "Dam edge and sloping lawns toward mature hedges", category: "Grounds" },
-  { seq: "014", alt: "Hedge tunnel walkway through formal garden structure", category: "Grounds" },
-  { seq: "015", alt: "Pergola courtyard beside residence exterior wall", category: "Exterior" },
-  { seq: "016", alt: "Orchard-style walking track and lawn around the home", category: "Grounds" },
-  { seq: "017", alt: "Two-story main residence and outbuilding", category: "Exterior" },
-  { seq: "018", alt: "Spa bathroom with corner bath and vanity", category: "Interiors" },
-  { seq: "019", alt: "Tree-lined drive and lawn frontage near buildings", category: "Grounds" },
-  { seq: "020", alt: "Circular garden bed and clipped hedge feature", category: "Grounds" },
-  { seq: "021", alt: "Canopy tree area overlooking the picturesque dam", category: "Grounds" },
-  { seq: "022", alt: "White boundary fencing beneath mature eucalypts", category: "Exterior" },
-  {
-    seq: "023",
-    alt: "Open lawn and tree line beside the boundary walking track, with the central mound screening a picture dam and merbau viewing deck behind",
-    category: "Grounds",
-  },
-  {
-    seq: "024",
-    alt: "Olive trees and walking track with water tanks on the left, and the studio, garage, and carport building in the centre",
-    category: "Grounds",
-  },
-  {
-    seq: "025",
-    alt: "Walk-in robe and dressing passage connecting to a toilet/vanity and the semi-ensuite family bathroom",
-    category: "Interiors",
-  },
-  { seq: "026", alt: "Double garage interior with vehicle and storage space", category: "Exterior" },
-  {
-    seq: "027",
-    alt: "Downstairs bedroom with large picture window, garden outlook, and adjoining bathroom",
-    category: "Interiors",
-  },
-  { seq: "028", alt: "Open lawn area with scattered shade trees", category: "Grounds" },
-  { seq: "029", alt: "Bedroom and adjoining retreat on the downstairs level", category: "Interiors" },
-  { seq: "030", alt: "Internal stair hall and passage to lower rooms", category: "Interiors" },
-  { seq: "031", alt: "Studio living zone with kitchenette, dining and lounge area", category: "Interiors" },
-  { seq: "032", alt: "Multipurpose studio room with kitchenette wall", category: "Interiors" },
-  { seq: "033", alt: "Dining nook with kitchenette and garden-facing window", category: "Interiors" },
-  {
-    seq: "034",
-    alt: "Large multipurpose room configured with bed, work area, kitchenette, laundry, and L-shaped bench suitable for dining",
-    category: "Interiors",
-  },
-  { seq: "035", alt: "Compact studio kitchenette and breakfast bench", category: "Interiors" },
-  { seq: "036", alt: "Kitchen sink window framing terrace and valley view", category: "Interiors" },
-  { seq: "037", alt: "Large bedroom suite with seating and soft natural light", category: "Interiors" },
-  { seq: "038", alt: "Covered alfresco deck with valley outlook beyond", category: "Exterior" },
-  { seq: "039", alt: "Guest bedroom with chandelier and garden window", category: "Interiors" },
-  { seq: "040", alt: "Walk-in pantry with open shelving and timber floor", category: "Interiors" },
-  { seq: "041", alt: "Covered outdoor edge overlooking driveway and lawn", category: "Exterior" },
-  {
-    seq: "042",
-    alt: "Expansive studio living zone near the double garage, with kitchenette and adjoining toilet powder room area, currently set up with dining and lounge spaces",
-    category: "Interiors",
-  },
-  {
-    seq: "043",
-    alt: "Studio vanity area with tiled splashback, timber benchtop, and wash basin",
-    category: "Interiors",
-  },
-  { seq: "044", alt: "Studio kitchenette and utility zone beside main open area", category: "Interiors" },
-  { seq: "045", alt: "Residence exterior through trees along gravel drive", category: "Exterior" },
-  { seq: "046", alt: "Studio family-sized room with dining table and storage", category: "Interiors" },
-  { seq: "047", alt: "Open-plan studio room with kitchenette and dining setup", category: "Interiors" },
-  {
-    seq: "048",
-    alt: "Main kitchen and dining area with island bench, timber benchtops, and classic retro Simpson stove and cooktop",
-    category: "Interiors",
-  },
-  { seq: "049", alt: "Open-plan kitchen and dining with timber floors", category: "Interiors" },
-  {
-    seq: "050",
-    alt: "Living room with slow combustion wood heater, TV wall, and rare Peppermint Gum timber floors",
-    category: "Interiors",
-  },
-  { seq: "051", alt: "Open-plan interior linking lounge, dining, and kitchen", category: "Interiors" },
-  { seq: "052", alt: "Kitchen benches and sink with wide valley outlook", category: "Interiors" },
-  { seq: "053", alt: "Terrace viewed through window toward surrounding gardens", category: "Exterior" },
-  { seq: "054", alt: "Main kitchen with island bench and timber benchtops", category: "Interiors" },
-  { seq: "055", alt: "Feature entry corridor with custom front doors and vista", category: "Interiors" },
-  { seq: "056", alt: "Lounge area with slow combustion wood heater and long-range outlook", category: "Interiors" },
-  { seq: "057", alt: "Terrace seating and lawn steps toward valley views", category: "Views" },
-  {
-    seq: "058",
-    alt: "Master bedroom with feature wall; right doorway leads to the walk-in robe, toilet and vanity, with the semi-ensuite family bathroom beyond, while the left doorway returns to the main-house corridor",
-    category: "Interiors",
-  },
-  { seq: "059", alt: "Sunset exterior of residence and curved driveway", category: "Exterior" },
-  { seq: "060", alt: "Dusk frontage of home and studio buildings", category: "Exterior" },
-  { seq: "061", alt: "Decorative mural niche detail within hallway", category: "Interiors" },
-  { seq: "062", alt: "Main bathroom with vanity, shower, and accessibility rail", category: "Interiors" },
-];
+export const propertyImages: PropertyImage[] = [...listingGalleryImages, ...listingPlans];
 
-const importedListingImages: PropertyImage[] = importedListingImageMetadata.map((image) => ({
-  src: `/images/springbank/gallery-full/springbank-mardan-south-gippsland-lifestyle-property-gallery-${image.seq}.jpg`,
-  alt: image.alt,
-  category: image.category,
-}));
+export const homepageHighlightImages: PropertyImage[] = listingGalleryImages.filter(
+  (image) => image.useInHomepage
+);
 
-const importedListingPlans: PropertyImage[] = [
-  {
-    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-listing-floorplan-01.png",
-    alt: "Springbank floor plan showing upper and lower residence layout plus the separate studio and garage plan",
-    category: "Plans",
-  },
-  {
-    src: "/images/springbank/plans/springbank-mardan-south-gippsland-property-listing-floorplan-02.jpg",
-    alt: "Springbank aerial boundary plan showing the full 5-acre holding",
-    category: "Plans",
-  },
-];
-
-export const propertyImages: PropertyImage[] = [...importedListingImages, ...importedListingPlans];
-
-const homepageHighlightSelections = [
-  {
-    file: "springbank-mardan-homepage-highlight-01.jpg",
-    alt: "Elevated view across Springbank grounds with dam and mature trees",
-    category: "Views",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-02.jpg",
-    alt: "Kitchen sink window framing Springbank gardens and valley outlook",
-    category: "Interiors",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-03.jpg",
-    alt: "White post-and-rail gate entry at 30 O'Malleys Road",
-    category: "Exterior",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-04.jpg",
-    alt: "Merbau deck beside the dam with open rural outlook",
-    category: "Views",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-05.jpg",
-    alt: "Pergola walkway linking courtyard and residence exterior",
-    category: "Exterior",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-06.jpg",
-    alt: "Established garden feature and lawns within the grounds",
-    category: "Grounds",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-07.jpg",
-    alt: "Open-plan kitchen and dining zone with timber finishes",
-    category: "Interiors",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-08.jpg",
-    alt: "Sunset exterior of the residence and driveway approach",
-    category: "Exterior",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-09.jpg",
-    alt: "Covered outdoor edge overlooking driveway and lawn area",
-    category: "Exterior",
-  },
-  {
-    file: "springbank-mardan-homepage-highlight-10.jpg",
-    alt: "Kitchen bench and sink with wide window to valley views",
-    category: "Interiors",
-  },
-] as const;
-
-export const homepageHighlightImages: PropertyImage[] = homepageHighlightSelections.map((item) => ({
-  src: `/images/springbank/highlights/${item.file}`,
-  alt: item.alt,
-  category: item.category,
-}));
+export const openHomeGalleryImages: PropertyImage[] = listingGalleryImages.filter(
+  (image) => image.useInOpenHome
+);
 
 export const galleryCategories: GalleryCategory[] = [
   "Exterior",
@@ -226,12 +206,15 @@ export function getHomepageGalleryHighlights(max = 10): PropertyImage[] {
   return homepageHighlightImages.slice(0, max);
 }
 
+export function getOpenHomeGalleryHighlights(max = 6): PropertyImage[] {
+  return openHomeGalleryImages.slice(0, max);
+}
+
 export function getEmbedVideoUrl(youtubeUrl: string): string | null {
   if (!youtubeUrl) {
     return null;
   }
 
-  // Supports both youtu.be and youtube.com links.
   const shortMatch = youtubeUrl.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
   const watchMatch = youtubeUrl.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
   const id = shortMatch?.[1] ?? watchMatch?.[1];

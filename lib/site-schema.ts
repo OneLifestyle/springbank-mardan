@@ -1,11 +1,12 @@
 import type { BlogPost } from "@/lib/blog";
+import { heroImage } from "@/lib/gallery";
 
 export const SITE_URL = "https://springbankmardan.com";
 export const SITE_NAME = "Springbank Mardan";
 export const SITE_DESCRIPTION =
   "Acreage for sale in South Gippsland at 30 O'Malleys Rd, Mardan VIC 3953. Tuscan-inspired Mediterranean residence on 5 acres near Leongatha, Meeniyan and Mirboo North.";
 export const DEFAULT_SHARE_IMAGE =
-  `${SITE_URL}/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg`;
+  `${SITE_URL}${heroImage.src}`;
 export const BLOG_URL = `${SITE_URL}/blog`;
 export const BLOG_NAME = "Springbank Journal";
 export const DEFAULT_BLOG_DESCRIPTION =
@@ -55,7 +56,7 @@ export const OPEN_HOME_EVENT = {
   displayTime: "11:00am to 12:00pm",
   teaserTime: "Saturday 4 April, 11am to 12pm",
   url: `${SITE_URL}/open-home`,
-  image: `${SITE_URL}/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg`,
+  image: DEFAULT_SHARE_IMAGE,
   description:
     "Open Home at 30 O'Malleys Rd, Mardan VIC 3953. Saturday 4 April 2026, 11am to 12pm. Easter long-weekend inspection.",
 };

@@ -10,6 +10,7 @@ import { LocationSection } from "@/components/location-section";
 import { BlogPreviewSection } from "@/components/blog-preview-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
+import { heroImage } from "@/lib/gallery";
 import { getRealEstateListingJsonLd } from "@/lib/site-schema";
 
 export const metadata: Metadata = {
@@ -38,10 +39,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+        url: heroImage.src,
         width: 1200,
         height: 630,
-        alt: "Acreage for sale in Mardan, South Gippsland",
+        alt: heroImage.alt,
       },
     ],
   },

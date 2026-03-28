@@ -2,6 +2,7 @@
 
 import { ChevronDown, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { heroImage } from "@/lib/gallery";
 
 export function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
         style={{
-          backgroundImage: `url('/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg')`,
+          backgroundImage: `url('${heroImage.src}')`,
         }}
       />
 

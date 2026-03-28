@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { heroImage } from "@/lib/gallery";
 import {
   filterPostsByFacets,
   getAllCategories,
@@ -46,10 +47,10 @@ export async function generateMetadata({ searchParams }: BlogIndexProps): Promis
       type: "website",
       images: [
         {
-          url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+          url: heroImage.src,
           width: 1200,
           height: 630,
-          alt: "South Gippsland real estate blog",
+          alt: heroImage.alt,
         },
       ],
     },

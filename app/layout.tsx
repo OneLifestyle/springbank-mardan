@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Abril_Fatface, Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { heroImage } from "@/lib/gallery";
 import { getGlobalOrganizationJsonLd, getWebsiteJsonLd } from "@/lib/site-schema";
 import "./globals.css";
 
@@ -37,10 +38,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg",
+        url: heroImage.src,
         width: 1200,
         height: 630,
-        alt: "Springbank - Mediterranean sanctuary overlooking the Tarwin Valley in Mardan, VIC",
+        alt: heroImage.alt,
       },
     ],
   },
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     title: "South Gippsland Acreage for Sale | Springbank Mardan",
     description:
       "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
-    images: ["/images/springbank/highlights/springbank-mardan-south-gippsland-lifestyle-property-hero.jpg"],
+    images: [heroImage.src],
   },
 };
 

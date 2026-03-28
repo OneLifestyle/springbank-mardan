@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { heroImage } from "@/lib/gallery";
 import GalleryClient from "./gallery-client";
 
 export const metadata: Metadata = {
@@ -18,10 +19,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        url: heroImage.src,
         width: 1200,
         height: 630,
-        alt: "Springbank full gallery preview",
+        alt: heroImage.alt,
       },
     ],
   },

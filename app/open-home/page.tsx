@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, CalendarDays, Clock3, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { getOpenHomeGalleryHighlights, heroImage } from "@/lib/gallery";
 import { LISTING_DETAILS, OPEN_HOME_EVENT, getOpenHomeEventJsonLd } from "@/lib/site-schema";
 
 export const metadata: Metadata = {
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
+        url: heroImage.src,
         width: 1200,
         height: 630,
-        alt: "Springbank open home in Mardan",
+        alt: heroImage.alt,
       },
     ],
   },
@@ -42,35 +43,9 @@ const expectations = [
   "Private 530-metre walking and running track encircling the grounds.",
 ];
 
-const galleryImages = [
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg",
-    alt: "Springbank from the dam with merbau deck, sweeping lawns and established gardens",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
-    alt: "Outdoor terrace with panoramic valley views",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-olive-path.jpg",
-    alt: "Olive tree-lined pathway through the grounds",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-main-residence-studio.jpg",
-    alt: "Main residence and poured earth studio",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-robert-boyle-gardens.jpg",
-    alt: "Robert Boyle designed gardens with mature trees",
-  },
-  {
-    src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-tarwin-valley-views.jpg",
-    alt: "Sweeping Tarwin Valley views from the property",
-  },
-];
-
 export default function OpenHomePage() {
   const openHomeEventJsonLd = getOpenHomeEventJsonLd();
+  const galleryImages = getOpenHomeGalleryHighlights(6);
 
   return (
     <>
@@ -152,8 +127,8 @@ export default function OpenHomePage() {
             <div className="overflow-hidden rounded-xl border border-border bg-card">
               <div className="relative aspect-[16/7] w-full">
                 <Image
-                  src="/images/springbank/highlights/springbank-mardan-south-gippsland-property-dam-view.jpg"
-                  alt="Springbank residence and grounds during open home season"
+                  src={heroImage.src}
+                  alt={heroImage.alt}
                   fill
                   className="object-cover"
                 />
