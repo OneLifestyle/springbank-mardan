@@ -17,17 +17,17 @@ export type PropertyImage = {
 
 const listingGalleryImages: PropertyImage[] = [
   {
-    src: "/images/springbank/gallery-full/mardan-lifestyle-property-front-elevation-001.jpg",
-    alt: "Dusk front elevation of the Mardan residence with studio building and gravel arrival court",
-    category: "Exterior",
+    src: "/images/springbank/gallery-full/mardan-acreage-home-dam-overview-001.jpg",
+    alt: "Broad view across the dam toward the main residence and outbuilding on the 5-acre holding",
+    category: "Views",
     useAsHero: true,
     useInHomepage: true,
     useInOpenHome: true,
   },
   {
-    src: "/images/springbank/gallery-full/mardan-acreage-home-dam-overview-001.jpg",
-    alt: "Broad view across the dam toward the main residence and outbuilding on the 5-acre holding",
-    category: "Views",
+    src: "/images/springbank/gallery-full/mardan-lifestyle-property-front-elevation-001.jpg",
+    alt: "Dusk front elevation of the Mardan residence with studio building and gravel arrival court",
+    category: "Exterior",
     useInHomepage: true,
     useInOpenHome: true,
   },
