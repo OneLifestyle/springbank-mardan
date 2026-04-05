@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
     description:
-      `Inspect 30 O'Malleys Rd, Mardan on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime} during the Easter long weekend.`,
+      `Inspect 30 O'Malleys Rd, Mardan on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime}.`,
     url: "https://springbankmardan.com/open-home",
     siteName: "Springbank Mardan",
     type: "website",
@@ -86,7 +86,7 @@ export default function OpenHomePage() {
                 Inspect 30 O&apos;Malleys Rd, Mardan in person and experience a Tuscan-inspired Mediterranean residence designed for year-round comfort, entertaining, and long-stay living.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                This open home falls on the Easter long weekend, when South Gippsland typically sees stronger visitor movement across the district.
+                This inspection window gives South Gippsland buyers and weekend visitors a clear opportunity to assess the home, grounds, and outlook in person.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-3">

@@ -50,15 +50,15 @@ export const LISTING_DETAILS = {
 
 export const OPEN_HOME_EVENT = {
   name: "Open Home - Springbank Mediterranean Sanctuary",
-  startDate: "2026-04-04T11:00:00+11:00",
-  endDate: "2026-04-04T12:00:00+11:00",
-  displayDate: "Saturday 4 April 2026",
+  startDate: "2026-04-18T11:00:00+10:00",
+  endDate: "2026-04-18T12:00:00+10:00",
+  displayDate: "Saturday 18 April 2026",
   displayTime: "11:00am to 12:00pm",
-  teaserTime: "Saturday 4 April, 11am to 12pm",
+  teaserTime: "Saturday 18 April, 11am to 12pm",
   url: `${SITE_URL}/open-home`,
   image: DEFAULT_SHARE_IMAGE,
   description:
-    "Open Home at 30 O'Malleys Rd, Mardan VIC 3953. Saturday 4 April 2026, 11am to 12pm. Easter long-weekend inspection.",
+    "Open Home at 30 O'Malleys Rd, Mardan VIC 3953. Saturday 18 April 2026, 11am to 12pm.",
 };
 
 type BlogAuthor = {

@@ -13,7 +13,7 @@ export function OpenHomePromoSection() {
             {OPEN_HOME_EVENT.displayDate}, {OPEN_HOME_EVENT.displayTime}
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
-            Inspect 30 O&apos;Malleys Rd, Mardan VIC 3953 in person over the Easter long weekend.
+            Inspect 30 O&apos;Malleys Rd, Mardan VIC 3953 in person.
             View the Tuscan-inspired Mediterranean residence, Robert Boyle designed gardens, the
             poured-earth studio, and sweeping Tarwin Valley outlook in one inspection window.
           </p>
