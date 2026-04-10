@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const resolvedDescription = post.seoDescription ?? post.excerpt;
   const titleSuffix = isPropertySpotlight
     ? " | Mardan Property for Sale"
-    : " | Springbank Journal";
+    : " | South Gippsland Real Estate Blog";
 
   return {
     title: `${resolvedTitle}${titleSuffix}`,

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
 import { guideEvents } from "@/lib/town-guides";
 import {
@@ -217,6 +218,16 @@ export default function MeeniyanPage() {
             </div>
           </div>
         </section>
+
+        <RelatedBuyerGuidesSection
+          title="Meeniyan-area buyer guides"
+          description="Meeniyan draws strong village-interest searches, but the next question is usually how that appeal compares with surrounding acreage, service access, and nearby lifestyle-property options."
+          slugs={[
+            "leongatha-vs-meeniyan-vs-mirboo-north-which-town-fits-your-lifestyle-property-plan",
+            "south-gippsland-weekender-holiday-home-guide-what-buyers-should-check",
+            "buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
+          ]}
+        />
 
         <section className="py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">

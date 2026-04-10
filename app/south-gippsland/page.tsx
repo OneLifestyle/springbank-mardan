@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
 import { guideEvents } from "@/lib/town-guides";
 import {
@@ -305,6 +306,16 @@ export default function SouthGippslandPage() {
             </div>
           </div>
         </section>
+
+        <RelatedBuyerGuidesSection
+          title="South Gippsland buyer guides worth reading next"
+          description="These articles go beyond a generic regional overview and help buyers compare town fit, acreage search strategy, and inspection planning before they move from browsing into enquiry mode."
+          slugs={[
+            "south-gippsland-real-estate-guide-2026-lifestyle-buyer-priorities",
+            "south-gippsland-tree-change-guide-2026-where-lifestyle-buyers-start",
+            "south-gippsland-lifestyle-property-search-pathway-from-research-to-inspection",
+          ]}
+        />
 
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
 import { guideEvents } from "@/lib/town-guides";
 import {
@@ -216,6 +217,16 @@ export default function MirbooNorthPage() {
             </div>
           </div>
         </section>
+
+        <RelatedBuyerGuidesSection
+          title="Mirboo North comparison guides for lifestyle buyers"
+          description="Mirboo North often enters the shortlist for buyers chasing village character. These guides help compare that appeal with practical service access, acreage usability, and the broader South Gippsland search."
+          slugs={[
+            "leongatha-vs-meeniyan-vs-mirboo-north-which-town-fits-your-lifestyle-property-plan",
+            "south-gippsland-permanent-move-guide-schools-healthcare-shops-and-daily-life",
+            "buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
+          ]}
+        />
 
         <section className="py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { getAllBlogPosts } from "@/lib/blog";
+import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/blog";
 
 function formatDate(value: string): string {
   return new Intl.DateTimeFormat("en-AU", {
@@ -14,6 +14,13 @@ function formatDate(value: string): string {
 
 export function BlogPreviewSection() {
   const latestPost = getAllBlogPosts()[0];
+  const featuredGuides = [
+    "buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
+    "south-gippsland-real-estate-guide-2026-lifestyle-buyer-priorities",
+    "30-omalleys-rd-mardan-7-features-that-make-this-acreage-home-comfortable-well-beyond-summer",
+  ]
+    .map((slug) => getBlogPostBySlug(slug))
+    .filter((post): post is NonNullable<typeof post> => Boolean(post));
 
   if (!latestPost) {
     return null;
@@ -29,12 +36,11 @@ export function BlogPreviewSection() {
                 Springbank Journal
               </p>
               <h2 className="font-serif text-3xl text-foreground md:text-4xl">
-                Long-form property and lifestyle insights
+                Buyer guides that support real property decisions
               </h2>
               <p className="text-muted-foreground">
-                Explore in-depth articles built for buyers researching South Gippsland lifestyle
-                property, regional living, and real estate context across Leongatha, Meeniyan,
-                Mirboo North, and Mardan.
+                Explore practical articles for buyers comparing South Gippsland townships, acreage
+                searches, inspection strategy, and this live Mardan property for sale.
               </p>
 
               <article className="rounded-lg border border-border p-5">
@@ -69,6 +75,25 @@ export function BlogPreviewSection() {
                   </Button>
                 </div>
               </article>
+
+              {featuredGuides.length > 0 && (
+                <div className="rounded-lg border border-border p-5">
+                  <p className="text-xs uppercase tracking-[0.14em] text-primary">
+                    Start with these guides
+                  </p>
+                  <div className="mt-4 grid gap-3">
+                    {featuredGuides.map((post) => (
+                      <Link
+                        key={post.slug}
+                        href={`/blog/${post.slug}`}
+                        className="rounded-lg border border-border px-4 py-3 text-sm text-foreground transition-colors hover:border-primary"
+                      >
+                        {post.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="relative overflow-hidden rounded-xl border border-border">

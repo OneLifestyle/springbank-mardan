@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
 import { guideEvents } from "@/lib/town-guides";
 import {
@@ -216,6 +217,16 @@ export default function LeongathaPage() {
             </div>
           </div>
         </section>
+
+        <RelatedBuyerGuidesSection
+          title="Leongatha-area guides for acreage buyers"
+          description="Leongatha attracts service-led searches, but serious buyers usually compare nearby acreage and longer-term liveability. These guides are the next step if you are narrowing from town research into actual property decisions."
+          slugs={[
+            "acreage-for-sale-near-leongatha-what-buyers-should-compare-beyond-the-town-boundary",
+            "south-gippsland-permanent-move-guide-schools-healthcare-shops-and-daily-life",
+            "buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
+          ]}
+        />
 
         <section className="py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
+import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
 import { guideEvents } from "@/lib/town-guides";
 import {
@@ -204,6 +205,16 @@ export default function WilsonsPromontoryPage() {
             </div>
           </div>
         </section>
+
+        <RelatedBuyerGuidesSection
+          title="Prom-country guides for buyers comparing coast and region"
+          description="People searching Wilsons Promontory often still need to decide whether they want a coast-led base, a village address, or a more flexible inland property. These guides map that choice more directly."
+          slugs={[
+            "living-near-wilsons-promontory-coast-access-without-compromising-town-convenience",
+            "prom-country-property-guide-buying-acreage-weekender-or-holiday-base",
+            "foster-real-estate-guide-prom-access-services-and-lifestyle-property-appeal",
+          ]}
+        />
 
         <section className="py-12 md:py-16">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
