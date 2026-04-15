@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button";
 import { heroImage } from "@/lib/gallery";
 
 export function HeroSection() {
+  const answerHighlights = [
+    "Tuscan-inspired Mediterranean residence on 5 acres",
+    "Fully double glazed main living spaces with passive solar comfort",
+    "Separate poured-earth studio and flexible lower level for long-stay use",
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with overlay */}
@@ -32,6 +38,27 @@ export function HeroSection() {
           Leongatha, Meeniyan and Mirboo North, with fully double glazed living areas, passive
           solar design, and a poured-earth studio for year-round comfort.
         </p>
+        <div className="mx-auto mb-8 max-w-4xl rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-5 text-left backdrop-blur-sm">
+          <p className="text-xs uppercase tracking-[0.16em] text-primary-foreground/75">
+            Direct Answer
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-primary-foreground/95 md:text-base">
+            30 O&apos;Malleys Rd, Mardan is a South Gippsland lifestyle property for sale that works
+            best as a private long-stay regional base. It combines a substantial split-level home,
+            mature designed gardens, a dam, and a studio building that remains unusually usable
+            through both summer heat and winter cold.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {answerHighlights.map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-primary-foreground/20 px-3 py-1 text-xs text-primary-foreground/90"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
         <p className="text-primary-foreground text-4xl md:text-5xl lg:text-6xl font-serif font-semibold mb-3">
           $1.28m
         </p>

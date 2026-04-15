@@ -218,6 +218,33 @@ export default function LeongathaPage() {
           </div>
         </section>
 
+        <section className="py-4 md:py-6">
+          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">What Leongatha is for buyers</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Leongatha is the region&apos;s practical benchmark. Buyers usually start here when
+                they want schools, supermarkets, healthcare, trades, and rail access in the same
+                search area.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Families, permanent movers, and acreage buyers who want a country setting without
+                giving up everyday convenience often use Leongatha as their decision-making anchor.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Mardan keeps Leongatha&apos;s services within easy reach while trading town-centre
+                immediacy for more privacy, valley outlook, and genuine lifestyle-property scale.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedBuyerGuidesSection
           title="Leongatha-area guides for acreage buyers"
           description="Leongatha attracts service-led searches, but serious buyers usually compare nearby acreage and longer-term liveability. These guides are the next step if you are narrowing from town research into actual property decisions."

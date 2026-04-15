@@ -218,6 +218,34 @@ export default function MirbooNorthPage() {
           </div>
         </section>
 
+        <section className="py-4 md:py-6">
+          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">What Mirboo North is for buyers</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Mirboo North is a scenic lifestyle-village search. Buyers usually come here for a
+                greener hilltop setting, stronger village identity, and day-to-day access to trails
+                and local hospitality.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                It suits buyers who care about landscape and community texture, especially people
+                comparing a scenic permanent move against larger, more service-led townships.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Mardan is less village-led than Mirboo North, but stronger for buyers who want a
+                central base, larger grounds, and simpler access to Leongatha, Meeniyan, and Prom
+                Country day trips.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedBuyerGuidesSection
           title="Mirboo North comparison guides for lifestyle buyers"
           description="Mirboo North often enters the shortlist for buyers chasing village character. These guides help compare that appeal with practical service access, acreage usability, and the broader South Gippsland search."

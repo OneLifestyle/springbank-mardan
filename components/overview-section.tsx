@@ -53,6 +53,11 @@ export function OverviewSection() {
             Tuscan-Inspired Mediterranean Living in South Gippsland
           </h2>
           <div className="w-20 h-px bg-primary mx-auto" />
+          <p className="mt-6 max-w-3xl mx-auto text-muted-foreground">
+            This page works best when it answers two questions quickly: what this property actually
+            is, and why it feels stronger in day-to-day use than a presentation-only lifestyle
+            holding.
+          </p>
         </div>
 
         {/* Property Stats Grid */}
@@ -77,6 +82,21 @@ export function OverviewSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mb-10 rounded-xl border border-border bg-secondary/30 p-6 md:p-8">
+          <h3 className="font-serif text-2xl text-foreground">What this property is</h3>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            30 O&apos;Malleys Rd, Mardan is a substantial split-level South Gippsland acreage home
+            designed for long-term liveability. It combines a highly resolved main dwelling, a
+            genuinely useful lower level, and a separate poured-earth studio building within mature
+            designed grounds that already feel established rather than aspirational.
+          </p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            That makes it stronger than a property that relies only on styling or outlook. The
+            commercial value here comes from how the residence, guest flexibility, garden rooms,
+            valley setting, and nearby township access work together in everyday use.
+          </p>
         </div>
 
         {/* Description */}

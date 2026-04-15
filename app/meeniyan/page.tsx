@@ -219,6 +219,32 @@ export default function MeeniyanPage() {
           </div>
         </section>
 
+        <section className="py-4 md:py-6">
+          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">What Meeniyan is for buyers</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Meeniyan is a village-character search. Buyers usually land here when they value
+                atmosphere, food culture, and a smaller-town feel more than full service-town scale.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                It tends to suit weekender buyers, downsizers, and permanent movers who want
+                walkable village life with strong identity, not just a rural address.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Mardan gives up Meeniyan&apos;s walkable main street, but gains more acreage, more
+                privacy, and easier positioning between multiple South Gippsland townships.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <RelatedBuyerGuidesSection
           title="Meeniyan-area buyer guides"
           description="Meeniyan draws strong village-interest searches, but the next question is usually how that appeal compares with surrounding acreage, service access, and nearby lifestyle-property options."

@@ -145,6 +145,53 @@ export function LocationSection() {
           </div>
         </div>
 
+        <div className="mb-16 rounded-xl border border-border bg-card p-6 md:p-8">
+          <h3 className="font-serif text-2xl text-foreground">Why this location works for buyers</h3>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <article className="rounded-xl border border-border bg-background p-5">
+              <h4 className="font-serif text-xl text-foreground">Service access without town-centre compromise</h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                The property sits close enough to{" "}
+                <Link href="/leongatha" className="text-primary underline-offset-4 hover:underline">
+                  Leongatha
+                </Link>{" "}
+                for daily practicality, but far enough away to preserve the privacy and land use
+                that town-centre buyers do not get.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-background p-5">
+              <h4 className="font-serif text-xl text-foreground">Village and food-culture reach</h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Access to{" "}
+                <Link href="/meeniyan" className="text-primary underline-offset-4 hover:underline">
+                  Meeniyan
+                </Link>{" "}
+                and{" "}
+                <Link href="/mirboo-north" className="text-primary underline-offset-4 hover:underline">
+                  Mirboo North
+                </Link>{" "}
+                means the property sits within reach of village character, cafes, galleries, and
+                regional events without being dependent on any one township.
+              </p>
+            </article>
+            <article className="rounded-xl border border-border bg-background p-5">
+              <h4 className="font-serif text-xl text-foreground">A stronger inland base than a pure holiday address</h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Buyers drawn by the wider{" "}
+                <Link href="/south-gippsland" className="text-primary underline-offset-4 hover:underline">
+                  South Gippsland region
+                </Link>{" "}
+                and{" "}
+                <Link href="/wilsons-promontory" className="text-primary underline-offset-4 hover:underline">
+                  Wilsons Promontory
+                </Link>{" "}
+                often find that an inland base gives more everyday flexibility than a purely
+                coastal address.
+              </p>
+            </article>
+          </div>
+        </div>
+
         {/* Map Embed */}
         <div className="bg-card border border-border overflow-hidden">
           <div className="aspect-[16/9] md:aspect-[21/9]">

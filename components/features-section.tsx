@@ -47,6 +47,21 @@ const features = [
 ];
 
 export function FeaturesSection() {
+  const answerPanels = [
+    {
+      title: "Comfort and performance",
+      body: "The strongest practical difference at Springbank is not cosmetic. Double glazing, passive solar orientation, and the thermal mass of the poured-earth studio make the home feel calmer and more stable across seasons.",
+    },
+    {
+      title: "Layout flexibility",
+      body: "The split-level structure, lower-level kitchenette zone, and separate studio building create useful separation between everyday living, guest stays, and work or creative use.",
+    },
+    {
+      title: "Lifestyle depth",
+      body: "The property is not just residence plus land. The gardens, dam, deck, orchard-style plantings, and valley outlook turn the holding into a place that rewards longer stays rather than quick visits.",
+    },
+  ];
+
   return (
     <section id="features" className="py-20 md:py-28 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,6 +98,15 @@ export function FeaturesSection() {
                 {feature.description}
               </p>
             </div>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {answerPanels.map((panel) => (
+            <article key={panel.title} className="rounded-xl border border-border bg-card p-6">
+              <h3 className="font-serif text-2xl text-foreground">{panel.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{panel.body}</p>
+            </article>
           ))}
         </div>
 

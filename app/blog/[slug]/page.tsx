@@ -14,12 +14,58 @@ type BlogPostPageProps = {
   }>;
 };
 
+type TakeawayContext = {
+  categories: string[];
+  featureListTitle: string;
+  relatedLinks?: Array<{ label: string; href: string }>;
+  sections: Array<{ heading: string }>;
+};
+
 function formatDate(value: string): string {
   return new Intl.DateTimeFormat("en-AU", {
     day: "2-digit",
     month: "long",
     year: "numeric",
   }).format(new Date(value));
+}
+
+function joinLabelList(labels: string[]): string {
+  if (labels.length === 0) return "";
+  if (labels.length === 1) return labels[0];
+  if (labels.length === 2) return `${labels[0]} and ${labels[1]}`;
+  return `${labels.slice(0, -1).join(", ")}, and ${labels.at(-1)}`;
+}
+
+function buildTakeaways(post: TakeawayContext): string[] {
+  const takeaways: string[] = [];
+  const isPropertySpotlight = post.categories.includes("Property Spotlight");
+  const supportingCategories = post.categories.filter((category) => category !== "Property Spotlight");
+  const focusHeadings = post.sections.slice(0, 3).map((section) => section.heading);
+  const relatedLabels = post.relatedLinks?.slice(0, 3).map((link) => link.label) ?? [];
+
+  if (isPropertySpotlight) {
+    takeaways.push(
+      `Property spotlight for buyers assessing how this Mardan acreage home performs in everyday living, guest use, and inspection readiness.`
+    );
+  } else if (supportingCategories.length > 0) {
+    takeaways.push(
+      `Buyer guide for ${joinLabelList(supportingCategories).toLowerCase()} research, written to support clearer property decisions rather than general tourism browsing.`
+    );
+  }
+
+  if (focusHeadings.length > 0) {
+    takeaways.push(`Covers ${joinLabelList(focusHeadings).toLowerCase()}.`);
+  }
+
+  takeaways.push(`Use the ${post.featureListTitle.toLowerCase()} for a quick comparison pass before your next inspection.`);
+
+  if (relatedLabels.length > 0) {
+    takeaways.push(`Useful follow-on area guides: ${joinLabelList(relatedLabels)}.`);
+  } else if (!isPropertySpotlight) {
+    takeaways.push(`Links this research back to the active Mardan lifestyle property listing and current open-home pathway.`);
+  }
+
+  return takeaways.slice(0, 4);
 }
 
 export async function generateStaticParams() {
@@ -84,6 +130,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const articleJsonLd = getBlogPostingJsonLd(post);
+  const takeaways = buildTakeaways(post);
 
   return (
     <>
@@ -142,6 +189,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </span>
               </div>
             </header>
+
+            <section className="border-t border-border bg-secondary/20 px-6 py-6 md:px-10">
+              <div className="max-w-4xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Quick takeaways
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                  {takeaways.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
 
             <figure className="relative aspect-[16/8] w-full">
               <Image src={post.heroImage.src} alt={post.heroImage.alt} fill className="object-cover" priority />
