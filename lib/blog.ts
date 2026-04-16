@@ -48,6 +48,8 @@ export type BlogPost = {
   publisher?: BlogPublisher;
   sourceUrl?: string;
   heroImage: BlogImage;
+  summaryHeading?: string;
+  summaryBullets?: string[];
   intro: string[];
   sections: BlogSection[];
   featureListTitle: string;
@@ -85,6 +87,11 @@ const posts: BlogPost[] = [
       caption:
         "Springbank at 30 O'Malleys Rd, Mardan: a master-built Mediterranean sanctuary on approximately 5 acres.",
     },
+    summaryBullets: [
+      "A master-built Mediterranean-inspired home on approximately 5 acres in Mardan.",
+      "Includes a guest-capable lower level, separate studio building, and mature Robert Boyle gardens.",
+      "A strong introduction to the way the home, grounds, and outlook come together in daily life.",
+    ],
     intro: [
       "In a regional marketplace often characterised by traditional homesteads, Springbank presents a distinctive architectural response to its landscape.",
       "Set on approximately 5 acres at 30 O'Malleys Rd, Mardan, this master-built Mediterranean-inspired residence combines craftsmanship, sustainability, and horticultural design in a cohesive lifestyle holding overlooking the Tarwin Valley toward the Hoddle Range.",
@@ -375,7 +382,7 @@ const posts: BlogPost[] = [
         paragraphs: [
           "Meeniyan real estate appeals strongly to buyers seeking a smaller village rhythm, strong local food culture, and walkable main-street character.",
           "It is often chosen by buyers who value atmosphere, cafes, and artisan offerings, while accepting that some services may require travel to larger centres.",
-          "For many lifestyle buyers, Meeniyan works best when social texture and village identity are as important as pure convenience.",
+          "For many lifestyle buyers, Meeniyan is most appealing when social texture and village identity matter as much as pure convenience.",
         ],
         image: {
           src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
@@ -1257,6 +1264,11 @@ const posts: BlogPost[] = [
       caption:
         "Springbank combines architectural intent, mature landscape design, and practical liveability.",
     },
+    summaryBullets: [
+      "Five details that tend to stand out quickly once you are on site.",
+      "Includes orientation, interior quality, lower-level flexibility, studio use, and garden structure.",
+      "Useful reading before a private inspection or open home.",
+    ],
     intro: [
       "For buyers searching Mardan property for sale, Springbank at 30 O'Malleys Road is a 5-acre lifestyle property that becomes clearer in person than it does online.",
       "Before private inspection or open home, these five highlights explain where the strongest day-to-day value sits across layout, flexibility, and landscape.",
@@ -1442,7 +1454,7 @@ const posts: BlogPost[] = [
           src: "/images/springbank/highlights/springbank-mardan-south-gippsland-property-terrace-view.jpg",
           alt: "Terrace and valley outlook at a South Gippsland lifestyle property",
           caption:
-            "A strong weekender works best when the quality of arrival matches the quality of the setting.",
+            "The best weekenders pair a memorable setting with an arrival that still feels easy and inviting.",
         },
       },
       {
@@ -1542,7 +1554,7 @@ const posts: BlogPost[] = [
     },
     intro: [
       "Buyers searching acreage for sale near Leongatha are usually not searching for a postcode alone. They are searching for land and privacy that still connect cleanly to schools, healthcare, retail, and everyday services.",
-      "That makes Leongatha less of a destination keyword and more of a decision-making anchor. The strongest acreage purchases in the district often sit outside the township itself, but still benefit from reliable access to what Leongatha provides.",
+      "For many searches, Leongatha becomes the practical point of reference. Some of the strongest acreage opportunities sit outside the township itself while still benefiting from straightforward access to everything the town provides.",
     ],
     sections: [
       {
@@ -1956,6 +1968,11 @@ const posts: BlogPost[] = [
       caption:
         "Springbank combines architectural presence, established landscape design, and a level of flexibility that suits more than one buyer profile.",
     },
+    summaryBullets: [
+      "Why Springbank can work as both a full-time home and a premium country weekender.",
+      "Looks at layout flexibility, guest use, the studio building, and the depth of the grounds.",
+      "Helpful for buyers weighing permanence against retreat value.",
+    ],
     intro: [
       "Some lifestyle properties are clearly holiday homes. Others are clearly permanent residences. Springbank at 30 O'Malleys Rd, Mardan is more interesting because it can credibly serve both roles.",
       "For buyers comparing South Gippsland lifestyle property for sale, that dual fit matters. It means the property offers not only aesthetic appeal, but also a more resilient ownership proposition for changing family patterns, longer stays, and future life-stage shifts.",
@@ -2418,7 +2435,7 @@ const posts: BlogPost[] = [
   },
   {
     slug: "fish-creek-property-guide-village-character-prom-country-appeal-and-buyer-fit",
-    title: "Fish Creek Property Guide: Village Character, Prom Country Appeal, and Buyer Fit",
+    title: "Fish Creek Property Guide: Village Character, Prom Country Appeal, and Lifestyle Fit",
     excerpt:
       "A Fish Creek property guide for buyers weighing village character, arts-led identity, Prom Country access, and whether a smaller village or a larger inland homesite is the better match.",
     publishedAt: "2026-03-20",
@@ -2552,6 +2569,11 @@ const posts: BlogPost[] = [
       caption:
         "30 O'Malleys Rd, Mardan pairs visual character with unusually strong day-to-day comfort and flexibility.",
     },
+    summaryBullets: [
+      "A closer look at the comfort and flexibility built into the home.",
+      "Covers double glazing, passive solar design, the poured-earth studio, and guest-ready lower level.",
+      "Useful for buyers interested in how the property feels beyond first impressions.",
+    ],
     intro: [
       "Some lifestyle properties are memorable because of the way they look. Others are memorable because of the way they work once you imagine living in them through the full cycle of seasons, guests, routines, and ordinary days.",
       "30 O'Malleys Rd, Mardan is unusual because it delivers both. The Tuscan-inspired Mediterranean presentation is immediate, but the deeper appeal lies in the way the property has been built to remain comfortable, adaptable, and genuinely useful over time.",
@@ -3166,9 +3188,14 @@ const posts: BlogPost[] = [
       caption:
         "The appeal of 30 O'Malleys Rd goes beyond visual character; it lies in how well the home and grounds support real use through the year.",
     },
+    summaryBullets: [
+      "Seven features that shape comfort across summer, winter, and longer stays.",
+      "Includes glazing, passive solar design, guest-ready flexibility, and the maturity of the outdoor setting.",
+      "A useful overview before inspecting the property in person.",
+    ],
     intro: [
       "Acreage buyers often respond first to outlook, architecture, and atmosphere. The more important question comes later: how well does the property actually live once the seasons change and the routines become ordinary?",
-      "At 30 O'Malleys Rd, Mardan, the answer is unusually strong. The home combines Tuscan-inspired Mediterranean character with a practical comfort story that becomes more obvious the longer you look at the details.",
+      "At 30 O'Malleys Rd, Mardan, that comfort story is one of the home's quiet strengths. The Tuscan-inspired Mediterranean character is immediate, but so is the sense that the property has been designed for longer, easier stays.",
     ],
     sections: [
       {
@@ -3472,7 +3499,7 @@ const posts: BlogPost[] = [
           src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
           alt: "South Gippsland coastline framing the beach-led appeal behind Sandy Point searches",
           caption:
-            "Sandy Point works best when repeated beach use is central to how you expect to own and use the property.",
+            "Sandy Point is most compelling for buyers who expect regular beach use to shape the way they own the property.",
         },
       },
       {
@@ -3552,7 +3579,7 @@ const posts: BlogPost[] = [
     title:
       "Fish Creek Real Estate Guide for Buyers Who Prioritise Village Life",
     seoTitle:
-      "Fish Creek Real Estate Guide: Village Life, Character, and Buyer Fit",
+      "Fish Creek Real Estate Guide: Village Life, Character, and Lifestyle Fit",
     seoDescription:
       "A Fish Creek real estate guide for buyers comparing village culture, Prom Country access, and whether a character-led township suits better than a larger homesite.",
     excerpt:
@@ -3674,7 +3701,7 @@ const posts: BlogPost[] = [
     title:
       "Foster and Toora Property Guide: Comparing Prom Access, Services, and Value",
     seoTitle:
-      "Foster and Toora Property Guide: Prom Access, Services, and Buyer Fit",
+      "Foster and Toora Property Guide: Prom Access, Services, and Local Fit",
     seoDescription:
       "A buyer-focused guide comparing Foster and Toora for Prom Country access, practical services, value, and whether a south-of-Leongatha search should stay coastal or move inland.",
     excerpt:
@@ -3811,9 +3838,14 @@ const posts: BlogPost[] = [
       caption:
         "For buyers widening out from coastal or village searches, the strongest move is sometimes a property that does more rather than a location that does all the work.",
     },
+    summaryBullets: [
+      "Why an inland Mardan holding can suit buyers who begin on the coast or in village towns.",
+      "Covers regional reach, land, flexibility, and the way the home supports longer stays.",
+      "Useful if your shortlist includes Inverloch, Fish Creek, Sandy Point, Foster, or Toora.",
+    ],
     intro: [
       "Many South Gippsland searches start on the coast or in the better-known village pockets. That is understandable. Places like Inverloch, Sandy Point, Fish Creek, Foster, and Toora help buyers work out what regional living might feel like.",
-      "The next step is often more important: working out whether the property itself now needs to carry more of the ownership value. That is where 30 O'Malleys Rd, Mardan becomes highly relevant.",
+      "The next step is often deciding whether the property itself now needs to offer more space, flexibility, and day-to-day ease. That is where 30 O'Malleys Rd, Mardan becomes highly relevant.",
     ],
     sections: [
       {

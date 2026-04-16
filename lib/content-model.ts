@@ -36,6 +36,7 @@ export type PropertyEntity = {
 export type PropertyFacts = {
   bedrooms: number;
   bathrooms: number;
+  numberOfRooms?: number;
   parking: string;
   landSize: number;
   landUnit: string;
@@ -106,4 +107,137 @@ export type SchemaConfig = {
   enableBreadcrumbs: boolean;
   enableEventSchema?: boolean;
   enableArticleSchema?: boolean;
+};
+
+export type LinkTarget = {
+  label: string;
+  href: string;
+};
+
+export type PropertyStatItem = {
+  id: string;
+  label: string;
+  value: string;
+  unit?: string;
+  description: string;
+};
+
+export type PropertyFeatureItem = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type AnswerPanel = {
+  title: string;
+  body: string;
+  links?: LinkTarget[];
+};
+
+export type HeroStatItem = {
+  id: string;
+  label: string;
+};
+
+export type HeroContent = {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  answerLabel?: string;
+  answerSummary: string;
+  answerHighlights: string[];
+  stats: HeroStatItem[];
+  priceGuideHref: string;
+};
+
+export type OverviewContent = {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  introNote?: string;
+  stats: PropertyStatItem[];
+  definitionHeading: string;
+  definitionParagraphs: string[];
+  descriptionParagraphs: string[];
+  quote: string;
+  supportingImageSrc: string;
+  supportingImageAlt: string;
+};
+
+export type BuyerFitContent = {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  intro: string;
+  bestFor: string[];
+  lessSuitableFor: string[];
+  realities: string[];
+  continuationHeading: string;
+  continuationBody: string;
+  continuationLinks: LinkTarget[];
+};
+
+export type WhatToKnowContent = {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  intro: string;
+  considerations: AnswerPanel[];
+  checksHeading: string;
+  checksBody: string;
+  checkLinks: LinkTarget[];
+};
+
+export type LocationSectionContent = {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  intro: string;
+  highlights: Array<{
+    id: string;
+    title: string;
+    description: string;
+  }>;
+  additionalTownLinks: LinkTarget[];
+  townExplorerTitle: string;
+  townExplorerBody: string;
+  buyerReasonsHeading: string;
+  buyerReasons: AnswerPanel[];
+};
+
+export type GroundsContent = {
+  sectionEyebrow: string;
+  sectionTitle: string;
+  intro: string;
+  featureItems: PropertyFeatureItem[];
+  showcaseHeading: string;
+  showcaseParagraphs: string[];
+  showcaseImageSrc: string;
+  showcaseImageAlt: string;
+  kicker: string;
+};
+
+export type PropertyPageContent = {
+  metadataTitle: string;
+  metadataDescription: string;
+  metadataKeywords: string[];
+  hero: HeroContent;
+  overview: OverviewContent;
+  features: {
+    sectionEyebrow: string;
+    sectionTitle: string;
+    intro: string;
+    featureItems: PropertyFeatureItem[];
+    answerPanels: AnswerPanel[];
+    retreatHeading: string;
+    retreatBody: string;
+  };
+  grounds: GroundsContent;
+  buyerFit: BuyerFitContent;
+  whatToKnow: WhatToKnowContent;
+  location: LocationSectionContent;
+  featuredGuideSlugs: string[];
+};
+
+export type GuideAnswerSummary = {
+  whatItIs: string;
+  whoItSuits: string;
+  howMardanCompares: string;
 };

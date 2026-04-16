@@ -1,51 +1,63 @@
 import type { BlogPost } from "@/lib/blog";
-import { heroImage } from "@/lib/gallery";
+import { springbankPropertyEntity, springbankPropertyFacts, springbankSiteConfig } from "@/lib/springbank-config";
 
-export const SITE_URL = "https://springbankmardan.com";
-export const SITE_NAME = "Springbank Mardan";
-export const SITE_DESCRIPTION =
-  "Acreage for sale in South Gippsland at 30 O'Malleys Rd, Mardan VIC 3953. Tuscan-inspired Mediterranean residence on 5 acres near Leongatha, Meeniyan and Mirboo North.";
-export const DEFAULT_SHARE_IMAGE =
-  `${SITE_URL}${heroImage.src}`;
+export const SITE_URL = springbankSiteConfig.siteUrl;
+export const SITE_NAME = springbankSiteConfig.siteName;
+export const SITE_DESCRIPTION = springbankSiteConfig.defaultMetaDescription;
+export const DEFAULT_SHARE_IMAGE = springbankSiteConfig.defaultShareImage;
 export const BLOG_URL = `${SITE_URL}/blog`;
 export const BLOG_NAME = "Springbank Journal";
 export const DEFAULT_BLOG_DESCRIPTION =
   "Buyer-focused South Gippsland real estate blog with guides on acreage for sale, township comparisons, and lifestyle-property inspection strategy.";
 
+function getLotSizeHectares() {
+  const { landSize, landUnit } = springbankPropertyFacts;
+  const normalizedUnit = landUnit.trim().toLowerCase();
+
+  if (normalizedUnit === "hectares" || normalizedUnit === "hectare" || normalizedUnit === "ha") {
+    return landSize;
+  }
+
+  if (normalizedUnit === "acres" || normalizedUnit === "acre") {
+    return Number((landSize * 0.40468564224).toFixed(3));
+  }
+
+  return undefined;
+}
+
 export const LISTING_PUBLISHER = {
-  name: "One Lifestyle Real Estate",
-  url: "https://onelifestylerealestate.com.au",
-  email: "dean@onelifestyle.com.au",
-  telephone: "+61 431 639 749",
+  name: springbankSiteConfig.agencyName,
+  url: springbankSiteConfig.agencyUrl,
+  email: springbankSiteConfig.contactEmail,
+  telephone: springbankSiteConfig.contactPhone,
 };
 
 export const DEFAULT_BLOG_AUTHOR = {
-  name: "Dean Jones",
-  role: "Licensed Estate Agent",
+  name: springbankSiteConfig.agentName,
+  role: springbankSiteConfig.agentRole,
 };
 
 export const LISTING_DETAILS = {
-  name: "30 O'Malleys Rd, Mardan - Tuscan-Inspired Mediterranean Residence on 5 Acres",
-  addressLine: "30 O'Malleys Rd, Mardan VIC 3953",
-  streetAddress: "30 O'Malleys Road",
-  locality: "Mardan",
-  region: "VIC",
-  postalCode: "3953",
-  country: "AU",
-  description:
-    "Tuscan-inspired Mediterranean residence on approximately 5 acres in Mardan, South Gippsland. Featuring Tarwin Valley views, fully double glazed main living spaces, passive solar comfort, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, and a poured earth studio with stable year-round temperatures. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
+  name: `${springbankPropertyEntity.addressLine} - Tuscan-Inspired Mediterranean Residence on 5 Acres`,
+  addressLine: springbankPropertyEntity.addressLine,
+  streetAddress: springbankPropertyEntity.streetAddress,
+  locality: springbankPropertyEntity.locality,
+  region: springbankPropertyEntity.region,
+  postalCode: springbankPropertyEntity.postalCode,
+  country: springbankPropertyEntity.country,
+  description: springbankPropertyEntity.fullDescription,
   listingUrl: SITE_URL,
   image: DEFAULT_SHARE_IMAGE,
   datePosted: "2026-01-27",
   priceCurrency: "AUD",
-  price: "1280000",
-  latitude: -38.4567,
-  longitude: 145.8234,
-  numberOfRooms: 8,
-  numberOfBedrooms: 5,
-  numberOfBathroomsTotal: 2,
-  floorSizeSqm: 471,
-  lotSizeHectares: 2,
+  price: String(springbankPropertyFacts.priceNumeric),
+  latitude: springbankPropertyEntity.lat,
+  longitude: springbankPropertyEntity.lng,
+  numberOfRooms: springbankPropertyFacts.numberOfRooms ?? springbankPropertyFacts.bedrooms,
+  numberOfBedrooms: springbankPropertyFacts.bedrooms,
+  numberOfBathroomsTotal: springbankPropertyFacts.bathrooms,
+  floorSizeSqm: springbankPropertyFacts.floorArea ?? 471,
+  lotSizeHectares: getLotSizeHectares(),
 };
 
 export const OPEN_HOME_EVENT = {
@@ -58,7 +70,7 @@ export const OPEN_HOME_EVENT = {
   url: `${SITE_URL}/open-home`,
   image: DEFAULT_SHARE_IMAGE,
   description:
-    "Open Home at 30 O'Malleys Rd, Mardan VIC 3953. Saturday 18 April 2026, 11am to 12pm.",
+    `Open Home at ${springbankPropertyEntity.addressLine}. Saturday 18 April 2026, 11am to 12pm.`,
 };
 
 type BlogAuthor = {
@@ -155,11 +167,15 @@ export function getRealEstateListingJsonLd() {
         value: LISTING_DETAILS.floorSizeSqm,
         unitCode: "SQM",
       },
-      lotSize: {
-        "@type": "QuantitativeValue",
-        value: LISTING_DETAILS.lotSizeHectares,
-        unitCode: "HAR",
-      },
+      ...(LISTING_DETAILS.lotSizeHectares
+        ? {
+            lotSize: {
+              "@type": "QuantitativeValue",
+              value: LISTING_DETAILS.lotSizeHectares,
+              unitCode: "HAR",
+            },
+          }
+        : {}),
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "Pinot Noir vineyard" },
         { "@type": "LocationFeatureSpecification", name: "Robert Boyle-designed gardens" },

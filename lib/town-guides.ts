@@ -901,7 +901,7 @@ export const townGuides: Record<string, TownGuideData> = {
     relatedGuides: [
       { title: "Inverloch", href: "/inverloch", description: "Larger coastal benchmark with more town-scale activity." },
       { title: "Sandy Point", href: "/sandy-point", description: "Prom-side coastal alternative with a quieter rhythm." },
-      { title: "South Gippsland", href: "/south-gippsland", description: "Broader inland and township comparison framework." },
+      { title: "South Gippsland", href: "/south-gippsland", description: "Broader inland and township guide to the wider region." },
       { title: "Mardan listing", href: "/", description: "See how a 5-acre inland base compares with beach-town living." },
     ],
     ctaTitle: "Compare Venus Bay with a larger inland base",

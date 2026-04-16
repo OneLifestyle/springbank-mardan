@@ -4,6 +4,10 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/blog";
 
+type BlogPreviewSectionProps = {
+  featuredSlugs?: string[];
+};
+
 function formatDate(value: string): string {
   return new Intl.DateTimeFormat("en-AU", {
     day: "2-digit",
@@ -12,13 +16,9 @@ function formatDate(value: string): string {
   }).format(new Date(value));
 }
 
-export function BlogPreviewSection() {
+export function BlogPreviewSection({ featuredSlugs = [] }: BlogPreviewSectionProps) {
   const latestPost = getAllBlogPosts()[0];
-  const featuredGuides = [
-    "buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
-    "south-gippsland-real-estate-guide-2026-lifestyle-buyer-priorities",
-    "30-omalleys-rd-mardan-7-features-that-make-this-acreage-home-comfortable-well-beyond-summer",
-  ]
+  const featuredGuides = featuredSlugs
     .map((slug) => getBlogPostBySlug(slug))
     .filter((post): post is NonNullable<typeof post> => Boolean(post));
 

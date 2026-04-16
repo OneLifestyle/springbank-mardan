@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { heroImage } from "@/lib/gallery";
 import { getGlobalOrganizationJsonLd, getWebsiteJsonLd } from "@/lib/site-schema";
+import { springbankSiteConfig } from "@/lib/springbank-config";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -19,10 +20,9 @@ const abrilFatface = Abril_Fatface({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://springbankmardan.com"),
-  title: "South Gippsland Acreage for Sale | Springbank Mardan",
-  description:
-    "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
+  metadataBase: new URL(springbankSiteConfig.siteUrl),
+  title: springbankSiteConfig.defaultMetaTitle,
+  description: springbankSiteConfig.defaultMetaDescription,
   keywords: [
     "South Gippsland real estate",
     "acreage for sale south gippsland",
@@ -30,11 +30,10 @@ export const metadata: Metadata = {
     "acreage property Gippsland",
   ],
   openGraph: {
-    title: "South Gippsland Acreage for Sale | Springbank Mardan",
-    description:
-      "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
-    url: "https://springbankmardan.com",
-    siteName: "Springbank Mardan",
+    title: springbankSiteConfig.defaultMetaTitle,
+    description: springbankSiteConfig.defaultMetaDescription,
+    url: springbankSiteConfig.siteUrl,
+    siteName: springbankSiteConfig.siteName,
     type: "website",
     images: [
       {
@@ -47,9 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "South Gippsland Acreage for Sale | Springbank Mardan",
-    description:
-      "Acreage for sale in South Gippsland, including Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
+    title: springbankSiteConfig.defaultMetaTitle,
+    description: springbankSiteConfig.defaultMetaDescription,
     images: [heroImage.src],
   },
 };
@@ -75,15 +73,15 @@ export default function RootLayout({
       >
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17968493350"
+          src={`https://www.googletagmanager.com/gtag/js?id=${springbankSiteConfig.adsMeasurementId ?? springbankSiteConfig.gaMeasurementId}`}
         />
         <Script id="google-ads-gtag">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-4KKB61S7KL');
-            gtag('config', 'AW-17968493350');
+            ${springbankSiteConfig.gaMeasurementId ? `gtag('config', '${springbankSiteConfig.gaMeasurementId}');` : ""}
+            ${springbankSiteConfig.adsMeasurementId ? `gtag('config', '${springbankSiteConfig.adsMeasurementId}');` : ""}
           `}
         </Script>
         <script

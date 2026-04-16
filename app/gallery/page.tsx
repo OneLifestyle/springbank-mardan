@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { heroImage } from "@/lib/gallery";
+import { springbankSiteConfig } from "@/lib/springbank-config";
 import GalleryClient from "./gallery-client";
 
 export const metadata: Metadata = {
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
     title: "Mardan Property for Sale Gallery | Springbank Photos",
     description:
       "Full photo library for Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
-    url: "https://springbankmardan.com/gallery",
-    siteName: "Springbank Mardan",
+    url: `${springbankSiteConfig.siteUrl}/gallery`,
+    siteName: springbankSiteConfig.siteName,
     type: "website",
     images: [
       {

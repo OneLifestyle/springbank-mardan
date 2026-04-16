@@ -10,6 +10,7 @@ import {
   getAllTags,
   toFacetSlug,
 } from "@/lib/blog";
+import { springbankSiteConfig } from "@/lib/springbank-config";
 import { DEFAULT_BLOG_DESCRIPTION, BLOG_NAME, getBlogCollectionPageJsonLd } from "@/lib/site-schema";
 
 type BlogIndexProps = {
@@ -42,8 +43,8 @@ export async function generateMetadata({ searchParams }: BlogIndexProps): Promis
       title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
       description:
         "Buyer-focused South Gippsland real estate insights with practical guides for acreage and lifestyle-property searches.",
-      url: "https://springbankmardan.com/blog",
-      siteName: "Springbank Mardan",
+      url: `${springbankSiteConfig.siteUrl}/blog`,
+      siteName: springbankSiteConfig.siteName,
       type: "website",
       images: [
         {

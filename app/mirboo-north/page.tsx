@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
+import { GuideAnswerSummary } from "@/components/guide-answer-summary";
+import { springbankGuideAnswerSummaries } from "@/lib/springbank-config";
 import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
@@ -218,33 +220,7 @@ export default function MirbooNorthPage() {
           </div>
         </section>
 
-        <section className="py-4 md:py-6">
-          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">What Mirboo North is for buyers</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Mirboo North is a scenic lifestyle-village search. Buyers usually come here for a
-                greener hilltop setting, stronger village identity, and day-to-day access to trails
-                and local hospitality.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                It suits buyers who care about landscape and community texture, especially people
-                comparing a scenic permanent move against larger, more service-led townships.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Mardan is less village-led than Mirboo North, but stronger for buyers who want a
-                central base, larger grounds, and simpler access to Leongatha, Meeniyan, and Prom
-                Country day trips.
-              </p>
-            </div>
-          </div>
-        </section>
+        <GuideAnswerSummary placeLabel="Mirboo North" summary={springbankGuideAnswerSummaries["mirboo-north"]} />
 
         <RelatedBuyerGuidesSection
           title="Mirboo North comparison guides for lifestyle buyers"
@@ -489,7 +465,7 @@ export default function MirbooNorthPage() {
             <h2 className="font-serif text-3xl text-foreground md:text-4xl">How Mirboo North compares in-region</h2>
             <div className="mt-4 max-w-4xl space-y-4 leading-relaxed text-muted-foreground">
               <p>
-                Most people assess Mirboo North as part of a multi-town shortlist rather than a standalone decision. The town tends to attract buyers who prioritise streetscape character, local community feel, and easy everyday access to walking and trail infrastructure. That profile is different from larger service centres, so the comparison framework matters.
+                Mirboo North is often considered alongside several nearby towns rather than in isolation. It tends to appeal to buyers who value streetscape character, community feel, and easy everyday access to walking trails and open space.
               </p>
               <p>
                 For broader services, buyers usually benchmark against{" "}

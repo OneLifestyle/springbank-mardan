@@ -5,6 +5,7 @@ import { ArrowLeft, CalendarDays, Clock3, Mail, MapPin, Phone } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { getOpenHomeGalleryHighlights, heroImage } from "@/lib/gallery";
+import { springbankSiteConfig } from "@/lib/springbank-config";
 import { LISTING_DETAILS, OPEN_HOME_EVENT, getOpenHomeEventJsonLd } from "@/lib/site-schema";
 
 export const metadata: Metadata = {
@@ -14,12 +15,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://springbankmardan.com/open-home",
   },
-  openGraph: {
-    title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
-    description:
-      `Inspect 30 O'Malleys Rd, Mardan on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime}.`,
-    url: "https://springbankmardan.com/open-home",
-    siteName: "Springbank Mardan",
+    openGraph: {
+      title: "Mardan Open Home | Acreage for Sale at 30 O'Malleys Rd",
+      description:
+        `Inspect 30 O'Malleys Rd, Mardan on ${OPEN_HOME_EVENT.displayDate} from ${OPEN_HOME_EVENT.displayTime}.`,
+    url: `${springbankSiteConfig.siteUrl}/open-home`,
+    siteName: springbankSiteConfig.siteName,
     type: "website",
     images: [
       {

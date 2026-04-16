@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
+import { GuideAnswerSummary } from "@/components/guide-answer-summary";
+import { springbankGuideAnswerSummaries } from "@/lib/springbank-config";
 import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
@@ -172,8 +174,7 @@ export default function MeeniyanPage() {
                 </Button>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
-                Buyer intent check: if you are researching Meeniyan property for sale and houses for
-                sale near Meeniyan, compare with nearby acreage options in{" "}
+                If Meeniyan is on your shortlist, it is also worth comparing nearby acreage options in{" "}
                 <Link href="/" className="text-primary underline-offset-4 hover:underline">
                   Mardan
                 </Link>
@@ -219,31 +220,7 @@ export default function MeeniyanPage() {
           </div>
         </section>
 
-        <section className="py-4 md:py-6">
-          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">What Meeniyan is for buyers</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Meeniyan is a village-character search. Buyers usually land here when they value
-                atmosphere, food culture, and a smaller-town feel more than full service-town scale.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                It tends to suit weekender buyers, downsizers, and permanent movers who want
-                walkable village life with strong identity, not just a rural address.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Mardan gives up Meeniyan&apos;s walkable main street, but gains more acreage, more
-                privacy, and easier positioning between multiple South Gippsland townships.
-              </p>
-            </div>
-          </div>
-        </section>
+        <GuideAnswerSummary placeLabel="Meeniyan" summary={springbankGuideAnswerSummaries.meeniyan} />
 
         <RelatedBuyerGuidesSection
           title="Meeniyan-area buyer guides"

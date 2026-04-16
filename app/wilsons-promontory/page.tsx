@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
+import { GuideAnswerSummary } from "@/components/guide-answer-summary";
+import { springbankGuideAnswerSummaries } from "@/lib/springbank-config";
 import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
@@ -206,32 +208,7 @@ export default function WilsonsPromontoryPage() {
           </div>
         </section>
 
-        <section className="py-4 md:py-6">
-          <div className="mx-auto grid w-full max-w-6xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">What The Prom is for buyers</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Wilsons Promontory is not a residential market itself. It is a lifestyle anchor that
-                shapes where buyers search when they want coast access, walking, beaches, and
-                nature-led travel patterns.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                It matters most to holiday-home buyers, weekender planners, and permanent movers who
-                want regular access to the coast without necessarily needing a house on the shoreline.
-              </p>
-            </div>
-            <div className="rounded-xl border border-border bg-card p-5">
-              <h2 className="font-serif text-2xl text-foreground">How Mardan compares</h2>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Mardan works as an inland base rather than a beach address, giving buyers more land,
-                more privacy, and a stronger everyday living setup while keeping Prom trips realistic.
-              </p>
-            </div>
-          </div>
-        </section>
+        <GuideAnswerSummary placeLabel="The Prom" summary={springbankGuideAnswerSummaries["wilsons-promontory"]} />
 
         <RelatedBuyerGuidesSection
           title="Prom-country guides for buyers comparing coast and region"

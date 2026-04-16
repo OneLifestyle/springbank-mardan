@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { RelatedBuyerGuidesSection } from "@/components/related-buyer-guides-section";
 import { GuideEventsSection } from "@/components/guide-events-section";
+import { GuideAnswerSummary } from "@/components/guide-answer-summary";
+import { springbankGuideAnswerSummaries } from "@/lib/springbank-config";
 import { guideEvents } from "@/lib/town-guides";
 import {
   ArrowLeft,
@@ -307,35 +309,7 @@ export default function SouthGippslandPage() {
           </div>
         </section>
 
-        <section className="py-4 md:py-6">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-              <div className="rounded-xl border border-border bg-card p-5">
-                <h2 className="font-serif text-2xl text-foreground">What South Gippsland is for buyers</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  South Gippsland is a region-level search for buyers comparing acreage, village
-                  towns, service hubs, and coastal access before they narrow to a specific township
-                  or listing.
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-5">
-                <h2 className="font-serif text-2xl text-foreground">Who it suits best</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  It suits tree-changers, lifestyle-property buyers, and coast-adjacent movers who
-                  want regional flexibility more than a single narrow town identity.
-                </p>
-              </div>
-              <div className="rounded-xl border border-border bg-card p-5">
-                <h2 className="font-serif text-2xl text-foreground">How Mardan fits the region</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  Mardan is useful because it sits between the region&apos;s most compared townships,
-                  letting buyers access Leongatha services, village destinations, and Prom Country
-                  drives from one more private base.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <GuideAnswerSummary placeLabel="South Gippsland" summary={springbankGuideAnswerSummaries["south-gippsland"]} />
 
         <RelatedBuyerGuidesSection
           title="South Gippsland buyer guides worth reading next"

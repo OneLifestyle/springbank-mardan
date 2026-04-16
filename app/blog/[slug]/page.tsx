@@ -6,6 +6,7 @@ import { ArrowLeft, CalendarDays, Clock3, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { getAllBlogPosts, getBlogPostBySlug, toFacetSlug } from "@/lib/blog";
+import { springbankSiteConfig } from "@/lib/springbank-config";
 import { getBlogPostingJsonLd } from "@/lib/site-schema";
 
 type BlogPostPageProps = {
@@ -16,6 +17,7 @@ type BlogPostPageProps = {
 
 type TakeawayContext = {
   categories: string[];
+  summaryBullets?: string[];
   featureListTitle: string;
   relatedLinks?: Array<{ label: string; href: string }>;
   sections: Array<{ heading: string }>;
@@ -37,32 +39,35 @@ function joinLabelList(labels: string[]): string {
 }
 
 function buildTakeaways(post: TakeawayContext): string[] {
+  if (post.summaryBullets?.length) {
+    return post.summaryBullets.slice(0, 4);
+  }
+
   const takeaways: string[] = [];
   const isPropertySpotlight = post.categories.includes("Property Spotlight");
-  const supportingCategories = post.categories.filter((category) => category !== "Property Spotlight");
   const focusHeadings = post.sections.slice(0, 3).map((section) => section.heading);
   const relatedLabels = post.relatedLinks?.slice(0, 3).map((link) => link.label) ?? [];
 
   if (isPropertySpotlight) {
     takeaways.push(
-      `Property spotlight for buyers assessing how this Mardan acreage home performs in everyday living, guest use, and inspection readiness.`
+      "A closer look at how the home, grounds, and ancillary spaces come together in everyday use."
     );
-  } else if (supportingCategories.length > 0) {
+  } else {
     takeaways.push(
-      `Buyer guide for ${joinLabelList(supportingCategories).toLowerCase()} research, written to support clearer property decisions rather than general tourism browsing.`
+      "A practical guide to the places, trade-offs, and details that shape a South Gippsland property search."
     );
   }
 
   if (focusHeadings.length > 0) {
-    takeaways.push(`Covers ${joinLabelList(focusHeadings).toLowerCase()}.`);
+    takeaways.push(`Includes notes on ${joinLabelList(focusHeadings).toLowerCase()}.`);
   }
 
-  takeaways.push(`Use the ${post.featureListTitle.toLowerCase()} for a quick comparison pass before your next inspection.`);
+  takeaways.push(`A quick checklist is included under ${post.featureListTitle.toLowerCase()}.`);
 
   if (relatedLabels.length > 0) {
-    takeaways.push(`Useful follow-on area guides: ${joinLabelList(relatedLabels)}.`);
+    takeaways.push(`Related reading: ${joinLabelList(relatedLabels)}.`);
   } else if (!isPropertySpotlight) {
-    takeaways.push(`Links this research back to the active Mardan lifestyle property listing and current open-home pathway.`);
+    takeaways.push("Useful if you are comparing the wider region before returning to the active Mardan listing.");
   }
 
   return takeaways.slice(0, 4);
@@ -104,7 +109,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       title: resolvedTitle,
       description: resolvedDescription,
       url: canonical,
-      siteName: "Springbank Mardan",
+      siteName: springbankSiteConfig.siteName,
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -193,7 +198,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <section className="border-t border-border bg-secondary/20 px-6 py-6 md:px-10">
               <div className="max-w-4xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Quick takeaways
+                  {post.summaryHeading ?? "In this guide"}
                 </p>
                 <ul className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground md:text-base">
                   {takeaways.map((item) => (
