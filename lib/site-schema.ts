@@ -126,6 +126,91 @@ export function getWebsiteJsonLd() {
   };
 }
 
+export function getRealEstateAgentJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": `${SITE_URL}/#real-estate-agent`,
+    name: LISTING_PUBLISHER.name,
+    url: LISTING_PUBLISHER.url,
+    email: LISTING_PUBLISHER.email,
+    telephone: LISTING_PUBLISHER.telephone,
+    areaServed: [
+      "Mardan",
+      "Leongatha",
+      "Meeniyan",
+      "Mirboo North",
+      "South Gippsland",
+    ],
+    employee: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#dean-jones`,
+      name: DEFAULT_BLOG_AUTHOR.name,
+      jobTitle: DEFAULT_BLOG_AUTHOR.role,
+      telephone: LISTING_PUBLISHER.telephone,
+      email: LISTING_PUBLISHER.email,
+      worksFor: {
+        "@id": `${SITE_URL}/#real-estate-agent`,
+      },
+    },
+  };
+}
+
+export function getFaqPageJsonLd(
+  faqs: Array<{ question: string; answer: string }>,
+  id: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": id,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getArticleJsonLd(input: {
+  url: string;
+  title: string;
+  description: string;
+  dateModified: string;
+  datePublished?: string;
+  section?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${input.url}#article`,
+    headline: input.title,
+    description: input.description,
+    datePublished: input.datePublished ?? input.dateModified,
+    dateModified: input.dateModified,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": input.url,
+    },
+    articleSection: input.section,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#dean-jones`,
+      name: DEFAULT_BLOG_AUTHOR.name,
+      jobTitle: DEFAULT_BLOG_AUTHOR.role,
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#publisher`,
+      name: LISTING_PUBLISHER.name,
+      url: LISTING_PUBLISHER.url,
+    },
+  };
+}
+
 export function getRealEstateListingJsonLd() {
   return {
     "@context": "https://schema.org",

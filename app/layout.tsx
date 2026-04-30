@@ -4,7 +4,7 @@ import { Abril_Fatface, Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { heroImage } from "@/lib/gallery";
-import { getGlobalOrganizationJsonLd, getWebsiteJsonLd } from "@/lib/site-schema";
+import { getGlobalOrganizationJsonLd, getRealEstateAgentJsonLd, getWebsiteJsonLd } from "@/lib/site-schema";
 import { springbankSiteConfig } from "@/lib/springbank-config";
 import "./globals.css";
 
@@ -65,6 +65,7 @@ export default function RootLayout({
 }>) {
   const websiteJsonLd = getWebsiteJsonLd();
   const organizationJsonLd = getGlobalOrganizationJsonLd();
+  const realEstateAgentJsonLd = getRealEstateAgentJsonLd();
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -91,6 +92,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateAgentJsonLd) }}
         />
         {children}
         <Analytics />

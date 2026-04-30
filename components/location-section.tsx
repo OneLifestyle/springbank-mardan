@@ -116,7 +116,7 @@ export function LocationSection({ content }: LocationSectionProps) {
           <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <h3 className="font-serif text-xl text-foreground mb-1">
-                30 O'Malleys Rd, Mardan VIC 3953
+                30 O&apos;Malleys Rd, Mardan VIC 3953
               </h3>
               <p className="text-muted-foreground">
                 South Gippsland, Victoria, Australia | Between Leongatha, Mirboo North and Meeniyan

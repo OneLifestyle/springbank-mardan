@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { questionPages } from "@/lib/aeo-questions";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -103,7 +104,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: "https://springbankmardan.com/contact",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://springbankmardan.com/questions",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
   ];
+
+  const questionRoutes: MetadataRoute.Sitemap = questionPages.map((page) => ({
+    url: `https://springbankmardan.com/questions/${page.slug}`,
+    lastModified: new Date(page.lastUpdated),
+    changeFrequency: "monthly" as const,
+    priority: 0.82,
+  }));
 
   const blogRoutes: MetadataRoute.Sitemap = [
     {
@@ -128,5 +148,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })),
   ];
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...questionRoutes, ...blogRoutes];
 }

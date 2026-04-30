@@ -11,6 +11,7 @@ import { LocationSection } from "@/components/location-section";
 import { BlogPreviewSection } from "@/components/blog-preview-section";
 import { ContactSection } from "@/components/contact-section";
 import { WhatToKnowSection } from "@/components/what-to-know-section";
+import { PropertyFaqSection } from "@/components/property-faq-section";
 import { Footer } from "@/components/footer";
 import { heroImage } from "@/lib/gallery";
 import { getRealEstateListingJsonLd } from "@/lib/site-schema";
@@ -58,6 +59,7 @@ export default function SpringbankPropertyPage() {
         <GroundsSection content={springbankPropertyPageContent.grounds} />
         <LocationSection content={springbankPropertyPageContent.location} />
         <WhatToKnowSection content={springbankPropertyPageContent.whatToKnow} />
+        <PropertyFaqSection />
         <FullGallerySection />
         <OpenHomePromoSection />
         <BlogPreviewSection featuredSlugs={springbankPropertyPageContent.featuredGuideSlugs} />

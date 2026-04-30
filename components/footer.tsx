@@ -34,7 +34,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 text-primary-foreground/70">
               <MapPin className="w-4 h-4" />
-              <span>30 O'Malleys Rd, Mardan VIC 3953</span>
+              <span>30 O&apos;Malleys Rd, Mardan VIC 3953</span>
             </div>
           </div>
 

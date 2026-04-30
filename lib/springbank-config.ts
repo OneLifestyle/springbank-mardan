@@ -312,6 +312,14 @@ export const springbankPropertyPageContent: PropertyPageContent = {
       { label: "Open-home details", href: "/open-home" },
       { label: "Property gallery", href: "/gallery" },
       {
+        label: "Buyer question hub",
+        href: "/questions",
+      },
+      {
+        label: "Who Springbank suits",
+        href: "/questions/who-is-springbank-mardan-suited-to",
+      },
+      {
         label: "Buying Acreage in Rural Victoria",
         href: "/blog/buying-acreage-in-rural-victoria-a-practical-checklist-for-lifestyle-property-buyers",
       },
@@ -350,6 +358,8 @@ export const springbankPropertyPageContent: PropertyPageContent = {
       },
     ],
     additionalTownLinks: [
+      { label: "Where is Mardan?", href: "/questions/where-is-mardan-victoria" },
+      { label: "Mardan living guide", href: "/questions/what-is-it-like-to-live-in-mardan" },
       { label: "Foster", href: "/foster" },
       { label: "Fish Creek", href: "/fish-creek" },
       { label: "Korumburra", href: "/korumburra" },
