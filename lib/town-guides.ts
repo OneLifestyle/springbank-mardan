@@ -145,81 +145,6 @@ export function buildTownGuideJsonLd(guide: TownGuideData) {
   };
 }
 
-const inverlochEquinoxFestival: GuideEvent = {
-  date: "20 to 22 Mar 2026",
-  title: "Inverloch Equinox Festival",
-  place: "Inverloch",
-  description:
-    "This late-March festival gives buyers a useful read on how the coast feels outside peak summer. It blends wellbeing, local business activity, and visitor traffic in a way that is more relevant to long-stay lifestyle planning than a one-off holiday surge.",
-  href: "https://www.visitinverloch.co/events/inverloch-equinox-festival",
-};
-
-const inverlochWellbeingExpo: GuideEvent = {
-  date: "20 to 29 Mar 2026",
-  title: "Inverloch Equinox Wellbeing Expo",
-  place: "Inverloch",
-  description:
-    "The wellbeing expo extends the Equinox period into a longer run of workshops and local programming. For relocation-minded visitors, that kind of calendar depth is useful because it reflects how the area supports repeat weekend use rather than one-off tourism.",
-  href: "https://www.visitinverloch.co/events/inverloch-equinox-wellbeing-expo26",
-};
-
-const runningFestival: GuideEvent = {
-  date: "28 to 29 Mar 2026",
-  title: "Running Festival Inverloch",
-  place: "Inverloch",
-  description:
-    "A fitness-led weekend like this shows how the South Gippsland coast operates as an active lifestyle destination rather than a purely passive beach market. It is close enough from inland towns to be genuinely usable, which matters when buyers compare regional bases.",
-  href: "https://www.visitinverloch.co/events/running-festival-inverloch",
-};
-
-const easterArtShow: GuideEvent = {
-  date: "2 to 5 Apr 2026",
-  title: "Easter Art Show",
-  place: "Inverloch",
-  description:
-    "The Easter Art Show broadens the holiday-weekend appeal beyond beaches and hiking. For buyers, it is a practical signal that the district carries arts and community programming through the key visitor periods that usually matter most to family and guest use.",
-  href: "https://www.basscoasthealth.org.au/events/easter-art-show/",
-};
-
-const anzacDayService: GuideEvent = {
-  date: "25 Apr 2026",
-  title: "Anzac Day Commemorative Service",
-  place: "Inverloch",
-  description:
-    "This local service is a reminder that the Bass Coast-South Gippsland interface has a functioning year-round community calendar, not just tourism peaks. For prospective movers, that everyday civic rhythm matters as much as headline attractions.",
-  href: "https://www.basscoast.vic.gov.au/events/anzac-day-commemorative-service",
-};
-
-const meeniyanJoshPyke: GuideEvent = {
-  date: "19 Apr 2026",
-  title: "Josh Pyke",
-  place: "Meeniyan Town Hall",
-  description:
-    "A recognised touring act in Meeniyan Town Hall reinforces the town's reputation for serious regional programming. It shows that small scale does not mean thin cultural depth, which is often a deciding factor in village-based lifestyle searches.",
-  href: "https://lyrebirdartscouncil.oztix.com.au/",
-  ctaLabel: "Ticket and event listings",
-};
-
-const meeniyanHistoricalOpenDay: GuideEvent = {
-  date: "25 Apr 2026",
-  title: "Meeniyan and District Historical Society Open Day",
-  place: "Meeniyan Community Hub",
-  description:
-    "Community-history events like this are not about tourism volume; they are about local participation and continuity. Buyers often underestimate how much these smaller community markers shape long-term fit once they stop visiting and start living in a district.",
-  href: "https://www.meeniyan.org.au/",
-  ctaLabel: "Town events and updates",
-};
-
-const meeniyanMajorZulu: GuideEvent = {
-  date: "2 May 2026",
-  title: "Major Zulu",
-  place: "Meeniyan Town Hall",
-  description:
-    "This kind of live-music programming shows how Meeniyan continues to draw visitors beyond the summer shoulder season. It is useful in property terms because it signals year-round village energy rather than a short tourist spike.",
-  href: "https://lyrebirdartscouncil.oztix.com.au/",
-  ctaLabel: "Ticket and event listings",
-};
-
 const meeniyanRuthieFoster: GuideEvent = {
   date: "10 May 2026",
   title: "Lyrebird Presents: Ruthie Foster & Band",
@@ -229,8 +154,17 @@ const meeniyanRuthieFoster: GuideEvent = {
   href: "https://www.visitvictoria.com/regions/gippsland/whats-on/music/lyrebird-presents-at-meeniyan---ruthie-foster-usa",
 };
 
-const fishCreekTeaCosy: GuideEvent = {
+const inverlochRegionalFarmersMarket: GuideEvent = {
   date: "16 May 2026",
+  title: "Regional Farmers Market - The Glade Inverloch",
+  place: "The Glade, Inverloch",
+  description:
+    "A Saturday farmers market gives buyers a practical sense of the coastal food circuit and the everyday appeal of Inverloch beyond summer beach demand.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const fishCreekTeaCosy: GuideEvent = {
+  date: "16 to 24 May 2026",
   title: "Fish Creek Tea Cosy Festival",
   place: "Fish Creek",
   description:
@@ -238,12 +172,96 @@ const fishCreekTeaCosy: GuideEvent = {
   href: "https://www.visitinverloch.co/events/tea-cosy-fish-creek",
 };
 
+const outtrimCarRally: GuideEvent = {
+  date: "17 May 2026",
+  title: "Outtrim Car Rally Scavenger Hunt",
+  place: "Outtrim",
+  description:
+    "This smaller regional event points to the kind of local community activity that sits between the main South Gippsland towns and the Bass Coast visitor trail.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const comeFromAwayWonthaggi: GuideEvent = {
+  date: "22 May to 6 Jun 2026",
+  title: "Come From Away",
+  place: "Wonthaggi Union Community Arts Centre",
+  description:
+    "A multi-week theatre season shows the depth of arts programming available within reach of South Gippsland and Bass Coast townships.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const nativeOrchidsBookLaunch: GuideEvent = {
+  date: "30 May 2026",
+  title: "Book Launch: Ecology of Native Orchids",
+  place: "Wonthaggi",
+  description:
+    "Nature and ecology programming is useful context for buyers drawn to the region's gardens, bushland, coast and conservation culture.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const meeniyanMakersMarket: GuideEvent = {
+  date: "6 Jun 2026",
+  title: "Meeniyan Square Makers Market",
+  place: "Meeniyan Square",
+  description:
+    "The makers market reflects Meeniyan's small-scale creative and food culture, which remains part of the broader appeal for people comparing nearby lifestyle bases.",
+  href: "https://www.meeniyan.org.au/whats-on",
+  ctaLabel: "Meeniyan what's on",
+};
+
+const venusBayFishingCompetition: GuideEvent = {
+  date: "5 to 8 Jun 2026",
+  title: "Fishing Competition",
+  place: "Venus Bay",
+  description:
+    "A long-weekend fishing event shows how the smaller coastal towns continue to draw repeat visitors and lifestyle use outside the summer peak.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const meeniyanLeahSenior: GuideEvent = {
+  date: "20 Jun 2026",
+  title: "Lyrebird Presents: Leah Senior",
+  place: "Meeniyan Town Hall",
+  description:
+    "Meeniyan Town Hall's winter program reinforces the village's reputation for live music and cultural depth within easy reach of Mardan.",
+  href: "https://www.meeniyan.org.au/whats-on",
+  ctaLabel: "Meeniyan what's on",
+};
+
+const promCountryFarmersMarket: GuideEvent = {
+  date: "20 Jun 2026",
+  title: "Prom Country Farmers Market",
+  place: "Foster",
+  description:
+    "Foster's monthly farmers market is a useful snapshot of Prom Country's produce culture and the practical service role Foster plays for nearby coastal and rural areas.",
+  href: "https://www.visitpromcountry.com.au/events-calendar/prom-country-farmers-market/foster",
+};
+
+const nationalLyrebirdSurvey: GuideEvent = {
+  date: "26 Jun 2026",
+  title: "National Lyrebird Survey",
+  place: "Foster",
+  description:
+    "Conservation events around Foster and Prom Country help show why the region appeals to buyers who value landscape, ecology and access to serious natural environments.",
+  href: "https://www.promcoastecolink.org.au/event-details/national-lyrebird-survey",
+};
+
+const meeniyanTavernNight: GuideEvent = {
+  date: "27 Jun 2026",
+  title: "Tavern Night",
+  place: "Meeniyan",
+  description:
+    "A local winter gathering is a simple but useful signal of Meeniyan's year-round village rhythm, not just its better-known festival moments.",
+  href: "https://www.meeniyan.org.au/whats-on",
+  ctaLabel: "Meeniyan what's on",
+};
+
 export const guideEvents = {
-  leongatha: [inverlochEquinoxFestival, runningFestival, easterArtShow, fishCreekTeaCosy],
-  meeniyan: [meeniyanJoshPyke, meeniyanHistoricalOpenDay, meeniyanMajorZulu, meeniyanRuthieFoster],
-  mirbooNorth: [inverlochEquinoxFestival, runningFestival, meeniyanMajorZulu, meeniyanRuthieFoster],
-  southGippsland: [inverlochEquinoxFestival, runningFestival, easterArtShow, fishCreekTeaCosy],
-  wilsonsPromontory: [runningFestival, easterArtShow, anzacDayService, fishCreekTeaCosy],
+  leongatha: [inverlochRegionalFarmersMarket, fishCreekTeaCosy, meeniyanMakersMarket, promCountryFarmersMarket],
+  meeniyan: [meeniyanRuthieFoster, fishCreekTeaCosy, meeniyanMakersMarket, meeniyanLeahSenior, meeniyanTavernNight],
+  mirbooNorth: [meeniyanRuthieFoster, fishCreekTeaCosy, meeniyanMakersMarket, meeniyanLeahSenior],
+  southGippsland: [fishCreekTeaCosy, comeFromAwayWonthaggi, venusBayFishingCompetition, promCountryFarmersMarket, nationalLyrebirdSurvey],
+  wilsonsPromontory: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, venusBayFishingCompetition],
 };
 
 const southGippslandLandscape: GuideImage = {
@@ -370,8 +388,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events help show how Foster fits into the broader Prom Country and South Gippsland calendar. Confirm details on the source pages before travelling.",
-    events: [runningFestival, easterArtShow, meeniyanMajorZulu, fishCreekTeaCosy],
+      "These May and June 2026 events help show how Foster fits into the broader Prom Country and South Gippsland calendar. Confirm details on the source pages before travelling.",
+    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, meeniyanLeahSenior],
     infoCards: [
       {
         icon: "clock",
@@ -483,8 +501,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events help explain why Fish Creek and its surrounding villages remain active beyond peak-holiday weeks. Confirm details on the source pages before travelling.",
-    events: [runningFestival, easterArtShow, meeniyanRuthieFoster, fishCreekTeaCosy],
+      "These May and June 2026 events help explain why Fish Creek and its surrounding villages remain active beyond peak-holiday weeks. Confirm details on the source pages before travelling.",
+    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, meeniyanTavernNight],
     infoCards: [
       {
         icon: "users",
@@ -605,8 +623,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events give a useful read on the broader South Gippsland calendar when comparing Korumburra with surrounding towns. Confirm details on the source pages before travelling.",
-    events: [inverlochEquinoxFestival, runningFestival, meeniyanMajorZulu, fishCreekTeaCosy],
+      "These May and June 2026 events give a useful read on the broader South Gippsland calendar when comparing Korumburra with surrounding towns. Confirm details on the source pages before travelling.",
+    events: [inverlochRegionalFarmersMarket, comeFromAwayWonthaggi, meeniyanMakersMarket, promCountryFarmersMarket],
     infoCards: [
       {
         icon: "clock",
@@ -729,8 +747,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These current 2026 events are part of the reason Inverloch remains prominent in coastal buyer searches. Confirm details on the source pages before travelling.",
-    events: [inverlochEquinoxFestival, inverlochWellbeingExpo, runningFestival, easterArtShow, anzacDayService],
+      "These May and June 2026 events are part of the reason Inverloch remains prominent in coastal buyer searches. Confirm details on the source pages before travelling.",
+    events: [inverlochRegionalFarmersMarket, outtrimCarRally, comeFromAwayWonthaggi, nativeOrchidsBookLaunch, venusBayFishingCompetition],
     infoCards: [
       {
         icon: "waves",
@@ -851,8 +869,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events are relevant to Venus Bay buyers because they show what the broader coast-and-hinterland calendar looks like after summer. Confirm details on the source pages before travelling.",
-    events: [inverlochEquinoxFestival, runningFestival, easterArtShow, anzacDayService],
+      "These May and June 2026 events are relevant to Venus Bay buyers because they show what the broader coast-and-hinterland calendar looks like after summer. Confirm details on the source pages before travelling.",
+    events: [inverlochRegionalFarmersMarket, fishCreekTeaCosy, venusBayFishingCompetition, promCountryFarmersMarket],
     infoCards: [
       {
         icon: "waves",
@@ -973,8 +991,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events are relevant to Sandy Point searches because they show how the broader Prom Country and Bass Coast calendar runs beyond summer. Confirm details on the source pages before travelling.",
-    events: [runningFestival, easterArtShow, anzacDayService, fishCreekTeaCosy],
+      "These May and June 2026 events are relevant to Sandy Point searches because they show how the broader Prom Country and Bass Coast calendar runs beyond summer. Confirm details on the source pages before travelling.",
+    events: [fishCreekTeaCosy, venusBayFishingCompetition, promCountryFarmersMarket, nationalLyrebirdSurvey],
     infoCards: [
       {
         icon: "waves",
@@ -1095,8 +1113,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events are relevant to Waratah Bay buyers because they show what the broader district offers beyond the shoreline itself. Confirm details on the source pages before travelling.",
-    events: [runningFestival, meeniyanMajorZulu, meeniyanRuthieFoster, fishCreekTeaCosy],
+      "These May and June 2026 events are relevant to Waratah Bay buyers because they show what the broader district offers beyond the shoreline itself. Confirm details on the source pages before travelling.",
+    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, meeniyanTavernNight],
     infoCards: [
       {
         icon: "waves",
@@ -1215,8 +1233,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These published 2026 events are relevant to Walkerville buyers because they show what the broader district offers beyond the immediate coastline. Confirm details on the source pages before travelling.",
-    events: [runningFestival, easterArtShow, meeniyanRuthieFoster, fishCreekTeaCosy],
+      "These May and June 2026 events are relevant to Walkerville buyers because they show what the broader district offers beyond the immediate coastline. Confirm details on the source pages before travelling.",
+    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, venusBayFishingCompetition],
     infoCards: [
       {
         icon: "mountain",

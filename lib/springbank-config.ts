@@ -55,8 +55,8 @@ export const springbankPropertyFacts: PropertyFacts = {
   landUnit: "acres",
   floorArea: 471,
   floorAreaUnit: "sqm",
-  priceDisplay: "$1.28m",
-  priceNumeric: 1280000,
+  priceDisplay: "$1.195m",
+  priceNumeric: 1195000,
   featureBullets: [
     "Tuscan-inspired Mediterranean residence on approximately 5 acres",
     "Fully double glazed upstairs living areas with passive solar orientation",
