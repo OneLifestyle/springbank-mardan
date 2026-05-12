@@ -62,6 +62,8 @@ export type BlogPost = {
   ctaBody: string;
 };
 
+export const BLOG_PAGE_SIZE = 10;
+
 const posts: BlogPost[] = [
   {
     slug: "escape-to-springbank-master-built-mediterranean-sanctuary",

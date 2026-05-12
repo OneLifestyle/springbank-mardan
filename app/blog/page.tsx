@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { heroImage } from "@/lib/gallery";
 import {
+  BLOG_PAGE_SIZE,
   filterPostsByFacets,
   getAllCategories,
   getAllTags,
@@ -19,26 +20,18 @@ type BlogIndexProps = {
     tag?: string | string[];
     page?: string | string[];
   }>;
+  categorySlug?: string;
+  tagSlug?: string;
+  pageSlug?: string;
 };
 
 export async function generateMetadata({ searchParams }: BlogIndexProps): Promise<Metadata> {
-  const params = await searchParams;
-  const activeCategory = firstParam(params?.category)?.toLowerCase();
-  const activeTag = firstParam(params?.tag)?.toLowerCase();
-
   return {
     title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
     description: DEFAULT_BLOG_DESCRIPTION,
     alternates: {
       canonical: "https://springbankmardan.com/blog",
     },
-    robots:
-      activeCategory || activeTag
-        ? {
-            index: false,
-            follow: true,
-          }
-        : undefined,
     openGraph: {
       title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
       description:
@@ -73,14 +66,16 @@ function formatDate(value: string): string {
   }).format(new Date(value));
 }
 
-export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
+export default async function BlogIndexPage({ searchParams, categorySlug, tagSlug, pageSlug }: BlogIndexProps) {
   const params = await searchParams;
-  const activeCategory = firstParam(params?.category)?.toLowerCase();
-  const activeTag = firstParam(params?.tag)?.toLowerCase();
-  const requestedPage = Number(firstParam(params?.page) ?? "1");
+  const activeCategory = categorySlug ?? (params?.category
+    ? firstParam(params.category)?.toLowerCase()
+    : undefined);
+  const activeTag = tagSlug ?? (params?.tag ? firstParam(params.tag)?.toLowerCase() : undefined);
+  const requestedPage = Number(pageSlug ?? firstParam(params?.page) ?? "1");
 
   const posts = filterPostsByFacets(activeCategory, activeTag);
-  const pageSize = 5;
+  const pageSize = BLOG_PAGE_SIZE;
   const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
   const currentPage =
     Number.isFinite(requestedPage) && requestedPage > 0
@@ -94,15 +89,13 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
   const collectionPageJsonLd = getBlogCollectionPageJsonLd();
 
   function buildBlogHref(page: number): string {
-    const query = new URLSearchParams();
-    if (activeCategory) query.set("category", activeCategory);
-    if (activeTag) query.set("tag", activeTag);
-    if (!activeCategory && !activeTag) {
-      return page > 1 ? `/blog/page/${page}` : "/blog";
+    if (activeCategory) {
+      return page > 1 ? `/blog/category/${activeCategory}/page/${page}` : `/blog/category/${activeCategory}`;
     }
-    if (page > 1) query.set("page", String(page));
-    const qs = query.toString();
-    return qs ? `/blog?${qs}` : "/blog";
+    if (activeTag) {
+      return page > 1 ? `/blog/tag/${activeTag}/page/${page}` : `/blog/tag/${activeTag}`;
+    }
+    return page > 1 ? `/blog/page/${page}` : "/blog";
   }
 
   return (
@@ -217,7 +210,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
                       {post.categories.map((category) => (
                         <Link
                           key={category}
-                          href={`/blog?category=${toFacetSlug(category)}`}
+                          href={`/blog/category/${toFacetSlug(category)}`}
                           className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground hover:border-primary hover:text-foreground"
                         >
                           {category}
@@ -314,7 +307,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
                 return (
                   <Link
                     key={category}
-                    href={`/blog?category=${slug}`}
+                    href={`/blog/category/${slug}`}
                     className={`rounded-full border px-3 py-1 text-xs transition-colors ${
                       active
                         ? "border-primary bg-primary text-primary-foreground"
@@ -337,7 +330,7 @@ export default async function BlogIndexPage({ searchParams }: BlogIndexProps) {
                 return (
                   <Link
                     key={tag}
-                    href={`/blog?tag=${slug}`}
+                    href={`/blog/tag/${slug}`}
                     className={`rounded-full border px-3 py-1 text-xs transition-colors ${
                       active
                         ? "border-primary bg-primary text-primary-foreground"

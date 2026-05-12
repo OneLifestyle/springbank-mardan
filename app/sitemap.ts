@@ -4,8 +4,6 @@ import { getAllBlogPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts = getAllBlogPosts();
-  const blogPageSize = 5;
-  const blogPageCount = Math.max(1, Math.ceil(blogPosts.length / blogPageSize));
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -138,14 +136,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...Array.from({ length: blogPageCount }, (_, index) => index + 1)
-      .filter((page) => page > 1)
-      .map((page) => ({
-        url: `https://springbankmardan.com/blog/page/${page}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.7,
-      })),
   ];
 
   return [...staticRoutes, ...questionRoutes, ...blogRoutes];

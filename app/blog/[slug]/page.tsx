@@ -167,7 +167,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.categories.map((category) => (
                   <Link
                     key={category}
-                    href={`/blog?category=${toFacetSlug(category)}`}
+                    href={`/blog/category/${toFacetSlug(category)}`}
                     className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground hover:border-primary hover:text-foreground"
                   >
                     {category}
@@ -338,7 +338,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.tags.map((tag) => (
                     <Link
                       key={tag}
-                      href={`/blog?tag=${toFacetSlug(tag)}`}
+                      href={`/blog/tag/${toFacetSlug(tag)}`}
                       className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground hover:border-primary hover:text-foreground"
                     >
                       {tag}

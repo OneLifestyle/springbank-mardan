@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogIndexPage from "../../page";
+import { BLOG_PAGE_SIZE, getAllBlogPosts } from "@/lib/blog";
 
 type BlogPaginationPageProps = {
   params: Promise<{
@@ -13,8 +14,9 @@ export async function generateMetadata({
 }: BlogPaginationPageProps): Promise<Metadata> {
   const { page } = await params;
   const pageNumber = Number(page);
+  const totalPages = Math.max(1, Math.ceil(getAllBlogPosts().length / BLOG_PAGE_SIZE));
 
-  if (!Number.isFinite(pageNumber) || pageNumber < 2) {
+  if (!Number.isFinite(pageNumber) || pageNumber < 2 || pageNumber > totalPages) {
     return {
       title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
       description:
@@ -41,8 +43,9 @@ export default async function BlogPaginationPage({
 }: BlogPaginationPageProps) {
   const { page } = await params;
   const pageNumber = Number(page);
+  const totalPages = Math.max(1, Math.ceil(getAllBlogPosts().length / BLOG_PAGE_SIZE));
 
-  if (!Number.isFinite(pageNumber) || pageNumber < 2) {
+  if (!Number.isFinite(pageNumber) || pageNumber < 2 || pageNumber > totalPages) {
     notFound();
   }
 
