@@ -40,7 +40,7 @@ const propertyFaqs = [
   {
     question: "When is the next open home?",
     answer:
-      "The next scheduled open home is Saturday 23 May 2026 from 1:00pm to 2:00pm. Buyers can also contact Dean Jones to confirm inspection options.",
+      "The next scheduled open home is King's Birthday weekend, Saturday 6 June 2026 from 1:00pm to 2:00pm. Buyers can also contact Dean Jones to confirm inspection options.",
   },
   {
     question: "Who is the agent for Springbank Mardan?",

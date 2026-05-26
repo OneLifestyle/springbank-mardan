@@ -146,21 +146,21 @@ export function buildTownGuideJsonLd(guide: TownGuideData) {
 }
 
 const artCubesFishCreek: GuideEvent = {
-  date: "11 May to 20 Jul 2026",
+  date: "27 May to 20 Jul 2026",
   title: "ArtCubes at Fish Creek",
   place: "Fish Creek",
   description:
-    "The ArtCubes residency brings a visible arts presence into Fish Creek through winter, which is useful context for buyers drawn to the area's creative village character.",
+    "The ArtCubes installation continues in Fish Creek through winter, giving buyers a useful read on the area's arts-led village character.",
   href: "https://visitsouthgippsland.com.au/event/artcubes-at-fish-creek/",
 };
 
-const fishCreekTeaCosy: GuideEvent = {
-  date: "16 to 24 May 2026",
-  title: "Fish Creek Tea Cosy Festival",
-  place: "Fish Creek",
+const eatPrayWalkNerrena: GuideEvent = {
+  date: "31 May 2026",
+  title: "Eat, Pray, Walk",
+  place: "Nerrena Hall",
   description:
-    "Fish Creek's Tea Cosy Festival is a good example of how village character translates into a distinctive, community-scale event. For buyers comparing towns, it offers a more realistic sense of local social texture than generic tourism copy ever can.",
-  href: "https://www.visitinverloch.co/events/tea-cosy-fish-creek",
+    "A small-hall performance near Leongatha shows how the district's community venues carry culture well beyond the main town centres.",
+  href: "https://visitsouthgippsland.com.au/event/eat-pray-walk-south-gippsland-small-halls-3/",
 };
 
 const southernRailTrailRunningFestival: GuideEvent = {
@@ -170,15 +170,6 @@ const southernRailTrailRunningFestival: GuideEvent = {
   description:
     "A major trail-based event shows how Leongatha and the rail trail support an active regional lifestyle, not just a scenic weekend drive.",
   href: "https://visitsouthgippsland.com.au/event/southern-rail-trail-running-festival-2026/",
-};
-
-const comeFromAwayWonthaggi: GuideEvent = {
-  date: "22 May to 6 Jun 2026",
-  title: "Come From Away",
-  place: "Wonthaggi Union Community Arts Centre",
-  description:
-    "A multi-week theatre season shows the depth of arts programming available within reach of South Gippsland and Bass Coast townships.",
-  href: "https://www.visitinverloch.co/events",
 };
 
 const lochFoodWineFestival: GuideEvent = {
@@ -200,14 +191,13 @@ const meeniyanMakersMarket: GuideEvent = {
   ctaLabel: "Meeniyan what's on",
 };
 
-const meeniyanLeahSenior: GuideEvent = {
-  date: "20 Jun 2026",
-  title: "Lyrebird Presents: Leah Senior",
-  place: "Meeniyan Town Hall",
+const inverlochLionsFarmersMarket: GuideEvent = {
+  date: "28 Jun 2026",
+  title: "Lions Community Farmers Market",
+  place: "The Glade, Inverloch",
   description:
-    "Meeniyan Town Hall's winter program reinforces the village's reputation for live music and cultural depth within easy reach of Mardan.",
-  href: "https://www.meeniyan.org.au/whats-on",
-  ctaLabel: "Meeniyan what's on",
+    "Inverloch's community farmers market gives coastal buyers a practical sense of local food routines beyond peak summer.",
+  href: "https://www.visitinverloch.co/events",
 };
 
 const promCountryFarmersMarket: GuideEvent = {
@@ -258,30 +248,48 @@ const paulDempseyMeeniyan: GuideEvent = {
 };
 
 const koonwarraFarmersMarket: GuideEvent = {
-  date: "4 Jul 2026",
+  date: "1 Aug 2026",
   title: "Koonwarra South Gippsland Farmers Market",
   place: "Koonwarra",
   description:
-    "A first-Saturday farmers market at Koonwarra gives buyers a practical read on local produce, food networks and weekend routines close to Leongatha.",
-  href: "https://visitsouthgippsland.com.au/event/koonwarra-south-gippsland-farmers-market-5-2-3-2-2-2-4-4-2/",
+    "The August farmers market gives buyers a practical read on local produce, food networks and weekend routines close to Leongatha.",
+  href: "https://visitsouthgippsland.com.au/event/koonwarra-south-gippsland-farmers-market-5-2-3-2-2-2-4-4-3/",
+};
+
+const joeAvatiKorumburra: GuideEvent = {
+  date: "8 Aug 2026",
+  title: "Joe Avati: The Good Old Days",
+  place: "Korumburra Italian Social Club",
+  description:
+    "A touring comedy show in Korumburra shows how inland service towns can still draw regional entertainment and multi-generational audiences.",
+  href: "https://visitsouthgippsland.com.au/event/joe-avati-the-good-old-days/",
+};
+
+const grigoryanBrothersWonthaggi: GuideEvent = {
+  date: "15 Aug 2026",
+  title: "Grigoryan Brothers",
+  place: "Wonthaggi Union Theatre",
+  description:
+    "A winter concert at Wonthaggi adds arts and entertainment depth for buyers comparing the Bass Coast and South Gippsland edges.",
+  href: "https://www.visitinverloch.co/events",
+};
+
+const tomGleesonWonthaggi: GuideEvent = {
+  date: "21 Aug 2026",
+  title: "Tom Gleeson - Out of Touch",
+  place: "Wonthaggi Union Theatre",
+  description:
+    "A headline comedy show within regional reach helps show the broader entertainment network around Inverloch and South Gippsland.",
+  href: "https://www.visitinverloch.co/events",
 };
 
 const kongwakRetroVintageMarket: GuideEvent = {
-  date: "12 Jul 2026",
+  date: "23 Aug 2026",
   title: "Kongwak Retro Vintage Market",
   place: "Kongwak",
   description:
-    "Kongwak's winter market shows another layer of South Gippsland's maker, vintage and food culture, especially for buyers comparing smaller village networks.",
-  href: "https://visitsouthgippsland.com.au/event/kongwak-retro-vintage-market-10-2-2-2-4-3-11-5-5-2-5-6-7/",
-};
-
-const shakeRattleRoll: GuideEvent = {
-  date: "12 Jul 2026",
-  title: "Shake, Rattle 'n' Roll",
-  place: "Wonthaggi Union Theatre",
-  description:
-    "Winter theatre programming at Wonthaggi adds regional entertainment depth for buyers comparing Inverloch, Venus Bay and inland South Gippsland bases.",
-  href: "https://www.visitinverloch.co/events",
+    "Kongwak's late-winter market shows another layer of South Gippsland's maker, vintage and food culture, especially for buyers comparing smaller village networks.",
+  href: "https://visitsouthgippsland.com.au/event/kongwak-retro-vintage-market-10-2-2-2-4-3-11-5-5-2-5-6-7-3-3-3/",
 };
 
 const bigArtSmallHalls: GuideEvent = {
@@ -303,11 +311,11 @@ const meeniyanAlexLloyd: GuideEvent = {
 };
 
 export const guideEvents = {
-  leongatha: [southernRailTrailRunningFestival, koonwarraFarmersMarket, kongwakRetroVintageMarket, bigArtSmallHalls],
-  meeniyan: [meeniyanMakersMarket, meeniyanLeahSenior, meeniyanTavernNight, paulDempseyMeeniyan, meeniyanAlexLloyd],
-  mirbooNorth: [meeniyanMakersMarket, meeniyanLeahSenior, paulDempseyMeeniyan, bigArtSmallHalls, meeniyanAlexLloyd],
-  southGippsland: [fishCreekTeaCosy, southernRailTrailRunningFestival, lochFoodWineFestival, koonwarraFarmersMarket, bigArtSmallHalls, meeniyanAlexLloyd],
-  wilsonsPromontory: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly, meeniyanAlexLloyd],
+  leongatha: [southernRailTrailRunningFestival, eatPrayWalkNerrena, lochFoodWineFestival, koonwarraFarmersMarket, kongwakRetroVintageMarket],
+  meeniyan: [meeniyanMakersMarket, meeniyanTavernNight, paulDempseyMeeniyan, meeniyanAlexLloyd, kongwakRetroVintageMarket],
+  mirbooNorth: [meeniyanMakersMarket, paulDempseyMeeniyan, bigArtSmallHalls, meeniyanAlexLloyd, koonwarraFarmersMarket],
+  southGippsland: [southernRailTrailRunningFestival, lochFoodWineFestival, promCountryFarmersMarket, koonwarraFarmersMarket, joeAvatiKorumburra, kongwakRetroVintageMarket],
+  wilsonsPromontory: [promCountryFarmersMarket, nationalLyrebirdSurvey, artCubesFishCreek, promCountryFarmersMarketJuly, kongwakRetroVintageMarket],
 };
 
 const southGippslandLandscape: GuideImage = {
@@ -434,8 +442,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events help show how Foster fits into the broader Prom Country and South Gippsland calendar. Confirm details on the source pages before travelling.",
-    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly, meeniyanAlexLloyd],
+      "These late-May to August 2026 events help show how Foster fits into the broader Prom Country and South Gippsland calendar. Confirm details on the source pages before travelling.",
+    events: [promCountryFarmersMarket, nationalLyrebirdSurvey, artCubesFishCreek, promCountryFarmersMarketJuly, kongwakRetroVintageMarket],
     infoCards: [
       {
         icon: "clock",
@@ -547,8 +555,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events help explain why Fish Creek and its surrounding villages remain active beyond peak-holiday weeks. Confirm details on the source pages before travelling.",
-    events: [artCubesFishCreek, fishCreekTeaCosy, meeniyanLeahSenior, paulDempseyMeeniyan, meeniyanAlexLloyd],
+      "These late-May to August 2026 events help explain why Fish Creek and its surrounding villages remain active beyond peak-holiday weeks. Confirm details on the source pages before travelling.",
+    events: [artCubesFishCreek, nationalLyrebirdSurvey, paulDempseyMeeniyan, meeniyanAlexLloyd, kongwakRetroVintageMarket],
     infoCards: [
       {
         icon: "users",
@@ -669,8 +677,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events give a useful read on the broader South Gippsland calendar when comparing Korumburra with surrounding towns. Confirm details on the source pages before travelling.",
-    events: [southernRailTrailRunningFestival, lochFoodWineFestival, koonwarraFarmersMarket, kongwakRetroVintageMarket],
+      "These late-May to August 2026 events give a useful read on the broader South Gippsland calendar when comparing Korumburra with surrounding towns. Confirm details on the source pages before travelling.",
+    events: [southernRailTrailRunningFestival, lochFoodWineFestival, koonwarraFarmersMarket, joeAvatiKorumburra, kongwakRetroVintageMarket],
     infoCards: [
       {
         icon: "clock",
@@ -793,8 +801,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events are part of the reason Inverloch remains prominent in coastal buyer searches. Confirm details on the source pages before travelling.",
-    events: [comeFromAwayWonthaggi, lochFoodWineFestival, shakeRattleRoll, koonwarraFarmersMarket],
+      "These late-May to August 2026 events are part of the reason Inverloch remains prominent in coastal buyer searches. Confirm details on the source pages before travelling.",
+    events: [inverlochLionsFarmersMarket, koonwarraFarmersMarket, grigoryanBrothersWonthaggi, tomGleesonWonthaggi],
     infoCards: [
       {
         icon: "waves",
@@ -915,8 +923,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events are relevant to Venus Bay buyers because they show what the broader coast-and-hinterland calendar looks like after summer. Confirm details on the source pages before travelling.",
-    events: [fishCreekTeaCosy, comeFromAwayWonthaggi, shakeRattleRoll, promCountryFarmersMarketJuly],
+      "These late-May to August 2026 events are relevant to Venus Bay buyers because they show what the broader coast-and-hinterland calendar looks like after summer. Confirm details on the source pages before travelling.",
+    events: [inverlochLionsFarmersMarket, promCountryFarmersMarketJuly, grigoryanBrothersWonthaggi, tomGleesonWonthaggi],
     infoCards: [
       {
         icon: "waves",
@@ -1037,8 +1045,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events are relevant to Sandy Point searches because they show how the broader Prom Country and Bass Coast calendar runs beyond summer. Confirm details on the source pages before travelling.",
-    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly],
+      "These late-May to August 2026 events are relevant to Sandy Point searches because they show how the broader Prom Country and Bass Coast calendar runs beyond summer. Confirm details on the source pages before travelling.",
+    events: [promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly, grigoryanBrothersWonthaggi],
     infoCards: [
       {
         icon: "waves",
@@ -1159,8 +1167,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events are relevant to Waratah Bay buyers because they show what the broader district offers beyond the shoreline itself. Confirm details on the source pages before travelling.",
-    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly],
+      "These late-May to August 2026 events are relevant to Waratah Bay buyers because they show what the broader district offers beyond the shoreline itself. Confirm details on the source pages before travelling.",
+    events: [promCountryFarmersMarket, nationalLyrebirdSurvey, artCubesFishCreek, promCountryFarmersMarketJuly, kongwakRetroVintageMarket],
     infoCards: [
       {
         icon: "waves",
@@ -1279,8 +1287,8 @@ export const townGuides: Record<string, TownGuideData> = {
       },
     ],
     eventsDescription:
-      "These May to July 2026 events are relevant to Walkerville buyers because they show what the broader district offers beyond the immediate coastline. Confirm details on the source pages before travelling.",
-    events: [fishCreekTeaCosy, promCountryFarmersMarket, nationalLyrebirdSurvey, promCountryFarmersMarketJuly],
+      "These late-May to August 2026 events are relevant to Walkerville buyers because they show what the broader district offers beyond the immediate coastline. Confirm details on the source pages before travelling.",
+    events: [promCountryFarmersMarket, nationalLyrebirdSurvey, artCubesFishCreek, promCountryFarmersMarketJuly, kongwakRetroVintageMarket],
     infoCards: [
       {
         icon: "mountain",

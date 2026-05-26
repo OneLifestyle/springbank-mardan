@@ -62,15 +62,15 @@ export const LISTING_DETAILS = {
 
 export const OPEN_HOME_EVENT = {
   name: "Open Home - Springbank Mediterranean Sanctuary",
-  startDate: "2026-05-23T13:00:00+10:00",
-  endDate: "2026-05-23T14:00:00+10:00",
-  displayDate: "Saturday 23 May 2026",
+  startDate: "2026-06-06T13:00:00+10:00",
+  endDate: "2026-06-06T14:00:00+10:00",
+  displayDate: "Saturday 6 June 2026",
   displayTime: "1:00pm to 2:00pm",
-  teaserTime: "Saturday 23 May, 1pm to 2pm",
+  teaserTime: "King's Birthday weekend, Saturday 6 June, 1pm to 2pm",
   url: `${SITE_URL}/open-home`,
   image: DEFAULT_SHARE_IMAGE,
   description:
-    `Open Home at ${springbankPropertyEntity.addressLine}. Saturday 23 May 2026, 1pm to 2pm.`,
+    `Open Home at ${springbankPropertyEntity.addressLine}. King's Birthday weekend, Saturday 6 June 2026, 1pm to 2pm.`,
 };
 
 type BlogAuthor = {

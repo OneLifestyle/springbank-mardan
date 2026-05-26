@@ -8,6 +8,11 @@ type BlogPreviewSectionProps = {
   featuredSlugs?: string[];
 };
 
+const previewImageProps = {
+  unoptimized: true,
+  sizes: "(max-width: 1024px) 100vw, 40vw",
+} as const;
+
 function formatDate(value: string): string {
   return new Intl.DateTimeFormat("en-AU", {
     day: "2-digit",
@@ -103,6 +108,7 @@ export function BlogPreviewSection({ featuredSlugs = [] }: BlogPreviewSectionPro
                   alt={latestPost.heroImage.alt}
                   fill
                   className="object-cover"
+                  {...previewImageProps}
                 />
               </div>
             </div>

@@ -73,6 +73,11 @@ function buildTakeaways(post: TakeawayContext): string[] {
   return takeaways.slice(0, 4);
 }
 
+const blogImageProps = {
+  unoptimized: true,
+  sizes: "(max-width: 768px) 100vw, 896px",
+} as const;
+
 export async function generateStaticParams() {
   return getAllBlogPosts().map((post) => ({
     slug: post.slug,
@@ -212,7 +217,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </section>
 
             <figure className="relative aspect-[16/8] w-full">
-              <Image src={post.heroImage.src} alt={post.heroImage.alt} fill className="object-cover" priority />
+              <Image
+                src={post.heroImage.src}
+                alt={post.heroImage.alt}
+                fill
+                className="object-cover"
+                priority
+                {...blogImageProps}
+              />
             </figure>
             {post.heroImage.caption && (
               <p className="border-t border-border px-6 py-4 text-sm text-muted-foreground md:px-10">
@@ -244,6 +256,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                           alt={section.image.alt}
                           fill
                           className="object-cover"
+                          {...blogImageProps}
                         />
                       </div>
                       {section.image.caption && (
@@ -289,7 +302,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.gallery.map((image) => (
                     <figure key={image.src} className="overflow-hidden rounded-xl border border-border">
                       <div className="relative aspect-[4/3] w-full">
-                        <Image src={image.src} alt={image.alt} fill className="object-cover" />
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          className="object-cover"
+                          {...blogImageProps}
+                        />
                       </div>
                     </figure>
                   ))}

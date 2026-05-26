@@ -66,6 +66,11 @@ function formatDate(value: string): string {
   }).format(new Date(value));
 }
 
+const blogCardImageProps = {
+  unoptimized: true,
+  sizes: "(max-width: 768px) 100vw, 50vw",
+} as const;
+
 export default async function BlogIndexPage({ searchParams, categorySlug, tagSlug, pageSlug }: BlogIndexProps) {
   const params = await searchParams;
   const activeCategory = categorySlug ?? (params?.category
@@ -190,7 +195,13 @@ export default async function BlogIndexPage({ searchParams, categorySlug, tagSlu
               <article key={post.slug} className="overflow-hidden rounded-xl border border-border bg-card">
                 <div className="grid gap-0 md:grid-cols-[1.05fr,1fr]">
                   <div className="relative min-h-[280px]">
-                    <Image src={post.heroImage.src} alt={post.heroImage.alt} fill className="object-cover" />
+                    <Image
+                      src={post.heroImage.src}
+                      alt={post.heroImage.alt}
+                      fill
+                      className="object-cover"
+                      {...blogCardImageProps}
+                    />
                   </div>
                   <div className="p-6 md:p-8">
                     <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.12em] text-muted-foreground">

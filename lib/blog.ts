@@ -5475,13 +5475,13 @@ const posts: BlogPost[] = [
         "The 23 May open home is a useful chance to assess the whole holding: home, studio, gardens, dam and valley setting.",
     },
     summaryBullets: [
-      "The next open home is Saturday 23 May 2026, 1:00pm to 2:00pm.",
+      "This inspection guide was prepared for the Saturday 23 May 2026 open home.",
       "The current price guide is $1.195m.",
       "Inspect the comfort features as closely as the presentation.",
       "Walk the grounds, studio and lower level before comparing the property with other acreage.",
     ],
     intro: [
-      "The next open home at 30 O'Malleys Rd, Mardan is scheduled for Saturday 23 May 2026 from 1:00pm to 2:00pm.",
+      "This guide was prepared for the Saturday 23 May 2026 open home at 30 O'Malleys Rd, Mardan.",
       "With the property now guided at $1.195m, the inspection is a good opportunity to compare the complete lifestyle package rather than only the headline price: the residence, valley outlook, gardens, dam, lower level and separate poured-earth studio.",
     ],
     sections: [
@@ -5534,7 +5534,7 @@ const posts: BlogPost[] = [
     ],
     featureListTitle: "Open-home inspection priorities",
     featureList: [
-      "Confirm the Saturday 23 May, 1pm to 2pm inspection window",
+      "Use the current open-home page to confirm the next inspection window",
       "Review the $1.195m price guide and statement of information",
       "Walk the terrace, dam, gardens and outlook points",
       "Check the double glazed upstairs living areas",
@@ -5566,7 +5566,7 @@ const posts: BlogPost[] = [
       { label: "Gallery", href: "/gallery" },
       { label: "South Gippsland guide", href: "/south-gippsland" },
     ],
-    ctaTitle: "Inspect Springbank on 23 May",
+    ctaTitle: "Check the current Springbank inspection details",
     ctaBody:
       "Use the open home to compare the full $1.195m lifestyle offering: the home, land, gardens, studio, outlook and practical access to South Gippsland towns.",
   },
@@ -6053,6 +6053,613 @@ const posts: BlogPost[] = [
     ctaTitle: "Compare coast access with a private inland base",
     ctaBody:
       "If Prom Country is part of your search but land and privacy matter most, inspect Springbank and compare it with the coastal and village alternatives.",
+  },
+  {
+    slug: "30-omalleys-rd-mardan-kings-birthday-open-home-winter-acreage-inspection-guide",
+    title: "30 O'Malleys Rd, Mardan: King's Birthday Weekend Open Home and Winter Acreage Inspection Guide",
+    excerpt:
+      "A listing-focused guide for inspecting Springbank on Saturday 6 June, with notes on winter comfort, valley views, gardens, studio flexibility and the $1.195m guide.",
+    seoTitle: "30 O'Malleys Rd Mardan Open Home 6 June | Winter Inspection Guide",
+    seoDescription:
+      "Inspect 30 O'Malleys Rd, Mardan on King's Birthday weekend, Saturday 6 June 2026 from 1pm to 2pm. Compare comfort, gardens, studio and $1.195m guide.",
+    publishedAt: "2026-05-26",
+    updatedAt: "2026-05-26",
+    readingTimeMinutes: 6,
+    categories: ["Property Feature", "Open Home", "Mardan"],
+    tags: [
+      "30 O'Malleys Rd Mardan open home",
+      "Mardan property for sale",
+      "South Gippsland acreage",
+      "King's Birthday weekend property inspection",
+      "Springbank Mardan",
+    ],
+    heroImage: {
+      src: "/images/springbank/gallery-full/mardan-acreage-home-dam-overview-001.jpg",
+      alt: "Springbank Mardan residence, gardens and dam viewed across the five-acre holding",
+      caption:
+        "The King's Birthday weekend open home is a useful chance to test Springbank as a winter-ready South Gippsland acreage base.",
+    },
+    summaryBullets: [
+      "The next open home is Saturday 6 June 2026, 1:00pm to 2:00pm.",
+      "The current guide is $1.195m.",
+      "Winter is a strong time to judge comfort, light, access and garden structure.",
+      "Inspect the residence, lower level, studio, dam, gardens and town access as one complete holding.",
+    ],
+    intro: [
+      "Springbank at 30 O'Malleys Rd, Mardan is open for inspection on King's Birthday weekend, Saturday 6 June 2026 from 1:00pm to 2:00pm.",
+      "A winter open home is useful for serious acreage buyers. It lets you test more than presentation: warmth, natural light, driveway access, garden structure, studio usability and whether the property still feels inviting outside the easiest summer months.",
+    ],
+    sections: [
+      {
+        heading: "Start with the way the home feels in winter",
+        paragraphs: [
+          "The main residence has a Tuscan-inspired Mediterranean character, but the first winter question is practical: does the house feel settled, comfortable and usable?",
+          "Springbank's fully double glazed upstairs living areas, passive solar orientation and fireplace are worth assessing in person because these details shape day-to-day comfort.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/mardan-living-room-fireplace-001.jpg",
+          alt: "Living room fireplace and winter-ready interior at Springbank Mardan",
+          caption:
+            "Cooler weather helps buyers test comfort rather than relying on presentation alone.",
+        },
+      },
+      {
+        heading: "Walk the land before you leave",
+        paragraphs: [
+          "The gardens, dam, terrace and driveway are central to the value of the property. Walk them slowly and consider how the grounds would work for guests, family, maintenance and ordinary weekends.",
+          "A five-acre holding should feel usable as well as beautiful. Winter can reveal that more clearly than a bright summer inspection.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/mardan-dam-residence-outlook-001.jpg",
+          alt: "Dam, gardens and residence outlook at 30 O'Malleys Rd Mardan",
+          caption:
+            "The dam and gardens are part of the lived setting, not just the view from the house.",
+        },
+      },
+      {
+        heading: "Inspect the studio and lower level as real use spaces",
+        paragraphs: [
+          "The separate poured-earth studio and lower-level accommodation add flexibility for work, creative use, visiting family and longer stays.",
+          "Ask how often you would use these spaces. If the answer is regular use, they become a major part of the property's appeal.",
+        ],
+        image: {
+          src: "/images/springbank/gallery-full/mardan-lower-level-kitchenette-001.jpg",
+          alt: "Lower-level kitchenette and guest-ready flexible space at Springbank Mardan",
+          caption:
+            "The lower level and studio help the property work for longer stays and guest-friendly living.",
+        },
+      },
+      {
+        heading: "Compare the guide against the complete package",
+        paragraphs: [
+          "At $1.195m, Springbank should be compared with other serious South Gippsland acreage rather than with a simple town house or a smaller weekender.",
+          "The comparison is the total package: home, land, privacy, gardens, dam, studio, outlook and access to Leongatha, Meeniyan and Mirboo North.",
+        ],
+      },
+    ],
+    featureListTitle: "Inspection priorities for Saturday 6 June",
+    featureList: [
+      "Confirm the King's Birthday weekend open home, Saturday 6 June, 1pm to 2pm",
+      "Review the $1.195m price guide and statement of information",
+      "Test winter comfort in the main living areas",
+      "Walk the dam, gardens, terrace and driveway",
+      "Inspect the lower level and separate poured-earth studio",
+      "Compare access to Leongatha, Meeniyan and Mirboo North",
+    ],
+    galleryTitle: "Springbank inspection reference images",
+    gallery: [
+      {
+        src: "/images/springbank/gallery-full/mardan-acreage-home-dam-overview-001.jpg",
+        alt: "Springbank Mardan acreage and dam",
+      },
+      {
+        src: "/images/springbank/gallery-full/mardan-living-room-fireplace-001.jpg",
+        alt: "Living room fireplace at Springbank Mardan",
+      },
+      {
+        src: "/images/springbank/gallery-full/mardan-dam-residence-outlook-001.jpg",
+        alt: "Dam and residence outlook at Springbank Mardan",
+      },
+      {
+        src: "/images/springbank/gallery-full/mardan-lower-level-kitchenette-001.jpg",
+        alt: "Lower-level kitchenette at Springbank Mardan",
+      },
+    ],
+    relatedLinks: [
+      { label: "Open home details", href: "/open-home" },
+      { label: "View the full listing", href: "/" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+    ],
+    ctaTitle: "Inspect Springbank on King's Birthday weekend",
+    ctaBody:
+      "If Springbank is on your South Gippsland shortlist, use the 6 June open home to compare comfort, land, studio flexibility and regional access in person.",
+  },
+  {
+    slug: "south-gippsland-tree-change-guide-what-to-test-before-moving-from-melbourne",
+    title: "South Gippsland Tree Change Guide: What to Test Before Moving from Melbourne",
+    excerpt:
+      "A practical guide for Melbourne buyers considering a South Gippsland tree change, covering services, travel, community, acreage upkeep and lifestyle fit.",
+    seoTitle: "South Gippsland Tree Change Guide for Melbourne Buyers",
+    seoDescription:
+      "Planning a South Gippsland tree change from Melbourne? Compare services, travel, acreage upkeep, community and lifestyle fit before buying.",
+    publishedAt: "2026-05-26",
+    updatedAt: "2026-05-26",
+    readingTimeMinutes: 7,
+    categories: ["Buyer Guide", "Tree Change", "South Gippsland"],
+    tags: [
+      "South Gippsland tree change",
+      "move to South Gippsland",
+      "tree change Victoria",
+      "South Gippsland acreage",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+      alt: "Rolling South Gippsland farmland and rural landscape",
+      caption:
+        "A successful tree change depends on everyday fit, not only landscape appeal.",
+    },
+    summaryBullets: [
+      "Test ordinary weekly routines before committing to a regional move.",
+      "Compare service access, travel time, maintenance and community fit.",
+      "Inspect in winter to understand comfort and practical land use.",
+      "Mardan is relevant for buyers who want privacy without losing town access.",
+    ],
+    intro: [
+      "A South Gippsland tree change can look simple from Melbourne: more land, better views, quieter roads and a slower pace of life.",
+      "The better buying decision comes from testing the details that will shape ordinary weeks. Services, travel, schools, healthcare, maintenance, weather and community rhythm all matter once the move becomes real.",
+    ],
+    sections: [
+      {
+        heading: "Start with weekly life, not the weekend version",
+        paragraphs: [
+          "A useful tree-change inspection should include groceries, fuel, medical access, school routes, trades, cafes and internet checks.",
+          "Leongatha often becomes the practical anchor for buyers around Mardan because it provides the service depth that smaller villages cannot always offer.",
+        ],
+        image: {
+          src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+          alt: "McCartin Street in Leongatha, South Gippsland",
+          caption:
+            "Leongatha is often the practical service-town reference point for buyers considering nearby acreage.",
+        },
+      },
+      {
+        heading: "Check whether you want village life or rural privacy",
+        paragraphs: [
+          "Some buyers want to walk to cafes and shops. Others want a private rural base with villages close enough for regular use.",
+          "That distinction matters. A Mardan property can suit buyers who value privacy first, while still wanting Meeniyan, Mirboo North and Leongatha within reach.",
+        ],
+      },
+      {
+        heading: "Be honest about acreage upkeep",
+        paragraphs: [
+          "Acreage is not the same as a large suburban block. Gardens, driveways, water, outbuildings and boundaries need attention.",
+          "For the right buyer, that work is part of the appeal. For the wrong buyer, it can become the hidden cost of a romantic decision.",
+        ],
+      },
+      {
+        heading: "Use winter as a serious test",
+        paragraphs: [
+          "Winter shows whether a property has genuine year-round appeal. Look at light, warmth, damp areas, driveway conditions and how the towns feel outside peak visitor periods.",
+          "A property that still feels appealing in June or July is usually a stronger long-term candidate than one that only shines in summer.",
+        ],
+      },
+    ],
+    featureListTitle: "Tree-change checks before buying",
+    featureList: [
+      "Service-town access and travel times",
+      "Internet and mobile coverage",
+      "Acreage maintenance requirements",
+      "Healthcare, schools and trades",
+      "Village fit versus rural privacy",
+      "Winter comfort and access",
+      "How often you will use Melbourne",
+    ],
+    galleryTitle: "South Gippsland tree-change context",
+    gallery: [
+      {
+        src: "/images/wikimedia/south-gippsland-cricklewood.jpg",
+        alt: "South Gippsland rural landscape",
+      },
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Leongatha town centre",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Views from Cricklewood",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Views_from_Cricklewood.jpg",
+        author: "Andy & Anna Kelk",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+      { label: "Leongatha guide", href: "/leongatha" },
+      { label: "Mirboo North guide", href: "/mirboo-north" },
+      { label: "View Springbank", href: "/" },
+    ],
+    ctaTitle: "Compare the tree-change brief with Springbank",
+    ctaBody:
+      "If your tree-change brief needs privacy, views and practical access to towns, inspect Springbank as a serious South Gippsland acreage base.",
+  },
+  {
+    slug: "country-retreat-near-wilsons-prom-why-inland-acreage-can-beat-a-beach-address",
+    title: "Country Retreat Near Wilsons Prom: Why Inland Acreage Can Beat a Beach Address",
+    excerpt:
+      "A buyer guide comparing beach-first searches with inland South Gippsland acreage for people wanting a country retreat near Wilsons Promontory and the coast.",
+    seoTitle: "Country Retreat Near Wilsons Prom | Inland Acreage Buyer Guide",
+    seoDescription:
+      "Compare a country retreat near Wilsons Prom with beach-town property. Inland South Gippsland acreage can offer privacy, land and coast access.",
+    publishedAt: "2026-05-26",
+    updatedAt: "2026-05-26",
+    readingTimeMinutes: 6,
+    categories: ["Buyer Guide", "Wilsons Promontory", "Lifestyle"],
+    tags: [
+      "country retreat near Wilsons Prom",
+      "Prom Country property",
+      "South Gippsland acreage",
+      "coastal access property",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+      alt: "Darby Beach at Wilsons Promontory",
+      caption:
+        "For some buyers, the strongest Prom Country decision is not the closest beach address but a more private inland base.",
+    },
+    summaryBullets: [
+      "A beach address is not the only way to access Prom Country lifestyle.",
+      "Inland acreage can offer privacy, land, gardens and guest space.",
+      "The right choice depends on how often you need immediate beach access.",
+      "Mardan can suit buyers who want coast reach without living in a beach market.",
+    ],
+    intro: [
+      "Many South Gippsland searches begin with Wilsons Promontory or the coast. That is understandable: the landscape is one of the region's great attractions.",
+      "But buyers looking for a country retreat near the Prom should also compare inland acreage. For some, a private rural base with coast access will be more useful than a smaller or busier beach-first property.",
+    ],
+    sections: [
+      {
+        heading: "Beach proximity is only one type of value",
+        paragraphs: [
+          "A coastal address is compelling if beach access is the main reason for buying. It is less clear if the brief also includes gardens, guest space, a substantial home and year-round privacy.",
+          "Those features are often easier to find in an inland acreage setting.",
+        ],
+      },
+      {
+        heading: "Prom Country works as a regional network",
+        paragraphs: [
+          "Foster, Fish Creek, Yanakie, Sandy Point, Waratah Bay and Wilsons Promontory all contribute to the lifestyle draw.",
+          "A buyer does not necessarily need to live closest to one destination if the broader region remains accessible.",
+        ],
+        image: {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Creek_sign_Stevage.jpg",
+          alt: "Fish Creek village sign in Prom Country",
+          caption:
+            "Fish Creek adds village character to the wider Prom Country lifestyle network.",
+        },
+      },
+      {
+        heading: "Where a Mardan base fits",
+        paragraphs: [
+          "Mardan is not a beach address. Its appeal is different: privacy, valley views, acreage, gardens and a substantial residence within reach of South Gippsland towns and coast trips.",
+          "That can be a stronger fit for buyers who want a country retreat first and a coastal lifestyle within reach.",
+        ],
+      },
+      {
+        heading: "How to compare the two models",
+        paragraphs: [
+          "Spend time at the coast, then inspect inland acreage on the same weekend. The contrast will usually make the brief clearer.",
+          "If the land, home and privacy matter more than daily beach access, an inland property deserves serious consideration.",
+        ],
+      },
+    ],
+    featureListTitle: "Beach-first versus inland-acreage checks",
+    featureList: [
+      "How often you will use the beach",
+      "Whether privacy or walking distance matters more",
+      "Guest accommodation and long-stay comfort",
+      "Land size and garden ambitions",
+      "Travel time to Prom Country destinations",
+      "Year-round use outside summer",
+    ],
+    galleryTitle: "Prom Country comparison images",
+    gallery: [
+      {
+        src: "/images/wikimedia/wilsons-prom-darby-beach.jpg",
+        alt: "Darby Beach at Wilsons Promontory",
+      },
+      {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Fish_Creek_sign_Stevage.jpg",
+        alt: "Fish Creek village sign",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Darby Beach, Wilsons Promontory",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Darby_Beach_Wilsons_Promontory_National_Park.jpg",
+        author: "Chris Phutully",
+        licenseName: "CC BY 2.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
+      },
+      {
+        label: "Fish Creek sign Stevage",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Fish_Creek_sign_Stevage.jpg",
+        author: "Stevage",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Wilsons Promontory guide", href: "/wilsons-promontory" },
+      { label: "Foster guide", href: "/foster" },
+      { label: "Fish Creek guide", href: "/fish-creek" },
+      { label: "View Springbank", href: "/" },
+    ],
+    ctaTitle: "Compare a coast search with Mardan acreage",
+    ctaBody:
+      "If your Prom Country brief includes privacy, land and long-stay comfort, inspect Springbank as an inland country retreat within regional reach.",
+  },
+  {
+    slug: "south-gippsland-winter-events-guide-for-property-buyers-june-to-august",
+    title: "South Gippsland Winter Events Guide for Property Buyers: June to August",
+    excerpt:
+      "A buyer-focused winter events guide showing how markets, music, theatre and community events reveal South Gippsland's year-round lifestyle appeal.",
+    seoTitle: "South Gippsland Winter Events Guide for Property Buyers",
+    seoDescription:
+      "Use South Gippsland winter events from June to August to test lifestyle fit, town energy, markets, music, theatre and community depth before buying.",
+    publishedAt: "2026-05-26",
+    updatedAt: "2026-05-26",
+    readingTimeMinutes: 6,
+    categories: ["Lifestyle", "Events", "South Gippsland"],
+    tags: [
+      "South Gippsland events",
+      "South Gippsland lifestyle",
+      "tree change Victoria",
+      "regional events Gippsland",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+      alt: "Historic Meeniyan building connected with South Gippsland village life",
+      caption:
+        "Winter events help buyers understand whether a region has real year-round depth.",
+    },
+    summaryBullets: [
+      "Winter events are useful because they show how towns behave outside peak holiday periods.",
+      "Markets, concerts and small-hall programming reveal community rhythm.",
+      "Buyers should attend ordinary local events as part of a serious research weekend.",
+      "Mardan works best for buyers who want privacy with access to this wider regional calendar.",
+    ],
+    intro: [
+      "Events are not just tourism filler for property buyers. They show how a region behaves when the weather is cooler and the summer visitor surge has passed.",
+      "In South Gippsland, winter programming across markets, music, theatre, arts and small halls can help buyers decide whether the district has enough life for permanent living or regular long weekends.",
+    ],
+    sections: [
+      {
+        heading: "Markets show everyday regional life",
+        paragraphs: [
+          "Farmers markets at Koonwarra, Foster and Inverloch reveal food networks, growers, locals and weekend routines.",
+          "For buyers, that kind of ordinary activity is often more revealing than a major festival because it shows repeatable lifestyle.",
+        ],
+      },
+      {
+        heading: "Music and theatre show cultural depth",
+        paragraphs: [
+          "Meeniyan Town Hall and Wonthaggi Union Theatre continue to draw touring acts and regional audiences through winter.",
+          "That matters for buyers who want a country property without losing access to interesting cultural life.",
+        ],
+        image: {
+          src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+          alt: "Mirboo North Town Hall and streetscape",
+          caption:
+            "Small halls and town venues are part of the cultural infrastructure that supports regional living.",
+        },
+      },
+      {
+        heading: "Arts and community events reveal town character",
+        paragraphs: [
+          "Smaller events such as ArtCubes at Fish Creek, small-hall performances and maker markets help buyers understand the texture of the region.",
+          "These are the details that distinguish a lived-in district from a place that only works during summer.",
+        ],
+      },
+      {
+        heading: "How to use events during a property weekend",
+        paragraphs: [
+          "Plan an inspection around one market, one meal stop and one town event. Then compare how the region feels before and after the property inspection.",
+          "If the surrounding towns feel useful and enjoyable, a private acreage base becomes much easier to imagine.",
+        ],
+      },
+    ],
+    featureListTitle: "Winter events to include in buyer research",
+    featureList: [
+      "Farmers markets in Foster, Koonwarra and Inverloch",
+      "Live music in Meeniyan",
+      "Theatre and touring acts in Wonthaggi",
+      "Arts programming in Fish Creek and small halls",
+      "Village meals and ordinary weekend errands",
+      "Drive times between events, towns and the property",
+    ],
+    galleryTitle: "Winter events and town-life context",
+    gallery: [
+      {
+        src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+        alt: "Meeniyan village reference image",
+      },
+      {
+        src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+        alt: "Mirboo North town hall",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Meeniyan National Bank of Australasia, Old Gippstown",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Meeniyan_National_Bank_of_Australasia,_Old_Gippstown.JPG",
+        author: "Gippslander2012",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+      {
+        label: "Mirboo North Town Hall - March 2022",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Mirboo_North_Town_Hall_%E2%80%94_March_2022.jpg",
+        author: "Alison Newman",
+        licenseName: "CC0 1.0",
+        licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "South Gippsland guide", href: "/south-gippsland" },
+      { label: "Meeniyan guide", href: "/meeniyan" },
+      { label: "Fish Creek guide", href: "/fish-creek" },
+      { label: "View Springbank", href: "/" },
+    ],
+    ctaTitle: "Use winter events to test the region",
+    ctaBody:
+      "If the South Gippsland winter calendar feels useful to you, inspect Springbank as a private base connected to the region's towns, markets and culture.",
+  },
+  {
+    slug: "leongatha-meeniyan-mirboo-north-which-town-would-you-actually-use-from-mardan",
+    title: "Leongatha, Meeniyan or Mirboo North: Which Town Would You Actually Use from Mardan?",
+    excerpt:
+      "A practical comparison for buyers considering Mardan acreage, focused on how Leongatha, Meeniyan and Mirboo North each support everyday lifestyle.",
+    seoTitle: "Leongatha Meeniyan Mirboo North Comparison for Mardan Buyers",
+    seoDescription:
+      "Compare Leongatha, Meeniyan and Mirboo North for Mardan acreage buyers deciding which South Gippsland towns they would actually use.",
+    publishedAt: "2026-05-26",
+    updatedAt: "2026-05-26",
+    readingTimeMinutes: 6,
+    categories: ["Leongatha", "Meeniyan", "Mirboo North"],
+    tags: [
+      "Leongatha real estate",
+      "Meeniyan property",
+      "Mirboo North real estate",
+      "Mardan acreage",
+      "South Gippsland lifestyle",
+    ],
+    heroImage: {
+      src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+      alt: "Leongatha McCartin Street in South Gippsland",
+      caption:
+        "Leongatha, Meeniyan and Mirboo North each support a different part of the lifestyle around Mardan.",
+    },
+    summaryBullets: [
+      "Leongatha is the practical service anchor.",
+      "Meeniyan adds food, events and compact village energy.",
+      "Mirboo North brings a greener hilltop village rhythm.",
+      "Mardan can work well when buyers want access to all three without living in town.",
+    ],
+    intro: [
+      "For buyers considering Mardan acreage, the nearby town question is more important than it first appears.",
+      "Leongatha, Meeniyan and Mirboo North are all within practical reach, but they do different jobs. Understanding those roles helps buyers decide whether a private Mardan base fits their ordinary life.",
+    ],
+    sections: [
+      {
+        heading: "Leongatha for services",
+        paragraphs: [
+          "Leongatha is the main service-town reference point. It is where many buyers will think about larger shopping, healthcare, schools, trades and practical errands.",
+          "If your tree-change plan needs a reliable service anchor, Leongatha is usually the first town to test.",
+        ],
+      },
+      {
+        heading: "Meeniyan for village energy",
+        paragraphs: [
+          "Meeniyan brings a more compact food, music and village-life layer. It is the kind of town buyers often use for meals, events and visiting friends.",
+          "Its appeal is not service depth. It is social and lifestyle texture.",
+        ],
+        image: {
+          src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+          alt: "Historic Meeniyan building representing village character",
+          caption:
+            "Meeniyan adds a compact village layer to the Mardan lifestyle.",
+        },
+      },
+      {
+        heading: "Mirboo North for hilltop character",
+        paragraphs: [
+          "Mirboo North feels different again: greener, hillier and slightly more tucked away. It can suit buyers who like cafes, community feel and a quieter village rhythm.",
+          "Together with Leongatha and Meeniyan, it gives Mardan buyers a wider set of local options.",
+        ],
+        image: {
+          src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+          alt: "Mirboo North Town Hall and village streetscape",
+          caption:
+            "Mirboo North gives the surrounding area a second village reference point with a different feel.",
+        },
+      },
+      {
+        heading: "Why Mardan sits differently from all three",
+        paragraphs: [
+          "Mardan is not trying to be a town address. Its appeal is privacy, land and rural outlook, with these three townships available when needed.",
+          "For the right buyer, that can be a better balance than choosing one town and giving up the acreage setting.",
+        ],
+      },
+    ],
+    featureListTitle: "How to compare the three towns",
+    featureList: [
+      "Use Leongatha for major services and errands",
+      "Use Meeniyan for food, events and compact village life",
+      "Use Mirboo North for hilltop village character",
+      "Test all three during the same property weekend",
+      "Compare whether privacy or walk-to-town convenience matters more",
+    ],
+    galleryTitle: "Town comparison images",
+    gallery: [
+      {
+        src: "/images/wikimedia/leongatha-mccartin-street.jpg",
+        alt: "Leongatha town centre",
+      },
+      {
+        src: "/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg",
+        alt: "Meeniyan village reference image",
+      },
+      {
+        src: "/images/wikimedia/mirboo-north-town-hall-2022.jpg",
+        alt: "Mirboo North town hall",
+      },
+    ],
+    imageCredits: [
+      {
+        label: "Leongatha McCartin Street",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:Leongatha_McCartin_Street.jpg",
+        author: "Melburnian",
+        licenseName: "CC BY 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by/3.0/",
+      },
+      {
+        label: "Meeniyan National Bank of Australasia, Old Gippstown",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Meeniyan_National_Bank_of_Australasia,_Old_Gippstown.JPG",
+        author: "Gippslander2012",
+        licenseName: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+      },
+      {
+        label: "Mirboo North Town Hall - March 2022",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Mirboo_North_Town_Hall_%E2%80%94_March_2022.jpg",
+        author: "Alison Newman",
+        licenseName: "CC0 1.0",
+        licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      },
+    ],
+    relatedLinks: [
+      { label: "Leongatha guide", href: "/leongatha" },
+      { label: "Meeniyan guide", href: "/meeniyan" },
+      { label: "Mirboo North guide", href: "/mirboo-north" },
+      { label: "View Springbank", href: "/" },
+    ],
+    ctaTitle: "Compare town access with a private Mardan base",
+    ctaBody:
+      "If all three towns would be useful to you, inspect Springbank as a private acreage base positioned between the main services and village lifestyle layers.",
   },
 ];
 

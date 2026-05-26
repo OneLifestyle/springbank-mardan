@@ -1,7 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const CANONICAL_HOST = "springbankmardan.com";
+
 export function proxy(request: NextRequest) {
   const { nextUrl } = request;
+  const host = request.headers.get("host") ?? "";
+  const forwardedProto = request.headers.get("x-forwarded-proto");
+  const isLocalHost =
+    host.startsWith("localhost") ||
+    host.startsWith("127.0.0.1") ||
+    host.startsWith("[::1]");
+
+  if (!isLocalHost && (host !== CANONICAL_HOST || forwardedProto === "http")) {
+    const url = nextUrl.clone();
+    url.protocol = "https:";
+    url.host = CANONICAL_HOST;
+    return NextResponse.redirect(url, 301);
+  }
 
   if (nextUrl.pathname === "/blog") {
     const category = nextUrl.searchParams.get("category");
@@ -34,5 +49,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: "/blog",
+  matcher: "/:path*",
 };
