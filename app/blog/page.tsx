@@ -25,7 +25,7 @@ type BlogIndexProps = {
   pageSlug?: string;
 };
 
-export async function generateMetadata({ searchParams }: BlogIndexProps): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "South Gippsland Real Estate Blog | Buyer Guides and Insights",
     description: DEFAULT_BLOG_DESCRIPTION,

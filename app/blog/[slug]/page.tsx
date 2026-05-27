@@ -141,6 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const articleJsonLd = getBlogPostingJsonLd(post);
   const takeaways = buildTakeaways(post);
+  const author = post.author?.name ?? `${springbankSiteConfig.agentName}, ${springbankSiteConfig.agencyName}`;
 
   return (
     <>
@@ -189,6 +190,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
+                <span>By {author}</span>
                 <span className="inline-flex items-center gap-2">
                   <CalendarDays className="h-4 w-4" />
                   {formatDate(post.publishedAt)}

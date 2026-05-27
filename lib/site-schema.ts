@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/blog";
+import { heroImage, propertyFilm, propertyImages } from "@/lib/gallery";
 import { springbankPropertyEntity, springbankPropertyFacts, springbankSiteConfig } from "@/lib/springbank-config";
 
 export const SITE_URL = springbankSiteConfig.siteUrl;
@@ -9,6 +10,24 @@ export const BLOG_URL = `${SITE_URL}/blog`;
 export const BLOG_NAME = "Springbank Journal";
 export const DEFAULT_BLOG_DESCRIPTION =
   "Buyer-focused South Gippsland real estate blog with guides on acreage for sale, township comparisons, and lifestyle-property inspection strategy.";
+
+const IDS = {
+  website: `${SITE_URL}/#website`,
+  publisher: `${SITE_URL}/#publisher`,
+  realEstateAgent: `${SITE_URL}/#real-estate-agent`,
+  agentPerson: `${SITE_URL}/#dean-jones`,
+  property: `${SITE_URL}/#property`,
+  listing: `${SITE_URL}/#listing`,
+  offer: `${SITE_URL}/#offer`,
+  homepage: `${SITE_URL}/#webpage`,
+  galleryPage: `${SITE_URL}/gallery#webpage`,
+  gallery: `${SITE_URL}/gallery#gallery`,
+  propertyFilm: `${SITE_URL}/gallery#property-film`,
+} as const;
+
+function absoluteUrl(value: string) {
+  return value.startsWith("http") ? value : `${SITE_URL}${value}`;
+}
 
 function getLotSizeHectares() {
   const { landSize, landUnit } = springbankPropertyFacts;
@@ -96,7 +115,7 @@ function getBlogPublisher(post: BlogPost): BlogPublisher {
 
 function getBlogImage(post: BlogPost): string {
   return post.heroImage?.src
-    ? `${SITE_URL}${post.heroImage.src}`
+    ? absoluteUrl(post.heroImage.src)
     : DEFAULT_SHARE_IMAGE;
 }
 
@@ -104,7 +123,7 @@ export function getGlobalOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${SITE_URL}/#publisher`,
+    "@id": IDS.publisher,
     name: LISTING_PUBLISHER.name,
     url: LISTING_PUBLISHER.url,
     email: LISTING_PUBLISHER.email,
@@ -116,12 +135,12 @@ export function getWebsiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${SITE_URL}/#website`,
+    "@id": IDS.website,
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     publisher: {
-      "@id": `${SITE_URL}/#publisher`,
+      "@id": IDS.publisher,
     },
   };
 }
@@ -130,7 +149,7 @@ export function getRealEstateAgentJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${SITE_URL}/#real-estate-agent`,
+    "@id": IDS.realEstateAgent,
     name: LISTING_PUBLISHER.name,
     url: LISTING_PUBLISHER.url,
     email: LISTING_PUBLISHER.email,
@@ -144,13 +163,13 @@ export function getRealEstateAgentJsonLd() {
     ],
     employee: {
       "@type": "Person",
-      "@id": `${SITE_URL}/#dean-jones`,
+      "@id": IDS.agentPerson,
       name: DEFAULT_BLOG_AUTHOR.name,
       jobTitle: DEFAULT_BLOG_AUTHOR.role,
       telephone: LISTING_PUBLISHER.telephone,
       email: LISTING_PUBLISHER.email,
       worksFor: {
-        "@id": `${SITE_URL}/#real-estate-agent`,
+        "@id": IDS.realEstateAgent,
       },
     },
   };
@@ -198,95 +217,120 @@ export function getArticleJsonLd(input: {
     articleSection: input.section,
     author: {
       "@type": "Person",
-      "@id": `${SITE_URL}/#dean-jones`,
+      "@id": IDS.agentPerson,
       name: DEFAULT_BLOG_AUTHOR.name,
       jobTitle: DEFAULT_BLOG_AUTHOR.role,
     },
     publisher: {
       "@type": "Organization",
-      "@id": `${SITE_URL}/#publisher`,
+      "@id": IDS.publisher,
       name: LISTING_PUBLISHER.name,
       url: LISTING_PUBLISHER.url,
     },
   };
 }
 
-export function getRealEstateListingJsonLd() {
+function getPropertyResidenceJsonLd() {
   return {
-    "@context": "https://schema.org",
-    "@type": "RealEstateListing",
-    "@id": `${SITE_URL}/#listing`,
-    name: LISTING_DETAILS.name,
+    "@type": "SingleFamilyResidence",
+    "@id": IDS.property,
+    name: "Springbank",
     description: LISTING_DETAILS.description,
     url: LISTING_DETAILS.listingUrl,
-    mainEntityOfPage: SITE_URL,
-    image: LISTING_DETAILS.image,
-    datePosted: LISTING_DETAILS.datePosted,
-    offers: {
-      "@type": "Offer",
-      priceCurrency: LISTING_DETAILS.priceCurrency,
-      price: LISTING_DETAILS.price,
-      url: LISTING_DETAILS.listingUrl,
+    image: absoluteUrl(heroImage.src),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: LISTING_DETAILS.streetAddress,
+      addressLocality: LISTING_DETAILS.locality,
+      addressRegion: LISTING_DETAILS.region,
+      postalCode: LISTING_DETAILS.postalCode,
+      addressCountry: LISTING_DETAILS.country,
     },
-    about: {
-      "@type": "SingleFamilyResidence",
-      name: "Springbank",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: LISTING_DETAILS.streetAddress,
-        addressLocality: LISTING_DETAILS.locality,
-        addressRegion: LISTING_DETAILS.region,
-        postalCode: LISTING_DETAILS.postalCode,
-        addressCountry: LISTING_DETAILS.country,
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: LISTING_DETAILS.latitude,
-        longitude: LISTING_DETAILS.longitude,
-      },
-      numberOfRooms: LISTING_DETAILS.numberOfRooms,
-      numberOfBedrooms: LISTING_DETAILS.numberOfBedrooms,
-      numberOfBathroomsTotal: LISTING_DETAILS.numberOfBathroomsTotal,
-      floorSize: {
-        "@type": "QuantitativeValue",
-        value: LISTING_DETAILS.floorSizeSqm,
-        unitCode: "SQM",
-      },
-      ...(LISTING_DETAILS.lotSizeHectares
-        ? {
-            lotSize: {
-              "@type": "QuantitativeValue",
-              value: LISTING_DETAILS.lotSizeHectares,
-              unitCode: "HAR",
-            },
-          }
-        : {}),
-      amenityFeature: [
-        { "@type": "LocationFeatureSpecification", name: "Pinot Noir vineyard" },
-        { "@type": "LocationFeatureSpecification", name: "Robert Boyle-designed gardens" },
-        { "@type": "LocationFeatureSpecification", name: "530m private walking track" },
-        { "@type": "LocationFeatureSpecification", name: "Poured earth studio with EV charging" },
-        { "@type": "LocationFeatureSpecification", name: "Dam with merbau deck" },
-        { "@type": "LocationFeatureSpecification", name: "Passive solar design" },
-        { "@type": "LocationFeatureSpecification", name: "Hydronic heating" },
-        { "@type": "LocationFeatureSpecification", name: "Double garage and carport" },
-      ],
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: LISTING_DETAILS.latitude,
+      longitude: LISTING_DETAILS.longitude,
     },
-    broker: {
-      "@type": "RealEstateAgent",
-      "@id": `${SITE_URL}/#publisher`,
-      name: LISTING_PUBLISHER.name,
-      url: LISTING_PUBLISHER.url,
-      telephone: LISTING_PUBLISHER.telephone,
-      email: LISTING_PUBLISHER.email,
-      employee: {
-        "@type": "Person",
-        name: DEFAULT_BLOG_AUTHOR.name,
-        telephone: LISTING_PUBLISHER.telephone,
-        email: LISTING_PUBLISHER.email,
-        jobTitle: DEFAULT_BLOG_AUTHOR.role,
-      },
+    numberOfRooms: LISTING_DETAILS.numberOfRooms,
+    numberOfBedrooms: LISTING_DETAILS.numberOfBedrooms,
+    numberOfBathroomsTotal: LISTING_DETAILS.numberOfBathroomsTotal,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: LISTING_DETAILS.floorSizeSqm,
+      unitCode: "SQM",
     },
+    ...(LISTING_DETAILS.lotSizeHectares
+      ? {
+          lotSize: {
+            "@type": "QuantitativeValue",
+            value: LISTING_DETAILS.lotSizeHectares,
+            unitCode: "HAR",
+          },
+        }
+      : {}),
+    amenityFeature: [
+      { "@type": "LocationFeatureSpecification", name: "Pinot Noir vineyard" },
+      { "@type": "LocationFeatureSpecification", name: "Robert Boyle-designed gardens" },
+      { "@type": "LocationFeatureSpecification", name: "530m private walking track" },
+      { "@type": "LocationFeatureSpecification", name: "Poured earth studio with EV charging" },
+      { "@type": "LocationFeatureSpecification", name: "Dam with merbau deck" },
+      { "@type": "LocationFeatureSpecification", name: "Passive solar design" },
+      { "@type": "LocationFeatureSpecification", name: "Hydronic heating" },
+      { "@type": "LocationFeatureSpecification", name: "Double garage and carport" },
+    ],
+  };
+}
+
+export function getRealEstateListingJsonLd() {
+  const primaryImage = {
+    "@type": "ImageObject",
+    "@id": `${absoluteUrl(heroImage.src)}#image`,
+    contentUrl: absoluteUrl(heroImage.src),
+    url: absoluteUrl(heroImage.src),
+    caption: heroImage.caption ?? heroImage.alt,
+    description: heroImage.alt,
+    representativeOfPage: true,
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": IDS.homepage,
+        url: SITE_URL,
+        name: springbankSiteConfig.defaultMetaTitle,
+        description: springbankSiteConfig.defaultMetaDescription,
+        isPartOf: { "@id": IDS.website },
+        primaryImageOfPage: { "@id": primaryImage["@id"] },
+        mainEntity: { "@id": IDS.listing },
+        about: { "@id": IDS.property },
+      },
+      primaryImage,
+      {
+        "@type": "RealEstateListing",
+        "@id": IDS.listing,
+        name: LISTING_DETAILS.name,
+        description: LISTING_DETAILS.description,
+        url: LISTING_DETAILS.listingUrl,
+        mainEntityOfPage: { "@id": IDS.homepage },
+        image: absoluteUrl(heroImage.src),
+        datePosted: LISTING_DETAILS.datePosted,
+        about: { "@id": IDS.property },
+        offers: { "@id": IDS.offer },
+        broker: { "@id": IDS.realEstateAgent },
+      },
+      {
+        "@type": "Offer",
+        "@id": IDS.offer,
+        priceCurrency: LISTING_DETAILS.priceCurrency,
+        price: LISTING_DETAILS.price,
+        url: LISTING_DETAILS.listingUrl,
+        itemOffered: { "@id": IDS.property },
+        seller: { "@id": IDS.realEstateAgent },
+      },
+      getPropertyResidenceJsonLd(),
+    ],
   };
 }
 
@@ -313,11 +357,74 @@ export function getOpenHomeEventJsonLd() {
       },
     },
     organizer: {
-      "@id": `${SITE_URL}/#publisher`,
+      "@id": IDS.realEstateAgent,
     },
     image: [OPEN_HOME_EVENT.image],
     url: OPEN_HOME_EVENT.url,
     description: OPEN_HOME_EVENT.description,
+  };
+}
+
+function getPropertyImageObjects() {
+  return propertyImages.map((image, index) => ({
+    "@type": "ImageObject",
+    "@id": `${absoluteUrl(image.src)}#image`,
+    contentUrl: absoluteUrl(image.src),
+    url: absoluteUrl(image.src),
+    caption: image.caption ?? image.alt,
+    description: image.alt,
+    position: index + 1,
+    representativeOfPage: image.src === heroImage.src,
+  }));
+}
+
+function getPropertyFilmEmbedUrl() {
+  const shortMatch = propertyFilm.youtubeUrl.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+  const watchMatch = propertyFilm.youtubeUrl.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+  const id = shortMatch?.[1] ?? watchMatch?.[1];
+
+  return id ? `https://www.youtube.com/embed/${id}` : propertyFilm.youtubeUrl;
+}
+
+export function getGalleryPageJsonLd() {
+  const imageObjects = getPropertyImageObjects();
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": IDS.galleryPage,
+        url: `${SITE_URL}/gallery`,
+        name: "Springbank property gallery: interiors, grounds and plans",
+        description:
+          "Full image and video gallery for Springbank at 30 O'Malleys Rd, Mardan VIC 3953.",
+        isPartOf: { "@id": IDS.website },
+        about: { "@id": IDS.property },
+        mainEntity: { "@id": IDS.gallery },
+        primaryImageOfPage: { "@id": `${absoluteUrl(heroImage.src)}#image` },
+      },
+      {
+        "@type": "ImageGallery",
+        "@id": IDS.gallery,
+        name: "Springbank Property Gallery",
+        url: `${SITE_URL}/gallery`,
+        about: { "@id": IDS.property },
+        associatedMedia: imageObjects.map((image) => ({ "@id": image["@id"] })),
+        video: { "@id": IDS.propertyFilm },
+      },
+      {
+        "@type": "VideoObject",
+        "@id": IDS.propertyFilm,
+        name: propertyFilm.title,
+        description: propertyFilm.description,
+        thumbnailUrl: [absoluteUrl(propertyFilm.fallbackImage)],
+        embedUrl: getPropertyFilmEmbedUrl(),
+        url: propertyFilm.youtubeUrl,
+        about: { "@id": IDS.property },
+      },
+      ...imageObjects,
+    ],
   };
 }
 
@@ -330,7 +437,7 @@ export function getBlogCollectionPageJsonLd() {
     url: BLOG_URL,
     description: DEFAULT_BLOG_DESCRIPTION,
     publisher: {
-      "@id": `${SITE_URL}/#publisher`,
+      "@id": IDS.publisher,
     },
     mainEntity: {
       "@type": "CreativeWorkSeries",
@@ -367,11 +474,16 @@ export function getBlogPostingJsonLd(post: BlogPost) {
     image: [getBlogImage(post)],
     author: {
       "@type": "Person",
+      "@id": IDS.agentPerson,
       name: author.name,
       ...(author.role ? { jobTitle: author.role } : {}),
+      affiliation: {
+        "@id": IDS.realEstateAgent,
+      },
     },
     publisher: {
       "@type": "Organization",
+      "@id": IDS.publisher,
       name: publisher.name,
       url: publisher.url ?? LISTING_PUBLISHER.url,
     },

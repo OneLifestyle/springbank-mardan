@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/breadcrumb-json-ld";
 import { heroImage } from "@/lib/gallery";
+import { getGalleryPageJsonLd } from "@/lib/site-schema";
 import { springbankSiteConfig } from "@/lib/springbank-config";
 import GalleryClient from "./gallery-client";
 
@@ -30,6 +31,8 @@ export const metadata: Metadata = {
 };
 
 export default function GalleryPage() {
+  const galleryJsonLd = getGalleryPageJsonLd();
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -37,6 +40,10 @@ export default function GalleryPage() {
           { name: "Home", item: "https://springbankmardan.com" },
           { name: "Gallery", item: "https://springbankmardan.com/gallery" },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(galleryJsonLd) }}
       />
       <GalleryClient />
     </>

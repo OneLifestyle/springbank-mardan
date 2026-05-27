@@ -40,8 +40,8 @@ export const springbankPropertyEntity: PropertyEntity = {
     "Tuscan-inspired Mediterranean residence on approximately 5 acres in Mardan, South Gippsland.",
   fullDescription:
     "Tuscan-inspired Mediterranean residence on approximately 5 acres in Mardan, South Gippsland. Featuring Tarwin Valley views, fully double glazed main living spaces, passive solar comfort, Robert Boyle-designed gardens, Pinot Noir vineyard, dam, and a poured earth studio with stable year-round temperatures. Located 15 minutes from Leongatha, Mirboo North and Meeniyan.",
-  lat: -38.4567,
-  lng: 145.8234,
+  lat: -38.475064,
+  lng: 146.114376,
   listingStatus: "for-sale",
   nickname: "Springbank",
 };
