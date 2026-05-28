@@ -1249,8 +1249,12 @@ const posts: BlogPost[] = [
       "South Gippsland Lifestyle Property for Sale: 5 Springbank Inspection Highlights",
     excerpt:
       "Mardan property for sale at 30 O'Malleys Rd: five inspection highlights covering orientation, interiors, lower-level flexibility, and gardens ahead of private inspection or open home.",
+    seoTitle:
+      "Springbank Inspection Guide: 5 Details to Check at 30 O'Malleys Rd",
+    seoDescription:
+      "Use this inspection-prep guide for Springbank at 30 O'Malleys Rd, Mardan: orientation, interior quality, lower-level flexibility, studio use, gardens, and buyer questions to ask on site.",
     publishedAt: "2026-02-28",
-    updatedAt: "2026-02-28",
+    updatedAt: "2026-05-28",
     readingTimeMinutes: 8,
     categories: ["Property Spotlight", "Springbank", "South Gippsland"],
     tags: [
@@ -1267,13 +1271,13 @@ const posts: BlogPost[] = [
         "Springbank combines architectural intent, mature landscape design, and practical liveability.",
     },
     summaryBullets: [
-      "Five details that tend to stand out quickly once you are on site.",
+      "Five inspection details to check while you are physically walking through Springbank.",
       "Includes orientation, interior quality, lower-level flexibility, studio use, and garden structure.",
-      "Useful reading before a private inspection or open home.",
+      "Use it as a buyer checklist before a private inspection or open home, not as a duplicate property overview.",
     ],
     intro: [
       "For buyers searching Mardan property for sale, Springbank at 30 O'Malleys Road is a 5-acre lifestyle property that becomes clearer in person than it does online.",
-      "Before private inspection or open home, these five highlights explain where the strongest day-to-day value sits across layout, flexibility, and landscape.",
+      "Before private inspection or open home, these five highlights explain what to test on site: how the home sits to the outlook, how the interiors feel in real use, how the lower level and studio expand the brief, and whether the garden structure matches the way you expect to live.",
     ],
     sections: [
       {
@@ -1355,6 +1359,24 @@ const posts: BlogPost[] = [
       "Flexible lower level with spa bathroom and kitchenette",
       "Integrated ancillary studio and garage capability",
       "Robert Boyle designed gardens, vineyard, orchard, and walking track",
+    ],
+    relatedLinks: [
+      {
+        label: "View the main Springbank property page",
+        href: "/",
+      },
+      {
+        label: "Check open-home details",
+        href: "/open-home",
+      },
+      {
+        label: "Browse the full Springbank gallery",
+        href: "/gallery",
+      },
+      {
+        label: "Compare access from Leongatha",
+        href: "/leongatha",
+      },
     ],
     galleryTitle: "Springbank inspection gallery",
     gallery: [
