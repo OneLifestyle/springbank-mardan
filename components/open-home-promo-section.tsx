@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { CalendarDays, Clock3, MapPin } from "lucide-react";
+import { CalendarDays, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { OPEN_HOME_EVENT } from "@/lib/site-schema";
 
 export function OpenHomePromoSection() {
   return (
@@ -10,22 +9,17 @@ export function OpenHomePromoSection() {
         <div className="rounded-xl border border-border bg-card p-8 md:p-10">
           <p className="text-primary text-sm tracking-[0.2em] uppercase mb-3">Open Home</p>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            {OPEN_HOME_EVENT.displayDate}, {OPEN_HOME_EVENT.displayTime}
+            No open homes are currently planned
           </h2>
           <p className="text-muted-foreground leading-relaxed max-w-3xl">
-            Inspect 30 O&apos;Malleys Rd, Mardan VIC 3953 in person.
-            View the Tuscan-inspired Mediterranean residence, Robert Boyle designed gardens, the
-            poured-earth studio, and sweeping Tarwin Valley outlook in one inspection window.
+            There are no scheduled open homes for 30 O&apos;Malleys Rd, Mardan VIC 3953 at this time.
+            This section will be updated when a new inspection window is planned.
           </p>
 
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
             <div className="flex items-center gap-2 text-sm text-foreground">
               <CalendarDays className="h-4 w-4 text-primary" />
-              {OPEN_HOME_EVENT.displayDate}
-            </div>
-            <div className="flex items-center gap-2 text-sm text-foreground">
-              <Clock3 className="h-4 w-4 text-primary" />
-              {OPEN_HOME_EVENT.displayTime}
+              No inspection date currently scheduled
             </div>
             <div className="flex items-center gap-2 text-sm text-foreground">
               <MapPin className="h-4 w-4 text-primary" />
@@ -35,13 +29,13 @@ export function OpenHomePromoSection() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <Button size="lg" asChild>
-              <Link href="/open-home">View open home details</Link>
+              <Link href="/open-home">View open home updates</Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="bg-transparent">
-              <a href="tel:0431639749">Call Dean Jones: 0431 639 749</a>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="bg-transparent">
-              <Link href="/">View full listing website</Link>
+              <a href="tel:0431639749" className="gap-2">
+                <Phone className="h-4 w-4" />
+                Call Dean Jones: 0431 639 749
+              </a>
             </Button>
           </div>
         </div>

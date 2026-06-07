@@ -89,9 +89,6 @@ export function FullGallerySection() {
                 <Button asChild>
                   <Link href="/gallery">View full gallery</Link>
                 </Button>
-                <Button variant="outline" asChild className="bg-transparent">
-                  <Link href="/open-home">View open home details</Link>
-                </Button>
               </div>
             </div>
           </div>

@@ -307,9 +307,8 @@ export const springbankPropertyPageContent: PropertyPageContent = {
     ],
     checksHeading: "If you would like to arrive prepared",
     checksBody:
-      "The open-home details, gallery, and acreage guide are a useful place to start before you visit.",
+      "The property gallery and acreage guide are a useful place to start before you visit.",
     checkLinks: [
-      { label: "Open-home details", href: "/open-home" },
       { label: "Property gallery", href: "/gallery" },
       {
         label: "Buyer question hub",
