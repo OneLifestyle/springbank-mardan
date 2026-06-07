@@ -281,6 +281,7 @@ export default function SouthGippslandPage() {
                   src="/images/wikimedia/south-gippsland-cricklewood.jpg"
                   alt="South Gippsland rural outlook with rolling hills and farmland"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>

@@ -36,7 +36,15 @@ function TownGuideHeroImage({ guide }: { guide: TownGuideData }) {
     return <img src={guide.heroImage.src} alt={guide.heroImage.alt} className="h-full w-full object-cover" />;
   }
 
-  return <Image src={guide.heroImage.src} alt={guide.heroImage.alt} fill className="object-cover" />;
+  return (
+    <Image
+      src={guide.heroImage.src}
+      alt={guide.heroImage.alt}
+      fill
+      unoptimized
+      className="object-cover"
+    />
+  );
 }
 
 export function TownGuidePage({ guide }: { guide: TownGuideData }) {

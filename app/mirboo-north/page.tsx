@@ -192,6 +192,7 @@ export default function MirbooNorthPage() {
                   src="/images/wikimedia/mirboo-north-town-hall-2022.jpg"
                   alt="Mirboo North Town Hall"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>

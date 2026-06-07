@@ -192,6 +192,7 @@ export default function LeongathaPage() {
                   src="/images/wikimedia/leongatha-mccartin-street.jpg"
                   alt="Leongatha town centre streetscape"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>

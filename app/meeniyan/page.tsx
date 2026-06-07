@@ -192,6 +192,7 @@ export default function MeeniyanPage() {
                   src="/images/wikimedia/meeniyan-national-bank-old-gippstown.jpg"
                   alt="Historic Meeniyan National Bank of Australasia building"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>

@@ -180,6 +180,7 @@ export default function WilsonsPromontoryPage() {
                   src="/images/wikimedia/wilsons-prom-darby-beach.jpg"
                   alt="Darby Beach at Wilsons Promontory National Park"
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
